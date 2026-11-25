@@ -3,6 +3,7 @@
 State on 2026-11-25: **live at https://breadator.robinluiz.fr.** Public repository
 `R-luiz/breadator`, Fly app `breadator` (one machine in `fra`, volume `breadator_data`), DNS and
 certificate in place, every green push on `main` deploys.
+AI assistants reach it at `https://breadator.robinluiz.fr/mcp` (see "MCP endpoint").
 
 Not configured yet, so switched off on the site:
 
@@ -184,9 +185,10 @@ Fly also snapshots volumes daily (5 days kept): a second, independent copy.
 - Sessions: 60 days, sliding; cookie `__Host-session` (`HttpOnly; Secure; SameSite=Lax`), only the
   SHA-256 of the token is stored. Users can sign out of other devices from their account page.
 - Every non-GET request must carry an `Origin` (or `Referer`) equal to `PUBLIC_URL`, else 403.
-  Exception: a JSON `/api/…` call with no session cookie (the stateless engine endpoints), which
-  has no credential to abuse. Calling the site through another hostname (for example
-  `breadator.fly.dev`) therefore fails on forms: use the public URL.
+  Exceptions: a JSON `/api/…` call with no session cookie (the stateless engine endpoints), which
+  has no credential to abuse, and `/mcp`, which reads no cookie at all and refuses only a
+  foreign `Origin`. Calling the site through another hostname (for example
+  `breadator.fly.dev`) therefore fails on forms and on `/mcp`: use the public URL.
 - Rate limits (SQLite, survive restarts): 5 magic links an hour per address, 20 per client
   address, 80 sign-in mails a day for the whole site, 60 OAuth starts an hour, and 30 passkey
   sign-ins started and 30 finished per ten minutes per client address. The client address is
@@ -220,6 +222,55 @@ link is logged at INFO (`RESEND_API_KEY is not set: sign-in link not emailed …
 link=http://localhost:8080/…`). Open the site as `http://localhost:8080` (not `127.0.0.1`): the
 origin check compares with `PUBLIC_URL`.
 Passkeys work on `localhost`.
+
+## MCP endpoint
+
+`POST https://breadator.robinluiz.fr/mcp` serves the calculators, the knowledge base and the
+recipes to AI assistants (Model Context Protocol, Streamable HTTP). No secret, no setting: it
+is on wherever the server runs, at `PUBLIC_URL` + `/mcp`. Design: `docs/ARCHITECTURE.md` (MCP).
+
+Connect an assistant:
+
+- **Claude** (web, desktop, mobile): Customize → Connectors → Add custom connector → URL
+  `https://breadator.robinluiz.fr/mcp`, Authentication "No sign in". The connector belongs to
+  the Claude account and Claude calls it from Anthropic's servers, not from the device.
+- **Claude Code**: `claude mcp add --transport http breadator https://breadator.robinluiz.fr/mcp`
+  (`--scope user` for every project), then `claude mcp list` shows `✓ Connected`.
+- Others: any client that speaks Streamable HTTP; the URL is all it needs.
+
+Check it by hand:
+
+```sh
+npx @modelcontextprotocol/inspector --cli https://breadator.robinluiz.fr/mcp --transport http --method tools/list
+curl -s https://breadator.robinluiz.fr/mcp -H 'content-type: application/json' \
+  -H 'accept: application/json, text/event-stream' \
+  -d '{"jsonrpc":"2.0","id":1,"method":"tools/call","params":{"name":"convert_yeast","arguments":{"grams":21,"from":"fresh_yeast","to":"instant_yeast"}}}'
+```
+
+What to know:
+
+- **Logs**: one INFO line per call, `mcp tool call` with `tool`, `ok`, `micros`, `protocol` (the
+  revision the client speaks) and `agent` (its user agent: `Claude-User` for Claude's servers),
+  never the arguments. A refused `Host` or `Origin` is a WARN from `rmcp` (`rejected request
+  with disallowed …`), a throttled address one WARN `mcp: too many requests` a minute. The
+  SDK's own per-request lines are filtered out unless `LOG_LEVEL` names `rmcp`
+  (`LOG_LEVEL=info,rmcp=debug` to see them).
+- **Limits**: 300 requests a minute per client address (`REQUESTS_PER_MINUTE` in
+  `src/mcp/mod.rs`), then `429` with `Retry-After`; bodies up to 64 KiB. Everyone using Claude's
+  hosted apps arrives from Anthropic's outbound ranges (`160.79.104.0/21` and
+  `153.61.208.0/20`, kept at https://platform.claude.com/docs/en/api/ip-addresses): raise the
+  limit if the WARN shows up for them.
+- **Cloudflare**: the hostname is proxied, and Claude's servers are not a browser. Keep "Block
+  AI bots" and Bot Fight Mode off for this hostname, or exempt `/mcp` and allow those two
+  ranges: a block there shows in Claude as "Couldn't reach the MCP server" while `curl` from
+  anywhere else works, and leaves a 403 in Cloudflare's events and nothing in `fly logs`.
+  Cloudflare must not cache or transform `/mcp` (its default for POST).
+- **Only the public hostname**: the `Host` header must be `PUBLIC_URL`'s (a guard against DNS
+  rebinding), so `breadator.fly.dev/mcp` answers 403.
+- **Changing tools**: clients may keep the tool list for five minutes (`ttlMs`). Renaming or
+  removing a tool breaks the conversations that use it: add, do not rename.
+- **Listing it in Claude's connector directory** is a separate step (review by Anthropic; the
+  tools already carry the titles and read-only annotations it asks for).
 
 ## Routine
 

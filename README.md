@@ -33,6 +33,10 @@ Bread-making calculators and science, for every baker: **https://breadator.robin
 - **Chat**: questions answered from the knowledge base with numbered sources; weights, times and
   temperatures come from the calculators, not from the model. Signed-in accounts only, under a
   fixed monthly budget.
+- **For AI assistants**: an [MCP](https://modelcontextprotocol.io) endpoint,
+  `https://breadator.robinluiz.fr/mcp`, gives Claude and other assistants the calculators, the
+  knowledge base with its sources and the recipes. No account and no key; see
+  [Use it from an assistant](#use-it-from-an-assistant).
 
 Coming: a persistent bake journal. See [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md).
 
@@ -42,6 +46,22 @@ preferment planner instead submits an online form without storing the calibratio
 putting them in the URL. The site installs as an app. French and English; results in grams and
 °C, with ounces, pounds and °F alongside for those who switch.
 
+## Use it from an assistant
+
+The endpoint speaks the Model Context Protocol over Streamable HTTP, without authentication and
+read-only: 14 tools (search, articles, recipes, bibliography and the eight calculators) and the
+articles and recipes as resources, in English and French.
+
+- **Claude** (claude.ai, desktop, mobile): Customize → Connectors → Add custom connector, URL
+  `https://breadator.robinluiz.fr/mcp`, authentication "No sign in".
+- **Claude Code**: `claude mcp add --transport http breadator https://breadator.robinluiz.fr/mcp`.
+- **Any other client**: the same URL; a quick look with the MCP Inspector:
+  `npx @modelcontextprotocol/inspector --cli https://breadator.robinluiz.fr/mcp --transport http --method tools/list`.
+
+An assistant then answers "two 800 g loaves at 75 % hydration with 20 % levain, and how long is
+the bulk at 24 °C?" with the engine's numbers, and "does salt slow fermentation?" from passages
+that carry their sources.
+
 ## Layout
 
 | Path | Content |
@@ -49,7 +69,7 @@ putting them in the URL. The site installs as an app. French and English; result
 | `crates/breadator-engine` | the engine: pure Rust, no I/O; every formula lives here |
 | `crates/breadator-wasm` | the engine for the browser (JSON in, JSON out) |
 | `crates/breadator-content` | knowledge base loader: articles, recipes, citation and link validation, full-text search |
-| `crates/breadator-server` | axum server: pages (askama), JSON API, accounts and sync (SQLite), Fluent translations, embedded static files and content |
+| `crates/breadator-server` | axum server: pages (askama), JSON API, MCP endpoint, accounts and sync (SQLite), Fluent translations, embedded static files and content |
 | `content/` | articles (`articles/<slug>/{fr,en}.md`) and recipes (`recipes/<slug>.toml`); how to write them: [`content/STYLE.md`](content/STYLE.md) |
 | `migrations/` | SQLite schema, applied at start-up |
 | `web/` | TypeScript islands, bundled by esbuild into the server's `static/dist/` |

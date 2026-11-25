@@ -114,6 +114,18 @@ jobs:
           check "$messages" 200
           curl -fsS -X POST -H 'content-type: application/json' \
             -d '{"grams":10,"from":"fresh_yeast","to":"instant_yeast"}' http://localhost:8080/api/v1/yeast
+          # The MCP endpoint as a hosted assistant opens it (the handshake of the earlier
+          # revisions, answered without a session), then a tool; there is no stream to GET.
+          mcp() {
+            curl -fsS -X POST -H 'content-type: application/json' \
+              -H 'accept: application/json, text/event-stream' "$@" http://localhost:8080/mcp
+          }
+          mcp -d '{"jsonrpc":"2.0","id":0,"method":"initialize","params":{"protocolVersion":"2025-11-25","capabilities":{},"clientInfo":{"name":"ci","version":"1"}}}' \
+            | grep -q '"name":"breadator"'
+          mcp -H 'mcp-protocol-version: 2025-11-25' \
+            -d '{"jsonrpc":"2.0","id":1,"method":"tools/call","params":{"name":"read_article","arguments":{"slug":"sourdough-starter","lang":"fr"}}}' \
+            | grep -q '## Sources'
+          check /mcp 405
           # Accounts: the data directory is writable by the server, a magic link signs in, the
           # session reads and writes synced records.
           check /en/account/sign-in 200

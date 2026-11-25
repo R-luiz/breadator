@@ -31,6 +31,10 @@ pulldown-cmark = { version = "0.13.6", default-features = false, features = ["ht
 reqwest = { version = "0.13.5", default-features = false, features = ["json", "form", "rustls-no-provider"] }
 rusqlite = { version = "0.43.0", features = ["bundled"] }
 rustls = { version = "0.23.46", default-features = false, features = ["ring", "std", "tls12"] }
+# The MCP endpoint (`/mcp`): the official SDK serves the stateless 2026-07-28 revision and the
+# earlier handshake-based ones over Streamable HTTP. Tool schemas are written by hand (shared
+# with the chat), so no macros.
+rmcp = { version = "3.11.0", default-features = false, features = ["server", "transport-streamable-http-server"] }
 serde.workspace = true
 # `raw_value`: synced records go out as the JSON text they were stored as, never parsed.
 serde_json = { workspace = true, features = ["raw_value"] }

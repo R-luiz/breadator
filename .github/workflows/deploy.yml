@@ -91,10 +91,10 @@ jobs:
       - name: Smoke test
         run: |
           set -euo pipefail
-          check() {
+          check() { # path expected_status [curl options]
             local got=""
             for _ in 1 2 3 4 5 6 7 8 9 10; do
-              got="$(curl -s -o /dev/null -w '%{http_code}' --max-time 15 "$PUBLIC_URL$1" || true)"
+              got="$(curl -s -o /dev/null -w '%{http_code}' --max-time 15 "${@:3}" "$PUBLIC_URL$1" || true)"
               [[ "$got" == "$2" ]] && { echo "ok   $1 -> $got"; return 0; }
               sleep 6
             done
@@ -106,4 +106,10 @@ jobs:
           check /fr 200 || failed=1
           check /en/calculators/formula 200 || failed=1
           check /sitemap.xml 200 || failed=1
+          # The MCP endpoint through the proxy, under the user agent of Claude's servers: an
+          # edge rule against bots would answer 403 here.
+          check /mcp 200 -X POST -A 'Claude-User' -H 'content-type: application/json' \
+            -H 'accept: application/json, text/event-stream' \
+            -d '{"jsonrpc":"2.0","id":0,"method":"initialize","params":{"protocolVersion":"2025-11-25","capabilities":{},"clientInfo":{"name":"deploy","version":"1"}}}' \
+            || failed=1
           exit "$failed"

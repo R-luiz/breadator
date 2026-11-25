@@ -1,5 +1,7 @@
 //! Plan a lean sourdough loaf from a preferment whose batch has already been weighed.
 
+use serde::{Deserialize, Serialize};
+
 use crate::ferment::{Band, Vigour};
 use crate::leaven::{
     CHECKED_STARTER_FEED_MAX, DoughFactors, Endpoint, FermentNote, QuickFerment, QuickStarter,
@@ -11,7 +13,9 @@ pub const MAX_OBSERVATIONS: usize = 4;
 const PRIOR_SIGMA: f64 = 0.35;
 const OBS_SIGMA: f64 = 0.20;
 
-#[derive(Debug, Clone, Copy)]
+/// A timed event of the same culture, used to estimate its vigour.
+#[derive(Debug, Clone, Copy, PartialEq, Serialize, Deserialize)]
+#[serde(tag = "kind", rename_all = "snake_case")]
 pub enum Observation {
     Peak {
         observed_h: f64,
@@ -32,7 +36,9 @@ pub enum Observation {
     },
 }
 
-#[derive(Debug)]
+/// The planner's form, shared by the server's page and its tools.
+#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
+#[serde(default)]
 pub struct QuickPreferment {
     pub seed_g: f64,
     pub seed_hydration_pct: f64,

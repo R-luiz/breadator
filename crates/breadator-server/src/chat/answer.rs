@@ -210,13 +210,10 @@ pub async fn run(
         for (i, tool_call) in tool_calls.iter().enumerate() {
             let result = if i < TOOLS_PER_ROUND {
                 send(Event::Tool(tools::kind(&tool_call.name)));
-                let (value, record) = tools::execute(
-                    &state.knowledge,
-                    job.lang,
-                    &tool_call.name,
-                    &tool_call.arguments,
-                    &mut sources,
-                );
+                let ctx =
+                    tools::Context { knowledge: &state.knowledge, lang: job.lang, site: None };
+                let (value, record) =
+                    tools::execute(&ctx, &tool_call.name, &tool_call.arguments, &mut sources);
                 records.push(record);
                 value
             } else {

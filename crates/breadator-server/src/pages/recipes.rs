@@ -8,6 +8,7 @@ use breadator_engine::formula::solve;
 
 use super::formula::{Results, results};
 use crate::app::{AppState, LangPath, Layout, not_found_page, render};
+use crate::i18n::Tr;
 use crate::knowledge::cite;
 use crate::state_codec;
 
@@ -25,6 +26,11 @@ struct IndexPage {
     recipes: Vec<RecipeLink>,
 }
 
+/// Translated kind of bread (`bread-type-pan`…).
+pub(crate) fn bread_type(tr: &Tr, code: &str) -> String {
+    tr.try_t(&format!("bread-type-{code}")).unwrap_or_else(|| code.replace('-', " "))
+}
+
 pub async fn index(State(state): State<AppState>, LangPath(lang): LangPath) -> Response {
     let tr = lang.tr();
     let code = lang.code();
@@ -36,9 +42,7 @@ pub async fn index(State(state): State<AppState>, LangPath(lang): LangPath) -> R
             href: format!("/{code}/recipes/{}", r.slug),
             title: r.title.get(code).to_owned(),
             description: r.description.get(code).to_owned(),
-            kind: tr
-                .try_t(&format!("bread-type-{}", r.bread_type))
-                .unwrap_or_else(|| r.bread_type.replace('-', " ")),
+            kind: bread_type(&tr, &r.bread_type),
         })
         .collect();
     recipes.sort_by(|a, b| {
@@ -65,7 +69,7 @@ pub struct SourceView {
 
 /// The recipe's sources, one entry per work: nine claims from one video read as the video's
 /// title followed by nine timestamps, not as nine lines with the same title.
-fn sources(lib: &breadator_content::Library, keys: &[String]) -> Vec<SourceView> {
+pub(crate) fn sources(lib: &breadator_content::Library, keys: &[String]) -> Vec<SourceView> {
     let mut out: Vec<(String, Vec<crate::knowledge::Citation>)> = Vec::new();
     for key in keys {
         let c = cite(lib, key);

@@ -21,7 +21,7 @@ pub struct TopicGroup {
 }
 
 /// Translated topic name (`topic-starch`…); the first segment of a dotted topic.
-fn topic_title(tr: &Tr, topic: &str) -> String {
+pub(crate) fn topic_title(tr: &Tr, topic: &str) -> String {
     let root = topic.split('.').next().unwrap_or(topic);
     tr.try_t(&format!("topic-{root}")).unwrap_or_else(|| root.replace('-', " "))
 }
@@ -57,7 +57,7 @@ const TOPIC_ORDER: [&str; 26] = [
     "troubleshooting",
 ];
 
-fn topic_rank(topic: &str) -> usize {
+pub(crate) fn topic_rank(topic: &str) -> usize {
     let root = topic.split('.').next().unwrap_or(topic);
     TOPIC_ORDER.iter().position(|t| *t == root).unwrap_or(TOPIC_ORDER.len())
 }

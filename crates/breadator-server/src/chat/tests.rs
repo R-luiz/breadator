@@ -130,9 +130,11 @@ const NO_ADDRESS: &str = "0.0.0.0";
 
 /// The sources a search of the fixture returns, numbered as the model sees them.
 fn searched(query: &str) -> Vec<Source> {
+    let knowledge = Knowledge::fixture();
+    let ctx = tools::Context { knowledge: &knowledge, lang: Lang::En, site: None };
     let mut sources = Vec::new();
     let arguments = json!({ "queries": [query] }).to_string();
-    tools::execute(&Knowledge::fixture(), Lang::En, "search_knowledge", &arguments, &mut sources);
+    tools::execute(&ctx, "search_knowledge", &arguments, &mut sources);
     sources
 }
 

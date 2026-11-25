@@ -5,7 +5,8 @@
 //! - [`pages`]: `/{lang}/chat` (works without JavaScript) and the streamed answer of
 //!   `web/src/chat.ts` (`POST /api/v1/chat`, server-sent events).
 //! - [`answer`]: the loop of model calls and tool runs behind one answer.
-//! - [`tools`] and [`passages`]: what the model can call; [`render`]: `[n]` markers to sources.
+//! - [`tools`]: what the model can call, out of the site's tools ([`crate::tools`]);
+//!   [`render`]: `[n]` markers to sources.
 //! - [`limits`] and [`store`]: the owner's budget, the per-account allowances, the tables.
 //! - [`openrouter`]: the request and its event stream; [`prompt`]: the system prompt.
 
@@ -13,7 +14,6 @@ mod answer;
 mod limits;
 mod openrouter;
 mod pages;
-mod passages;
 mod prompt;
 mod render;
 mod store;

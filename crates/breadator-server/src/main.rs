@@ -8,11 +8,13 @@ mod chat;
 mod db;
 mod i18n;
 mod knowledge;
+mod mcp;
 mod pages;
 mod state_codec;
 mod sync;
 #[cfg(test)]
 mod testkit;
+mod tools;
 
 use std::io::{Read, Write};
 use std::net::{SocketAddr, TcpStream};
@@ -97,7 +99,23 @@ fn main() -> ExitCode {
         return healthcheck(config.port);
     }
 
-    let filter = EnvFilter::try_from_env("LOG_LEVEL").unwrap_or_else(|_| EnvFilter::new("info"));
+    // `LOG_LEVEL` is a filter: `info`, `debug`, `info,breadator=debug`… Unless it names the
+    // MCP SDK, that one is kept quiet: it writes three INFO lines for every request served
+    // without a session, and its service layer repeats at WARN what a client sent wrong (an
+    // unknown tool's name, as long as the client made it). Its warnings about a refused
+    // `Host` or `Origin` stay.
+    let level = std::env::var("LOG_LEVEL")
+        .ok()
+        .filter(|level| !level.trim().is_empty())
+        .unwrap_or_else(|| "info".to_owned());
+    let mut filter = EnvFilter::try_new(&level).unwrap_or_else(|_| EnvFilter::new("info"));
+    if !level.contains("rmcp") {
+        for quiet in ["rmcp=warn", "rmcp::service=error"] {
+            if let Ok(directive) = quiet.parse::<tracing_subscriber::filter::Directive>() {
+                filter = filter.add_directive(directive);
+            }
+        }
+    }
     if std::env::var("LOG_FORMAT").as_deref() == Ok("json") {
         tracing_subscriber::fmt().json().with_env_filter(filter).init();
     } else {

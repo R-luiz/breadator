@@ -9,7 +9,8 @@ Public repository: code MIT, content CC BY-SA 4.0.
 
 1. **One engine, everywhere.** All bread arithmetic and science models live in one pure Rust crate
    (`breadator-engine`). The server links it; the browser runs the same code as WebAssembly; the
-   chatbot calls it through tools. No formula is ever reimplemented in JavaScript or in a prompt.
+   chatbot and outside assistants (MCP) call it through tools. No formula is ever reimplemented
+   in JavaScript or in a prompt.
 2. **Works without JavaScript, better with it.** Shareable calculators render GET form results
    on the server; their WASM islands can recompute without a round trip. The existing preferment
    planner takes an online POST instead: observations stay out of the URL, aren't saved, and
@@ -38,7 +39,8 @@ crates/
                            translations; renders Markdown to sanitized HTML. Used by build.rs of the
                            server to embed the compiled bundle.
   breadator-server/        axum app (binary `breadator`): pages (askama templates), JSON API,
-                           auth, user data, sync, chat, search, SQLite, backups, health.
+                           auth, user data, sync, chat, tools and their MCP endpoint, search,
+                           SQLite, backups, health.
 web/                       TypeScript islands + CSS + service worker, built with esbuild into
                            crates/breadator-server/static/dist (hashed names, manifest JSON).
 content/
@@ -131,13 +133,59 @@ tests for mass conservation (sum of stage + final grams equals totals).
   stored sizes; records go out as the JSON text written from their columns (`RawValue`), never
   parsed. The browser pushes batches of at most 512 KiB, shows the two refusals and holds the
   refused changes until the next edit (or the end of the ten minutes).
-- **Chat** (`src/chat/`, `web/src/chat.ts`): OpenRouter chat completions, streamed, with tools the
-  server runs: `search_knowledge` (the FTS5 index over articles, claims and recipes; returns
-  passages in which each statement carries a number `[n]` standing for the citation keys the
-  article gives it, or for the claim, recipe or article itself), `compute_formula`,
-  `water_temperature`, `predict_fermentation`, `predict_starter` and `convert_yeast` (the
-  engine's `QuickForm`/`formula::solve`, `QuickTemperature`, `QuickFerment`, `QuickStarter`,
-  `yeast::convert`; wrong arguments come back to the model as `{"error": …}`).
+- **Tools** (`src/tools/`): what a model can call, one registry for the chat below and for the
+  MCP endpoint. Each has a name, a title, a description and the JSON Schema of its arguments,
+  and runs over the embedded knowledge base and the engine:
+  - knowledge: `search_knowledge` (the FTS5 index over articles, claims and recipes; returns
+    passages in which each statement carries a number `[n]` standing for the citation keys the
+    article gives it, or for the claim, recipe or article itself), `list_articles`,
+    `read_article` (the article as Markdown, citation numbers after each statement, the
+    sources listed at the end), `list_recipes`, `get_recipe` (formula, solved weights, steps,
+    sources; scaled to a `target` on request), `list_sources` (the bibliography, by words);
+  - calculators: `compute_formula` (`QuickForm`), `solve_formula` (any engine `Formula`:
+    enrichments, several stages, a levain built from a seed; a key the type would ignore is
+    refused rather than silently dropped), `water_temperature`, `predict_fermentation`,
+    `predict_starter`, `plan_existing_preferment` (`QuickPreferment`), `blend_flour`,
+    `convert_yeast`.
+
+  A calculator's arguments are laid over its form (`QuickForm`, `QuickFerment`…): what is not
+  given keeps the form's default, except the levain of `compute_formula`, absent unless asked
+  for, and the predictors and `blend_flour` return the `inputs` they used. An unknown or wrong
+  argument comes back as a message naming it and what is accepted, for the model to correct.
+  Numbers are rounded as a baker reads them. The vigour calibration saved with an account
+  (`vigour`, `anchor_c`) is not offered; `plan_existing_preferment` takes the planner page's
+  own observations instead.
+- **MCP** (`src/mcp/`, `POST /mcp`): the tools for AI assistants (Claude custom connector,
+  Claude Code, any Model Context Protocol client) over Streamable HTTP, through the official
+  Rust SDK (`rmcp`).
+  - Open and read-only: exactly what the site gives without an account. Every tool is
+    annotated `readOnlyHint` with a title. No authentication, no cookie: the route is merged
+    outside the session middleware, so a signed-in browser lends it nothing. Account data
+    (saved formulas) is not exposed; doing so means OAuth 2.1 with the endpoint as a protected
+    resource, not built.
+  - Stateless, both protocol eras: the 2026-07-28 revision (per-request `_meta`,
+    `server/discover`, `Mcp-Method`/`Mcp-Name` headers checked against the body, `ttlMs` and
+    `cacheScope: public` on lists and reads) and the handshake-based ones (2025-11-25 and
+    earlier), whose `initialize` is answered without a session id; claude.ai still opens with
+    it. Replies are plain JSON (no event stream: no tool runs long); GET and DELETE answer 405.
+  - A tool whose text exists in French and English takes `lang` here (default `en`); the
+    chat takes the page's language instead. Results link to the site here and only here
+    (`Context::site`; the chat lists an answer's sources itself and its model writes no link):
+    a search's passages name the article or recipe page they were read on, and its result
+    carries `sources`, each `[n]` with its citations (text and link). An article goes out as
+    text, everything else as `structuredContent` plus its JSON text. A refused call is a tool
+    result with `isError`, an unknown tool a JSON-RPC error.
+  - Resources: every article (`breadator://articles/{lang}/{slug}`, Markdown) and recipe
+    (`breadator://recipes/{lang}/{slug}`, JSON), for a person to attach to a conversation.
+  - Guards: `Host` must be the site's and a browser's `Origin` the site's own (403 otherwise;
+    requests without `Origin`, an assistant's backend, pass), bodies over 64 KiB get 413, and
+    300 requests a minute per client address then 429 with `Retry-After` (in memory; hosted
+    assistants share their servers' addresses, hence the height). One log line per call:
+    tool, outcome, duration, protocol revision, user agent, never the arguments.
+- **Chat** (`src/chat/`, `web/src/chat.ts`): OpenRouter chat completions, streamed, with seven
+  of the tools above, run by the server: `search_knowledge`, `compute_formula`,
+  `water_temperature`, `predict_fermentation`, `predict_starter`, `blend_flour` and
+  `convert_yeast` (wrong arguments come back to the model as `{"error": …}`).
   - One answer = at most 3 model calls (two tool rounds, then a call with `tool_choice: none`),
     run in its own task so a closed page does not lose a paid answer. The system prompt
     (`prompt.rs`, French or English by the page) restricts the model to bread making, makes it

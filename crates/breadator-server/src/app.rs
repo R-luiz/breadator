@@ -23,7 +23,7 @@ use crate::db::Db;
 use crate::i18n::{Lang, Tr};
 use crate::knowledge::Knowledge;
 use crate::pages;
-use crate::{account, sync};
+use crate::{account, mcp, sync};
 
 pub struct Inner {
     pub assets: Assets,
@@ -130,7 +130,10 @@ pub fn router(state: AppState) -> Router {
         .fallback(not_found)
         .with_state(state.clone())
         // Closest to the routes, so even its refusals get the security headers below.
-        .layer(axum::middleware::from_fn_with_state(state, auth::guard::guard));
+        .layer(axum::middleware::from_fn_with_state(state.clone(), auth::guard::guard))
+        // Merged after the guard, so outside it: the MCP endpoint takes no cookie (no session
+        // to look up, nothing a third-party page could ride on) and has its own `Origin` rule.
+        .merge(mcp::routes(state));
     for (name, value) in headers {
         router = router
             .layer(SetResponseHeaderLayer::if_not_present(name, HeaderValue::from_static(value)));

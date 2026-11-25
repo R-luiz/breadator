@@ -18,6 +18,18 @@ pub struct Block {
 pub struct Segment {
     pub text: String,
     pub keys: Vec<String>,
+    /// What separated it from the segment before, in the article.
+    pub gap: Gap,
+}
+
+/// What stands between the citation that ends a segment and the text of the next one.
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+pub enum Gap {
+    /// Nothing: the first segment of a block, or the punctuation that follows a citation.
+    None,
+    Space,
+    /// A line break: the next item of a list, the next row of a table.
+    Line,
 }
 
 const CITE_OPEN: &str = r#"<sup class="cite">"#;
@@ -106,7 +118,7 @@ fn segments(inner: &str, citations: &[String]) -> Vec<Segment> {
             let end = sup.find("</sup>").unwrap_or(sup.len());
             let keys = cite_keys(&sup[..end], citations);
             if !keys.is_empty() {
-                out.push(Segment { text: std::mem::take(&mut text), keys });
+                out.push(Segment { text: std::mem::take(&mut text), keys, gap: Gap::None });
             }
             rest = sup.get(end + "</sup>".len()..).unwrap_or("");
             continue;
@@ -126,11 +138,19 @@ fn segments(inner: &str, citations: &[String]) -> Vec<Segment> {
         rest = &tag[close..];
     }
     unescape(rest, &mut text);
-    // A tail of punctuation or table bars says nothing.
-    if text.chars().any(char::is_alphanumeric) {
-        out.push(Segment { text, keys: Vec::new() });
+    // Without a letter or a digit a tail (the full stop after a citation, a table bar) only
+    // closes what precedes it: alone it says nothing.
+    if text.chars().any(char::is_alphanumeric) || (!out.is_empty() && !text.trim().is_empty()) {
+        out.push(Segment { text, keys: Vec::new(), gap: Gap::None });
     }
-    for segment in &mut out {
+    for (at, segment) in out.iter_mut().enumerate() {
+        let lead = &segment.text[..segment.text.len() - segment.text.trim_start().len()];
+        segment.gap = match lead {
+            _ if at == 0 => Gap::None,
+            lead if lead.contains('\n') => Gap::Line,
+            "" => Gap::None,
+            _ => Gap::Space,
+        };
         segment.text = tidy(&segment.text);
     }
     out
@@ -236,29 +256,41 @@ mod tests {
              - Rabats doux [@breadcode-0828]\n- Pâte \"ferme\" <b>\n\n| a | b |\n|---|---|\n| 1 | 2 [@yang2019] |\n",
         );
         let blocks = blocks(&rendered.html, &rendered.citations);
-        let seg = |text: &str, keys: &[&str]| Segment {
+        let seg = |gap: Gap, text: &str, keys: &[&str]| Segment {
             text: text.to_owned(),
             keys: keys.iter().map(|k| (*k).to_owned()).collect(),
+            gap,
         };
         assert_eq!(blocks.len(), 4, "{blocks:#?}");
         assert_eq!(
             blocks[0],
-            Block { heading: String::new(), segments: vec![seg("Intro without source.", &[])] }
+            Block {
+                heading: String::new(),
+                segments: vec![seg(Gap::None, "Intro without source.", &[])]
+            }
         );
         assert_eq!(blocks[1].heading, "Autolyse & repos");
         assert_eq!(
             blocks[1].segments,
             vec![
-                seg("Calvel l'a décrite en 1974", &["calvel2001"]),
-                seg(". Les gains de goût sont faibles", &["novita-0105", "calvel2001"]),
-                seg(". Fin sans source.", &[]),
+                seg(Gap::None, "Calvel l'a décrite en 1974", &["calvel2001"]),
+                seg(Gap::None, ". Les gains de goût sont faibles", &["novita-0105", "calvel2001"]),
+                seg(Gap::None, ". Fin sans source.", &[]),
             ]
         );
+        // The second item of the list is on its own line, though a citation ended the first.
         assert_eq!(
             blocks[2].segments,
-            vec![seg("Rabats doux", &["breadcode-0828"]), seg("Pâte \"ferme\" <b>", &[])]
+            vec![
+                seg(Gap::None, "Rabats doux", &["breadcode-0828"]),
+                seg(Gap::Line, "Pâte \"ferme\" <b>", &[]),
+            ]
         );
-        assert_eq!(blocks[3].segments[0], seg("a | b |\n1 | 2", &["yang2019"]));
+        // What closes a row after its citation is kept, to be written as the article has it.
+        assert_eq!(
+            blocks[3].segments,
+            vec![seg(Gap::None, "a | b |\n1 | 2", &["yang2019"]), seg(Gap::Space, "|", &[])]
+        );
     }
 
     #[test]
