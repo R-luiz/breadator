@@ -17,7 +17,7 @@ use super::tools::{self, Source};
 use crate::db;
 use crate::i18n::Lang;
 use crate::knowledge::Knowledge;
-use crate::testkit::{HTTPS_URL, TestApp, received_json};
+use crate::testkit::{HTTPS_URL, TestApp, away_from_window_end, received_json};
 
 const COMPLETIONS: &str = "/chat/completions";
 
@@ -334,6 +334,7 @@ async fn without_javascript_the_form_answers_on_the_conversation_page() {
 
 #[tokio::test]
 async fn budgets_and_allowances_refuse_before_any_model_call() {
+    away_from_window_end(86_400).await;
     let server = model(Vec::new()).await;
     let app = app(&server);
     let (mut me, _) = app.signed_in("me@example.com").await;
@@ -506,6 +507,7 @@ async fn a_failed_answer_costs_no_allowance_and_offers_the_question_again() {
 
 #[tokio::test]
 async fn a_deleted_and_recreated_account_has_no_fresh_allowance() {
+    away_from_window_end(86_400).await;
     let server = model(Vec::new()).await;
     let app = app(&server);
     let (mut me, _) = app.signed_in("me@example.com").await;
@@ -540,6 +542,7 @@ async fn a_deleted_and_recreated_account_has_no_fresh_allowance() {
 
 #[tokio::test]
 async fn one_network_has_its_daily_answers_whatever_the_accounts() {
+    away_from_window_end(86_400).await;
     let server = model(vec![text("Yes.", 0.0001)]).await;
     let app = app(&server);
     let day = limits::utc_day(db::now());
@@ -570,6 +573,7 @@ async fn one_network_has_its_daily_answers_whatever_the_accounts() {
 
 #[tokio::test]
 async fn calls_that_never_returned_keep_their_ceiling_booked() {
+    away_from_window_end(86_400).await;
     let server = model(Vec::new()).await;
     let app = app(&server);
     let (mut me, _) = app.signed_in("me@example.com").await;

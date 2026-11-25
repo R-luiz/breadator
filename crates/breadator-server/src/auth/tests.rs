@@ -9,7 +9,8 @@ use wiremock::matchers::{header, method, path};
 use wiremock::{Mock, MockServer, Request, ResponseTemplate};
 
 use crate::testkit::{
-    Client, HTTPS_URL, Logs, Reply, TestApp, oauth_config, received_json, wait_for_requests,
+    Client, HTTPS_URL, Logs, Reply, TestApp, away_from_window_end, oauth_config, received_json,
+    wait_for_requests,
 };
 
 // ---- magic link ------------------------------------------------------------------------------
@@ -177,6 +178,7 @@ fn cookie_shapes(reply: &Reply) -> Vec<String> {
 
 #[tokio::test]
 async fn magic_link_is_rate_limited_per_address_and_per_client() {
+    away_from_window_end(3600).await;
     let (app, resend) = resend_app().await;
     let mut browser = app.client();
     // Per address: five an hour, whatever the casing or the client.
@@ -347,6 +349,7 @@ async fn a_magic_link_signs_in_by_itself_only_in_the_browser_that_asked_for_it()
 
 #[tokio::test]
 async fn sign_in_mails_stop_at_the_daily_cap() {
+    away_from_window_end(3600).await;
     let logs = Logs::start();
     let (app, resend) = resend_app().await;
     // All but one of today's mails are already gone.
@@ -1217,6 +1220,7 @@ async fn passkey_endpoints_guard_their_ceremonies() {
 
 #[tokio::test]
 async fn passkey_sign_in_starts_are_rate_limited_per_client() {
+    away_from_window_end(600).await;
     let app = TestApp::new();
     let mut flood = app.client();
     from_ip(&mut flood, "203.0.113.50");

@@ -326,3 +326,16 @@ pub async fn wait_for_requests(server: &wiremock::MockServer, path: &str, n: usi
     }
     received_json(server, path).await
 }
+
+/// For a test that counts hits up to a limit. Limits are counted per slice of the clock
+/// (`now / window`, a UTC day for the chat): a test that runs across the end of a slice sees
+/// a fresh allowance and fails. When the slice ends within the next seconds, waits for the
+/// next one.
+pub async fn away_from_window_end(window_secs: i64) {
+    const MARGIN_SECS: i64 = 15;
+    let left = window_secs - crate::db::now().rem_euclid(window_secs);
+    if left <= MARGIN_SECS {
+        let wait = u64::try_from(left).unwrap_or(0) + 1;
+        tokio::time::sleep(std::time::Duration::from_secs(wait)).await;
+    }
+}
