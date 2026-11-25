@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% import "macros.html" as m %}
+{% block content %}
+<article class="article">
+  <p class="note"><a href="{{ layout.href("/recipes") }}">{{ layout.tr.t("recipes-title") }}</a></p>
+  <h1>{{ title }}</h1>
+  <p class="lead">{{ description }}</p>
+  <p><a class="button" href="{{ calculator }}">{{ layout.tr.t("recipe-open-calculator") }}</a></p>
+  {% if let Some(r) = results %}
+  <h2>{{ layout.tr.t("recipe-weights") }}</h2>
+  {% for st in r.stages %}
+  <h3>{{ st.title }} <small>{{ st.mass }} g · {{ layout.tr.t("hydration") }} {{ st.hydration }} %</small></h3>
+  {% call m::rows(st.rows) %}{% endcall %}
+  {% endfor %}
+  <h3>{{ layout.tr.t("formula-final-mix") }}</h3>
+  {% call m::rows(r.final_mix) %}{% endcall %}
+  <dl class="metrics">
+    {% for x in r.metrics %}<div><dt>{{ x.label }}</dt><dd>{{ x.value }}</dd></div>
+    {% endfor %}</dl>
+  {% endif %}
+  {% if !steps.is_empty() %}
+  <h2>{{ layout.tr.t("recipe-steps") }}</h2>
+  <ol class="steps">
+  {% for s in steps %}<li>{{ s }}</li>
+  {% endfor %}</ol>
+  <p class="note">{{ layout.tr.t("recipe-timing-note") }} <a href="{{ layout.href("/calculators/fermentation") }}">{{ layout.tr.t("ferment-title") }}</a></p>
+  {% endif %}
+  {% if let Some(n) = notes %}<h2>{{ layout.tr.t("recipe-notes") }}</h2><p>{{ n }}</p>{% endif %}
+  <section class="sources">
+    <h2>{{ layout.tr.t("recipe-sources") }}</h2>
+    <ul>
+    {% for s in sources %}<li>{% if let Some(h) = s.href %}<a href="{{ h }}" rel="noopener noreferrer">{{ s.text }}</a>{% else %}{{ s.text }}{% endif %}{% if !s.places.is_empty() %} ({% for (at, href) in s.places %}{% if let Some(h) = href %}<a href="{{ h }}" rel="noopener noreferrer">{{ at }}</a>{% else %}{{ at }}{% endif %}{% if !loop.last %} · {% endif %}{% endfor %}){% endif %}</li>
+    {% endfor %}</ul>
+  </section>
+</article>
+{% endblock %}

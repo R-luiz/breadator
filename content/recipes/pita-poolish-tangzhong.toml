@@ -1,0 +1,29 @@
+bread_type = "flatbread"
+sources = ["novita-0817", "novita-0815", "novita-0816", "novita-0818", "novita-0814", "novita-0819"]
+title = { fr = "Pita sur poolish et tangzhong", en = "Pita with poolish and tangzhong" }
+description = { fr = "D'après la pita de Novita Listyani : huit pitas cuites à la poêle, à environ 71 % d'hydratation, avec une poolish d'une nuit et un empois limité à moins de 15 % de la farine pour qu'elles gonflent encore.", en = "After Novita Listyani's pita: eight pan-cooked pitas at about 71 % hydration, with an overnight poolish and a scald kept under 15 % of the flour so they still puff." }
+steps = [
+  { fr = "Poolish (la veille) : mélangez la levure à la farine de la poolish, ajoutez l'eau et remuez. Laissez 1 à 2 h à température ambiante, puis gardez une nuit au réfrigérateur ; pour tout faire dans la journée, laissez-la plutôt environ 4 h à température ambiante.", en = "Poolish (the day before): whisk the yeast into the poolish flour, add the water and mix. Leave it 1 to 2 h at room temperature, then refrigerate overnight; for a one-day version, leave it about 4 h at room temperature instead." },
+  { fr = "Empois (la veille) : versez l'eau bouillante dans un bol préchauffé, ajoutez d'un coup la farine de l'empois et remuez 1 à 2 min jusqu'à obtenir une pâte épaisse et lisse. Couvrez, laissez refroidir, puis gardez une nuit au réfrigérateur.", en = "Scald (the day before): pour the boiling water into a pre-warmed bowl, add the scald flour at once and stir for 1–2 min into a thick, smooth paste. Cover, let it cool, then refrigerate overnight." },
+  { fr = "Mettez tout dans le bol en une fois, huile d'olive comprise. La pâte est ferme au début parce que la poolish et l'empois sont froids. Pétrissez à la main 7 à 8 min, en étirant la pâte devant vous, jusqu'au test du voile.", en = "Put everything in the bowl at once, olive oil included. The dough is stiff at first because the poolish and the scald are cold. Knead by hand for 7 to 8 min, pushing the dough away from you, until it passes the windowpane test." },
+  { fr = "Pointage : 1 h à 1 h 30 à environ 27 °C, jusqu'au doublement. Le calculateur de fermentation donne la durée pour la température de votre pâte.", en = "Bulk fermentation: 1 to 1.5 h at about 27 °C, until doubled. The fermentation calculator gives the time for your own dough temperature." },
+  { fr = "Divisez en 8 pâtons, boulez-les et laissez 20 min de détente. Abaissez chacun en un disque fin et régulier et laissez environ 30 min, jusqu'à ce qu'il soit légèrement gonflé.", en = "Divide into 8 pieces, round them and rest 20 min. Roll each one into a thin, even round and rest about 30 min, until slightly puffed." },
+  { fr = "Chauffez une poêle à sec jusqu'à environ 220 °C en surface. Cuisez une pita 30 s, retournez-la, puis retournez toutes les 30 s pour chauffer les deux faces ; cessez de retourner quand elle commence à gonfler, laissez-la gonfler complètement, puis donnez environ 1 min sur l'autre face (environ 3 min en tout).", en = "Heat a dry pan until its surface is at about 220 °C. Cook a pita 30 s, flip it, then flip every 30 s so both sides heat; stop flipping when it starts to inflate, let it puff fully, then give about 1 min on the other side (about 3 min in all)." },
+]
+notes = { fr = "Fournée de la source pour 8 pitas : poolish de 100 g de farine, 100 g d'eau et 0,6 g de levure instantanée ; empois de 50 g de farine et 100 g d'eau bouillante ; pétrin de 200 g de farine, 50 g d'eau, 6 g de sel et 18 g d'huile d'olive. La recette écrite laisse la poolish 1 h à température ambiante, la vidéo 2 h. L'autrice n'ajoute ni sucre ni levure au pétrin. Une pita gonfle quand son intérieur atteint 100 °C, ce qui demande assez d'eau, un réseau de gluten solide et une épaisseur régulière. La source ne dit pas combien d'eau l'empois perd en refroidissant : pesez-le froid et rajoutez ce qui manque. Les pourcentages sont arrondis à 0,01 point (0,001 en dessous de 1 %) ; les poids donnés par le calculateur restent à moins de 0,3 % de ceux de la source.", en = "Source batch for 8 pitas: poolish of 100 g flour, 100 g water and 0.6 g instant yeast; scald of 50 g flour and 100 g boiling water; final mix of 200 g flour, 50 g water, 6 g salt and 18 g olive oil. The written recipe leaves the poolish 1 h at room temperature and the video 2 h. The author adds no sugar and no yeast to the final mix. A pita puffs when its inside reaches 100 °C, which needs enough water, a strong gluten network and an even thickness. The source does not say how much water the scald loses on cooling: weigh it cold and add back what is missing. Percentages are rounded to 0.01 point (0.001 below 1 %); the weights the calculator gives stay within 0.3 % of the source's." }
+
+[formula]
+target = { by = "pieces", count = 8, grams = 78.1 }
+flours = [
+  { id = "bread_flour", pct = 100 },
+]
+ingredients = [
+  { id = "water", kind = "water", pct = 71.43 },
+  { id = "salt", kind = "salt", pct = 1.71 },
+  { id = "olive_oil", kind = "oil", pct = 5.14 },
+  { id = "instant_yeast", kind = "instant_yeast", pct = 0.171 },
+]
+stages = [
+  { id = "poolish", kind = "poolish", flour_pct = 28.57, liquid_pct = 100, extras = [{ ingredient = "instant_yeast", pct = 0.171, basis = "total_flour" }] },
+  { id = "scald", kind = "scald", flour_pct = 14.29, liquid_pct = 200 },
+]

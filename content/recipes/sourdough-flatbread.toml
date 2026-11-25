@@ -1,0 +1,27 @@
+bread_type = "flatbread"
+sources = ["breadcode-0279", "breadcode-0282", "breadcode-0281", "breadcode-0301", "breadcode-0284", "breadcode-0285", "breadcode-0288", "breadcode-0295", "breadcode-0297", "breadcode-0296", "breadcode-0300", "breadcode-0298", "breadcode-0299", "breadcode-0302", "breadcode-0184"]
+title = { fr = "Pain plat au levain, à la poêle", en = "Simple sourdough flatbread" }
+description = { fr = "D'après le pain plat simple de The Sourdough Framework de Hendrik Kleinwächter : une pâte molle de n'importe quelle farine, fermentée jusqu'à avoir levé de moitié et cuite à la poêle sous couvercle.", en = "After the simple flatbread of The Sourdough Framework by Hendrik Kleinwächter: a wet dough of any flour, fermented until it has risen by half and cooked in a covered pan." }
+steps = [
+  { fr = "Si votre levain n'est pas actif, rafraîchissez-le en 1:5:5 le matin : il est prêt le soir, plus tôt dans une cuisine chaude.", en = "If your starter is not active, feed it 1:5:5 in the morning: it is ready in the evening, sooner in a warm kitchen." },
+  { fr = "Mélangez la farine (blé, seigle, maïs ou autre) avec de l'eau à température ambiante, ajoutez le levain actif et le sel et mélangez soigneusement.", en = "Mix the flour (wheat, rye, corn or another) with water at room temperature, add the active starter and the salt and mix thoroughly." },
+  { fr = "Couvrez, de préférence dans un récipient transparent, et laissez fermenter jusqu'à ce que la pâte ait levé d'au moins 50 % : 4 à 24 h selon la température et le levain, en général 6 à 12 h, et 8 à 12 h pour le meilleur goût. Le calculateur de fermentation donne la durée pour la température de votre pâte.", en = "Cover, ideally in a transparent container, and ferment until the dough has risen by at least 50 %: 4 to 24 h depending on the temperature and the starter, typically 6 to 12 h, and 8 to 12 h for the best flavour. The fermentation calculator gives the time for your own dough temperature." },
+  { fr = "Une pâte prête trop tôt se garde plusieurs jours au réfrigérateur en devenant plus acide ; elle passe à la poêle encore froide.", en = "Dough that is ready too early keeps for several days in the refrigerator and becomes more sour; it goes into the pan cold." },
+  { fr = "Chauffez une poêle à feu moyen avec un peu d'huile et essuyez l'excédent. Étalez une portion de pâte sur environ 1 cm d'épaisseur et couvrez, pour que la vapeur cuise le dessus.", en = "Heat a pan over medium heat with a little oil and wipe off the excess. Spread a portion of dough about 1 cm thick and cover with a lid, so that the steam cooks the top." },
+  { fr = "Cuisez environ 5 min par face jusqu'à une couleur dorée, moins si le pain fonce trop vite ; le texte de méthode du livre retourne après 2 à 4 min. Une cuisson plus longue retire une partie de l'acidité.", en = "Cook about 5 min per side until golden brown, less if it darkens too fast; the book's method text flips after 2 to 4 min. Cooking longer removes some of the acidity." },
+  { fr = "Enveloppez les pains cuits dans un torchon pour qu'ils restent souples.", en = "Wrap the cooked flatbreads in a kitchen towel to keep them soft." },
+]
+notes = { fr = "Adapté de The Sourdough Framework de Hendrik Kleinwächter (CC BY-SA 4.0) ; le texte de cette recette est partagé sous la même licence. Fournée du livre : 400 g de farine, 320 g d'eau, 80 g de levain actif et 8 g de sel ; l'huile de la poêle n'entre pas dans la formule. Le livre compte le levain à part (20 %) sans donner son hydratation ; un levain ordinaire à 100 % est supposé, soit 440 g de farine, 81,8 % d'hydratation et 1,82 % de sel. Le tableau du livre admet 5 à 20 % de levain et jusqu'à 100 % d'eau. Les pourcentages sont arrondis à 0,01 point (0,001 en dessous de 1 %) ; les poids donnés par le calculateur restent à moins de 0,1 % de ceux de la source.", en = "Adapted from The Sourdough Framework by Hendrik Kleinwächter (CC BY-SA 4.0); this recipe text is shared under the same licence. Book batch: 400 g flour, 320 g water, 80 g active starter and 8 g salt; the oil for the pan is not in the formula. The book counts the starter as a separate 20 % and does not give its hydration; a regular 100 % starter is assumed, which makes 440 g of flour, 81.8 % hydration and 1.82 % salt. The book's table allows 5 to 20 % starter and up to 100 % water. Percentages are rounded to 0.01 point (0.001 below 1 %); the weights the calculator gives stay within 0.1 % of the source's." }
+
+[formula]
+target = { by = "dough", grams = 808 }
+flours = [
+  { id = "flour", pct = 100 },
+]
+ingredients = [
+  { id = "water", kind = "water", pct = 81.82 },
+  { id = "salt", kind = "salt", pct = 1.82 },
+]
+stages = [
+  { id = "levain", kind = "levain", flour_pct = 9.09, flour = "flour", liquid_pct = 100 },
+]

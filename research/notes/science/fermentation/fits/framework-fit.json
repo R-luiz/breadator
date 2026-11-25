@@ -1,0 +1,30 @@
+{
+  "recently_fed": {
+    "linear": {
+      "intercept": 35.0,
+      "slope_per_c": -1.0,
+      "in_sample_rmse_pct": 0.0,
+      "loocv_rmse_pct": 0.0
+    },
+    "exponential": {
+      "intercept": 4.953221790513727,
+      "slope_per_c": -0.10986122886681099,
+      "in_sample_rmse_pct": 0.69262647530489,
+      "loocv_rmse_pct": 3.139676045968766
+    }
+  },
+  "starving": {
+    "linear": {
+      "intercept": 24.583333333333332,
+      "slope_per_c": -0.75,
+      "in_sample_rmse_pct": 0.5892556509887895,
+      "loocv_rmse_pct": 2.165063509461097
+    },
+    "exponential": {
+      "intercept": 5.0751738152338275,
+      "slope_per_c": -0.13862943611198908,
+      "in_sample_rmse_pct": 1.1466334093198022e-15,
+      "loocv_rmse_pct": 1.1466334093198022e-15
+    }
+  }
+}

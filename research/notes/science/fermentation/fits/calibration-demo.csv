@@ -1,0 +1,11 @@
+source,logged_bakes,coverage_of_80pct_band,median_abs_error_pct,p90_abs_error_pct,band_factor_at_anchor
+Sourdough Journey timetables (true v about 1.0),0,1.0,9.4,16.3,1.68
+Sourdough Journey timetables (true v about 1.0),1,1.0,9.6,23.9,1.4
+Sourdough Journey timetables (true v about 1.0),2,1.0,9.1,22.0,1.36
+Sourdough Journey timetables (true v about 1.0),3,0.998,9.1,20.5,1.34
+Sourdough Journey timetables (true v about 1.0),5,0.998,9.0,19.2,1.32
+"Wraith table, 2 % salt, doubling (true v about 1.6)",0,1.0,56.6,70.9,1.68
+"Wraith table, 2 % salt, doubling (true v about 1.6)",1,1.0,11.7,19.5,1.4
+"Wraith table, 2 % salt, doubling (true v about 1.6)",2,1.0,6.2,14.2,1.36
+"Wraith table, 2 % salt, doubling (true v about 1.6)",3,1.0,4.0,12.4,1.34
+"Wraith table, 2 % salt, doubling (true v about 1.6)",5,1.0,2.2,10.6,1.32

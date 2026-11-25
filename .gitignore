@@ -1,0 +1,21 @@
+# Fetched originals (transcripts, pages, PDFs): copyrighted, never committed or published.
+research/raw/
+
+# Distilled from the owner's private Claude project (conversation ids, titles, personal bakes):
+# used locally to write content and validate the fermentation model, never committed.
+research/notes/project/
+research/data/*-project.*
+# Aggregates computed from the private bake log: the notes say what they show.
+research/notes/science/fermentation/fits/private-bakes-validation.json
+# Third-party compilation without a licence (validation input only; aggregates are published).
+research/notes/science/fermentation/fits/data/yeast_external_compilation.csv
+research/tools/node_modules/
+__pycache__/
+
+# Rust
+target/
+
+# Front end: dependencies and build outputs (rebuilt by CI and the Dockerfile)
+web/node_modules/
+web/pkg/
+crates/breadator-server/static/dist/

@@ -1,0 +1,35 @@
+bread_type = "enriched-pan"
+sources = ["novita-0244", "novita-0498", "novita-0248", "novita-0247"]
+title = { fr = "Shokupan au levain et au seigle", en = "Sourdough shokupan with rye" }
+description = { fr = "D'après le shokupan au seigle de Novita Listyani : deux pains de mie moelleux levés au seul levain, avec un empois de seigle et de farine de riz qui fermente avec le levain.", en = "After Novita Listyani's rye shokupan: two soft pan loaves leavened by sourdough alone, with a rye and rice-flour scald that is fermented together with the levain." }
+steps = [
+  { fr = "Empois (la veille) : les deux empois listés ci-dessus se préparent dans le même bol. Versez toute leur eau bouillante dans un bol préchauffé, incorporez d'abord la farine de riz (son amidon gélatinise à plus haute température), puis la farine de seigle, jusqu'à obtenir une pâte épaisse. Couvrez, laissez refroidir et gardez une nuit au réfrigérateur.", en = "Scald (the day before): the two scalds listed above are made in one bowl. Pour all their boiling water into a pre-warmed bowl, stir in the rice flour first (its starch gelatinizes at a higher temperature), then the rye flour, into a thick paste. Cover, let it cool and refrigerate overnight." },
+  { fr = "Levain : mélangez le levain chef mûr avec tout l'empois et la farine de seigle du levain ; aucune autre eau n'est nécessaire. Laissez fermenter 3 à 4 h à température ambiante (27–28 °C dans la source), jusqu'à environ 1,5 fois son volume.", en = "Levain: mix the ripe starter with all of the scald and the rye flour of the levain; no other water is needed. Let it ferment 3 to 4 h at room temperature (27–28 °C in the source), until it reaches about 1.5 times its volume." },
+  { fr = "Au robot pétrisseur, réunissez le levain, l'eau, le lait, le sel, le sucre et la farine de force : environ 4 min à vitesse moyenne, jusqu'à une pâte lisse et un peu collante. Ajoutez le beurre ramolli et pétrissez encore 4 à 5 min, jusqu'à ce que la pâte s'enroule sur le crochet, décolle du bol et passe le test du voile.", en = "In a stand mixer, combine the levain, water, milk, salt, sugar and bread flour: about 4 min on medium speed, until smooth and tacky. Add the softened butter and mix 4 to 5 min more, until the dough clings to the hook, clears the bowl and passes the windowpane test." },
+  { fr = "Pointage : environ 2 h à environ 27 °C, jusqu'à ce que la pâte ait presque doublé. Le calculateur de fermentation donne la durée pour la température de votre pâte.", en = "Bulk fermentation: about 2 h at about 27 °C, until nearly doubled. The fermentation calculator gives the time for your own dough temperature." },
+  { fr = "Divisez en 4 pâtons (2 par pain), préfaçonnez et laissez 15 min de détente.", en = "Divide into 4 pieces (2 per loaf), preshape and rest 15 min." },
+  { fr = "Abaissez chaque pâton, roulez-le, et posez deux rouleaux aux spirales opposées dans chaque moule graissé (21 × 11 × 12 cm dans la source).", en = "Roll each piece out, roll it up, and place two rolls with opposite spirals in each greased loaf pan (21 × 11 × 12 cm in the source)." },
+  { fr = "Apprêt : 2 à 3 h à environ 27 °C, jusqu'à ce que la pâte arrive à 1 à 2 cm sous le bord.", en = "Final proof: 2 to 3 h at about 27 °C, until the dough is 1 to 2 cm below the rim." },
+  { fr = "Cuisez à 180 °C sur la grille du milieu : 25 min en chaleur statique (voûte et sole), puis 15 min en sole seule.", en = "Bake at 180 °C on the middle rack: 25 min with top and bottom heat, then 15 min with bottom heat only." },
+]
+notes = { fr = "Fournée de la source pour deux pains : empois de 70 g de farine de seigle, 30 g de farine de riz et 200 g d'eau bouillante ; levain de 90 g de levain chef, tout l'empois et 70 g de farine de seigle ; pétrin de 480 g de farine de force, 140 g d'eau, 120 g de lait, 40 g de sucre, 44 g de beurre et 12 g de sel. Pas de levure de boulanger. La source compte le chef comme environ moitié farine, moitié eau ; il est saisi à 100 % d'hydratation et ses 45 g de farine sont comptés avec le seigle : le seigle représente donc 26,6 % des 695 g de farine, contre 20 % si l'on ne compte que la farine de seigle pesée. Le calculateur liste l'empois à part du levain, séparé en une part seigle et une part riz à 1:2 de farine pour l'eau chacune ; c'est pourquoi le levain affiche une hydratation basse alors qu'il est préparé avec tout l'empois. La source ne dit pas combien d'eau l'empois perd en refroidissant. Les pourcentages sont arrondis à 0,01 point (0,001 en dessous de 1 %) ; les poids donnés par le calculateur restent à moins de 0,2 % de ceux de la source.", en = "Source batch for two loaves: scald of 70 g rye flour, 30 g rice flour and 200 g boiling water; levain of 90 g starter, all the scald and 70 g rye flour; final mix of 480 g bread flour, 140 g water, 120 g milk, 40 g sugar, 44 g butter and 12 g salt. No commercial yeast. The source counts the starter as about half flour, half water; it is entered at 100 % hydration and its 45 g of flour are counted with the rye, so rye is 26.6 % of the 695 g of flour, against 20 % when only the rye flour weighed is counted. The calculator lists the scald apart from the levain, split into a rye part and a rice part of 1:2 flour to water each; this is why the levain shows a low hydration although it is made with the whole scald. The source does not say how much water the scald loses on cooling. Percentages are rounded to 0.01 point (0.001 below 1 %); the weights the calculator gives stay within 0.2 % of the source's." }
+
+[formula]
+target = { by = "pieces", count = 2, grams = 648 }
+flours = [
+  { id = "bread_flour", pct = 69.06 },
+  { id = "rye_flour", pct = 26.62 },
+  { id = "rice_flour", pct = 4.32 },
+]
+ingredients = [
+  { id = "water", kind = "water", pct = 55.4 },
+  { id = "milk", kind = "milk", pct = 17.27 },
+  { id = "sugar", kind = "sugar", pct = 5.76 },
+  { id = "butter", kind = "butter", pct = 6.33 },
+  { id = "salt", kind = "salt", pct = 1.73 },
+]
+stages = [
+  { id = "scald", kind = "scald", flour_pct = 10.07, flour = "rye_flour", liquid_pct = 200 },
+  { id = "scald_rice", kind = "scald", flour_pct = 4.32, flour = "rice_flour", liquid_pct = 200 },
+  { id = "levain", kind = "levain", flour_pct = 16.55, flour = "rye_flour", liquid_pct = 39.131, seed = { pct = 128.57, hydration_pct = 100 } },
+]

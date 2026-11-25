@@ -1,0 +1,26 @@
+bread_type = "pizza"
+sources = ["breadcode-1318", "breadcode-1319", "breadcode-1320", "breadcode-1345", "breadcode-1347", "breadcode-1322", "breadcode-1346", "breadcode-1323", "breadcode-1344", "breadcode-1324", "breadcode-1216"]
+title = { fr = "Pâte à pizza au levain, retardée au froid", en = "Sourdough pizza dough, cold-retarded" }
+description = { fr = "D'après la pizza au levain de Hendrik Kleinwächter (The Bread Code) : une pâte ferme à 60 % d'eau, fermentée jusqu'à ce qu'un témoin ait levé de moitié, puis gardée au réfrigérateur jusqu'à une semaine.", en = "After Hendrik Kleinwächter's (The Bread Code) sourdough pizza: a firm dough at 60 % water, fermented until a sample has risen by half, then kept in the refrigerator for up to a week." }
+steps = [
+  { fr = "Mélangez la farine, l'eau à température ambiante, le levain et le sel jusqu'à ce qu'il ne reste plus de farine sèche.", en = "Mix the flour, room-temperature water, starter and salt until no dry flour is left." },
+  { fr = "Pétrissez par séries d'environ 5 min séparées de 5 min de repos, jusqu'à ce que la pâte passe le test du voile. Placez un échantillon de pâte dans un bocal témoin et marquez son niveau.", en = "Knead in sets of about 5 min separated by 5 min rests, until the dough passes the windowpane test. Put a sample of dough in a jar and mark its level." },
+  { fr = "Pointage à température ambiante : jusqu'à ce que le témoin ait levé d'environ 50 %, repère valable pour une farine de force (visez moins avec une farine plus faible). La source a observé 6 à 10 h avec environ 5 % de levain liquide ; plus de levain va plus vite. Le calculateur de fermentation donne la durée pour la température de votre pâte.", en = "Bulk fermentation at room temperature: until the sample has risen by about 50 %, a target for a strong flour (aim lower with a weaker one). The source saw 6 to 10 h with about 5 % of liquid starter; more starter goes faster. The fermentation calculator gives the time for your own dough temperature." },
+  { fr = "Mettez la pâte au réfrigérateur à moins de 6 °C ; vers 4 °C la fermentation s'arrête presque et la pâte se garde jusqu'à 7 jours. Au-dessus de 6 °C, elle continue de fermenter et devient collante.", en = "Refrigerate the dough below 6 °C; at about 4 °C fermentation almost stops and the dough keeps for up to 7 days. Above 6 °C it goes on fermenting and turns sticky." },
+  { fr = "Sortez la pâte environ 3 h avant de l'étaler. Divisez-la en 4 pâtons, boulez-les sans farine et couvrez-les d'un linge humide. Les pâtons sont prêts environ 3 h après le boulage et restent bons 3 à 6 h de plus.", en = "Take the dough out about 3 h before shaping. Divide it into 4 pieces, round them into balls without flour and cover them with a damp towel. The balls are ready about 3 h after rounding and stay good for another 3 to 6 h." },
+  { fr = "Cuisez aussi chaud que possible : 90 s au plus dans un four à pizza à environ 500 °C. Dans un four ménager à environ 250 °C, préchauffez une pierre ou une plaque d'acier, précuisez le fond et terminez sous le gril 60 à 90 s pour colorer le dessus.", en = "Bake as hot as you can: at most 90 s in a pizza oven at about 500 °C. In a home oven at about 250 °C, preheat a stone or steel, bake the base first and finish under the grill for 60 to 90 s to brown the top." },
+]
+notes = { fr = "Fournée de la source pour quatre pizzas : 600 g de farine de force, 360 g d'eau, 60 g de levain et 12 g de sel (60 % d'eau, 10 % de levain et 2 % de sel sur la farine ajoutée). La source admet 5 à 20 % de levain (30 à 120 g). L'hydratation du levain n'est pas précisée ; la vidéo utilise un levain liquide, compté ici à 100 %, soit 630 g de farine, 61,9 % d'hydratation et 1,9 % de sel. Les pourcentages sont arrondis à 0,01 point (0,001 en dessous de 1 %) ; les poids donnés par le calculateur restent à moins de 0,3 % de ceux de la source.", en = "Source batch for four pizzas: 600 g strong flour, 360 g water, 60 g starter and 12 g salt (60 % water, 10 % starter and 2 % salt on the flour added). The source allows 5 to 20 % starter (30 to 120 g). The starter's hydration is not stated; the video uses a liquid starter, counted here at 100 %, which makes 630 g of flour, 61.9 % hydration and 1.9 % salt. Percentages are rounded to 0.01 point (0.001 below 1 %); the weights the calculator gives stay within 0.3 % of the source's." }
+
+[formula]
+target = { by = "pieces", count = 4, grams = 258 }
+flours = [
+  { id = "bread_flour", pct = 100 },
+]
+ingredients = [
+  { id = "water", kind = "water", pct = 61.9 },
+  { id = "salt", kind = "salt", pct = 1.9 },
+]
+stages = [
+  { id = "levain", kind = "levain", flour_pct = 4.76, flour = "bread_flour", liquid_pct = 100 },
+]

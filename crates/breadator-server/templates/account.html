@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="account" data-island="account">
+<h1>{{ layout.tr.t("account-title") }}</h1>
+{% if let Some(b) = banner %}<p class="{{ b.class }}" role="status">{{ b.text }}</p>{% endif %}
+<p class="lead">{{ layout.tr.t("account-lead") }}</p>
+<p><a href="{{ layout.href("/my/formulas") }}">{{ layout.tr.t("account-my-formulas") }}</a></p>
+
+<section class="panel" aria-labelledby="acc-profile">
+  <h2 id="acc-profile">{{ layout.tr.t("account-profile") }}</h2>
+  <form class="inputs" method="post" action="{{ layout.href("/account/profile") }}">
+    <label class="field"><span class="label">{{ layout.tr.t("account-display-name") }}</span>
+      <input type="text" name="display_name" value="{{ display_name }}" maxlength="60" autocomplete="nickname"></label>
+    {% if !email.is_empty() %}<p class="note">{{ layout.tr.t("account-email") }} <strong>{{ email }}</strong></p>{% endif %}
+    <button type="submit">{{ layout.tr.t("account-save") }}</button>
+  </form>
+</section>
+
+<section class="panel" aria-labelledby="acc-settings">
+  <h2 id="acc-settings">{{ layout.tr.t("account-settings") }}</h2>
+  <form class="inputs" method="post" action="{{ layout.href("/account/settings") }}">
+    <label class="field"><span class="label">{{ layout.tr.t("account-language") }}</span>
+      <select name="locale">
+        <option value="fr"{% if self.is_locale("fr") %} selected{% endif %}>Français</option>
+        <option value="en"{% if self.is_locale("en") %} selected{% endif %}>English</option>
+      </select></label>
+    <label class="field"><span class="label">{{ layout.tr.t("account-units") }}</span>
+      <select name="units">
+        <option value="metric"{% if self.is_units("metric") %} selected{% endif %}>{{ layout.tr.t("account-units-metric") }}</option>
+        <option value="us"{% if self.is_units("us") %} selected{% endif %}>{{ layout.tr.t("account-units-us") }}</option>
+      </select>
+      <small class="hint">{{ layout.tr.t("account-units-hint") }}</small></label>
+    <button type="submit">{{ layout.tr.t("account-save") }}</button>
+  </form>
+</section>
+
+<section class="panel" aria-labelledby="acc-methods">
+  <h2 id="acc-methods">{{ layout.tr.t("account-methods") }}</h2>
+  <p class="note">{{ layout.tr.t("account-methods-lead") }}</p>
+  <ul class="rows">
+    {% if !email.is_empty() %}<li><span class="grow"><strong>{{ layout.tr.t("account-method-email") }}</strong><br><span class="note">{{ email }}</span></span></li>
+    {% endif %}{% for i in identities %}<li><span class="grow"><strong>{{ i.label }}</strong><br><span class="note">{{ i.email }} · {{ layout.tr.t("account-linked-on") }} {{ i.linked }}</span></span>
+      {% if can_remove %}<form method="post" action="{{ layout.href("/account/identities/") }}{{ i.id }}/remove"><button type="submit" class="secondary small">{{ layout.tr.t("account-unlink") }}</button></form>{% endif %}</li>
+    {% endfor %}{% for p in passkeys %}<li><span class="grow"><strong>{{ p.name }}</strong><br><span class="note">{{ layout.tr.t("account-passkey") }} · {{ layout.tr.t("account-added-on") }} {{ p.created }}{% if !p.last_used.is_empty() %} · {{ layout.tr.t("account-last-used") }} {{ p.last_used }}{% endif %}</span></span>
+      {% if can_remove %}<form method="post" action="{{ layout.href("/account/passkeys/") }}{{ p.id }}/remove"><button type="submit" class="secondary small">{{ layout.tr.t("account-remove") }}</button></form>{% endif %}</li>
+    {% endfor %}</ul>
+  {% if !can_remove %}<p class="note">{{ layout.tr.t("account-last-method") }}</p>{% endif %}
+  {% if !link_providers.is_empty() %}<p class="actions">{% for p in link_providers %}<a class="button secondary" href="{{ p.href }}">{{ p.label }}</a>{% endfor %}</p>
+  {% endif %}{% if passkeys_enabled %}<div class="passkey-add" data-passkey-register hidden>
+    <h3>{{ layout.tr.t("account-passkey-add") }}</h3>
+    <p class="note">{{ layout.tr.t("account-passkey-lead") }}</p>
+    <label class="field"><span class="label">{{ layout.tr.t("account-passkey-name") }}</span>
+      <input type="text" data-passkey-name maxlength="60" placeholder="{{ layout.tr.t("account-passkey-name-placeholder") }}"></label>
+    <p class="actions"><button type="button" class="secondary" data-passkey-register-button>{{ layout.tr.t("account-passkey-add") }}</button></p>
+    <p class="notice" role="status" data-passkey-ok hidden>{{ layout.tr.t("account-passkey-added") }}</p>
+    <p class="error" role="alert" data-passkey-error hidden></p>
+  </div>
+  {% endif %}
+</section>
+
+<section class="panel" aria-labelledby="acc-devices">
+  <h2 id="acc-devices">{{ layout.tr.t("account-devices") }}</h2>
+  <p class="note">{{ layout.tr.t("account-devices-lead") }}</p>
+  <ul class="rows">
+    {% for d in devices %}<li><span class="grow"><strong>{{ d.label }}</strong>{% if d.current %} <span class="badge">{{ layout.tr.t("account-this-device") }}</span>{% endif %}<br><span class="note">{{ layout.tr.t("account-signed-in-on") }} {{ d.created }} · {{ layout.tr.t("account-last-seen") }} {{ d.last_seen }}</span></span>
+      {% if !d.current %}<form method="post" action="{{ layout.href("/account/sessions/") }}{{ d.id }}/revoke"><button type="submit" class="secondary small">{{ layout.tr.t("account-revoke") }}</button></form>{% endif %}</li>
+    {% endfor %}</ul>
+  <form class="inline-form" method="post" action="{{ layout.href("/account/sign-out") }}">
+    <label class="choice"><input type="checkbox" name="wipe" value="1"> {{ layout.tr.t("account-wipe-device") }}</label>
+    <button type="submit" class="secondary">{{ layout.tr.t("account-sign-out") }}</button>
+  </form>
+  <form class="inline-form" method="post" action="{{ layout.href("/account/sign-out-all") }}">
+    <button type="submit" class="secondary">{{ layout.tr.t("account-sign-out-all") }}</button>
+  </form>
+</section>
+
+<section class="panel" aria-labelledby="acc-data">
+  <h2 id="acc-data">{{ layout.tr.t("account-data") }}</h2>
+  <p class="note">{{ layout.tr.t("account-data-lead") }}</p>
+  <p class="actions"><a class="button secondary" href="{{ layout.href("/account/export") }}" download>{{ layout.tr.t("account-download") }}</a></p>
+</section>
+
+<section class="panel danger-zone" aria-labelledby="acc-delete">
+  <h2 id="acc-delete">{{ layout.tr.t("account-delete") }}</h2>
+  <p class="note">{{ layout.tr.t("account-delete-lead") }}</p>
+  <form class="inputs" method="post" action="{{ layout.href("/account/delete") }}">
+    <label class="field"><span class="label">{{ layout.tr.t("account-delete-confirm") }}</span>
+      <input type="text" name="confirm" autocomplete="off" autocapitalize="off" spellcheck="false" required></label>
+    <label class="choice"><input type="checkbox" name="wipe" value="1" checked> {{ layout.tr.t("account-wipe-device") }}</label>
+    <button type="submit" class="danger">{{ layout.tr.t("account-delete-button") }}</button>
+  </form>
+</section>
+</div>
+{% endblock %}

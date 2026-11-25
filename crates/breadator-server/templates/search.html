@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>{{ layout.tr.t("search-title") }}</h1>
+<form class="search" method="get" action="{{ layout.href("/search") }}" role="search">
+  <label class="field"><span class="label">{{ layout.tr.t("search-label") }}</span>
+    <input type="search" name="q" value="{{ q }}" placeholder="{{ layout.tr.t("search-placeholder") }}" maxlength="200"></label>
+  <button type="submit">{{ layout.tr.t("search-button") }}</button>
+</form>
+{% if !q.is_empty() %}
+{% if hits.is_empty() %}<p>{{ layout.tr.t("search-none") }}</p>{% endif %}
+<ol class="hits">
+{% for h in hits %}<li>
+  <span class="note">{{ h.kind }}</span>
+  {% if let Some(href) = h.href %}<a href="{{ href }}">{{ h.title }}</a>{% else %}{{ h.title }}{% endif %}
+  <p class="snippet">{% for (text, hit) in h.snippet %}{% if *hit %}<mark>{{ text }}</mark>{% else %}{{ text }}{% endif %}{% endfor %}</p>
+</li>
+{% endfor %}</ol>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% import "macros.html" as m %}
+{% block content %}
+<h1>{{ layout.tr.t("starter-title") }}</h1>
+<p class="lead">{{ layout.tr.t("starter-lead") }}</p>
+<div class="calc" data-island="starter">
+<form class="inputs" method="get" action="{{ layout.href("/calculators/starter") }}">
+  <fieldset>
+    <legend>{{ layout.tr.t("ferment-question") }}</legend>
+    <label class="choice"><input type="radio" name="solve" value="time"{% if !self.dose() %} checked{% endif %}> {{ layout.tr.t("starter-solve-time") }}</label>
+    <label class="choice"><input type="radio" name="solve" value="dose"{% if self.dose() %} checked{% endif %}> {{ layout.tr.t("starter-solve-ratio") }}</label>
+    <div data-when="dose">{% call m::num("target_h", layout.tr.t("starter-target"), self.v(form.target_h), "h", "1", "72", "") %}{% endcall %}</div>
+  </fieldset>
+  <fieldset>
+    <legend>{{ layout.tr.t("starter-feed") }}</legend>
+    {% call m::num("flour", layout.tr.t("starter-flour-parts"), self.v(form.flour_parts), "×", "0.2", "100", layout.tr.t("starter-parts-hint")) %}{% endcall %}
+    <div data-when="time">{% call m::num("water", layout.tr.t("starter-water-parts"), self.v(form.water_parts), "×", "0", "300", "") %}{% endcall %}</div>
+    <div data-when="dose">{% call m::num("hyd", layout.tr.t("starter-hyd-target"), self.v(form.hydration_pct), "%", "30", "300", layout.tr.t("starter-hyd-target-hint")) %}{% endcall %}</div>
+    {% call m::num("seed_hyd", layout.tr.t("starter-seed-hyd"), self.v(form.seed_hydration_pct), "%", "30", "300", "") %}{% endcall %}
+    <label class="field"><span class="label">{{ layout.tr.t("ferment-starter-state") }}</span>
+      <select name="seed_state">
+        <option value="ripe"{% if !self.cold_seed() %} selected{% endif %}>{{ layout.tr.t("starter-ripe") }}</option>
+        <option value="from_fridge"{% if self.cold_seed() %} selected{% endif %}>{{ layout.tr.t("starter-from-fridge") }}</option>
+      </select>
+    </label>
+    {% call m::num("temp_c", layout.tr.t("starter-temp"), self.v(form.temp_c), "°C", "2", "38", layout.tr.t("starter-temp-hint")) %}{% endcall %}
+    {% call m::num("need_g", layout.tr.t("starter-need"), self.v(form.need_g), "g", "0", "100000", layout.tr.t("starter-need-hint")) %}{% endcall %}
+  </fieldset>
+  <button type="submit">{{ layout.tr.t("compute") }}</button>
+</form>
+<section class="results" aria-live="polite">
+  {% if let Some(e) = error %}<p class="error" role="alert">{{ e }}</p>{% endif %}
+  {% if let Some(r) = result %}
+  <p class="big"><strong>{{ r.headline }}</strong></p>
+  <p>{{ r.range }}</p>
+  {% for n in r.notes %}<p class="warning">{{ n }}</p>{% endfor %}
+  <dl class="metrics">
+    {% for (label, value) in r.details %}<div><dt>{{ label }}</dt><dd>{{ value }}</dd></div>
+    {% endfor %}</dl>
+  {% if let Some((seed, flour, water)) = r.build %}
+  <h2>{{ layout.tr.t("starter-build") }}</h2>
+  <table class="lines"><tbody>
+    <tr><th scope="row">{{ layout.tr.t("starter-build-seed") }}</th><td class="g">{{ seed }} g</td></tr>
+    <tr><th scope="row">{{ layout.tr.t("entry-flour") }}</th><td class="g">{{ flour }} g</td></tr>
+    <tr><th scope="row">{{ layout.tr.t("entry-water") }}</th><td class="g">{{ water }} g</td></tr>
+  </tbody></table>
+  {% endif %}
+  {% endif %}
+  <h2>{{ layout.tr.t("ferment-how") }}</h2>
+  <p class="note">{{ layout.tr.t("starter-how") }}</p>
+</section>
+</div>
+{% endblock %}

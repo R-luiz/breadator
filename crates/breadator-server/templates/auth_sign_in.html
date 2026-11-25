@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="narrow" data-island="account" {% if wiped %}data-wipe-local{% endif %}>
+<h1>{{ layout.tr.t("auth-sign-in-title") }}</h1>
+<p class="lead">{{ layout.tr.t("auth-sign-in-lead") }}</p>
+{% if let Some(e) = error %}<p class="error" role="alert">{{ e }}</p>{% endif %}
+{% if !open %}<p class="notice">{{ layout.tr.t("auth-closed") }}</p>
+{% else %}{% if by_email %}<section class="auth-method" aria-labelledby="auth-email">
+  <h2 id="auth-email">{{ layout.tr.t("auth-email-heading") }}</h2>
+  <form class="inputs" method="post" action="{{ layout.href("/account/sign-in") }}">
+    <label class="field"><span class="label">{{ layout.tr.t("auth-email-label") }}</span>
+      <input type="email" name="email" value="{{ email }}" autocomplete="email webauthn" inputmode="email" maxlength="254" required>
+      <small class="hint">{{ layout.tr.t("auth-email-hint") }}</small>
+    </label>
+    <input type="hidden" name="next" value="{{ next }}">
+    <button type="submit">{{ layout.tr.t("auth-email-send") }}</button>
+  </form>
+</section>
+{% endif %}{% if !providers.is_empty() %}<section class="auth-method" aria-labelledby="auth-providers">
+  <h2 id="auth-providers">{{ layout.tr.t("auth-providers-heading") }}</h2>
+  <p class="actions">{% for p in providers %}<a class="button secondary" href="{{ p.href }}">{{ p.label }}</a>{% endfor %}</p>
+</section>
+{% endif %}{% if passkeys %}<section class="auth-method" aria-labelledby="auth-passkey" data-passkey-login hidden>
+  <h2 id="auth-passkey">{{ layout.tr.t("auth-passkey-heading") }}</h2>
+  <p class="note">{{ layout.tr.t("auth-passkey-hint") }}</p>
+  <p class="actions"><button type="button" class="secondary" data-passkey-login-button>{{ layout.tr.t("auth-passkey-button") }}</button></p>
+  <p class="error" role="alert" data-passkey-error hidden></p>
+</section>
+{% endif %}<p class="note">{{ layout.tr.t("auth-privacy") }}</p>
+{% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,96 @@
+{
+ "model": "deepseek/deepseek-v4.1-flash-1017",
+ "provider": {
+  "zdr": true
+ },
+ "started": "2026-11-24T13:48:26.218Z",
+ "answers": [
+  {
+   "id": "Q05",
+   "lang": "fr",
+   "kind": "numeric",
+   "question": "Je veux faire 2 pains de 900 g chacun, hydratation 75 %, sel 2 %, levain liquide (100 %) à 20 %. Donne-moi les pesées.",
+   "final": "Pour2 pâtons de 900 g (1 800 g de pâte au total), avec levain liquide à 100 % d'hydratation :\n\n| Ingrédient | Poids à peser |\n|---|---|\n| Farine (T65 ou autre) | 915 g |\n| Eau | 661 g |\n| Levain liquide (100 %) | 203 g |\n| Sel | 20 g |\n| **Total pâte** | **1 800 g** |\n\nLe levain apporte lui-même 102 g de farine et 102 g d'eau : le total réel est donc de 1 017 g de farine et 763 g d'eau, soit bien 75 % d'hydratation et 20 % de levain par rapport à la farine totale.\n\nDeux remarques pratiques : le sel à 2 % est dans la fourchette haute mais classique pour une pâte à 75 % d'hydratation, il renforce le réseau glutineux ; et avec 20 % de levain, la durée de pointage dépendra surtout de la température de pâte — si tu me la donnes, je peux l'estimer.",
+   "error": null,
+   "tool_calls": [
+    {
+     "name": "compute_formula",
+     "args": {
+      "pieces": 2,
+      "piece_weight_g": 900,
+      "hydration_pct": 75,
+      "salt_pct": 2,
+      "levain_pct": 20,
+      "levain_hydration_pct": 100
+     }
+    }
+   ],
+   "totals": {
+    "calls": 2,
+    "cost": 0.0012094200000000001,
+    "prompt_tokens": 4045,
+    "completion_tokens": 467,
+    "reasoning_tokens": 74,
+    "cached_tokens": 1920,
+    "ms": 3364,
+    "providers": [
+     "Reka"
+    ]
+   },
+   "calls": [
+    {
+     "q": "Q05",
+     "i": 0,
+     "model": "deepseek/deepseek-v4.1-flash-1017",
+     "provider": "Reka",
+     "prompt_tokens": 1900,
+     "completion_tokens": 140,
+     "reasoning_tokens": 5,
+     "cached_tokens": 0,
+     "cache_write_tokens": 0,
+     "cost": 0.000738,
+     "ms": 1429,
+     "finish": "tool_calls"
+    },
+    {
+     "q": "Q05",
+     "i": 1,
+     "model": "deepseek/deepseek-v4.1-flash-1017",
+     "provider": "Reka",
+     "prompt_tokens": 2145,
+     "completion_tokens": 327,
+     "reasoning_tokens": 69,
+     "cached_tokens": 1920,
+     "cache_write_tokens": 0,
+     "cost": 0.00047142,
+     "ms": 1935,
+     "finish": "stop"
+    }
+   ],
+   "auto": {
+    "searched": false,
+    "n_search": 0,
+    "engine_calls": [
+     {
+      "name": "compute_formula",
+      "args": {
+       "pieces": 2,
+       "piece_weight_g": 900,
+       "hydration_pct": 75,
+       "salt_pct": 2,
+       "levain_pct": 20,
+       "levain_hydration_pct": 100
+      }
+     }
+    ],
+    "cited": [],
+    "invented_keys": [],
+    "irrelevant_cited": [],
+    "unsourced_labels": 0,
+    "words": 165,
+    "lang_guess": "fr",
+    "args_ok": true
+   }
+  }
+ ]
+}

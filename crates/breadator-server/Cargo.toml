@@ -1,0 +1,51 @@
+[package]
+name = "breadator-server"
+version = "0.1.0"
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+description = "Breadator web server: pages, JSON API, static assets."
+publish = false
+
+[[bin]]
+name = "breadator"
+path = "src/main.rs"
+
+[dependencies]
+askama = "0.16.1"
+axum = { version = "0.8.9", default-features = false, features = ["http1", "tokio", "json", "query", "form", "matched-path"] }
+base64 = "0.23.1"
+breadator-content = { path = "../breadator-content" }
+breadator-engine = { path = "../breadator-engine" }
+fluent-templates = "0.15.1"
+# Chat: the response bodies fed from a channel (answer stream, page that waits for an answer).
+futures-core = "0.3.34"
+getrandom = "0.4.3"
+include_dir = "0.7.4"
+# Chat answers are Markdown from a model: rendered here with links, images and raw HTML removed.
+pulldown-cmark = { version = "0.13.6", default-features = false, features = ["html"] }
+# Resend, the OAuth providers and OpenRouter. TLS is rustls with the `ring` provider (no OpenSSL,
+# no CMake or NASM: it builds with a plain C compiler on Linux and on Windows GNU); roots come
+# from the OS.
+reqwest = { version = "0.13.5", default-features = false, features = ["json", "form", "rustls-no-provider"] }
+rusqlite = { version = "0.43.0", features = ["bundled"] }
+rustls = { version = "0.23.46", default-features = false, features = ["ring", "std", "tls12"] }
+serde.workspace = true
+# `raw_value`: synced records go out as the JSON text they were stored as, never parsed.
+serde_json = { workspace = true, features = ["raw_value"] }
+sha2 = "0.11.1"
+tokio = { version = "1.54.1", features = ["rt-multi-thread", "macros", "net", "signal", "sync", "time"] }
+tower-http = { version = "0.7.1", features = ["compression-br", "compression-gzip", "set-header", "trace", "timeout"] }
+tracing = "0.1.44"
+tracing-subscriber = { version = "0.3.23", features = ["env-filter", "json"] }
+unic-langid = { version = "0.9.6", features = ["macros"] }
+uuid = { version = "1.29.3", features = ["v4", "v7", "serde"] }
+# Passkeys: pure Rust (RustCrypto), no OpenSSL. The state of a ceremony is kept in memory.
+webauthn-rs = { version = "0.6.2", default-features = false, features = ["conditional-ui"] }
+
+[dev-dependencies]
+http-body-util = "0.1.5"
+tower = { version = "0.5.3", features = ["util"] }
+tempfile = "3.27.0"
+wiremock = "0.6.5"

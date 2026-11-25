@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="narrow" data-island="account">
+<h1>{{ layout.tr.t("auth-verify-title") }}</h1>
+<p class="lead">{{ who }}</p>
+{% if !asked_here %}<p class="warning" role="note">{{ layout.tr.t("auth-verify-warning") }}</p>
+{% endif %}<form class="inputs" method="post" action="{{ layout.href("/account/sign-in/verify") }}"{% if asked_here %} data-autosubmit{% endif %}>
+  <input type="hidden" name="token" value="{{ token }}">
+  <input type="hidden" name="next" value="{{ next }}">
+  <button type="submit">{{ layout.tr.t("auth-verify-button") }}</button>
+</form>
+</div>
+{% endblock %}

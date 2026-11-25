@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>{{ layout.tr.t("my-title") }}</h1>
+<p class="lead">{{ layout.tr.t("my-lead") }}</p>
+<div data-island="my-formulas">
+  <p class="note" data-nojs>{{ layout.tr.t("my-no-js") }}</p>
+  <ul class="rows saved" data-list></ul>
+  <p class="note" data-empty hidden>{{ layout.tr.t("my-empty") }} <a href="{{ layout.href("/calculators/formula") }}">{{ layout.tr.t("my-empty-link") }}</a></p>
+  <p class="note" data-status role="status"></p>
+</div>
+{% if layout.user.is_some() %}<p class="note">{{ layout.tr.t("my-synced") }}</p>
+{% else %}<p class="note">{{ layout.tr.t("my-device-only") }} <a href="{{ layout.href("/account/sign-in?next=") }}{{ layout.href("/my/formulas") }}">{{ layout.tr.t("my-sign-in") }}</a></p>
+{% endif %}{% endblock %}

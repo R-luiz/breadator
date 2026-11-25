@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="chat" data-island="chat">
+<h1>{{ layout.tr.t("chat-title") }}</h1>
+{% if let Some(b) = banner %}<p class="{{ b.class }}" role="status">{{ b.text }}</p>
+{% endif %}
+{% if !available %}
+<p class="lead">{{ layout.tr.t("chat-lead") }}</p>
+<p class="notice">{{ layout.tr.t("chat-unavailable") }}</p>
+{% else if !signed_in %}
+<p class="lead">{{ layout.tr.t("chat-lead") }}</p>
+<p>{{ layout.tr.t("chat-signed-out") }}</p>
+<p><a class="button" href="{{ sign_in_href }}">{{ layout.tr.t("chat-sign-in") }}</a></p>
+<p class="note">{{ layout.tr.t("chat-privacy") }}</p>
+{% else %}
+<div class="chat-layout">
+  <nav class="chat-list" aria-labelledby="chat-list-heading">
+    <h2 id="chat-list-heading">{{ layout.tr.t("chat-conversations") }}</h2>
+    <p><a href="{{ layout.href("/chat") }}"{% if current.is_none() %} aria-current="page"{% endif %}>{{ layout.tr.t("chat-new") }}</a></p>
+    {% if conversations.is_empty() %}<p class="note">{{ layout.tr.t("chat-no-conversations") }}</p>
+    {% else %}<ul>
+    {% for c in conversations %}<li><a href="{{ c.href }}"{% if c.current %} aria-current="page"{% endif %}>{{ c.title }}</a></li>
+    {% endfor %}</ul>
+    {% endif %}
+  </nav>
+  <section class="chat-main" aria-label="{{ layout.tr.t("chat-title") }}">
+    {% if let Some(c) = current %}<h2>{{ c.title }}</h2>
+    {% else %}<p class="lead">{{ layout.tr.t("chat-lead") }}</p>
+    {% endif %}
+    <ol class="chat-log" data-log aria-live="polite">
+    {% if let Some(c) = current %}{% for m in c.messages %}{% if m.user %}<li class="chat-q"><span class="who">{{ layout.tr.t("chat-you") }}</span><p>{{ m.text }}</p></li>
+    {% else %}<li class="chat-a"><span class="who">Breadator</span>{{ m.html|safe }}</li>
+    {% endif %}{% endfor %}{% endif %}</ol>
+    {% if let Some(c) = current %}{% if c.unanswered %}<p class="note" data-unanswered>{{ layout.tr.t("chat-unanswered") }}</p>
+    {% endif %}{% endif %}
+    {% if let Some(b) = blocked %}<p class="notice">{{ b }}</p>
+    {% endif %}
+    <form class="chat-ask" method="post" action="{{ layout.href("/chat") }}" data-ask>
+      {% if let Some(c) = current %}<input type="hidden" name="conversation" value="{{ c.id }}">
+      {% endif %}<label class="field"><span class="label">{{ layout.tr.t("chat-question") }}</span>
+        <textarea name="question" rows="3" maxlength="{{ max_chars }}" required placeholder="{{ layout.tr.t("chat-placeholder") }}">{{ draft }}</textarea></label>
+      <div class="actions"><button type="submit">{{ layout.tr.t("chat-send") }}</button><span class="note" data-left>{{ left }}</span></div>
+      <p class="note" data-status role="status"></p>
+    </form>
+    {% if let Some(c) = current %}<form class="inline-form" method="post" action="{{ c.delete_href }}" data-delete>
+      <button class="secondary small" type="submit">{{ layout.tr.t("chat-delete") }}</button>
+    </form>
+    {% endif %}
+    <p class="note">{{ layout.tr.t("chat-warning") }}</p>
+    <p class="note">{{ layout.tr.t("chat-privacy") }}</p>
+  </section>
+</div>
+{% endif %}
+</div>
+{% endblock %}

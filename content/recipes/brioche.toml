@@ -1,0 +1,35 @@
+bread_type = "enriched"
+sources = ["novita-0463", "novita-0462", "novita-0464", "novita-0165", "novita-0458"]
+title = { fr = "Brioche sur poolish", en = "Brioche on poolish" }
+description = { fr = "D'après la brioche de Novita Listyani, dans sa version à la levure instantanée : une poolish longue, 39 % de beurre ajouté en cinq fois, et 12 à 24 h au réfrigérateur avant le façonnage.", en = "After Novita Listyani's brioche, in its instant-yeast version: a long poolish, 39 % butter added in five portions, and 12 to 24 h in the refrigerator before shaping." }
+steps = [
+  { fr = "Poolish : mélangez sa farine, son eau et sa levure jusqu'à ce que toute la farine soit hydratée. Couvrez et laissez fermenter jusqu'à ce qu'elle soit pleine de bulles ; la source donne 12 à 18 h (voir les notes pour la levure instantanée).", en = "Poolish: mix its flour, water and yeast until all the flour is hydrated. Cover and let it ferment until bubbly; the source gives 12 to 18 h (see the notes for instant yeast)." },
+  { fr = "Sortez le beurre du réfrigérateur pour qu'il s'assouplisse un peu tout en restant frais au toucher. Dans le bol d'un robot pétrisseur, délayez la poolish avec les œufs, le lait en poudre, le sucre et le sel, puis ajoutez la farine ordinaire.", en = "Take the butter out of the refrigerator so that it softens slightly but stays cool to the touch. In the bowl of a stand mixer, stir the poolish, eggs, milk powder, sugar and salt until the poolish is dissolved, then add the all-purpose flour." },
+  { fr = "Au crochet, pétrissez environ 1 min à petite vitesse, puis 7 à 8 min à vitesse moyenne, jusqu'à ce que la pâte soit homogène et se tienne.", en = "With the dough hook, mix about 1 min on low speed, then 7 to 8 min on medium, until the dough is cohesive." },
+  { fr = "Ajoutez le beurre en 5 fois, en laissant chaque portion disparaître avant la suivante ; un beurre frais évite que la pâte ne chauffe pendant ce long pétrissage. Pétrissez ensuite encore 9 à 10 min à vitesse moyenne, jusqu'au test du voile.", en = "Add the butter in 5 portions, letting each one disappear before adding the next; cool butter keeps the dough from heating up during this long mix. Then mix 9 to 10 min more on medium speed, until the windowpane test." },
+  { fr = "Pointage : dans un bol graissé et couvert, jusqu'au doublement, environ 3 h dans la source (2 à 3 h dans une cuisine chaude). Le calculateur de fermentation donne la durée pour la température de votre pâte.", en = "Bulk fermentation: in a greased, covered bowl until doubled, about 3 h in the source (2 to 3 h in a warm kitchen). The fermentation calculator gives the time for your own dough temperature." },
+  { fr = "Mettez la pâte au réfrigérateur pour 12 à 24 h : le froid la raffermit pour le façonnage et développe le goût. Au-delà d'environ 24 h, l'autrice a trouvé le gluten affaibli et la brioche légèrement acide.", en = "Refrigerate the dough for 12 to 24 h: the cold firms it for shaping and builds flavour. Beyond about 24 h the author found the gluten weaker and the brioche slightly sour." },
+  { fr = "Façonnez la pâte froide sur un plan légèrement fariné. Pour une tresse à trois brins, divisez en 3, aplatissez chaque pâton en rectangle, roulez-le en boudin, allongez-le et tressez. Posez dans un moule graissé ou sur une plaque.", en = "Shape the cold dough on a lightly floured bench. For a three-strand braid, divide it into 3, flatten each piece into a rectangle, roll it into a cylinder, lengthen it and braid. Place in a greased pan or on a tray." },
+  { fr = "Apprêt : à couvert, 2 à 3 h dans une cuisine chaude, jusqu'à ce que la brioche ait plus que doublé de hauteur.", en = "Final proof: covered, 2 to 3 h in a warm kitchen, until more than doubled in height." },
+  { fr = "Dorez à l'œuf battu et cuisez à 190 °C en chaleur statique (voûte et sole) pendant 40 à 45 min, jusqu'à une couleur brun doré. Laissez deux minutes dans le moule avant de démouler.", en = "Brush with beaten egg and bake at 190 °C with top and bottom heat for 40 to 45 min, until golden brown. Leave it a couple of minutes in the pan before turning it out." },
+]
+notes = { fr = "Fournée de la source : poolish de 100 g de farine de force et 100 g d'eau de fruits fermentée, ou 100 g d'eau et un quart de cuillère à café de levure instantanée, version retenue ici ; pétrin de 260 g de farine ordinaire, 100 g d'œufs (2 gros), 20 g de lait en poudre, 65 g de sucre, 7 g de sel et 140 g de beurre doux. La source ne donne pas le poids du quart de cuillère de levure : il est saisi à 1,2 g, l'équivalence que l'autrice utilise dans une autre recette. Les 12 à 18 h de la poolish sont écrites pour l'eau de fruits fermentée ; dans une autre vidéo, elle laisse mûrir une poolish à la levure instantanée 5 à 8 h à 29 °C : jugez-la donc à ses bulles. Le lait en poudre est compté comme un ingrédient sec et la dorure est hors formule. Les pourcentages sont arrondis à 0,01 point (0,001 en dessous de 1 %) ; les poids donnés par le calculateur restent à moins de 0,3 % de ceux de la source.", en = "Source batch: poolish of 100 g bread flour and 100 g fruit yeast water, or 100 g water and a quarter teaspoon of instant yeast, the version used here; final mix of 260 g all-purpose flour, 100 g eggs (2 large), 20 g milk powder, 65 g sugar, 7 g salt and 140 g unsalted butter. The source gives no weight for the quarter teaspoon of yeast: it is entered as 1.2 g, the author's own equivalence in another recipe. The 12 to 18 h of the poolish are written for fruit yeast water; in another video she lets an instant-yeast poolish mature 5 to 8 h at 29 °C, so judge it by its bubbles. The milk powder is counted as a dry ingredient and the egg wash is outside the formula. Percentages are rounded to 0.01 point (0.001 below 1 %); the weights the calculator gives stay within 0.3 % of the source's." }
+
+[formula]
+target = { by = "pieces", count = 1, grams = 793.2 }
+flours = [
+  { id = "all_purpose_flour", pct = 72.22 },
+  { id = "bread_flour", pct = 27.78 },
+]
+ingredients = [
+  { id = "water", kind = "water", pct = 27.78 },
+  { id = "egg", kind = "egg", pct = 27.78 },
+  { id = "butter", kind = "butter", pct = 38.89 },
+  { id = "sugar", kind = "sugar", pct = 18.06 },
+  { id = "milk_powder", kind = "other", pct = 5.56 },
+  { id = "salt", kind = "salt", pct = 1.94 },
+  { id = "instant_yeast", kind = "instant_yeast", pct = 0.333 },
+]
+stages = [
+  { id = "poolish", kind = "poolish", flour_pct = 27.78, flour = "bread_flour", liquid_pct = 100, extras = [{ ingredient = "instant_yeast", pct = 0.333, basis = "total_flour" }] },
+]

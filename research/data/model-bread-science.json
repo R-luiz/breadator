@@ -1,0 +1,2432 @@
+{
+ "schema_version": "1.0",
+ "claims_file": "research/data/claims-science-bread.jsonl",
+ "references_file": "research/data/references-science-bread.json",
+ "notes": "research/notes/science/cereal/{05-enzymes,07-salt-sugar-fat-dairy-eggs,08-acidity,09-baking,10-staling-storage,11-nutrition}.md",
+ "generated": "2026-11-25",
+ "status": "sourced reference values for enzymes, ingredients, acidity, baking, staling and nutrition; every value carries its source, evidence label and claim ids; extrapolations are labelled",
+ "units": {
+  "temperature": "deg C",
+  "time": "min or h as stated",
+  "dose": "baker's % (flour = 100) unless stated",
+  "acidity": "pH; degree of acidity (Säuregrad) = mL 0.1 M NaOH per 10 g sample",
+  "mass": "g"
+ },
+ "evidence_labels": [
+  "measured",
+  "literature",
+  "creator-rule",
+  "anecdote",
+  "extrapolation"
+ ],
+ "related_models": {
+  "fermentation": "research/data/model-fermentation.json (salt, sugar, hydration modifiers of fermentation rate)",
+  "cereal": "research/data/model-cereal.json (flours, water absorption, scalds, vital gluten, fibres)"
+ },
+ "enzymes": {
+  "scope": "flour, malt and added enzymes in bread dough; values are reference points, not guarantees: activity depends on dose, pH, water, time and the temperature history of the dough",
+  "amylases": {
+   "by_origin": {
+    "cereal": {
+     "purity": "low",
+     "heat_resistance": "medium",
+     "registers_in_falling_number": true
+    },
+    "fungal": {
+     "purity": "medium",
+     "heat_resistance": "low",
+     "registers_in_falling_number": false
+    },
+    "bacterial": {
+     "purity": "high",
+     "heat_resistance": "extremely high",
+     "risk": "over-dose, gummy crumb"
+    },
+    "evidence": "literature",
+    "confidence": "medium",
+    "source": "BAKERpedia — Amylase, section 'Comparative functionalities of amylases from various sources'",
+    "claims": [
+     "science-bread-0001"
+    ]
+   },
+   "substrate": {
+    "value": "damaged or gelatinised starch only",
+    "evidence": "literature",
+    "confidence": "medium",
+    "source": "BAKERpedia — Amylase, section 'Activity of alpha-amylase'",
+    "claims": [
+     "science-bread-0002"
+    ]
+   },
+   "alpha_amylase_cereal": {
+    "optimum_c": {
+     "values": [
+      {
+       "range": [
+        40,
+        60
+       ],
+       "context": "dough, trade encyclopedia",
+       "evidence": "literature",
+       "confidence": "medium",
+       "source": "BAKERpedia — Amylase, section 'Activity of alpha-amylase'",
+       "claims": [
+        "science-bread-0002"
+       ]
+      },
+      {
+       "range": [
+        72,
+        74
+       ],
+       "context": "rye scald",
+       "evidence": "literature",
+       "confidence": "medium",
+       "source": "doi:10.3390/foods13132077 — Introduction, paragraph on scalding (citing its ref. 18)",
+       "claims": [
+        "science-bread-0005"
+       ]
+      },
+      {
+       "range": [
+        71,
+        72
+       ],
+       "context": "brewing mash rest",
+       "evidence": "literature",
+       "confidence": "low",
+       "source": "Wikipedia contributors — section 'Mashing' rest table and 'Mashout'",
+       "claims": [
+        "science-bread-0006"
+       ]
+      }
+     ],
+     "note": "the 'optimum' depends on assay time: short assays give 70+ C, long dough processes act at lower temperature"
+    },
+    "ph_optimum": [
+     {
+      "range": [
+       5.5,
+       6.0
+      ],
+      "evidence": "literature",
+      "confidence": "medium",
+      "source": "BAKERpedia — Amylase, section 'Activity of alpha-amylase'",
+      "claims": [
+       "science-bread-0002"
+      ]
+     },
+     {
+      "range": [
+       5.0,
+       5.5
+      ],
+      "context": "rye, IREKS",
+      "evidence": "literature",
+      "confidence": "medium",
+      "source": "IREKS GmbH — Rye sourdoughs > Basics of acidification > Why does rye sourdough have to be acidified?",
+      "claims": [
+       "science-bread-0022"
+      ]
+     }
+    ],
+    "inactivation_c": [
+     {
+      "value": 75,
+      "evidence": "literature",
+      "confidence": "medium",
+      "source": "IREKS GmbH — The baking process > Processes in the dough and the baked goods during the baking process, table 'Processes in the dough/baked goods during baking'",
+      "claims": [
+       "science-bread-0004"
+      ]
+     },
+     {
+      "value": 78,
+      "context": "'denatures quickly above'",
+      "evidence": "literature",
+      "confidence": "low",
+      "source": "Wikipedia contributors — section 'Mashing' rest table and 'Mashout'",
+      "claims": [
+       "science-bread-0006"
+      ]
+     }
+    ]
+   },
+   "beta_amylase": {
+    "optimum_c": [
+     {
+      "range": [
+       60,
+       65
+      ],
+      "evidence": "literature",
+      "confidence": "medium",
+      "source": "doi:10.3390/foods13132077 — Introduction, paragraph on scalding (citing its ref. 18)",
+      "claims": [
+       "science-bread-0005"
+      ]
+     },
+     {
+      "range": [
+       62,
+       67
+      ],
+      "evidence": "literature",
+      "confidence": "low",
+      "source": "Wikipedia contributors — section 'Mashing' rest table and 'Mashout'",
+      "claims": [
+       "science-bread-0006"
+      ]
+     }
+    ],
+    "inactivation_c": {
+     "value": 60,
+     "evidence": "literature",
+     "confidence": "medium",
+     "source": "IREKS GmbH — The baking process > Processes in the dough and the baked goods during the baking process, table 'Processes in the dough/baked goods during baking'",
+     "claims": [
+      "science-bread-0004"
+     ]
+    },
+    "sound_wheat": {
+     "value": "considerable β-amylase, little α-amylase",
+     "evidence": "literature",
+     "confidence": "medium",
+     "source": "doi:10.1007/s00217-020-03657-y — Introduction",
+     "claims": [
+      "science-bread-0011"
+     ]
+    }
+   },
+   "alpha_amylase_fungal": {
+    "inactivation_c": {
+     "value": 80,
+     "note": "lower than bacterial; residual activity after baking 0 %",
+     "evidence": "literature",
+     "confidence": "medium",
+     "source": "doi:10.1007/s00217-020-03657-y — Discussion (citing refs 34 and 16, Cauvain 2015)",
+     "claims": [
+      "science-bread-0007"
+     ]
+    },
+    "residual_after_baking_pct": {
+     "value": 0,
+     "evidence": "measured",
+     "confidence": "high",
+     "source": "doi:10.1007/s00217-020-03657-y — Abstract; Results 'Residual α-amylase activity'",
+     "claims": [
+      "science-bread-0008"
+     ]
+    },
+    "manufacturer_dose_mg_per_kg": {
+     "range": [
+      10,
+      50
+     ],
+     "evidence": "creator-rule",
+     "confidence": "high",
+     "source": "doi:10.1007/s00217-020-03657-y — Table 1",
+     "claims": [
+      "science-bread-0009"
+     ]
+    }
+   },
+   "alpha_amylase_bacterial": {
+    "optimum_c": {
+     "value": 70,
+     "evidence": "literature",
+     "confidence": "medium",
+     "source": "doi:10.1007/s00217-020-03657-y — Discussion (citing refs 34 and 16, Cauvain 2015)",
+     "claims": [
+      "science-bread-0007"
+     ]
+    },
+    "active_at_c": {
+     "value": 90,
+     "evidence": "literature",
+     "confidence": "medium",
+     "source": "doi:10.1007/s00217-020-03657-y — Discussion (citing refs 34 and 16, Cauvain 2015)",
+     "claims": [
+      "science-bread-0007"
+     ]
+    },
+    "residual_after_baking_pct": {
+     "value": 4.0,
+     "evidence": "measured",
+     "confidence": "high",
+     "source": "doi:10.1007/s00217-020-03657-y — Abstract; Results 'Residual α-amylase activity'",
+     "claims": [
+      "science-bread-0008"
+     ]
+    },
+    "manufacturer_dose_mg_per_kg": {
+     "range": [
+      50,
+      600
+     ],
+     "evidence": "creator-rule",
+     "confidence": "high",
+     "source": "doi:10.1007/s00217-020-03657-y — Table 1",
+     "claims": [
+      "science-bread-0009"
+     ]
+    }
+   },
+   "maltogenic_amylase": {
+    "residual_after_baking_pct": {
+     "value": 17.8,
+     "sd": 1.24,
+     "evidence": "measured",
+     "confidence": "high",
+     "source": "doi:10.1007/s12161-019-01673-7 — Abstract; Results; Discussion (buffer data from Derde et al. 2012)",
+     "claims": [
+      "science-bread-0010"
+     ]
+    },
+    "buffer_50pct_activity_c": {
+     "value": 80,
+     "evidence": "measured",
+     "confidence": "high",
+     "source": "doi:10.1007/s12161-019-01673-7 — Abstract; Results; Discussion (buffer data from Derde et al. 2012)",
+     "claims": [
+      "science-bread-0010"
+     ]
+    },
+    "buffer_inactive_c": {
+     "value": 90,
+     "evidence": "measured",
+     "confidence": "high",
+     "source": "doi:10.1007/s12161-019-01673-7 — Abstract; Results; Discussion (buffer data from Derde et al. 2012)",
+     "claims": [
+      "science-bread-0010"
+     ]
+    },
+    "crumb_max_c": {
+     "value": 97,
+     "evidence": "measured",
+     "confidence": "high",
+     "source": "doi:10.1007/s12161-019-01673-7 — Abstract; Results; Discussion (buffer data from Derde et al. 2012)",
+     "claims": [
+      "science-bread-0010"
+     ]
+    }
+   },
+   "added_alpha_amylase_dose_ppm": {
+    "range": [
+     20,
+     60
+    ],
+    "evidence": "creator-rule",
+    "confidence": "medium",
+    "source": "BAKERpedia — Amylase, section 'Activity of alpha-amylase'",
+    "claims": [
+     "science-bread-0003"
+    ]
+   },
+   "endogenous_inactivated_by_baking": {
+    "value": true,
+    "evidence": "measured",
+    "confidence": "high",
+    "source": "doi:10.1007/s12161-019-01673-7 — Abstract; Results; Discussion (buffer data from Derde et al. 2012)",
+    "claims": [
+     "science-bread-0010"
+    ]
+   }
+  },
+  "falling_number": {
+   "method": {
+    "flour_g": 7,
+    "water_ml": 25,
+    "includes_stir_s": 60,
+    "evidence": "literature",
+    "confidence": "high",
+    "source": "IREKS GmbH — Flour analysis > Analysis methods for testing the starch quality and the enzyme activity > Falling number",
+    "claims": [
+     "science-bread-0012"
+    ]
+   },
+   "wheat": {
+    "ireks_type_550_s": {
+     "high_activity": [
+      240,
+      300
+     ],
+     "normal": [
+      300,
+      360
+     ],
+     "low_activity": [
+      360,
+      420
+     ],
+     "evidence": "creator-rule",
+     "confidence": "medium",
+     "source": "IREKS GmbH — Flour analysis > Analysis methods for testing the starch quality and the enzyme activity > Falling number, table 'Dough and baked goods properties of wheat flour type 550 depending on the falling number'",
+     "claims": [
+      "science-bread-0013"
+     ]
+    },
+    "bakerpedia_s": {
+     "minimum": 250,
+     "supplement_above": 350,
+     "industrial_target": [
+      250,
+      280
+     ],
+     "evidence": "creator-rule",
+     "confidence": "medium",
+     "source": "BAKERpedia — Falling Number Test, section 'Application'",
+     "claims": [
+      "science-bread-0014"
+     ]
+    },
+    "wikipedia_de_s": {
+     "normal": [
+      230,
+      280
+     ],
+     "moist_below": 220,
+     "dry_above": 300,
+     "sprouted_below": 150,
+     "evidence": "literature",
+     "confidence": "low",
+     "source": "Wikipedia contributors — introduction and section 'Wirkung von α-Amylase'",
+     "claims": [
+      "science-bread-0015"
+     ]
+    },
+    "receival_standards_s": {
+     "range": [
+      250,
+      350
+     ],
+     "australia": 300,
+     "evidence": "literature",
+     "confidence": "medium",
+     "source": "doi:10.3389/fpls.2018.01356 — Results and Discussion (citing Mares & Mrva 2008; Posner & Hibbs 2011)",
+     "claims": [
+      "science-bread-0016"
+     ]
+    },
+    "late_maturity_amylase_caveat": {
+     "efn_range": [
+      157,
+      294
+     ],
+     "baking_effect": "none consistent",
+     "evidence": "measured",
+     "confidence": "medium",
+     "source": "doi:10.3389/fpls.2018.01356 — Abstract; Discussion",
+     "claims": [
+      "science-bread-0017"
+     ]
+    }
+   },
+   "rye": {
+    "ireks_types_997_1150_s": {
+     "high_activity": [
+      120,
+      180
+     ],
+     "normal": [
+      180,
+      240
+     ],
+     "low_activity": [
+      240,
+      300
+     ],
+     "evidence": "creator-rule",
+     "confidence": "medium",
+     "source": "IREKS GmbH — Flour analysis > Analysis methods for testing the starch quality and the enzyme activity > Falling number, table for rye flour type 997 and 1150",
+     "claims": [
+      "science-bread-0018"
+     ]
+    },
+    "murniece_good_s": {
+     "range": [
+      125,
+      200
+     ],
+     "evidence": "literature",
+     "confidence": "medium",
+     "source": "doi:10.3390/foods13132077 — Introduction (citing its ref. 21)",
+     "claims": [
+      "science-bread-0019"
+     ]
+    },
+    "minimum_s": {
+     "value": 120,
+     "evidence": "literature",
+     "confidence": "low",
+     "source": "Wikipedia contributors — introduction and section 'Wirkung von α-Amylase'",
+     "claims": [
+      "science-bread-0015"
+     ]
+    }
+   },
+   "amylograph": {
+    "rye_AU": {
+     "high": [
+      250,
+      450
+     ],
+     "normal": [
+      450,
+      650
+     ],
+     "low": [
+      650,
+      900
+     ]
+    },
+    "rye_peak_c": {
+     "high": [
+      58,
+      63
+     ],
+     "normal": [
+      63,
+      68
+     ],
+     "low": [
+      68,
+      73
+     ]
+    },
+    "wheat_AU": {
+     "high": [
+      300,
+      600
+     ],
+     "normal": [
+      600,
+      900
+     ],
+     "low": [
+      900,
+      1200
+     ]
+    },
+    "wheat_peak_c": {
+     "high": [
+      75,
+      80
+     ],
+     "normal": [
+      80,
+      85
+     ],
+     "low": [
+      85,
+      90
+     ]
+    },
+    "evidence": "creator-rule",
+    "confidence": "medium",
+    "source": "IREKS GmbH — Flour analysis > Analysis methods for testing the starch quality and the enzyme activity > Amylograph",
+    "claims": [
+     "science-bread-0020"
+    ]
+   },
+   "rye_processing_by_activity": {
+    "high_activity": "direct method, more acidifier, slightly more salt, shorter bulk and proof, hot oven",
+    "low_activity": "darker flour, softer dough, longer bulk",
+    "evidence": "creator-rule",
+    "confidence": "medium",
+    "source": "IREKS GmbH — Flour analysis > Analysis methods for testing the starch quality and the enzyme activity > Amylograph, table 'Product and processing recommendations for rye flour'",
+    "claims": [
+     "science-bread-0021"
+    ]
+   }
+  },
+  "rye_amylase_and_acid": {
+   "mechanism": {
+    "value": "rye amylase optimum overlaps rye starch gelatinisation; acid inhibits it (pH optimum 5-5.5)",
+    "evidence": "literature",
+    "confidence": "medium",
+    "source": "IREKS GmbH — Rye sourdoughs > Basics of acidification > Why does rye sourdough have to be acidified?",
+    "claims": [
+     "science-bread-0022"
+    ]
+   },
+   "enzyme_stop_ph": {
+    "value": 4.1,
+    "evidence": "literature",
+    "confidence": "low",
+    "source": "Wikipedia contributors — section on rye bread (citing Loderbauer, Das Bäckerbuch)",
+    "claims": [
+     "science-bread-0024"
+    ]
+   },
+   "acidifier_demo": {
+    "falling_number_s": 120,
+    "min_acidifier_pct": 5,
+    "acidifier_degree_of_acidity": 200,
+    "evidence": "measured",
+    "confidence": "medium",
+    "source": "IREKS GmbH — Rye sourdoughs > Basics of acidification > Why does rye sourdough have to be acidified?, figure 'Influence of the dosage of FERTIGSAUER on the baking behaviour of rye bread'",
+    "claims": [
+     "science-bread-0023"
+    ]
+   },
+   "modern_rye": {
+    "value": "hybrid rye is enzyme-poor: less acid needed, up to +10 % water; dough <= 28 C",
+    "evidence": "creator-rule",
+    "confidence": "medium",
+    "source": "IREKS GmbH — Rye sourdoughs > Changes in the rye flour quality and influence on the sourdough method",
+    "claims": [
+     "science-bread-0025"
+    ]
+   },
+   "acidity_targets": "see section 'acidity' (IREKS degree of acidity and pH tables)"
+  },
+  "malt": {
+   "diastatic_syrup_doses_pct": {
+    "white_pan": [
+     0.5,
+     1.5
+    ],
+    "french_italian": [
+     0.5,
+     2.0
+    ],
+    "hard_rolls": 1.25,
+    "wheat_rolls": 2.7,
+    "light_rye": 0.5,
+    "pumpernickel": 1.6,
+    "sweet_goods": [
+     1.5,
+     3.0
+    ],
+    "whole_wheat": [
+     5.0,
+     9.0
+    ],
+    "pretzels": [
+     1.5,
+     6.0
+    ],
+    "evidence": "creator-rule",
+    "confidence": "medium",
+    "source": "BAKERpedia — Diastatic Malt, sections 'Application' and 'Regulations'",
+    "claims": [
+     "science-bread-0026"
+    ]
+   },
+   "malt_additive_pct": {
+    "range": [
+     0.2,
+     2.0
+    ],
+    "evidence": "literature",
+    "confidence": "medium",
+    "source": "doi:10.3390/foods13132077 — Introduction (citing its refs 11–12)",
+    "claims": [
+     "science-bread-0027"
+    ]
+   },
+   "excess": {
+    "value": "soft dough, keyholing, sticky crumb in long fermentations",
+    "evidence": "creator-rule",
+    "confidence": "medium",
+    "source": "BAKERpedia — Malt, 'Considerations for bakery applications'; Diastatic Malt, 'Application'",
+    "claims": [
+     "science-bread-0028"
+    ]
+   },
+   "syrup_composition_g_per_100g": {
+    "carbohydrate": 71.4,
+    "water": 21.1,
+    "protein": 6.2,
+    "ash": 1.3,
+    "evidence": "literature",
+    "confidence": "medium",
+    "source": "BAKERpedia — Diastatic Malt, 'Nutrition'; Malt, 'Malt Barley Extract'",
+    "claims": [
+     "science-bread-0029"
+    ]
+   },
+   "active_vs_inactive": {
+    "value": "only enzyme-active malt adds amylase; inactive malt adds sugars, colour, flavour",
+    "evidence": "creator-rule",
+    "confidence": "medium",
+    "source": "IREKS GmbH — Malt flours and malt extracts > Effect of malt flour and malt extract; Bread ageing and freshkeeping > Measures to delay staling",
+    "claims": [
+     "science-bread-0030"
+    ]
+   }
+  },
+  "general": {
+   "ph": [
+    4.0,
+    7.5
+   ],
+   "temp_c": [
+    35,
+    60
+   ],
+   "dose_ppm": [
+    50,
+    100
+   ],
+   "evidence": "creator-rule",
+   "confidence": "medium",
+   "source": "BAKERpedia — Enzymes, section 'Application'",
+   "claims": [
+    "science-bread-0031"
+   ]
+  },
+  "effects_table": {
+   "value": "amylase: sugar, colour, volume; xylanase: water binding, volume, freshness; protease: softer gluten; lipase: volume; hexose oxidase: stronger, drier dough",
+   "evidence": "literature",
+   "confidence": "medium",
+   "source": "IREKS GmbH — Improvers and mixes > Enzymes (table 'Effects of enzymes on the dough properties and the baked goods properties')",
+   "claims": [
+    "science-bread-0032"
+   ]
+  },
+  "proteases": {
+   "dose_pct": [
+    0.1,
+    0.5
+   ],
+   "ph": [
+    4.5,
+    6.5
+   ],
+   "mash_rest_c": [
+    50,
+    54
+   ],
+   "evidence": "creator-rule",
+   "confidence": "medium",
+   "source": "BAKERpedia — Protease, sections 'Function' and 'Application'",
+   "claims": [
+    "science-bread-0033"
+   ]
+  },
+  "xylanases": {
+   "value": "WU-AX -> WE-AX; dose not sourced",
+   "evidence": "literature",
+   "confidence": "medium",
+   "source": "BAKERpedia — Xylanase, sections 'Function' and 'Mechanisms used by xylanase'",
+   "claims": [
+    "science-bread-0034"
+   ]
+  },
+  "phytase": {
+   "ph_optimum": [
+    {
+     "range": [
+      4.3,
+      5.5
+     ],
+     "evidence": "literature",
+     "confidence": "medium",
+     "source": "doi:10.3389/fnut.2026.1777596 — section on mineral bioaccessibility and Table (citing Fretzdorff 1992 and Leenhardt 2005)",
+     "claims": [
+      "science-bread-0042"
+     ]
+    },
+    {
+     "range": [
+      4.3,
+      4.6
+     ],
+     "context": "Fretzdorff 1992",
+     "evidence": "literature",
+     "confidence": "medium",
+     "source": "doi:10.3389/fnut.2026.1777596 — section on mineral bioaccessibility and Table (citing Fretzdorff 1992 and Leenhardt 2005)",
+     "claims": [
+      "science-bread-0042"
+     ]
+    }
+   ],
+   "moderate_acidification": {
+    "dough_ph": 5.5,
+    "phytate_reduction_pct": 70,
+    "unacidified_pct": 40,
+    "evidence": "measured",
+    "confidence": "high",
+    "source": "doi:10.1021/jf049193q — Abstract",
+    "claims": [
+     "science-bread-0040"
+    ]
+   },
+   "sourdough_vs_yeast": {
+    "sourdough_pct": 62,
+    "yeast_pct": 38,
+    "bran_preincubation_pct": 90,
+    "evidence": "measured",
+    "confidence": "high",
+    "source": "doi:10.1021/jf001255z — Abstract",
+    "claims": [
+     "science-bread-0041"
+    ]
+   },
+   "long_vs_short_fermentation": {
+    "value": "long sourdough > short yeast; exogenous phytase up to 100 %",
+    "evidence": "literature",
+    "confidence": "medium",
+    "source": "doi:10.3390/nu14010025 — section 4 'Phytate degradation' (Ad 1 and Ad 2)",
+    "claims": [
+     "science-bread-0043"
+    ]
+   },
+   "heat_destroys_phytase": {
+    "value": true,
+    "evidence": "literature",
+    "confidence": "medium",
+    "source": "doi:10.1002/fsn3.846 — section on fermentation and phytate (citing Egli et al. 2002, 2003)",
+    "claims": [
+     "science-bread-0044"
+    ]
+   },
+   "scalded_fraction": {
+    "value": "no endogenous phytase left in the cooked fraction",
+    "evidence": "extrapolation",
+    "confidence": "medium",
+    "source": "Breadator cereal-science synthesis — 05-enzymes.md, section 'Phytase'",
+    "claims": [
+     "science-bread-0045"
+    ]
+   },
+   "temperature_optimum": null,
+   "temperature_optimum_note": "not found in the sources read (gap)"
+  },
+  "beta_glucanase": {
+   "brewing_rest_c": {
+    "range": [
+     40,
+     45
+    ],
+    "evidence": "literature",
+    "confidence": "low",
+    "source": "Wikipedia contributors — section 'Mashing' rest table and 'Mashout'",
+    "claims": [
+     "science-bread-0006"
+    ]
+   },
+   "degradation_lowers_efficacy": {
+    "value": true,
+    "evidence": "literature",
+    "confidence": "high",
+    "source": "doi:10.2903/j.efsa.2025.9630 — section 'Data and methodologies' (citing Wood et al. 1994)",
+    "claims": [
+     "science-bread-0046"
+    ]
+   },
+   "bread_implication": {
+    "value": "analyse β-glucan in the finished bread, not the flour",
+    "evidence": "extrapolation",
+    "confidence": "low",
+    "source": "Breadator cereal-science synthesis — 05-enzymes.md, section 'β-glucanase'",
+    "claims": [
+     "science-bread-0047"
+    ]
+   }
+  },
+  "lipoxygenase": {
+   "soy_flour_max_pct": 0.5,
+   "evidence": "creator-rule",
+   "confidence": "medium",
+   "source": "BAKERpedia — Lipoxygenase, sections 'Function' and 'Application'",
+   "claims": [
+    "science-bread-0035"
+   ]
+  },
+  "ascorbic_acid": {
+   "mill_dose_ppm": {
+    "range": [
+     5,
+     30
+    ],
+    "evidence": "literature",
+    "confidence": "medium",
+    "source": "IREKS GmbH — Improvers and mixes > Technological effect of additives > Ascorbic acid",
+    "claims": [
+     "science-bread-0036"
+    ]
+   },
+   "bread_max_ppm": {
+    "value": 150,
+    "fda_limit": 200,
+    "evidence": "creator-rule",
+    "confidence": "medium",
+    "source": "BAKERpedia — Ascorbic Acid, sections 'Origin', 'Application' and 'Regulation'",
+    "claims": [
+     "science-bread-0037"
+    ]
+   }
+  },
+  "glucose_oxidase": {
+   "value": "acts mainly during mixing (needs oxygen)",
+   "evidence": "literature",
+   "confidence": "medium",
+   "source": "BAKERpedia — Glucose Oxidase, sections 'Function' and 'Application'",
+   "claims": [
+    "science-bread-0038"
+   ]
+  },
+  "lipase": {
+   "ph_opt": 8,
+   "temp_above_c": 45,
+   "evidence": "creator-rule",
+   "confidence": "medium",
+   "source": "BAKERpedia — Lipase, section 'Application'",
+   "claims": [
+    "science-bread-0039"
+   ]
+  },
+  "disagreements": [
+   "Wheat falling-number targets: IREKS 300-360 s normal; BAKERpedia 250-280 s industrial target; German Wikipedia 230-280 s normal and 200-250 s 'optimal'; Newberry 2018 found no baking penalty from late-maturity amylase at 157-294 s.",
+   "Rye falling number: IREKS 180-240 s normal vs Murniece (citing Kucerova) 125-200 s good; Wikipedia minimum 120 s.",
+   "α-amylase 'optimum': 40-60 C (BAKERpedia, dough) vs 72-74 C (Murniece, scald) vs 71-72 C (brewing).",
+   "Heat stability ranking vs numbers: BAKERpedia ranks fungal α-amylase as the least heat-stable source, yet Rebholz (citing Cauvain) gives about 80 C for fungal inactivation while IREKS gives 75 C for (cereal) α-amylase; no single source measured both."
+  ]
+ },
+ "counts": {
+  "claims": 139,
+  "references": 45
+ },
+ "ingredients": {
+  "salt": {
+   "bread_pct": {
+    "range": [
+     1.8,
+     2.0
+    ],
+    "evidence": "creator-rule",
+    "confidence": "medium",
+    "source": "BAKERpedia — Salt, sections 'Function' and 'Application'",
+    "claims": [
+     "science-bread-0048"
+    ]
+   },
+   "cookies_cakes_pct": {
+    "range": [
+     0.75,
+     1.25
+    ],
+    "evidence": "creator-rule",
+    "confidence": "medium",
+    "source": "BAKERpedia — Salt, sections 'Function' and 'Application'",
+    "claims": [
+     "science-bread-0048"
+    ]
+   },
+   "rheology_at_1_5_pct": {
+    "farinograph_absorption": "down a few points (95 % of flours)",
+    "development_time": "up (78 %)",
+    "stability": "up (70 %)",
+    "alveograph_W_max_increase_pct": 86,
+    "evidence": "measured",
+    "confidence": "high",
+    "source": "doi:10.3390/foods9070952 — Abstract; Results (Figures 4–7)",
+    "claims": [
+     "science-bread-0049"
+    ]
+   },
+   "sufficient_for_quality_pct": {
+    "value": 1.5,
+    "too_tenacious_strong_flour_pct": 3.0,
+    "evidence": "measured",
+    "confidence": "medium",
+    "source": "doi:10.3390/foods9070952 — Conclusions",
+    "claims": [
+     "science-bread-0050"
+    ]
+   },
+   "fermentation": {
+    "rate_factor": {
+     "1.5": 1.04,
+     "2": 1.0,
+     "3": 0.88
+    },
+    "see": "model-fermentation.json",
+    "evidence": "extrapolation",
+    "confidence": "medium",
+    "source": "Breadator cereal-science synthesis — 07-salt-sugar-fat-dairy-eggs.md; research/data/model-fermentation.json modifiers.table 'salt'",
+    "claims": [
+     "science-bread-0051"
+    ]
+   }
+  },
+  "sugar": {
+   "functions": {
+    "value": "yeast food, sweetness, humectant, browning, raises gelatinisation/denaturation temperature",
+    "evidence": "literature",
+    "confidence": "medium",
+    "source": "BAKERpedia — Sugar, sections 'Function', 'Cake batters' and 'Bread and buns'",
+    "claims": [
+     "science-bread-0052"
+    ]
+   },
+   "gelatinisation_shift": {
+    "wheat_onset_in_water_c": 60.78,
+    "least": "fructose",
+    "most": "isomalt, isomaltulose",
+    "evidence": "measured",
+    "confidence": "high",
+    "source": "doi:10.3390/foods9060757 — Abstract; Table 1",
+    "claims": [
+     "science-bread-0053"
+    ]
+   },
+   "yeast_osmotic_stress": {
+    "see": "model-fermentation.json modifiers 'sugar'",
+    "evidence": "extrapolation",
+    "confidence": "medium",
+    "source": "Breadator cereal-science synthesis — 07-salt-sugar-fat-dairy-eggs.md; research/data/model-fermentation.json modifiers.table 'sugar'",
+    "claims": [
+     "science-bread-0054"
+    ]
+   },
+   "honey": {
+    "replace_sugar": "1:1 by weight",
+    "cut_liquid_pct_of_honey": [
+     15,
+     18
+    ],
+    "oven_minus_c": 14,
+    "ph": [
+     3.5,
+     4.5
+    ],
+    "evidence": "creator-rule",
+    "confidence": "medium",
+    "source": "BAKERpedia — Honey, sections 'Function', 'Nutrition' and 'Application'",
+    "claims": [
+     "science-bread-0055"
+    ]
+   },
+   "malt_syrup": "see enzymes.malt.syrup_composition_g_per_100g"
+  },
+  "fat": {
+   "shortening_bread_pct": {
+    "range": [
+     3,
+     5
+    ],
+    "yeast_donut_max_pct": 12,
+    "evidence": "creator-rule",
+    "confidence": "medium",
+    "source": "BAKERpedia — Shortening, sections 'What is', 'Application'",
+    "claims": [
+     "science-bread-0056"
+    ]
+   },
+   "butter_fat_pct": {
+    "value": 80,
+    "evidence": "literature",
+    "confidence": "medium",
+    "source": "BAKERpedia — Butter, sections 'Origin' and 'Function'",
+    "claims": [
+     "science-bread-0057"
+    ]
+   },
+   "butter_water_pct": {
+    "value": 15.4,
+    "evidence": "measured",
+    "confidence": "high",
+    "source": "Anses — foods 19024, 19042, 22000, 22002, 22001, 16400, 31008, 19054, 31016",
+    "claims": [
+     "science-bread-0060"
+    ]
+   }
+  },
+  "dairy": {
+   "milk_effects": {
+    "value": "more absorption, higher pH, slower fermentation, faster browning, more volume, longer shelf life",
+    "evidence": "creator-rule",
+    "confidence": "medium",
+    "source": "BAKERpedia — Milk, section 'Application'",
+    "claims": [
+     "science-bread-0058"
+    ]
+   },
+   "whole_milk_recombined_per_100g": {
+    "nfdm_g": 8.5,
+    "butter_g": 3.5,
+    "water_g": 88,
+    "evidence": "creator-rule",
+    "confidence": "medium",
+    "source": "BAKERpedia — Milk, section 'Application'",
+    "claims": [
+     "science-bread-0058"
+    ]
+   },
+   "scalding_milk": null,
+   "scalding_milk_note": "no primary source on heat-treating milk for bread was reached (gap)"
+  },
+  "eggs": {
+   "composition": {
+    "whole_moisture_pct": 75,
+    "white_moisture_pct": 88,
+    "yolk_moisture_pct": 49,
+    "evidence": "literature",
+    "confidence": "medium",
+    "source": "BAKERpedia — Eggs Spec Sheet, sections 'Eggs quality and functionality' and composition table",
+    "claims": [
+     "science-bread-0059"
+    ]
+   },
+   "functions": {
+    "value": "colour, flavour, structure, emulsification (lecithin), tenderness",
+    "evidence": "literature",
+    "confidence": "medium",
+    "source": "BAKERpedia — Eggs Spec Sheet, sections 'Eggs quality and functionality' and composition table",
+    "claims": [
+     "science-bread-0059"
+    ]
+   }
+  },
+  "water_content_g_per_100g": {
+   "whole_milk": 89.1,
+   "semi_skimmed_milk": 89.4,
+   "whole_egg": 76.3,
+   "yolk": 55.0,
+   "white": 87.6,
+   "butter_82": 15.4,
+   "honey": 17.6,
+   "skimmed_milk_powder": 1.95,
+   "white_sugar": 0.17,
+   "evidence": "measured",
+   "confidence": "high",
+   "source": "Anses — foods 19024, 19042, 22000, 22002, 22001, 16400, 31008, 19054, 31016",
+   "claims": [
+    "science-bread-0060"
+   ]
+  },
+  "hydration_bookkeeping": {
+   "equation": "W = water + 0.89 milk + 0.76 egg + 0.55 yolk + 0.88 white + 0.15 butter + 0.18 honey + 0.21 malt syrup",
+   "evidence": "extrapolation",
+   "confidence": "medium",
+   "source": "Breadator cereal-science synthesis — 07-salt-sugar-fat-dairy-eggs.md, section 'Counting water'",
+   "claims": [
+    "science-bread-0061"
+   ]
+  },
+  "disagreements": [
+   "Salt level: BAKERpedia recommends 1.8-2.0 %; Carcea 2020 finds more than 1.5 % unnecessary for dough quality (taste not assessed).",
+   "Yolk moisture: BAKERpedia 49 %, Ciqual 55 % (raw yolk); the model uses Ciqual."
+  ]
+ },
+ "acidity": {
+  "definitions": {
+   "ph": "strength of acid",
+   "degree_of_acidity": "mL 0.1 M NaOH per 10 g sample (Säuregrad ~ TTA)",
+   "evidence": "literature",
+   "confidence": "high",
+   "source": "IREKS GmbH — Rye sourdoughs > Basics of acidification > pH value and degree of acidity; Quality check of baked goods > Analytic measuring methods > pH value and degree of acidity",
+   "claims": [
+    "science-bread-0062"
+   ]
+  },
+  "rye_sourdoughs": {
+   "refreshed_DY190": {
+    "TTA": [
+     6,
+     8
+    ],
+    "pH": [
+     4.0,
+     4.3
+    ]
+   },
+   "basic_DY160": {
+    "TTA": [
+     16,
+     20
+    ],
+    "pH": [
+     3.9,
+     4.1
+    ]
+   },
+   "full_DY180": {
+    "TTA": [
+     11,
+     13
+    ],
+    "pH": [
+     4.0,
+     4.2
+    ]
+   },
+   "basic_DY200": {
+    "TTA": [
+     14,
+     16
+    ],
+    "pH": [
+     3.6,
+     3.9
+    ]
+   },
+   "full_DY230": {
+    "TTA": [
+     13,
+     15
+    ],
+    "pH": [
+     3.8,
+     4.1
+    ]
+   },
+   "long_DY200": {
+    "TTA": [
+     25,
+     30
+    ],
+    "pH": [
+     3.5,
+     3.9
+    ]
+   },
+   "evidence": "literature",
+   "confidence": "medium",
+   "source": "IREKS GmbH — Rye sourdoughs > Basics of acidification > pH value and degree of acidity, table 'Degrees of acidity and pH values of various sourdoughs'",
+   "claims": [
+    "science-bread-0063"
+   ]
+  },
+  "bread_doughs": {
+   "coarse_rye": {
+    "TTA": [
+     9,
+     14
+    ],
+    "pH": [
+     4.2,
+     4.8
+    ]
+   },
+   "rye": {
+    "TTA": [
+     7,
+     10
+    ],
+    "pH": [
+     4.2,
+     4.5
+    ]
+   },
+   "mixed_rye": {
+    "TTA": [
+     6,
+     8
+    ],
+    "pH": [
+     4.2,
+     4.6
+    ]
+   },
+   "mixed_wheat": {
+    "TTA": [
+     5,
+     7
+    ],
+    "pH": [
+     5.0,
+     5.2
+    ]
+   },
+   "wheat": {
+    "TTA": [
+     4,
+     5
+    ],
+    "pH": [
+     5.2,
+     5.6
+    ]
+   },
+   "evidence": "literature",
+   "confidence": "medium",
+   "source": "IREKS GmbH — Rye sourdoughs > Basics of acidification > pH value and degree of acidity, table 'Degrees of acidity and pH values of various bread doughs'",
+   "claims": [
+    "science-bread-0064"
+   ]
+  },
+  "breads": {
+   "coarse_rye": {
+    "TTA": [
+     11,
+     14
+    ],
+    "pH": [
+     4.0,
+     4.5
+    ]
+   },
+   "rye": {
+    "TTA": [
+     8,
+     10
+    ],
+    "pH": [
+     4.2,
+     4.5
+    ]
+   },
+   "mixed_rye": {
+    "TTA": [
+     7,
+     9
+    ],
+    "pH": [
+     4.2,
+     4.6
+    ]
+   },
+   "mixed_wheat": {
+    "TTA": [
+     5,
+     7
+    ],
+    "pH": [
+     4.9,
+     5.2
+    ]
+   },
+   "wheat": {
+    "TTA": [
+     2,
+     5
+    ],
+    "pH": [
+     5.2,
+     5.6
+    ]
+   },
+   "evidence": "literature",
+   "confidence": "medium",
+   "source": "IREKS GmbH — Rye sourdoughs > Basics of acidification > pH value and degree of acidity, table 'Degrees of acidity and pH values of various types of bread'",
+   "claims": [
+    "science-bread-0065"
+   ]
+  },
+  "measured_examples": {
+   "wheat_pan": {
+    "pH": 5.48,
+    "TTA": 4.18
+   },
+   "rye_wheat_70_30_sourdough": {
+    "pH": 4.48,
+    "TTA": 9.11
+   },
+   "evidence": "measured",
+   "confidence": "high",
+   "source": "doi:10.3390/foods10010076 — Table 1",
+   "claims": [
+    "science-bread-0066"
+   ]
+  },
+  "wheat_sourdough": [
+   {
+    "typical_ph": [
+     3.5,
+     4.3
+    ],
+    "bread_4h_30C": [
+     4.45,
+     4.74
+    ],
+    "bread_10h": [
+     3.2,
+     3.4
+    ],
+    "evidence": "literature",
+    "confidence": "medium",
+    "source": "doi:10.3390/foods13132132 — section 4.1 'Fermentation Process: Time, Temperature, and SD Type'",
+    "claims": [
+     "science-bread-0067"
+    ]
+   },
+   {
+    "ripe_sourdough_ph": [
+     3.8,
+     4.3
+    ],
+    "evidence": "literature",
+    "confidence": "low",
+    "source": "Wikipedia contributors — section on sourdough microbiology",
+    "claims": [
+     "science-bread-0068"
+    ]
+   }
+  ],
+  "temperature_and_firmness": {
+   "lactic_only_above_c": 30,
+   "acetic_c": [
+    22,
+    25
+   ],
+   "soft_warm_DY": [
+    190,
+    220
+   ],
+   "evidence": "creator-rule",
+   "confidence": "medium",
+   "source": "IREKS GmbH — Rye sourdoughs > Raw material and process parameters in sourdough methods",
+   "claims": [
+    "science-bread-0069"
+   ]
+  },
+  "buffering_and_starter_dose": {
+   "value": "higher ash -> slower pH fall, higher TTA; too much starter -> pH too low too soon",
+   "evidence": "creator-rule",
+   "confidence": "medium",
+   "source": "IREKS GmbH — Rye sourdoughs > Raw material and process parameters in sourdough methods",
+   "claims": [
+    "science-bread-0070"
+   ]
+  },
+  "why_rye_needs_acid": {
+   "rye_share_threshold_pct": 20,
+   "evidence": "creator-rule",
+   "confidence": "medium",
+   "source": "IREKS GmbH — Rye sourdoughs > Basics of acidification > Why does rye sourdough have to be acidified?",
+   "claims": [
+    "science-bread-0071"
+   ]
+  },
+  "rye_amylase_protection": "see enzymes.rye_amylase_and_acid (pH optimum of α-amylase 5-5.5; enzyme activity largely stopped at pH 4.1)",
+  "phytase_link": "see enzymes.phytase (pH 5.5 already gives 70 % phytate breakdown in whole wheat)",
+  "calculator_targets": {
+   "wheat_dough_ph": [
+    5.2,
+    5.6
+   ],
+   "mixed_wheat_ph": [
+    5.0,
+    5.2
+   ],
+   "mixed_rye_ph": [
+    4.2,
+    4.6
+   ],
+   "rye_ph": [
+    4.2,
+    4.5
+   ],
+   "wheat_sourdough_bread_ph": [
+    3.8,
+    4.5
+   ],
+   "evidence": "extrapolation",
+   "confidence": "low",
+   "source": "Breadator cereal-science synthesis — 08-acidity.md, section 'Targets'",
+   "claims": [
+    "science-bread-0072"
+   ]
+  },
+  "see_also": "research/data/sf-table-7-4-ph.csv (The Sourdough Framework example pH values, CC BY-SA 4.0)",
+  "disagreements": [
+   "Ripe sourdough pH: 3.8-4.3 (German Wikipedia) vs 3.5-4.3 (Islam 2024) vs IREKS rye sours down to 3.5; the ranges overlap and differ by process, not by contradiction."
+  ]
+ },
+ "baking": {
+  "temperature_events_c": {
+   "oven_spring_start": [
+    35,
+    45
+   ],
+   "yeast_death": [
+    50,
+    60
+   ],
+   "rye_gelatinisation": [
+    50,
+    76
+   ],
+   "wheat_gelatinisation": [
+    60,
+    89
+   ],
+   "gluten_denaturation": [
+    60,
+    80
+   ],
+   "beta_amylase_off": 60,
+   "alpha_amylase_off": 75,
+   "ethanol": 78,
+   "crust_start": 98,
+   "maillard": [
+    100,
+    120
+   ],
+   "sucrose_caramel": 130,
+   "carbonisation": [
+    150,
+    200
+   ],
+   "evidence": "literature",
+   "confidence": "medium",
+   "source": "IREKS GmbH — The baking process > Processes in the dough and the baked goods during the baking process, table 'Processes in the dough/baked goods during baking'",
+   "claims": [
+    "science-bread-0073"
+   ]
+  },
+  "core_temperature": {
+   "plateau": {
+    "value": "crumb centre stops near 100 C while water remains; crust keeps heating",
+    "evidence": "literature",
+    "confidence": "medium",
+    "source": "IREKS GmbH — The baking process > Processes in the dough and the baked goods during the baking process, figures 'Cutting rye mixed breads 80/20' and 'Temperature profile of the center of the crumb'",
+    "claims": [
+     "science-bread-0074"
+    ]
+   },
+   "measured": [
+    {
+     "value": 97,
+     "context": "pan white bread, 230 C, 35 min",
+     "evidence": "measured",
+     "confidence": "high",
+     "source": "doi:10.1007/s12161-019-01673-7 — Abstract; Methods 'Baking'",
+     "claims": [
+      "science-bread-0075"
+     ]
+    },
+    {
+     "short": [
+      9.5,
+      79
+     ],
+     "long": [
+      17,
+      96
+     ],
+     "context": "part-baked sourdough re-bake at 230 C: [min, core C]",
+     "evidence": "measured",
+     "confidence": "high",
+     "source": "doi:10.3389/fnut.2024.1370086 — section 3.1 'Physico-chemical characterization'",
+     "claims": [
+      "science-bread-0078"
+     ]
+    },
+    {
+     "toast_required_c": 98,
+     "evidence": "measured",
+     "confidence": "high",
+     "source": "doi:10.1007/s13197-020-04945-x — Methods 'Baking'; Results 'Toast bread resilience and shape'",
+     "claims": [
+      "science-bread-0076"
+     ]
+    }
+   ],
+   "practitioner": [
+    {
+     "benchmark_c": 88,
+     "drier_c": [
+      96,
+      99
+     ],
+     "baguette_c": 100,
+     "evidence": "anecdote",
+     "confidence": "medium",
+     "source": "Hamel — sections 'Sandwich loaves', 'Whole grain', 'Buns', 'Baguettes' and 'What we learned'",
+     "claims": [
+      "science-bread-0079"
+     ]
+    },
+    {
+     "rye_c": [
+      96,
+      99
+     ],
+     "gluten_free_c": 96,
+     "altitude_minus_c": 3,
+     "evidence": "creator-rule",
+     "confidence": "medium",
+     "source": "Hamel — section 'What we learned'",
+     "claims": [
+      "science-bread-0080"
+     ]
+    }
+   ],
+   "endpoints_by_bread_type_c": {
+    "wheat_pan_and_rolls": [
+     88,
+     96
+    ],
+    "hearth": [
+     96,
+     99
+    ],
+    "rye": [
+     96,
+     99
+    ],
+    "gluten_free": [
+     96,
+     99
+    ],
+    "thin_crusty": "crust colour (core ~100)",
+    "evidence": "extrapolation",
+    "confidence": "medium",
+    "source": "Breadator cereal-science synthesis — 09-baking.md, section 'Core temperature'",
+    "claims": [
+     "science-bread-0081"
+    ]
+   },
+   "toast_times_to_core_min": {
+    "oven_200": {
+     "90": 24.0,
+     "95": 26.8,
+     "98": 28.8
+    },
+    "oven_220": {
+     "90": 21.2,
+     "95": 22.5,
+     "98": 26.8
+    },
+    "oven_240": {
+     "90": 18.8,
+     "95": 21.3,
+     "98": 28.3
+    },
+    "evidence": "measured",
+    "confidence": "high",
+    "source": "doi:10.1007/s13197-020-04945-x — Methods 'Baking'; Results 'Toast bread resilience and shape'",
+    "claims": [
+     "science-bread-0076"
+    ]
+   }
+  },
+  "guide_times_min": {
+   "rolls": [
+    18,
+    22
+   ],
+   "wheat_toast": [
+    28,
+    35
+   ],
+   "mixed_grain": [
+    45,
+    60
+   ],
+   "rye_free_1000g": [
+    50,
+    60
+   ],
+   "rye_free_2000g": [
+    60,
+    70
+   ],
+   "rye_free_3000g": [
+    80,
+    90
+   ],
+   "rye_touched_1500g": 75,
+   "evidence": "creator-rule",
+   "confidence": "medium",
+   "source": "IREKS GmbH — The baking process > Guiding values for baking times, initial baking temperatures and capacities, table 'Baking times'",
+   "claims": [
+    "science-bread-0082"
+   ]
+  },
+  "guide_initial_temps_c": {
+   "rolls_deck": [
+    220,
+    240
+   ],
+   "wheat_deck": [
+    210,
+    230
+   ],
+   "rye_free_deck": [
+    250,
+    270
+   ],
+   "rye_free_rack": [
+    270,
+    280
+   ],
+   "evidence": "creator-rule",
+   "confidence": "medium",
+   "source": "IREKS GmbH — The baking process > Guiding values for baking times, initial baking temperatures and capacities, table 'Baking temperatures'",
+   "claims": [
+    "science-bread-0083"
+   ]
+  },
+  "steam": {
+   "more_steam": "under-proofed pieces, hot oven",
+   "less_steam": "over-proofed pieces, cool oven",
+   "rye": "vent after a short time",
+   "evidence": "creator-rule",
+   "confidence": "medium",
+   "source": "IREKS GmbH — The baking process > Processes in the dough and the baked goods during the baking process, text and figure 'Connection between fermentation state, baking temperature and amount of steam' (after Schünemann et al. 2016)",
+   "claims": [
+    "science-bread-0084"
+   ]
+  },
+  "cold_retarded_core_before_baking_c": {
+   "range": [
+    15,
+    24
+   ],
+   "evidence": "creator-rule",
+   "confidence": "medium",
+   "source": "IREKS GmbH — Cold dough methods > Core temperatures of various baked goods",
+   "claims": [
+    "science-bread-0085"
+   ]
+  },
+  "bake_loss": {
+   "definition": "loss % = 100 x (dough mass - loaf mass) / dough mass; state when the loaf is weighed (hot or cooled)",
+   "mixed_rye_by_size": {
+    "baked_g": [
+     500,
+     750,
+     1000,
+     1250,
+     1500,
+     1750,
+     2000
+    ],
+    "loss_pct": [
+     16.7,
+     14.3,
+     13.0,
+     12.3,
+     11.8,
+     11.4,
+     11.1
+    ],
+    "roll_49g_pct": 18.0,
+    "evidence": "creator-rule",
+    "confidence": "medium",
+    "source": "IREKS GmbH — The baking process > Scaling weight/Baking loss/Baked goods yield, table 'Guiding values for weights of baked goods, baking losses and required scaling weights'",
+    "claims": [
+     "science-bread-0086"
+    ]
+   },
+   "mixed_rye_equation": {
+    "loss_g": "50 + 0.1 W",
+    "dough_g": "1.1 W + 50",
+    "valid_W_g": [
+     500,
+     2000
+    ],
+    "evidence": "extrapolation",
+    "confidence": "high",
+    "source": "Breadator cereal-science synthesis — 09-baking.md, section 'Bake loss'",
+    "claims": [
+     "science-bread-0087"
+    ]
+   },
+   "drivers": {
+    "value": "free-standing > tin; small > large; long narrow > round; longer bake > shorter; cool oven > hot",
+    "evidence": "creator-rule",
+    "confidence": "medium",
+    "source": "IREKS GmbH — The baking process > Scaling weight/Baking loss/Baked goods yield, table 'Parameters which influence the loss in weight'",
+    "claims": [
+     "science-bread-0088"
+    ]
+   },
+   "by_shape_and_vessel_pct": {
+    "white_tin": 14,
+    "small_white_tin": 13,
+    "whole_wheat_tin": 15,
+    "small_whole_wheat_tin": 16,
+    "baguette": 24,
+    "artisan": 24,
+    "sourdough": 24,
+    "evidence": "creator-rule",
+    "confidence": "medium",
+    "source": "Busby — sections 'Which types of bread doughs lose the most weight?' and scaling table",
+    "claims": [
+     "science-bread-0090"
+    ]
+   },
+   "toast_tins_measured_pct": {
+    "range": [
+     4,
+     12
+    ],
+    "evidence": "measured",
+    "confidence": "high",
+    "source": "doi:10.1007/s13197-020-04945-x — Results 'Weight loss during baking and vacuum cooling'",
+    "claims": [
+     "science-bread-0077"
+    ]
+   },
+   "phases": {
+    "total": [
+     10,
+     25
+    ],
+    "oven": [
+     2,
+     4
+    ],
+    "cooling": [
+     2,
+     4
+    ],
+    "per_day": [
+     3,
+     5
+    ],
+    "evidence": "creator-rule",
+    "confidence": "low",
+    "source": "Busby — sections 'How much weight can be lost when baking?' to 'How much weight does bread lose when it cools?'",
+    "claims": [
+     "science-bread-0091"
+    ]
+   },
+   "hamelman": {
+    "max_loss_pct": 20,
+    "evidence": "creator-rule",
+    "confidence": "medium",
+    "source": "Hamelman — section 'Moisture Loss in Baked Bread'",
+    "claims": [
+     "science-bread-0092"
+    ]
+   },
+   "lidded_pot_default_pct": {
+    "open_hearth": [
+     20,
+     24
+    ],
+    "tin": [
+     13,
+     16
+    ],
+    "evidence": "extrapolation",
+    "confidence": "low",
+    "source": "Breadator cereal-science synthesis — 09-baking.md, section 'Vessel'",
+    "claims": [
+     "science-bread-0093"
+    ]
+   },
+   "bread_yield_per_100_flour": {
+    "wheat": [
+     136,
+     141
+    ],
+    "rolls": [
+     130,
+     133
+    ],
+    "mixed_rye_80_20": [
+     159,
+     162
+    ],
+    "rye": [
+     160,
+     164
+    ],
+    "coarse_rye": [
+     166,
+     169
+    ],
+    "evidence": "creator-rule",
+    "confidence": "medium",
+    "source": "IREKS GmbH — The baking process > Scaling weight/Baking loss/Baked goods yield, table 'Guiding values for the baked good yield'",
+    "claims": [
+     "science-bread-0089"
+    ]
+   }
+  },
+  "disagreements": [
+   "Core-temperature endpoint for wheat loaves: 88 C is enough (King Arthur tests) vs 98 C needed for shape stability under vacuum cooling (Kinner 2021); IREKS and Reichenberger show crumbs reaching 97-100 C in full bakes.",
+   "Share of the loss in the oven: 2-4 % (Busby) vs 4-12 % measured for small tin loaves (Kinner 2021) and 11-18 % IREKS guide values for baking plus cooling."
+  ]
+ },
+ "staling": {
+  "mechanism": {
+   "amylose": "retrogrades during cooling, irreversible",
+   "amylopectin": "recrystallises over days, partly reversible by reheating",
+   "evidence": "literature",
+   "confidence": "medium",
+   "source": "IREKS GmbH — Bread ageing and freshkeeping > Staling",
+   "claims": [
+    "science-bread-0094"
+   ]
+  },
+  "temperature_window": [
+   {
+    "tg_c": -5,
+    "tm_c": 60,
+    "evidence": "literature",
+    "confidence": "medium",
+    "source": "doi:10.3390/foods10010076 — section 3.4 (citing Gray & BeMiller 2003; Slade & Levine 1987)",
+    "claims": [
+     "science-bread-0096"
+    ]
+   },
+   {
+    "fastest_c": 0,
+    "freezer_c": -18,
+    "warm_storage_c": 55,
+    "evidence": "literature",
+    "confidence": "medium",
+    "source": "IREKS GmbH — Bread ageing and freshkeeping > Measures to delay staling",
+    "claims": [
+     "science-bread-0095"
+    ]
+   }
+  ],
+  "room_vs_fridge_10_days": {
+   "fridge_c": 8.2,
+   "room_c": 21.9,
+   "firmness_pct_of_day0": {
+    "wheat_fridge": 424,
+    "sourdough_fridge": 398,
+    "wheat_room": 390,
+    "sourdough_room": 330
+   },
+   "evidence": "measured",
+   "confidence": "high",
+   "source": "doi:10.3390/foods10010076 — section 3.4 and Figure 1",
+   "claims": [
+    "science-bread-0097"
+   ]
+  },
+  "moisture_loss_10_days_pct": {
+   "paper_bag": [
+    10.3,
+    13.5
+   ],
+   "bread_box": [
+    7.0,
+    8.9
+   ],
+   "plastic_room": [
+    3.5,
+    5.7
+   ],
+   "plastic_fridge": [
+    3.1,
+    5.5
+   ],
+   "evidence": "measured",
+   "confidence": "high",
+   "source": "doi:10.3390/foods10010076 — Table 2",
+   "claims": [
+    "science-bread-0098"
+   ]
+  },
+  "freezer": {
+   "value": -18,
+   "note": "stops recrystallisation; quality loss happens before freezing and after thawing",
+   "evidence": "literature",
+   "confidence": "medium",
+   "source": "IREKS GmbH — Bread ageing and freshkeeping > Measures to delay staling",
+   "claims": [
+    "science-bread-0095"
+   ]
+  },
+  "reheating": [
+   {
+    "value": "partly reverses amylopectin staling, short-lived",
+    "evidence": "literature",
+    "confidence": "medium",
+    "source": "IREKS GmbH — Bread ageing and freshkeeping > Staling",
+    "claims": [
+     "science-bread-0094"
+    ]
+   },
+   {
+    "crumb_target_c": 60,
+    "evidence": "extrapolation",
+    "confidence": "medium",
+    "source": "Breadator cereal-science synthesis — 10-staling-storage.md, section 'Reheating'",
+    "claims": [
+     "science-bread-0109"
+    ]
+   }
+  ],
+  "freshkeeping_levers": [
+   {
+    "value": "high dough yield, preferments/sourdough, hot short bake, enzymes, emulsifiers, guar, malt",
+    "evidence": "creator-rule",
+    "confidence": "medium",
+    "source": "IREKS GmbH — Bread ageing and freshkeeping > Measures to delay staling",
+    "claims": [
+     "science-bread-0104"
+    ]
+   },
+   {
+    "value": "emulsifiers slow firming; maltogenic amylase; lipase; hydrocolloids; sugar; freezing; packaging; size",
+    "evidence": "literature",
+    "confidence": "medium",
+    "source": "BAKERpedia — Staling, section 'Approaches to reduce staling in bakery products'",
+    "claims": [
+     "science-bread-0105"
+    ]
+   }
+  ],
+  "rye_keeps_longer": {
+   "value": "freshness improves with rye share",
+   "evidence": "creator-rule",
+   "confidence": "medium",
+   "source": "IREKS GmbH — Bread ageing and freshkeeping > Staling",
+   "claims": [
+    "science-bread-0106"
+   ]
+  },
+  "bake_degree": {
+   "value": "88 C core stays moister than 96 C core",
+   "evidence": "anecdote",
+   "confidence": "medium",
+   "source": "Hamel — sections 'Sandwich loaves' and 'Buns'",
+   "claims": [
+    "science-bread-0108"
+   ]
+  },
+  "storage_digestibility_link": {
+   "slowest_digestion_c": 4,
+   "note": "see nutrition.resistant_starch",
+   "evidence": "measured",
+   "confidence": "high",
+   "source": "doi:10.3390/foods13040517 — Abstract",
+   "claims": [
+    "science-bread-0107"
+   ]
+  },
+  "app_default": {
+   "value": "room temperature 1-2 days; otherwise freeze at -18 C",
+   "evidence": "extrapolation",
+   "confidence": "medium",
+   "source": "Breadator cereal-science synthesis — 10-staling-storage.md, section 'Storage'",
+   "claims": [
+    "science-bread-0110"
+   ]
+  },
+  "mould": {
+   "storage_trial": {
+    "wheat_plastic_room_days": [
+     4,
+     5
+    ],
+    "wheat_breadbox_days": [
+     4,
+     6
+    ],
+    "fridge_8C_no_mould_days": 10,
+    "sourdough_plastic_room_days": 10,
+    "evidence": "measured",
+    "confidence": "high",
+    "source": "doi:10.3390/foods10010076 — section 3.2 'Microbial Stability of Breads under Different Storage Conditions'",
+    "claims": [
+     "science-bread-0099"
+    ]
+   },
+   "mycotoxins_in_trial": {
+    "colonies": "produced OTA, FB1, FB2",
+    "bread_slices_day10": "below LOD/LOQ (OTA < 1.25, FB1 < 30.3, FB2 < 22.7 ug/kg)",
+    "evidence": "measured",
+    "confidence": "medium",
+    "source": "doi:10.3390/foods10010076 — Abstract; section 3.3 'Relation between Microbial Growth and Mycotoxin Production'",
+    "claims": [
+     "science-bread-0100"
+    ]
+   },
+   "authority_usda_fsis": {
+    "bread": "discard",
+    "reason": "porous; contamination below the surface; toxins around root threads",
+    "firm_low_moisture_foods": "cut 1 inch (2.5 cm) around and below",
+    "evidence": "literature",
+    "confidence": "high",
+    "source": "U.S. Department of Agriculture — sections 'Are Molds Only on the Surface of Food?' and table 'FOOD | HANDLING | REASON' (row 'Bread and baked goods: Discard')",
+    "claims": [
+     "science-bread-0101"
+    ]
+   },
+   "authority_bfr": {
+    "bread": "discard",
+    "reason": "hyphae spread invisibly; mycotoxins heat- and acid-stable",
+    "exceptions": "air-dried sausage, whole hams",
+    "evidence": "literature",
+    "confidence": "high",
+    "source": "Bundesinstitut für Risikobewertung (BfR) — questions 'Woran sind Schimmelpilze zu erkennen?', 'Wie geht man mit Lebensmitteln um, die sichtbar von Schimmelpilzen befallen sind?' and 'Was sind Schimmelpilzgifte (Mykotoxine)?'",
+    "claims": [
+     "science-bread-0102"
+    ]
+   },
+   "starter": {
+    "value": "discard a visibly mouldy starter (extrapolation from FSIS and BfR)",
+    "evidence": "extrapolation",
+    "confidence": "medium",
+    "source": "Breadator cereal-science synthesis — 10-staling-storage.md, section 'Mould'",
+    "claims": [
+     "science-bread-0103"
+    ]
+   }
+  },
+  "disagreements": [
+   "Mouldy starter: some baking books advise rescuing a starter from a mould-free part; USDA FSIS and BfR advise discarding moist, porous foods with visible mould and do not mention starters (extrapolation recorded as such).",
+   "Mycotoxins in mouldy bread: none quantified in the Alpers 2021 trial (three toxins) vs authority guidance that toxins may spread through porous food; the trial is narrow and does not contradict the discard advice."
+  ]
+ },
+ "nutrition": {
+  "glycaemic_response": {
+   "meta_analysis": {
+    "n_studies": 18,
+    "md_60min": -0.29,
+    "ci95_60min": [
+     -0.46,
+     -0.12
+    ],
+    "md_120min": -0.21,
+    "ci95_120min": [
+     -0.32,
+     -0.09
+    ],
+    "i2_pct": 0,
+    "certainty": "low to very low",
+    "comparators": "industrial bread or glucose",
+    "evidence": "measured",
+    "confidence": "medium",
+    "source": "doi:10.1080/10408398.2022.2108756 — Abstract",
+    "claims": [
+     "science-bread-0111"
+    ]
+   },
+   "systematic_reviews": [
+    {
+     "n_studies": 27,
+     "conclusion": "neither sufficient nor convincing (healthy adults)",
+     "evidence": "literature",
+     "confidence": "high",
+     "source": "doi:10.3389/fnut.2026.1910648 — Abstract; Methods",
+     "claims": [
+      "science-bread-0113"
+     ]
+    },
+    {
+     "n_studies": 20,
+     "same_recipe_significant": "3/8",
+     "wholegrain_vs_white_significant": "2/7",
+     "evidence": "literature",
+     "confidence": "high",
+     "source": "doi:10.1016/j.advnut.2022.10.003 — Results 'Postprandial glucose response' and 'Healthy subjects'",
+     "claims": [
+      "science-bread-0114"
+     ]
+    },
+    {
+     "conclusion": "sourdough can modulate glucose response; insulin unclear",
+     "evidence": "literature",
+     "confidence": "medium",
+     "source": "doi:10.1017/s0007114517000770 — Abstract",
+     "claims": [
+      "science-bread-0115"
+     ]
+    }
+   ],
+   "regulatory": {
+    "value": "no claim: effect vs glucose is not specific to sourdough rye bread",
+    "evidence": "literature",
+    "confidence": "high",
+    "source": "doi:10.2903/j.efsa.2014.3837 — Abstract",
+    "claims": [
+     "science-bread-0112"
+    ]
+   },
+   "gi_value": null,
+   "gi_value_note": "no meta-analysed GI difference (sourdough minus yeast bread) was found; only the glucose-change MDs above"
+  },
+  "resistant_starch": {
+   "freeze_toast_iauc_mmol_min_l": {
+    "homemade": {
+     "fresh": 259,
+     "frozen_defrosted": 179,
+     "toasted": 193,
+     "frozen_toasted": 157
+    },
+    "commercial": {
+     "fresh": 253,
+     "toasted": 183,
+     "frozen_toasted": 187
+    },
+    "n": 10,
+    "evidence": "measured",
+    "confidence": "medium",
+    "source": "doi:10.1038/sj.ejcn.1602746 — Abstract",
+    "claims": [
+     "science-bread-0116"
+    ]
+   },
+   "cooling_rs3": {
+    "cooling_min_h": 12,
+    "reheat_below_c": 130,
+    "evidence": "literature",
+    "confidence": "medium",
+    "source": "doi:10.3389/fnut.2022.1025993 — section 'Storage' and Figure 1",
+    "claims": [
+     "science-bread-0117"
+    ]
+   },
+   "cold_storage_digestion": "see staling.storage_digestibility_link (Li 2024: 2 days at 4 C gave the slowest in-vitro digestion)",
+   "app_statement": {
+    "value": "direction only; no RS grams for bread",
+    "evidence": "extrapolation",
+    "confidence": "high",
+    "source": "Breadator cereal-science synthesis — 11-nutrition.md, section 'Resistant starch'",
+    "claims": [
+     "science-bread-0118"
+    ]
+   },
+   "eu_claim": {
+    "min_rs_pct_of_total_starch": 14,
+    "evidence": "literature",
+    "confidence": "high",
+    "source": "European Commission — Annex, entry 'Resistant starch' (EFSA Journal 2011;9(4):2024)",
+    "claims": [
+     "science-bread-0123"
+    ]
+   }
+  },
+  "beta_glucan": {
+   "cholesterol_claim": {
+    "min_g_per_portion": 1,
+    "daily_g": 3,
+    "evidence": "literature",
+    "confidence": "high",
+    "source": "European Commission — Annex, entry 'Beta-glucans' (EFSA Journal 2009;7(9):1254, 2011;9(6):2207)",
+    "claims": [
+     "science-bread-0119"
+    ]
+   },
+   "postprandial_claim": {
+    "min_g_per_30g_available_carbohydrate": 4,
+    "evidence": "literature",
+    "confidence": "high",
+    "source": "European Commission — Annex, entry 'Beta-glucans from oats and barley' (EFSA Journal 2011;9(6):2207)",
+    "claims": [
+     "science-bread-0120"
+    ]
+   },
+   "efsa_2025_lower_dose_rejected": {
+    "proposed_g_per_30g": 2,
+    "evidence": "literature",
+    "confidence": "high",
+    "source": "doi:10.2903/j.efsa.2025.9630 — Abstract",
+    "claims": [
+     "science-bread-0121"
+    ]
+   },
+   "bread_arithmetic": {
+    "bg_g_per_100g_bread_postprandial": [
+     5.9,
+     7.3
+    ],
+    "bg_g_per_100g_for_50g_portion": 2,
+    "evidence": "extrapolation",
+    "confidence": "high",
+    "source": "Breadator cereal-science synthesis — 11-nutrition.md, section 'β-glucan claims'",
+    "claims": [
+     "science-bread-0122"
+    ]
+   },
+   "degradation": "see enzymes.beta_glucanase"
+  },
+  "other_eu_fibre_claims": {
+   "arabinoxylan_fibre_g_per_100g_avcho": 8,
+   "wheat_bran_daily_g": 10,
+   "evidence": "literature",
+   "confidence": "high",
+   "source": "European Commission — Annex, entries 'Arabinoxylan produced from wheat endosperm', 'Rye fibre', 'Barley grain fibre', 'Oat grain fibre', 'Wheat bran fibre'",
+   "claims": [
+    "science-bread-0124"
+   ]
+  },
+  "fodmap": {
+   "proof_time_wheat": {
+    "proof_min": [
+     60,
+     80
+    ],
+    "fructan_mg_100g_dm": [
+     338,
+     266
+    ],
+    "total_fodmap_mg_100g_dm": [
+     528,
+     358
+    ],
+    "evidence": "measured",
+    "confidence": "high",
+    "source": "doi:10.1007/s00217-020-03633-6 — Results 'Effect of proofing time on FODMAPs', Table 8",
+    "claims": [
+     "science-bread-0125"
+    ]
+   },
+   "sourdough_effect": {
+    "value": "fructans down, mannitol up, total unchanged; rye and whole-meal stay high",
+    "evidence": "measured",
+    "confidence": "high",
+    "source": "doi:10.1007/s00217-020-03633-6 — Abstract; Results 'White bread with sourdough' and rye breads",
+    "claims": [
+     "science-bread-0126"
+    ]
+   },
+   "cutoffs_per_serving_g": {
+    "excess_fructose": 0.15,
+    "oligosaccharides": 0.3,
+    "polyols": 0.4,
+    "mannitol_or_sorbitol": 0.2,
+    "lactose": 1.0,
+    "evidence": "literature",
+    "confidence": "medium",
+    "source": "doi:10.1007/s00217-020-03633-6 — Introduction and Discussion (citing Varney et al. 2017)",
+    "claims": [
+     "science-bread-0127"
+    ]
+   },
+   "rye_time_no_effect": {
+    "fermentation_min": [
+     90,
+     180
+    ],
+    "evidence": "measured",
+    "confidence": "high",
+    "source": "doi:10.1007/s00217-020-03537-5 — Abstract",
+    "claims": [
+     "science-bread-0128"
+    ]
+   },
+   "mechanism": {
+    "wheat_bread_fructan_pct": [
+     1.0,
+     1.5
+    ],
+    "rye_bread_fructan_pct": 3,
+    "yeast_invertase": "short fructans only",
+    "evidence": "literature",
+    "confidence": "high",
+    "source": "doi:10.3390/foods7070096 — sections 2–4 and Conclusions",
+    "claims": [
+     "science-bread-0129"
+    ]
+   },
+   "clinical_low_fodmap_rye": {
+    "fodmap_fraction": 0.33,
+    "fibre_g_100g": 10,
+    "evidence": "literature",
+    "confidence": "medium",
+    "source": "doi:10.3390/foods7070096 — section 5 'Proof of Concept from Clinical Trials with Low FODMAP Rye Bread'",
+    "claims": [
+     "science-bread-0130"
+    ]
+   },
+   "yeast_rich_short_process": {
+    "yeast_pct": 6,
+    "ferment_c": 40,
+    "ferment_min": 60,
+    "reduction_pct_min": 75,
+    "evidence": "measured",
+    "confidence": "medium",
+    "source": "doi:10.3390/foods14020304 — Abstract",
+    "claims": [
+     "science-bread-0131"
+    ]
+   },
+   "app_statement": {
+    "value": "direction only; never 'low-FODMAP' without analysis",
+    "evidence": "extrapolation",
+    "confidence": "high",
+    "source": "Breadator cereal-science synthesis — 11-nutrition.md, section 'FODMAP'",
+    "claims": [
+     "science-bread-0132"
+    ]
+   }
+  },
+  "coeliac": {
+   "statement": {
+    "value": "sourdough fermentation does not make wheat, rye or barley bread safe for coeliac disease",
+    "evidence": "literature",
+    "confidence": "high",
+    "source": "Beyond Celiac — page 'Is Sourdough Bread Gluten-Free?'",
+    "claims": [
+     "science-bread-0137"
+    ]
+   },
+   "gluten_free_limit_mg_per_kg": {
+    "value": 20,
+    "very_low_gluten": 100,
+    "evidence": "literature",
+    "confidence": "high",
+    "source": "European Commission — Annex, part A",
+    "claims": [
+     "science-bread-0134"
+    ]
+   },
+   "advocacy_guidance": {
+    "value": "regular sourdough is not gluten-free",
+    "evidence": "literature",
+    "confidence": "high",
+    "source": "Beyond Celiac — page 'Is Sourdough Bread Gluten-Free?' (archived 8 January 2026)",
+    "claims": [
+     "science-bread-0133"
+    ]
+   },
+   "experimental_detox": [
+    {
+     "natural_ppm": 80127,
+     "extensively_hydrolysed_ppm": 2480,
+     "fully_hydrolysed_ppm": 8,
+     "evidence": "measured",
+     "confidence": "high",
+     "source": "doi:10.1016/j.cgh.2010.09.025 — Abstract",
+     "claims": [
+      "science-bread-0135"
+     ]
+    },
+    {
+     "wheat_share_pct": 30,
+     "responders_yeast_bread": "13/17",
+     "evidence": "measured",
+     "confidence": "medium",
+     "source": "doi:10.1128/AEM.70.2.1088-1096.2004 — Abstract",
+     "claims": [
+      "science-bread-0136"
+     ]
+    }
+   ]
+  },
+  "minerals_phytate": {
+   "phytate_breakdown": "see enzymes.phytase (sourdough -62 % vs yeast -38 %; pH 5.5 gives -70 %)",
+   "iron_outcomes": {
+    "n_studies": 8,
+    "ferritin_ug_l": [
+     32,
+     27
+    ],
+    "body_iron_mg_kg": [
+     6.9,
+     5.4
+    ],
+    "evidence": "literature",
+    "confidence": "high",
+    "source": "doi:10.3389/fnut.2026.1778997 — Abstract; Table 1",
+    "claims": [
+     "science-bread-0138"
+    ]
+   },
+   "bioaccessibility_vs_bioavailability": {
+    "value": "in-vitro gains do not establish better mineral status",
+    "evidence": "literature",
+    "confidence": "medium",
+    "source": "doi:10.3390/nu14010025 — section 5 'Limitations of Approaches and Data'",
+    "claims": [
+     "science-bread-0139"
+    ]
+   }
+  },
+  "wording_rule": "statements describe studies (population, dose, effect size, certainty); no advice, no promise",
+  "disagreements": [
+   "Sourdough and glycaemia: Rolim 2022 meta-analysis reports a small pooled reduction (low/very low certainty, comparators include glucose) vs Starowicz 2026 (27 studies, insufficient) and EFSA 2014 (effect vs glucose not specific); Ribet 2023 counts mostly null comparisons in healthy people.",
+   "Fermentation time and fructans: longer proof lowered fructans in refined wheat (Schmidt 2021) but not in rye (Pejcz 2020); sourdough lowered rye fructans (Pejcz) yet left wheat total FODMAPs unchanged by adding mannitol (Schmidt).",
+   "Coeliac disease: experimental fully hydrolysed sourdough wheat (8 ppm, fungal proteases) was tolerated (Greco 2011) while ordinary sourdough is not gluten-free; the experimental process is not home or bakery sourdough."
+  ]
+ }
+}

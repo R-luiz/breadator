@@ -1,0 +1,24 @@
+bread_type = "pizza"
+sources = ["breadcode-2714", "breadcode-2715", "breadcode-2716", "breadcode-2718", "breadcode-1212", "breadcode-2719", "breadcode-2720", "breadcode-1214", "breadcode-1216", "breadcode-2721"]
+title = { fr = "Pâte à pizza de style napolitain, fermentée une nuit", en = "Overnight Neapolitan-style pizza dough" }
+description = { fr = "D'après la pâte à pizza napolitaine d'une nuit de Hendrik Kleinwächter (The Bread Code) : farine, eau, sel et très peu de levure sèche, mélangés le soir et gardés au froid quand la cuisson doit attendre.", en = "After Hendrik Kleinwächter's (The Bread Code) overnight Neapolitan pizza dough: flour, water, salt and very little dry yeast, stirred in the evening and held in the cold when the bake has to wait." }
+steps = [
+  { fr = "Le soir (vers 22 h dans la source), mélangez la farine, l'eau, le sel et la levure dans un récipient jusqu'à ce qu'il ne reste plus de farine sèche, et couvrez. Prenez une farine de force riche en protéines : un réseau de gluten plus solide retient plus de gaz.", en = "In the evening (about 10 pm in the source), stir the flour, water, salt and yeast in a pot until no dry flour is left, and cover. Use a high-protein bread flour: a stronger gluten network holds more gas." },
+  { fr = "Pointage : toute la nuit, jusqu'à ce que la pâte ait doublé. La source ne précise pas la température de la pièce. Le calculateur de fermentation donne la durée pour la température de votre pâte.", en = "Bulk fermentation: overnight, until the dough has doubled. The source does not state its room temperature. The fermentation calculator gives the time for your own dough temperature." },
+  { fr = "Le matin, donnez un rabat. Si le repas est plus tard, ralentissez la pâte dans un endroit froid ou au réfrigérateur (environ 3 h dans la source) et sortez-la environ 3 h avant de l'utiliser.", en = "In the morning give one stretch-and-fold. If the meal is later, slow the dough down in a cold place or in the refrigerator (about 3 h in the source) and take it out about 3 h before use." },
+  { fr = "Divisez en 2 pâtons, boulez-les et laissez-les reposer à couvert environ 2 h.", en = "Divide into 2 pieces, round them into balls and let them rest covered for about 2 h." },
+  { fr = "Préchauffez le four au maximum pendant au moins 30 min, avec une pierre ou une plaque d'acier à l'intérieur.", en = "Preheat the oven as hot as it goes for at least 30 min, with a stone or steel inside." },
+  { fr = "Étalez chaque pâton jusqu'à 1 à 2 mm d'épaisseur au centre, garnissez et enfournez. Dans un four ménager, le bord colore en premier ; utilisez le gril pour colorer le dessus.", en = "Stretch each ball to 1 to 2 mm in the centre, top it and bake. In a home oven the edge browns first; use the grill to colour the top." },
+]
+notes = { fr = "Fournée de la source pour deux pizzas : 280 g de farine de force, 168 g d'eau, 5 g de sel et environ 1 g de levure sèche. La source annonce 2 % de sel et 0,25 % de levure, mais ses pesées donnent 1,79 % et 0,36 % : ce sont les pesées qui sont suivies ici. Le type de levure sèche n'est pas précisé ; elle est saisie comme levure sèche active. C'est une pâte fermentée une nuit à température ambiante ; le passage au froid sert seulement à faire attendre une pâte prête trop tôt. Les pourcentages sont arrondis à 0,01 point (0,001 en dessous de 1 %) ; les poids donnés par le calculateur restent à moins de 0,3 % de ceux de la source.", en = "Source batch for two pizzas: 280 g bread flour, 168 g water, 5 g salt and about 1 g dry yeast. The source states 2 % salt and 0.25 % yeast, but its weights give 1.79 % and 0.36 %: the weights are followed here. The kind of dry yeast is not stated; it is entered as active dry yeast. This is a room-temperature overnight dough; the cold stage only holds a dough that is ready too early. Percentages are rounded to 0.01 point (0.001 below 1 %); the weights the calculator gives stay within 0.3 % of the source's." }
+
+[formula]
+target = { by = "pieces", count = 2, grams = 227 }
+flours = [
+  { id = "bread_flour", pct = 100 },
+]
+ingredients = [
+  { id = "water", kind = "water", pct = 60 },
+  { id = "salt", kind = "salt", pct = 1.79 },
+  { id = "active_dry_yeast", kind = "active_dry_yeast", pct = 0.357 },
+]

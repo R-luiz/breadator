@@ -1,0 +1,28 @@
+bread_type = "lean-hearth"
+sources = ["novita-0238", "novita-0239", "novita-0240", "novita-0241", "novita-0242"]
+title = { fr = "Pain de campagne au levain", en = "Sourdough country loaf" }
+description = { fr = "D'après le guide du levain de Novita Listyani : un pain blanc à environ 78 % d'hydratation, levé par un petit levain rafraîchi en 1:2:2 et cuit en cocotte.", en = "After Novita Listyani's sourdough guide: a lean white loaf at about 78 % hydration, raised by a small levain fed 1:2:2 and baked in a covered pot." }
+steps = [
+  { fr = "Levain : mélangez le levain chef mûr avec la farine et l'eau du levain (1 part de chef, 2 parts d'eau, 2 parts de farine) et laissez fermenter jusqu'à son sommet. La durée dépend de votre chef et de la température.", en = "Levain: mix the ripe starter with the levain flour and water (1 part starter, 2 parts water, 2 parts flour) and let it ferment until it reaches its peak. The time depends on your starter and on the temperature." },
+  { fr = "Autolyse : 30 à 60 min avant que le levain soit prêt, mélangez la farine du pétrin avec son eau, en réservant environ 10 g d'eau pour le sel. Couvrez et laissez reposer.", en = "Autolyse: 30 to 60 min before the levain is ready, mix the final-mix flour with its water, keeping back about 10 g of water for the salt. Cover and rest." },
+  { fr = "Ajoutez le levain et incorporez-le. Dissolvez le sel dans l'eau réservée et incorporez-le à la pâte.", en = "Add the levain and work it in. Dissolve the salt in the reserved water and mix it into the dough." },
+  { fr = "Donnez de la force en 4 séries environ, espacées de 30 min : d'abord des soulevés-rabattus (slap and fold), puis des rabats (4 par série), et des rabats par enroulement (coil folds) pour la dernière.", en = "Build strength in about 4 rounds, 30 min apart: slap-and-folds first, then stretch-and-folds (4 per round), and coil folds for the last round." },
+  { fr = "Pointage : arrêtez quand la pâte a gagné 80 à 90 % de volume, un peu avant le doublement. Le calculateur de fermentation donne la durée pour la température de votre pâte.", en = "Bulk fermentation: stop when the dough has grown by 80 to 90 %, a little short of doubled. The fermentation calculator gives the time for your own dough temperature." },
+  { fr = "Divisez si vous voulez deux petits pains, préfaçonnez, laissez 20 min de détente, puis façonnez en boules et déposez-les en bannetons farinés.", en = "Divide if you want two small loaves, preshape, rest 20 min on the bench, then shape into boules and place them in floured bannetons." },
+  { fr = "Apprêt : 30 min à 1 h à température ambiante (29 °C dans la source), puis au froid. La source donne environ 2 h à environ 10 °C, puis environ 3 h de plus ; un réfrigérateur plus froid demande plus de temps, et la durée suit la température de la pâte plus que l'horloge.", en = "Final proof: 30 min to 1 h at room temperature (29 °C in the source), then in the cold. The source gives about 2 h at about 10 °C, then about 3 h more; a colder refrigerator needs longer, and the timing follows the dough temperature more than the clock." },
+  { fr = "Préchauffez une cocotte à la température maximale de votre four. Grignez, cuisez 25 min à couvert, puis sans couvercle jusqu'à ce que la croûte soit brun foncé.", en = "Preheat a Dutch oven at the highest temperature of your oven. Score the loaf, bake 25 min with the lid on, then without the lid until the crust is deep brown." },
+]
+notes = { fr = "Fournée de la source : 20 g de levain chef, 40 g de farine et 40 g d'eau pour le levain ; 460 g de farine, 350 g d'eau et 10 g de sel pour la pâte. La source ne donne pas l'hydratation du chef : il est compté ici à 100 % (10 g de farine, 10 g d'eau), soit 510 g de farine et 78,4 % d'hydratation. La source annonce 80 %, mais ses propres pesées donnent 78 % (390 g d'eau pour 500 g de farine). La température du four n'est donnée que comme le maximum du four. Les pourcentages sont arrondis à 0,01 point (0,001 en dessous de 1 %) ; les poids donnés par le calculateur restent à moins de 0,1 % de ceux de la source.", en = "Source batch: 20 g starter, 40 g flour and 40 g water for the levain; 460 g flour, 350 g water and 10 g salt for the dough. The source does not give the starter's hydration: it is counted here at 100 % (10 g flour, 10 g water), which makes 510 g of flour and 78.4 % hydration. The source announces 80 %, but its own weights give 78 % (390 g of water for 500 g of flour). The oven temperature is given only as the oven's maximum. Percentages are rounded to 0.01 point (0.001 below 1 %); the weights the calculator gives stay within 0.1 % of the source's." }
+
+[formula]
+target = { by = "dough", grams = 920 }
+flours = [
+  { id = "bread_flour", pct = 100 },
+]
+ingredients = [
+  { id = "water", kind = "water", pct = 78.43 },
+  { id = "salt", kind = "salt", pct = 1.96 },
+]
+stages = [
+  { id = "levain", kind = "levain", flour_pct = 9.8, flour = "bread_flour", liquid_pct = 100, seed = { pct = 50, hydration_pct = 100 } },
+]

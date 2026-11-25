@@ -1,0 +1,27 @@
+bread_type = "rye"
+sources = ["breadcode-0326", "breadcode-0327", "breadcode-0329", "breadcode-0330", "breadcode-0331", "breadcode-0334", "breadcode-0332", "breadcode-0333", "breadcode-0337", "breadcode-0328", "breadcode-0338", "breadcode-0339", "breadcode-0308", "breadcode-0340", "breadcode-0341", "breadcode-0344", "breadcode-0184"]
+title = { fr = "Pains de seigle complet au levain, en moule", en = "Whole-rye sourdough pan loaves" }
+description = { fr = "D'après la recette de seigle de The Sourdough Framework de Hendrik Kleinwächter : deux pains de seigle complet en moule, mélangés sans pétrissage et cuits jusqu'à 92 °C à cœur.", en = "After the rye recipe of The Sourdough Framework by Hendrik Kleinwächter: two pan loaves of whole rye, mixed without kneading and baked to 92 °C at the core." }
+steps = [
+  { fr = "Le levain peut être actif ou non : la pâte de seigle accepte un levain sorti du réfrigérateur ou resté une semaine à température ambiante. Délayez d'abord un levain dur dans l'eau.", en = "The starter can be active or not: rye dough accepts one that comes straight from the refrigerator or has waited a week at room temperature. Dissolve a stiff starter in the water first." },
+  { fr = "Mélangez la farine, l'eau à température ambiante, le levain et le sel à la spatule jusqu'à homogénéité. Ne pétrissez pas : il s'agit seulement de répartir le levain, le seigle ne formant pas de réseau de gluten.", en = "Mix flour, room-temperature water, starter and salt with a spatula until homogeneous. Do not knead: the only aim is to spread the starter evenly, since rye builds no gluten network." },
+  { fr = "Pointage : jusqu'à ce que la pâte ait levé d'environ 50 %. Cela peut prendre quelques heures ou bien plus ; une fermentation plus longue donne un pain plus acide, jusqu'à environ 48 h à température ambiante. Le calculateur de fermentation donne la durée pour la température de votre pâte.", en = "Bulk fermentation: until the dough has risen by about 50 %. It can take a few hours or much longer; a longer fermentation gives a more acidic bread, up to about 48 h at room temperature. The fermentation calculator gives the time for your own dough temperature." },
+  { fr = "Divisez en deux et étalez la pâte dans des moules graissés ; lissez le dessus avec une spatule mouillée jusqu'à ce qu'il soit régulier et brillant. À cette hydratation, la pâte ne se façonne pas à la main.", en = "Divide in two and spread the dough into greased loaf pans; smooth the top with a wet spatula until it is even and shiny. At this hydration the dough cannot be shaped by hand." },
+  { fr = "Apprêt : environ 60 min. Un apprêt plus long ne rend pas le seigle plus léger. Les moules peuvent aussi attendre au réfrigérateur.", en = "Final proof: about 60 min. A longer proof does not make rye lighter. The pans can also wait in the refrigerator." },
+  { fr = "Cuisez vers 200 °C, le réglage du livre pour les pains en moule, sans grigner : la croûte se fend d'elle-même. Le pain est cuit à environ 92 °C à cœur.", en = "Bake at about 200 °C, the book's setting for pan loaves, without scoring: the crust cracks by itself. The loaf is done at about 92 °C at the core." },
+  { fr = "Pour une croûte sur toutes les faces, démoulez les pains quand ils atteignent cette température et remettez-les au four avec de la vapeur. Une cuisson plus longue donne une croûte plus foncée et plus croustillante, et un pain moins acide.", en = "For a crust on every side, take the loaves out of the pans once they reach that temperature and return them to the oven with steam. A longer bake gives a darker, crunchier crust and a less sour loaf." },
+]
+notes = { fr = "Adapté de The Sourdough Framework de Hendrik Kleinwächter (CC BY-SA 4.0) ; le texte de cette recette est partagé sous la même licence. Fournée du livre pour deux pains : 1000 g de farine de seigle complète, 800 g d'eau, 200 g de levain et 20 g de sel. Le livre compte le levain à part (20 %) sans donner son hydratation ; un levain ordinaire à 100 % est supposé, soit 1100 g de farine, 81,8 % d'hydratation et 1,82 % de sel. Pour un pain façonné sans moule, le livre descend à environ 60 % d'eau sur la farine. Les pourcentages sont arrondis à 0,01 point (0,001 en dessous de 1 %) ; les poids donnés par le calculateur restent à moins de 0,1 % de ceux de la source.", en = "Adapted from The Sourdough Framework by Hendrik Kleinwächter (CC BY-SA 4.0); this recipe text is shared under the same licence. Book batch for two loaves: 1000 g whole rye flour, 800 g water, 200 g starter and 20 g salt. The book counts the starter as a separate 20 % and does not give its hydration; a regular 100 % starter is assumed, which makes 1100 g of flour, 81.8 % hydration and 1.82 % salt. For a free-standing loaf the book lowers the water to about 60 % of the flour. Percentages are rounded to 0.01 point (0.001 below 1 %); the weights the calculator gives stay within 0.1 % of the source's." }
+
+[formula]
+target = { by = "pieces", count = 2, grams = 1010 }
+flours = [
+  { id = "whole_rye_flour", pct = 100 },
+]
+ingredients = [
+  { id = "water", kind = "water", pct = 81.82 },
+  { id = "salt", kind = "salt", pct = 1.82 },
+]
+stages = [
+  { id = "levain", kind = "levain", flour_pct = 9.09, flour = "whole_rye_flour", liquid_pct = 100 },
+]

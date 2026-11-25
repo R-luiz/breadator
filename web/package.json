@@ -1,0 +1,14 @@
+{
+  "name": "breadator-web",
+  "private": true,
+  "type": "module",
+  "description": "Breadator browser islands: calculators running the Rust engine as WebAssembly.",
+  "scripts": {
+    "check": "tsc --noEmit",
+    "build": "node build.mjs"
+  },
+  "devDependencies": {
+    "esbuild": "0.28.2",
+    "typescript": "7.0.2"
+  }
+}

@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+{% import "macros.html" as m %}
+{% block content %}
+<h1>{{ layout.tr.t("flour-title") }}</h1>
+<p class="lead">{{ layout.tr.t("flour-lead") }}</p>
+<div class="calc" data-island="flour">
+<form class="inputs" method="get" action="{{ layout.href("/calculators/flour") }}">
+  <fieldset>
+    <legend>{{ layout.tr.t("flour-blend") }}</legend>
+    {% for row in rows %}
+    <div class="flour-row">
+      <label class="field"><span class="label">{{ layout.tr.t("flour-type") }} {{ row.n }}</span>
+        <select name="f{{ row.n }}">
+          {% if row.n > 1 %}<option value="">—</option>{% endif %}
+          {% for g in options %}<optgroup label="{{ g.label }}">
+            {% for (id, name) in g.options %}<option value="{{ id }}"{% if *id == row.id %} selected{% endif %}>{{ name }}</option>
+            {% endfor %}</optgroup>
+          {% endfor %}</select>
+      </label>
+      <label class="field"><span class="label">{{ layout.tr.t("flour-share") }}</span>
+        <span class="input-unit"><input type="number" name="p{{ row.n }}" value="{{ row.pct }}" min="0" max="100000" step="any" inputmode="decimal"><span class="unit">%</span></span></label>
+      <label class="field"><span class="label">{{ layout.tr.t("flour-bag-protein") }}</span>
+        <span class="input-unit"><input type="number" name="prot{{ row.n }}" value="{{ row.protein }}" min="1" max="30" step="any" inputmode="decimal"><span class="unit">%</span></span></label>
+    </div>
+    {% endfor %}
+    <small class="hint">{{ layout.tr.t("flour-blend-hint") }}</small>
+    {% call m::num("flour_g", layout.tr.t("flour-total"), flour_g, "g", "1", "1000000", "") %}{% endcall %}
+  </fieldset>
+  <fieldset>
+    <legend>{{ layout.tr.t("flour-ref-legend") }}</legend>
+    <label class="field"><span class="label">{{ layout.tr.t("flour-ref-flour") }}</span>
+      <select name="ref">
+        <option value="">{{ layout.tr.t("flour-ref-none") }}</option>
+        {% for g in options %}<optgroup label="{{ g.label }}">
+          {% for (id, name) in g.options %}<option value="{{ id }}"{% if *id == reference %} selected{% endif %}>{{ name }}</option>
+          {% endfor %}</optgroup>
+        {% endfor %}</select>
+    </label>
+    {% call m::num("ref_h", layout.tr.t("flour-ref-hydration"), ref_h, "%", "30", "150", layout.tr.t("flour-ref-hint")) %}{% endcall %}
+  </fieldset>
+  <fieldset>
+    <legend>{{ layout.tr.t("flour-additions") }}</legend>
+    {% for a in additions %}{% call m::num(a.name, a.label, a.value, "%", "0", "100", "") %}{% endcall %}
+    {% endfor %}
+  </fieldset>
+  <fieldset>
+    <legend>{{ layout.tr.t("flour-scald") }}</legend>
+    {% call m::num("scald_pct", layout.tr.t("flour-scald-share"), scald_pct, "%", "0", "100", layout.tr.t("flour-scald-hint")) %}{% endcall %}
+    <label class="field"><span class="label">{{ layout.tr.t("flour-scald-method") }}</span>
+      <select name="scald">
+        <option value="yudane"{% if scald == "yudane" %} selected{% endif %}>{{ layout.tr.t("flour-scald-yudane") }}</option>
+        <option value="hot"{% if scald == "hot" %} selected{% endif %}>{{ layout.tr.t("flour-scald-hot") }}</option>
+        <option value="cooked"{% if scald == "cooked" %} selected{% endif %}>{{ layout.tr.t("flour-scald-cooked") }}</option>
+      </select>
+    </label>
+  </fieldset>
+  <fieldset>
+    <legend>{{ layout.tr.t("flour-target-legend") }}</legend>
+    {% call m::num("target", layout.tr.t("flour-target"), target, "%", "1", "30", layout.tr.t("flour-target-hint")) %}{% endcall %}
+    {% call m::num("gluten_protein", layout.tr.t("flour-gluten-protein"), gluten_protein, "%", "40", "95", "") %}{% endcall %}
+  </fieldset>
+  <button type="submit">{{ layout.tr.t("compute") }}</button>
+</form>
+<section class="results" aria-live="polite">
+  {% if let Some(e) = error %}<p class="error" role="alert">{{ e }}</p>{% endif %}
+  {% if let Some(r) = result %}
+  <p class="big"><strong>{{ r.headline }}</strong></p>
+  {% if let Some(w) = r.water %}<p>{{ w }}</p>{% endif %}
+  {% for n in r.notes %}<p class="warning">{{ n }}</p>{% endfor %}
+  {% if !r.parts.is_empty() %}<table class="lines"><tbody>
+    {% for (label, value) in r.parts %}<tr><th scope="row">{{ label }}</th><td class="g">{{ value }}</td></tr>
+    {% endfor %}</tbody></table>
+  {% endif %}
+  <dl class="metrics">
+    {% for (label, value) in r.metrics %}<div><dt>{{ label }}</dt><dd>{{ value }}</dd></div>
+    {% endfor %}</dl>
+  {% if !r.additions.is_empty() %}
+  <h2>{{ layout.tr.t("flour-additions-water") }}</h2>
+  <table class="lines">
+    <thead><tr><th scope="col">{{ layout.tr.t("flour-addition") }}</th><th scope="col">{{ layout.tr.t("flour-weight") }}</th><th scope="col">{{ layout.tr.t("flour-its-water") }}</th></tr></thead>
+    <tbody>
+    {% for (name, grams, water) in r.additions %}<tr><th scope="row">{{ name }}</th><td class="g">{{ grams }} g</td><td class="g">{{ water }} g</td></tr>
+    {% endfor %}</tbody></table>
+  {% endif %}
+  {% if let Some(g) = r.gluten %}
+  <h2>{{ layout.tr.t("flour-target-legend") }}</h2>
+  <p>{{ g }}</p>
+  {% endif %}
+  {% endif %}
+  <h2>{{ layout.tr.t("ferment-how") }}</h2>
+  <p class="note">{{ layout.tr.t("flour-how") }}</p>
+</section>
+</div>
+{% endblock %}

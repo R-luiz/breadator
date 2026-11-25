@@ -1,0 +1,432 @@
+{
+ "model": "google/gemma-4-31b-it:free",
+ "provider": {
+  "data_collection": "deny"
+ },
+ "started": "2026-11-24T13:49:38.100Z",
+ "answers": [
+  {
+   "id": "Q01",
+   "lang": "fr",
+   "kind": "mechanism",
+   "question": "Pourquoi faut-il acidifier une pâte de seigle ? Qu'est-ce qui se passe avec les enzymes si on ne le fait pas ?",
+   "final": "",
+   "error": "429 Provider returned error {\"raw\":\"google/gemma-4-31b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own provider key to use your own limits: https://openrouter.ai/workspaces/default/byok\",\"provider_name\":\"Google AI Studio\",\"is_byok\":false,\"provider_error_code\":\"429\",\"limit_source\":\"upstream_p",
+   "tool_calls": [],
+   "totals": {
+    "calls": 0,
+    "cost": 0,
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "reasoning_tokens": 0,
+    "cached_tokens": 0,
+    "ms": 0,
+    "providers": []
+   },
+   "calls": [],
+   "auto": {
+    "searched": false,
+    "n_search": 0,
+    "engine_calls": [],
+    "cited": [],
+    "invented_keys": [],
+    "irrelevant_cited": [],
+    "unsourced_labels": 0,
+    "words": 0,
+    "lang_guess": "en"
+   }
+  },
+  {
+   "id": "Q02",
+   "lang": "en",
+   "kind": "mechanism",
+   "question": "What's the actual difference between tangzhong and yudane in terms of starch gelatinization? Which one should I use for a soft sandwich loaf?",
+   "final": "",
+   "error": "429 Provider returned error {\"raw\":\"google/gemma-4-31b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own provider key to use your own limits: https://openrouter.ai/workspaces/default/byok\",\"provider_name\":\"Google AI Studio\",\"is_byok\":false,\"provider_error_code\":\"429\",\"limit_source\":\"upstream_p",
+   "tool_calls": [],
+   "totals": {
+    "calls": 0,
+    "cost": 0,
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "reasoning_tokens": 0,
+    "cached_tokens": 0,
+    "ms": 0,
+    "providers": []
+   },
+   "calls": [],
+   "auto": {
+    "searched": false,
+    "n_search": 0,
+    "engine_calls": [],
+    "cited": [],
+    "invented_keys": [],
+    "irrelevant_cited": [],
+    "unsourced_labels": 0,
+    "words": 0,
+    "lang_guess": "en"
+   }
+  },
+  {
+   "id": "Q03",
+   "lang": "fr",
+   "kind": "mechanism",
+   "question": "Pourquoi le sel ralentit-il la fermentation ? Si je mets 2 % de sel, est-ce que ça change beaucoup ?",
+   "final": "",
+   "error": "429 Provider returned error {\"raw\":\"google/gemma-4-31b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own provider key to use your own limits: https://openrouter.ai/workspaces/default/byok\",\"provider_name\":\"Google AI Studio\",\"is_byok\":false,\"provider_error_code\":\"429\",\"limit_source\":\"upstream_p",
+   "tool_calls": [],
+   "totals": {
+    "calls": 0,
+    "cost": 0,
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "reasoning_tokens": 0,
+    "cached_tokens": 0,
+    "ms": 0,
+    "providers": []
+   },
+   "calls": [],
+   "auto": {
+    "searched": false,
+    "n_search": 0,
+    "engine_calls": [],
+    "cited": [],
+    "invented_keys": [],
+    "irrelevant_cited": [],
+    "unsourced_labels": 0,
+    "words": 0,
+    "lang_guess": "en"
+   }
+  },
+  {
+   "id": "Q04",
+   "lang": "en",
+   "kind": "mechanism",
+   "question": "Does a stiff starter make a more sour bread than a liquid one? Why?",
+   "final": "",
+   "error": "429 Provider returned error {\"raw\":\"google/gemma-4-31b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own provider key to use your own limits: https://openrouter.ai/workspaces/default/byok\",\"provider_name\":\"Google AI Studio\",\"is_byok\":false,\"provider_error_code\":\"429\",\"limit_source\":\"upstream_p",
+   "tool_calls": [],
+   "totals": {
+    "calls": 0,
+    "cost": 0,
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "reasoning_tokens": 0,
+    "cached_tokens": 0,
+    "ms": 0,
+    "providers": []
+   },
+   "calls": [],
+   "auto": {
+    "searched": false,
+    "n_search": 0,
+    "engine_calls": [],
+    "cited": [],
+    "invented_keys": [],
+    "irrelevant_cited": [],
+    "unsourced_labels": 0,
+    "words": 0,
+    "lang_guess": "en"
+   }
+  },
+  {
+   "id": "Q05",
+   "lang": "fr",
+   "kind": "numeric",
+   "question": "Je veux faire 2 pains de 900 g chacun, hydratation 75 %, sel 2 %, levain liquide (100 %) à 20 %. Donne-moi les pesées.",
+   "final": "",
+   "error": "429 Provider returned error {\"raw\":\"google/gemma-4-31b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own provider key to use your own limits: https://openrouter.ai/workspaces/default/byok\",\"provider_name\":\"Google AI Studio\",\"is_byok\":false,\"provider_error_code\":\"429\",\"limit_source\":\"upstream_p",
+   "tool_calls": [],
+   "totals": {
+    "calls": 0,
+    "cost": 0,
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "reasoning_tokens": 0,
+    "cached_tokens": 0,
+    "ms": 0,
+    "providers": []
+   },
+   "calls": [],
+   "auto": {
+    "searched": false,
+    "n_search": 0,
+    "engine_calls": [],
+    "cited": [],
+    "invented_keys": [],
+    "irrelevant_cited": [],
+    "unsourced_labels": 0,
+    "words": 0,
+    "lang_guess": "en",
+    "args_ok": false
+   }
+  },
+  {
+   "id": "Q06",
+   "lang": "en",
+   "kind": "numeric",
+   "question": "My dough is sitting at 75°F and I used 15% levain. How long should bulk fermentation take?",
+   "final": "",
+   "error": "429 Provider returned error {\"raw\":\"google/gemma-4-31b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own provider key to use your own limits: https://openrouter.ai/workspaces/default/byok\",\"provider_name\":\"Google AI Studio\",\"is_byok\":false,\"provider_error_code\":\"429\",\"limit_source\":\"upstream_p",
+   "tool_calls": [],
+   "totals": {
+    "calls": 0,
+    "cost": 0,
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "reasoning_tokens": 0,
+    "cached_tokens": 0,
+    "ms": 0,
+    "providers": []
+   },
+   "calls": [],
+   "auto": {
+    "searched": false,
+    "n_search": 0,
+    "engine_calls": [],
+    "cited": [],
+    "invented_keys": [],
+    "irrelevant_cited": [],
+    "unsourced_labels": 0,
+    "words": 0,
+    "lang_guess": "en",
+    "args_ok": false
+   }
+  },
+  {
+   "id": "Q07",
+   "lang": "fr",
+   "kind": "numeric",
+   "question": "Avec 10 % de levain, combien de temps de pointage à 21 °C ? Et si je monte ma pâte à 26 °C ?",
+   "final": "",
+   "error": "429 Provider returned error {\"raw\":\"google/gemma-4-31b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own provider key to use your own limits: https://openrouter.ai/workspaces/default/byok\",\"provider_name\":\"Google AI Studio\",\"is_byok\":false,\"provider_error_code\":\"429\",\"limit_source\":\"upstream_p",
+   "tool_calls": [
+    {
+     "name": "predict_bulk_time",
+     "args": {
+      "dough_temp_c": 21,
+      "levain_pct": 10
+     }
+    },
+    {
+     "name": "predict_bulk_time",
+     "args": {
+      "dough_temp_c": 26,
+      "levain_pct": 10
+     }
+    }
+   ],
+   "totals": {
+    "calls": 1,
+    "cost": 0,
+    "prompt_tokens": 1661,
+    "completion_tokens": 238,
+    "reasoning_tokens": 180,
+    "cached_tokens": 0,
+    "ms": 7616,
+    "providers": [
+     "Google AI Studio"
+    ]
+   },
+   "calls": [
+    {
+     "q": "Q07",
+     "i": 0,
+     "model": "google/gemma-4-31b-it:free",
+     "provider": "Google AI Studio",
+     "prompt_tokens": 1661,
+     "completion_tokens": 238,
+     "reasoning_tokens": 180,
+     "cached_tokens": 0,
+     "cache_write_tokens": 0,
+     "cost": 0,
+     "ms": 7616,
+     "finish": "tool_calls"
+    }
+   ],
+   "auto": {
+    "searched": false,
+    "n_search": 0,
+    "engine_calls": [
+     {
+      "name": "predict_bulk_time",
+      "args": {
+       "dough_temp_c": 21,
+       "levain_pct": 10
+      }
+     },
+     {
+      "name": "predict_bulk_time",
+      "args": {
+       "dough_temp_c": 26,
+       "levain_pct": 10
+      }
+     }
+    ],
+    "cited": [],
+    "invented_keys": [],
+    "irrelevant_cited": [],
+    "unsourced_labels": 0,
+    "words": 0,
+    "lang_guess": "en",
+    "args_ok": true
+   }
+  },
+  {
+   "id": "Q08",
+   "lang": "en",
+   "kind": "numeric",
+   "question": "I want 3 baguettes of 350 g each: 68% hydration, 1.8% salt, 0.5% instant yeast, no levain. What do I weigh out?",
+   "final": "",
+   "error": "429 Provider returned error {\"raw\":\"google/gemma-4-31b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own provider key to use your own limits: https://openrouter.ai/workspaces/default/byok\",\"provider_name\":\"Google AI Studio\",\"is_byok\":false,\"provider_error_code\":\"429\",\"limit_source\":\"upstream_p",
+   "tool_calls": [],
+   "totals": {
+    "calls": 0,
+    "cost": 0,
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "reasoning_tokens": 0,
+    "cached_tokens": 0,
+    "ms": 0,
+    "providers": []
+   },
+   "calls": [],
+   "auto": {
+    "searched": false,
+    "n_search": 0,
+    "engine_calls": [],
+    "cited": [],
+    "invented_keys": [],
+    "irrelevant_cited": [],
+    "unsourced_labels": 0,
+    "words": 0,
+    "lang_guess": "en",
+    "args_ok": false
+   }
+  },
+  {
+   "id": "Q09",
+   "lang": "fr",
+   "kind": "grounding",
+   "question": "Ma mie de pain 100 % seigle est collante alors que j'ai bien cuit. Pourquoi ? Et à quelle température à cœur un pain de seigle est-il cuit ?",
+   "final": "",
+   "error": "429 Provider returned error {\"raw\":\"google/gemma-4-31b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own provider key to use your own limits: https://openrouter.ai/workspaces/default/byok\",\"provider_name\":\"Google AI Studio\",\"is_byok\":false,\"provider_error_code\":\"429\",\"limit_source\":\"upstream_p",
+   "tool_calls": [],
+   "totals": {
+    "calls": 0,
+    "cost": 0,
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "reasoning_tokens": 0,
+    "cached_tokens": 0,
+    "ms": 0,
+    "providers": []
+   },
+   "calls": [],
+   "auto": {
+    "searched": false,
+    "n_search": 0,
+    "engine_calls": [],
+    "cited": [],
+    "invented_keys": [],
+    "irrelevant_cited": [],
+    "unsourced_labels": 0,
+    "words": 0,
+    "lang_guess": "en"
+   }
+  },
+  {
+   "id": "Q10",
+   "lang": "en",
+   "kind": "grounding",
+   "question": "What does an autolyse actually do, and is it worth it for a whole wheat dough?",
+   "final": "",
+   "error": "429 Provider returned error {\"raw\":\"google/gemma-4-31b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own provider key to use your own limits: https://openrouter.ai/workspaces/default/byok\",\"provider_name\":\"Google AI Studio\",\"is_byok\":false,\"provider_error_code\":\"429\",\"limit_source\":\"upstream_p",
+   "tool_calls": [],
+   "totals": {
+    "calls": 0,
+    "cost": 0,
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "reasoning_tokens": 0,
+    "cached_tokens": 0,
+    "ms": 0,
+    "providers": []
+   },
+   "calls": [],
+   "auto": {
+    "searched": false,
+    "n_search": 0,
+    "engine_calls": [],
+    "cited": [],
+    "invented_keys": [],
+    "irrelevant_cited": [],
+    "unsourced_labels": 0,
+    "words": 0,
+    "lang_guess": "en"
+   }
+  },
+  {
+   "id": "Q11",
+   "lang": "fr",
+   "kind": "grounding",
+   "question": "L'eau du robinet chlorée peut-elle tuer mon levain ? Faut-il utiliser de l'eau minérale ?",
+   "final": "",
+   "error": "429 Provider returned error {\"raw\":\"google/gemma-4-31b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own provider key to use your own limits: https://openrouter.ai/workspaces/default/byok\",\"provider_name\":\"Google AI Studio\",\"is_byok\":false,\"provider_error_code\":\"429\",\"limit_source\":\"upstream_p",
+   "tool_calls": [],
+   "totals": {
+    "calls": 0,
+    "cost": 0,
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "reasoning_tokens": 0,
+    "cached_tokens": 0,
+    "ms": 0,
+    "providers": []
+   },
+   "calls": [],
+   "auto": {
+    "searched": false,
+    "n_search": 0,
+    "engine_calls": [],
+    "cited": [],
+    "invented_keys": [],
+    "irrelevant_cited": [],
+    "unsourced_labels": 0,
+    "words": 0,
+    "lang_guess": "en"
+   }
+  },
+  {
+   "id": "Q12",
+   "lang": "en",
+   "kind": "grounding",
+   "question": "My friend has celiac disease. If I ferment an einkorn sourdough for 48 hours, will it be safe for her?",
+   "final": "",
+   "error": "429 Provider returned error {\"raw\":\"google/gemma-4-31b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own provider key to use your own limits: https://openrouter.ai/workspaces/default/byok\",\"provider_name\":\"Google AI Studio\",\"is_byok\":false,\"provider_error_code\":\"429\",\"limit_source\":\"upstream_p",
+   "tool_calls": [],
+   "totals": {
+    "calls": 0,
+    "cost": 0,
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "reasoning_tokens": 0,
+    "cached_tokens": 0,
+    "ms": 0,
+    "providers": []
+   },
+   "calls": [],
+   "auto": {
+    "searched": false,
+    "n_search": 0,
+    "engine_calls": [],
+    "cited": [],
+    "invented_keys": [],
+    "irrelevant_cited": [],
+    "unsourced_labels": 0,
+    "words": 0,
+    "lang_guess": "en"
+   }
+  }
+ ]
+}

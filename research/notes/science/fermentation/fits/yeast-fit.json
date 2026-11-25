@@ -1,0 +1,228 @@
+{
+  "dataset": "yeast_craig_chart.csv",
+  "n_cells": 918,
+  "n_fitted": 753,
+  "fit_rule": "cells >= 4 h (integer rounding and the 2 h floor distort shorter cells)",
+  "residual": "ln(predicted / chart)",
+  "models": {
+    "M_cf_calculator": {
+      "formula": "h = 30.91 * IDY%^-0.72 * exp(-0.110 * (degF - 35))",
+      "parameters_fitted": 0,
+      "rmse_ln": {
+        "all": 0.884896058239655,
+        "cold_below_8C": 0.04900692761476801,
+        "mid_8_to_28C": 0.7285533772047273,
+        "warm_28_to_35C": 1.6834448307129868
+      }
+    },
+    "M_exp": {
+      "formula": "h = A * d^-a * exp(-b (T - 25))",
+      "A_h": 0.9518169619365018,
+      "a": 0.7225198100748735,
+      "b_per_C": 0.13688760549991902,
+      "q10": 3.9309300624694115,
+      "parameters_fitted": 3,
+      "rmse_ln": {
+        "all": 0.1026920301164485,
+        "cold_below_8C": 0.12884826988837533,
+        "mid_8_to_28C": 0.06520635546112376,
+        "warm_28_to_35C": 0.18401887673304174
+      }
+    },
+    "M_ctmi": {
+      "formula": "h = A * d^-a / (CTMI(T) / CTMI(25))",
+      "A_h": 1.3972710117675746,
+      "a": 0.6419282940531373,
+      "t_min": -2.2281341418397185,
+      "t_opt": 40.706648387892855,
+      "t_max": 40.70652716814605,
+      "parameters_fitted": 5,
+      "note": "t_opt runs into t_max: the chart never turns down below 35 C, and the CTMI's quadratic foot does not follow the chart's near-exponential cold tail",
+      "rmse_ln": {
+        "all": 0.2653285579549939,
+        "cold_below_8C": 0.26205475611729373,
+        "mid_8_to_28C": 0.22888307419442044,
+        "warm_28_to_35C": 0.39739223367139404
+      }
+    },
+    "M_card": {
+      "formula": "h = A * d^-a * exp(-c (T - 25)) * ((Tmax - 25) / (Tmax - T))^b",
+      "A_h": 0.9104640767693228,
+      "a": 0.7192546294262353,
+      "b": 1.3194014235965743,
+      "c_per_C": 0.19011578954606836,
+      "t_max": 45.0,
+      "t_opt": 38.06001133968486,
+      "se": {
+        "ln_A": 0.006916321885452801,
+        "a": 0.0018101689912588179,
+        "b": 0.028382567647219033,
+        "c": 0.0011737278411680446
+      },
+      "parameters_fitted": 4,
+      "rmse_ln": {
+        "all": 0.05209940038641952,
+        "cold_below_8C": 0.04369881631009285,
+        "mid_8_to_28C": 0.052340640551483124,
+        "warm_28_to_35C": 0.05892772844034025
+      }
+    }
+  },
+  "chosen": "M_card",
+  "engine_defaults": {
+    "A": 0.91,
+    "a": 0.72,
+    "b": 1.32,
+    "c": 0.19,
+    "t_max": 45.0
+  },
+  "local_q10_of_engine_curve": {
+    "7": 4.714325389924067,
+    "15": 4.2881553308600715,
+    "20": 3.9148854012274814,
+    "25": 3.4065845006339557,
+    "30": 2.677934321226894
+  },
+  "engine_rmse_ln_on_chart": {
+    "all": 0.052137472031155686,
+    "cold_below_8C": 0.044164935370804584,
+    "mid_8_to_28C": 0.052286470814220554,
+    "warm_28_to_35C": 0.05900772811977172
+  },
+  "validation_isothermal": {
+    "ext:biga:ripe": {
+      "n": 13,
+      "median_ln_obs_over_engine": 0.879,
+      "time_factor": 2.41,
+      "sd_ln": 0.458
+    },
+    "ext:direct dough:doubled": {
+      "n": 5,
+      "median_ln_obs_over_engine": 0.037,
+      "time_factor": 1.04,
+      "sd_ln": 0.718
+    },
+    "ext:direct dough:schedule/other": {
+      "n": 28,
+      "median_ln_obs_over_engine": 0.446,
+      "time_factor": 1.56,
+      "sd_ln": 0.563
+    },
+    "ext:direct dough:unspecified": {
+      "n": 31,
+      "median_ln_obs_over_engine": 1.04,
+      "time_factor": 2.83,
+      "sd_ln": 0.35
+    },
+    "ext:dough with poolish:schedule/other": {
+      "n": 1,
+      "median_ln_obs_over_engine": 1.16,
+      "time_factor": 3.19,
+      "sd_ln": null
+    },
+    "ext:dough with ~10-17% poolish:schedule/other": {
+      "n": 4,
+      "median_ln_obs_over_engine": 0.262,
+      "time_factor": 1.3,
+      "sd_ln": 0.543
+    },
+    "ext:dough:schedule/other": {
+      "n": 24,
+      "median_ln_obs_over_engine": 0.174,
+      "time_factor": 1.19,
+      "sd_ln": 0.431
+    },
+    "ext:poolish:ripe": {
+      "n": 33,
+      "median_ln_obs_over_engine": 0.496,
+      "time_factor": 1.64,
+      "sd_ln": 0.422
+    },
+    "ext:p\u00e2te ferment\u00e9e:ripe": {
+      "n": 1,
+      "median_ln_obs_over_engine": 0.145,
+      "time_factor": 1.16,
+      "sd_ln": null
+    },
+    "ext:sponge:ripe": {
+      "n": 1,
+      "median_ln_obs_over_engine": 0.694,
+      "time_factor": 2.0,
+      "sd_ln": null
+    },
+    "own:bakerpedia-poolish": {
+      "n": 4,
+      "median_ln_obs_over_engine": 1.168,
+      "time_factor": 3.22,
+      "sd_ln": 0.296
+    },
+    "own:breadcode-basic-bread": {
+      "n": 1,
+      "median_ln_obs_over_engine": 0.496,
+      "time_factor": 1.64,
+      "sd_ln": null
+    },
+    "own:breadcode-pizza": {
+      "n": 1,
+      "median_ln_obs_over_engine": -0.02,
+      "time_factor": 0.98,
+      "sd_ln": null
+    },
+    "own:technomitron-poolish": {
+      "n": 8,
+      "median_ln_obs_over_engine": 0.661,
+      "time_factor": 1.94,
+      "sd_ln": 0.207
+    },
+    "own:weekendbakery-poolish": {
+      "n": 3,
+      "median_ln_obs_over_engine": 0.651,
+      "time_factor": 1.92,
+      "sd_ln": 0.298
+    }
+  },
+  "ripe_poolish_factor": {
+    "n": 48,
+    "median": 1.89,
+    "quartiles": [
+      1.38,
+      2.24
+    ],
+    "meaning": "hours to a ripe poolish divided by engine hours to 'doubled' at the same dose and temperature"
+  },
+  "dose_exponent_independent": {
+    "technomitron_poolish_22_24C": [
+      0.704,
+      8
+    ],
+    "bakerpedia_poolish_26_29C": [
+      0.898,
+      4
+    ],
+    "weekendbakery_poolish": [
+      0.39,
+      3
+    ]
+  },
+  "within_source_temperature_slope": {
+    "method": "ln h = source effect - a ln d - b (T - 25) over sources with at least 3 rows and 2 temperatures",
+    "groups": 7,
+    "n": 63,
+    "a": 0.629,
+    "b_per_C": 0.074,
+    "time_q10": 2.1,
+    "resid_sd_ln": 0.269,
+    "note": "18-30 C; dominated by one calculator table and by proof-stage pairs; the chart's own slope there is 0.137 per C"
+  },
+  "validation_cold_profiles": {
+    "n": 41,
+    "median_progress_P": 0.75,
+    "quartiles_P": [
+      0.54,
+      1.33
+    ],
+    "sd_ln_P": 0.805,
+    "assumption": "dough ball cooling time constant 1.5 h; warm phase before the fridge counted; warm-up before baking not counted",
+    "reading": "P is the engine's progress toward 'doubled' at the end of the published schedule; published cold schedules sit above P = 1 when they are conservative"
+  }
+}

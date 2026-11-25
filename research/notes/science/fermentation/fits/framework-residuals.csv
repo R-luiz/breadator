@@ -1,0 +1,13 @@
+condition,model,temp_c,observed_pct,predicted_pct,residual_pct,loocv_predicted_pct,loocv_residual_pct,source
+recently_fed,linear,20,15,15.0,0.0,15.0,0.0,The Sourdough Framework table 7.1
+recently_fed,linear,25,10,10.0,0.0,10.0,0.0,The Sourdough Framework table 7.1
+recently_fed,linear,30,5,5.0,0.0,5.0,0.0,The Sourdough Framework table 7.1
+recently_fed,exponential,20,15,15.736725951324718,0.7367259513247184,20.000000000000014,5.000000000000014,The Sourdough Framework table 7.1
+recently_fed,exponential,25,10,9.085602964160698,-0.9143970358393023,8.660254037844386,-1.3397459621556145,The Sourdough Framework table 7.1
+recently_fed,exponential,30,5,5.24557531710824,0.24557531710823977,6.666666666666667,1.666666666666667,The Sourdough Framework table 7.1
+starving,linear,20,10,9.583333333333332,-0.41666666666666785,7.5,-2.5,The Sourdough Framework table 7.1
+starving,linear,25,5,5.833333333333332,0.8333333333333321,6.25,1.25,The Sourdough Framework table 7.1
+starving,linear,30,2.5,2.083333333333332,-0.41666666666666785,0.0,-2.5,The Sourdough Framework table 7.1
+starving,exponential,20,10,10.000000000000002,1.7763568394002505e-15,9.999999999999998,-1.7763568394002505e-15,The Sourdough Framework table 7.1
+starving,exponential,25,5,5.000000000000001,8.881784197001252e-16,5.000000000000001,8.881784197001252e-16,The Sourdough Framework table 7.1
+starving,exponential,30,2.5,2.5,0.0,2.5,0.0,The Sourdough Framework table 7.1

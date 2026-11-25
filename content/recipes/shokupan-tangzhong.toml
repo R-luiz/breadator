@@ -1,0 +1,33 @@
+bread_type = "enriched-pan"
+sources = ["novita-0480", "novita-0487", "novita-0477", "novita-0484", "novita-0486", "novita-0479", "novita-0482", "novita-0488", "novita-0489", "novita-0490", "novita-0478"]
+title = { fr = "Shokupan : pain de mie au lait et au tangzhong", en = "Shokupan: tangzhong milk bread" }
+description = { fr = "D'après le shokupan de Novita Listyani : un pain de mie au lait en pâte directe, avec 20 % de la farine en empois, du lait et un œuf entier, cuit en moule fermé.", en = "After Novita Listyani's shokupan: a straight yeasted milk loaf with 20 % of the flour scalded, milk and a whole egg, baked in a lidded pan." }
+steps = [
+  { fr = "Empois : versez l'eau bouillante dans un bol, ajoutez d'un coup la farine de l'empois et remuez vivement jusqu'à obtenir une pâte lisse. Couvrez et laissez refroidir. Une nuit au réfrigérateur est facultative ; l'autrice la recommande pour un pain plus sucré.", en = "Scald: pour the boiling water into a bowl, add the scald flour at once and stir quickly into a smooth paste. Cover and let it cool. A night in the refrigerator is optional; the author recommends it for a sweeter loaf." },
+  { fr = "Mettez l'empois, le lait, l'œuf, le sucre, le sel, la levure et la farine dans un robot pétrisseur : quelques instants à petite vitesse, puis environ 4 min à vitesse moyenne-rapide. Ajoutez le beurre ramolli et pétrissez encore 5 à 6 min.", en = "Put the scald, milk, egg, sugar, salt, yeast and flour in a stand mixer: a few moments on low speed, then about 4 min on medium-high. Add the softened butter and mix 5 to 6 min more." },
+  { fr = "Arrêtez dès que la pâte est lisse, laisse le bol propre et passe le test du voile : une pâte à empois demande un pétrissage plus long mais supporte mal le surpétrissage, et son voile ne s'étire pas aussi fin que celui d'une pâte ordinaire.", en = "Stop as soon as the dough is smooth, leaves the bowl clean and passes the windowpane test: a scalded dough needs a longer mix but tolerates overmixing badly, and it does not stretch as thin as a plain dough." },
+  { fr = "Pointage : jusqu'au doublement, environ 1 h (60 à 90 min) dans une pièce à 25–29 °C. Le calculateur de fermentation donne la durée pour la température de votre pâte.", en = "Bulk fermentation: until doubled, about 1 h (60 to 90 min) in a room at 25 to 29 °C. The fermentation calculator gives the time for your own dough temperature." },
+  { fr = "Dégazez la pâte, divisez-la en 2 pâtons, boulez-les sans serrer et laissez 10 min de détente.", en = "Deflate the dough, divide it into 2 pieces, round them loosely and rest 10 min." },
+  { fr = "Abaissez chaque pâton en un rectangle d'environ 35 cm de long, rabattez les grands côtés vers le milieu et roulez serré en soudant la clé. Posez les deux rouleaux côte à côte dans un moule à pain de mie graissé, spirales en sens opposés.", en = "Roll each piece into a rectangle about 35 cm long, fold the long sides to the middle and roll it up tightly, sealing the seam. Place the two rolls side by side in a greased lidded loaf pan, their spirals turning in opposite directions." },
+  { fr = "Apprêt : jusqu'à ce que la pâte arrive juste sous le bord, environ 1 h 30 (60 à 120 min) à 25–29 °C ; une pâte à empois demande souvent plus de temps qu'une pâte ordinaire.", en = "Final proof: until the dough is just below the rim, about 1.5 h (60 to 120 min) at 25 to 29 °C; a scalded dough often needs longer than a plain one." },
+  { fr = "Fermez le couvercle et cuisez sur la grille du bas à 190 °C : 15 min en chaleur statique (voûte et sole), puis environ 20 min en sole seule. Adaptez à votre four.", en = "Close the lid and bake on the bottom rack at 190 °C: 15 min with top and bottom heat, then about 20 min with bottom heat only. Adjust to your oven." },
+]
+notes = { fr = "Fournée de la source : empois de 60 g de farine et 120 g d'eau bouillante ; pétrin de 240 g de farine, 50 g de lait, 50 g d'œuf entier, 18 g de sucre, 15 g de beurre, 5 g de sel et 1,8 g de levure instantanée (une demi-cuillère à café). L'autrice compte 67,7 % d'hydratation avec ses propres coefficients pour le lait, l'œuf et le beurre ; le calculateur utilise ses propres compositions. Environ 560 g de pâte conviennent à son moule ; elle vise 257 à 286 g de pâte par litre de volume du moule : adaptez la quantité au vôtre avec le calculateur de formule. Pour une pâte à 20 % de farine en empois, elle considère environ 71 % d'hydratation comme un plafond. La source ne dit pas combien d'eau l'empois perd en refroidissant : pesez-le froid et rajoutez ce qui manque. Les pourcentages sont arrondis à 0,01 point (0,001 en dessous de 1 %) ; les poids donnés par le calculateur restent à moins de 0,2 % de ceux de la source.", en = "Source batch: scald of 60 g flour and 120 g boiling water; final mix of 240 g flour, 50 g milk, 50 g whole egg, 18 g sugar, 15 g butter, 5 g salt and 1.8 g instant yeast (half a teaspoon). The author counts 67.7 % hydration with her own factors for milk, egg and butter; the calculator uses its own compositions. About 560 g of dough suits her pan; she aims for 257 to 286 g of dough per litre of pan volume, so rescale to your pan with the formula calculator. For a dough with 20 % scalded flour she treats about 71 % hydration as the ceiling. The source does not say how much water the scald loses on cooling: weigh it cold and add back what is missing. Percentages are rounded to 0.01 point (0.001 below 1 %); the weights the calculator gives stay within 0.2 % of the source's." }
+
+[formula]
+target = { by = "pieces", count = 1, grams = 559.8 }
+flours = [
+  { id = "bread_flour", pct = 100 },
+]
+ingredients = [
+  { id = "water", kind = "water", pct = 40 },
+  { id = "milk", kind = "milk", pct = 16.67 },
+  { id = "egg", kind = "egg", pct = 16.67 },
+  { id = "sugar", kind = "sugar", pct = 6 },
+  { id = "butter", kind = "butter", pct = 5 },
+  { id = "salt", kind = "salt", pct = 1.67 },
+  { id = "instant_yeast", kind = "instant_yeast", pct = 0.6 },
+]
+stages = [
+  { id = "scald", kind = "scald", flour_pct = 20, liquid_pct = 200 },
+]

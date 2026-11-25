@@ -1,0 +1,34 @@
+bread_type = "rolls"
+sources = ["novita-0765", "novita-0764", "novita-0766", "novita-0767", "novita-0768", "novita-0769", "novita-0770", "novita-0771"]
+title = { fr = "Pains à burger sur tangzhong, poolish et œuf", en = "Burger buns with tangzhong, poolish and egg" }
+description = { fr = "D'après les pains à burger de Novita Listyani : six pains moelleux au lait et à l'œuf entier, avec un empois à 1:1, une poolish d'une nuit pour le goût et un ajout de levure au pétrin.", en = "After Novita Listyani's burger buns: six soft buns with milk and a whole egg, a 1:1 scald, an overnight poolish for flavour and extra yeast in the final mix." }
+steps = [
+  { fr = "Poolish (la veille) : mélangez son eau, sa levure et sa farine jusqu'à homogénéité. Laissez environ 2 h à température ambiante, jusqu'à ce qu'elle ait levé (plus longtemps dans une cuisine fraîche), puis gardez une nuit au réfrigérateur.", en = "Poolish (the day before): mix its water, yeast and flour until homogeneous. Leave it about 2 h at room temperature, until risen (longer in a cool kitchen), then refrigerate overnight." },
+  { fr = "Empois (la veille) : incorporez vivement la farine de l'empois dans le même poids d'eau bouillante, en gardant le mélange au-dessus de 65 °C pendant que vous remuez. Couvrez, laissez refroidir et gardez une nuit au réfrigérateur.", en = "Scald (the day before): stir the scald flour quickly into the same weight of boiling water, keeping the mixture above 65 °C while you mix. Cover, let it cool and refrigerate overnight." },
+  { fr = "Au robot pétrisseur muni du crochet, réunissez le lait, l'œuf, le sucre, le sel, le reste de levure, la farine, l'empois et la poolish : 3 à 4 min à vitesse moyenne-rapide, jusqu'à former une boule lisse et serrée autour du crochet.", en = "In a stand mixer with the dough hook, combine the milk, egg, sugar, salt, remaining yeast, flour, scald and poolish: 3 to 4 min on medium-high speed, until a smooth, tight ball forms around the hook." },
+  { fr = "Ajoutez le beurre mou : 20 à 30 s à petite vitesse, puis 4 à 5 min à vitesse moyenne-rapide. La pâte semble se défaire, puis se reforme, lisse, en laissant le fond du bol propre. Vérifiez le voile : aucune fermentation longue ne viendra ici achever le gluten.", en = "Add the soft butter: 20 to 30 s on low speed, then 4 to 5 min on medium-high. The dough seems to fall apart, then comes together again, smooth, leaving the bottom of the bowl clean. Check the windowpane: no long fermentation will finish the gluten here." },
+  { fr = "Pointage : environ 1 h à la température ambiante de la source, jusqu'à ce que la pâte ait au moins doublé. Le calculateur de fermentation donne la durée pour la température de votre pâte.", en = "Bulk fermentation: about 1 h at the source's room temperature, until at least doubled. The fermentation calculator gives the time for your own dough temperature." },
+  { fr = "Dégazez, divisez en 6 pâtons d'environ 80 g et boulez-les aussitôt, sans détente. Posez-les sur une plaque garnie de papier cuisson.", en = "Deflate, divide into 6 pieces of about 80 g and round them straight away, without a bench rest. Set them on a lined baking tray." },
+  { fr = "Apprêt : environ 70 min à la même température, jusqu'à ce que les pains aient presque doublé de volume. Trop peu poussés, ils sont denses ; trop poussés, ils gonflent puis retombent.", en = "Final proof: about 70 min at the same temperature, until almost twice their volume. Under-proofed buns are dense; over-proofed ones swell and collapse." },
+  { fr = "Dorez à l'œuf battu avec un peu de lait et parsemez de graines de sésame. Cuisez sur la grille du milieu en chaleur statique (voûte et sole) : 12 min à 180 °C, puis 8 min à 150 °C.", en = "Brush with egg beaten with a little milk and sprinkle with sesame seeds. Bake on the middle rack with top and bottom heat: 12 min at 180 °C, then 8 min at 150 °C." },
+]
+notes = { fr = "Fournée de la source pour 6 pains : empois de 50 g de farine et 50 g d'eau bouillante ; poolish de 50 g de farine, 50 g d'eau et 0,6 g de levure instantanée (un huitième de cuillère à café) ; pétrin de 150 g de farine, 45 g de lait, 45 g d'œuf entier, 20 g de sucre, 4 g de sel, 1,2 g de levure instantanée (un quart de cuillère à café) et 10 g de beurre doux (475,8 g de pâte). L'autrice compte 69,7 % d'hydratation avec ses propres coefficients pour le lait, l'œuf et le beurre ; le calculateur utilise ses propres compositions. La dorure et le sésame sont hors formule. Elle indique que ces pains restent moelleux et peuvent se préparer à l'avance. La source ne dit pas combien d'eau l'empois perd en refroidissant : pesez-le froid et rajoutez ce qui manque. Les pourcentages sont arrondis à 0,01 point (0,001 en dessous de 1 %) ; les poids donnés par le calculateur restent à moins de 0,1 % de ceux de la source.", en = "Source batch for 6 buns: scald of 50 g flour and 50 g boiling water; poolish of 50 g flour, 50 g water and 0.6 g instant yeast (an eighth of a teaspoon); final mix of 150 g flour, 45 g milk, 45 g whole egg, 20 g sugar, 4 g salt, 1.2 g instant yeast (a quarter teaspoon) and 10 g unsalted butter (475.8 g of dough). The author counts 69.7 % hydration with her own factors for milk, egg and butter; the calculator uses its own compositions. The egg wash and the sesame are outside the formula. She says the buns stay soft and can be made ahead. The source does not say how much water the scald loses on cooling: weigh it cold and add back what is missing. Percentages are rounded to 0.01 point (0.001 below 1 %); the weights the calculator gives stay within 0.1 % of the source's." }
+
+[formula]
+target = { by = "pieces", count = 6, grams = 79.3 }
+flours = [
+  { id = "bread_flour", pct = 100 },
+]
+ingredients = [
+  { id = "water", kind = "water", pct = 40 },
+  { id = "milk", kind = "milk", pct = 18 },
+  { id = "egg", kind = "egg", pct = 18 },
+  { id = "sugar", kind = "sugar", pct = 8 },
+  { id = "butter", kind = "butter", pct = 4 },
+  { id = "salt", kind = "salt", pct = 1.6 },
+  { id = "instant_yeast", kind = "instant_yeast", pct = 0.72 },
+]
+stages = [
+  { id = "scald", kind = "scald", flour_pct = 20, liquid_pct = 100 },
+  { id = "poolish", kind = "poolish", flour_pct = 20, liquid_pct = 100, extras = [{ ingredient = "instant_yeast", pct = 1.2 }] },
+]

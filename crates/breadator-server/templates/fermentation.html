@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+{% import "macros.html" as m %}
+{% block content %}
+<h1>{{ layout.tr.t("ferment-title") }}</h1>
+<p class="lead">{{ layout.tr.t("ferment-lead") }}</p>
+<div class="calc" data-island="fermentation">
+<form class="inputs" method="get" action="{{ layout.href("/calculators/fermentation") }}">
+  <fieldset>
+    <legend>{{ layout.tr.t("ferment-question") }}</legend>
+    <label class="choice"><input type="radio" name="solve" value="time" {{ self.chk("solve", "time") }}> {{ layout.tr.t("ferment-solve-time") }}</label>
+    <label class="choice"><input type="radio" name="solve" value="dose" {{ self.chk("solve", "dose") }}> {{ layout.tr.t("ferment-solve-dose") }}</label>
+    <div data-when="dose">{% call m::num("target_h", layout.tr.t("ferment-target"), self.v(form.target_h), "h", "0.5", "96", layout.tr.t("ferment-target-hint")) %}{% endcall %}</div>
+  </fieldset>
+  <fieldset>
+    <legend>{{ layout.tr.t("ferment-leavening") }}</legend>
+    <label class="field"><span class="label">{{ layout.tr.t("ferment-leavening-kind") }}</span>
+      <select name="leavening">
+        <option value="sourdough" {{ self.sel("leavening", "sourdough") }}>{{ layout.tr.t("leavening-sourdough") }}</option>
+        <option value="instant_yeast" {{ self.sel("leavening", "instant_yeast") }}>{{ layout.tr.t("entry-instant_yeast") }}</option>
+        <option value="active_dry_yeast" {{ self.sel("leavening", "active_dry_yeast") }}>{{ layout.tr.t("entry-active_dry_yeast") }}</option>
+        <option value="fresh_yeast" {{ self.sel("leavening", "fresh_yeast") }}>{{ layout.tr.t("entry-fresh_yeast") }}</option>
+        <option value="osmotolerant_yeast" {{ self.sel("leavening", "osmotolerant_yeast") }}>{{ layout.tr.t("entry-osmotolerant_yeast") }}</option>
+      </select>
+    </label>
+    <div data-when="time">{% call m::num("dose", layout.tr.t("ferment-dose"), self.v(form.dose_pct), "%", "0", "200", layout.tr.t("ferment-dose-hint")) %}{% endcall %}</div>
+    <div data-when="sourdough">
+    {% call m::num("starter_hyd", layout.tr.t("ferment-starter-hyd"), self.v(form.starter_hydration_pct), "%", "30", "300", "") %}{% endcall %}
+    <label class="field"><span class="label">{{ layout.tr.t("ferment-starter-state") }}</span>
+      <select name="starter_state">
+        <option value="ripe" {{ self.sel("starter_state", "ripe") }}>{{ layout.tr.t("starter-ripe") }}</option>
+        <option value="from_fridge" {{ self.sel("starter_state", "from_fridge") }}>{{ layout.tr.t("starter-from-fridge") }}</option>
+      </select>
+    </label>
+    </div>
+    <label class="field"><span class="label">{{ layout.tr.t("ferment-endpoint") }}</span>
+      <select name="endpoint">
+        <option value="rise25" {{ self.sel("endpoint", "rise25") }}>{{ layout.tr.t("endpoint-rise25") }}</option>
+        <option value="rise50" {{ self.sel("endpoint", "rise50") }}>{{ layout.tr.t("endpoint-rise50") }}</option>
+        <option value="rise75" {{ self.sel("endpoint", "rise75") }}>{{ layout.tr.t("endpoint-rise75") }}</option>
+        <option value="doubled" {{ self.sel("endpoint", "doubled") }}>{{ layout.tr.t("endpoint-doubled") }}</option>
+        <option value="tripled" {{ self.sel("endpoint", "tripled") }}>{{ layout.tr.t("endpoint-tripled") }}</option>
+        <option value="ripe_poolish" {{ self.sel("endpoint", "ripe_poolish") }}>{{ layout.tr.t("endpoint-ripe_poolish") }}</option>
+      </select>
+      <small class="hint">{{ layout.tr.t("ferment-endpoint-hint") }}</small>
+    </label>
+  </fieldset>
+  <fieldset>
+    <legend>{{ layout.tr.t("ferment-temperatures") }}</legend>
+    {% call m::num("dough_c", layout.tr.t("ferment-dough-c"), self.v(form.dough_c), "°C", "0", "45", layout.tr.t("ferment-dough-c-hint")) %}{% endcall %}
+    {% call m::num("room_c", layout.tr.t("ferment-room-c"), self.v(form.room_c), "°C", "0", "45", "") %}{% endcall %}
+    {% call m::num("warm_h", layout.tr.t("ferment-warm-h"), self.v(form.warm_h), "h", "0", "72", layout.tr.t("ferment-warm-h-hint")) %}{% endcall %}
+    {% call m::num("fridge_h", layout.tr.t("ferment-fridge-h"), self.v(form.fridge_h), "h", "0", "120", layout.tr.t("ferment-fridge-h-hint")) %}{% endcall %}
+    {% call m::num("fridge_c", layout.tr.t("ferment-fridge-c"), self.v(form.fridge_c), "°C", "-2", "12", "") %}{% endcall %}
+    {% call m::num("dough_g", layout.tr.t("ferment-dough-g"), self.v(form.dough_g), "g", "50", "20000", "") %}{% endcall %}
+    <label class="field"><span class="label">{{ layout.tr.t("ferment-container") }}</span>
+      <select name="container">
+        <option value="tub" {{ self.sel("container", "tub") }}>{{ layout.tr.t("container-tub") }}</option>
+        <option value="thick_bowl" {{ self.sel("container", "thick_bowl") }}>{{ layout.tr.t("container-thick_bowl") }}</option>
+        <option value="banneton" {{ self.sel("container", "banneton") }}>{{ layout.tr.t("container-banneton") }}</option>
+        <option value="pizza_tray" {{ self.sel("container", "pizza_tray") }}>{{ layout.tr.t("container-pizza_tray") }}</option>
+        <option value="bare_tray" {{ self.sel("container", "bare_tray") }}>{{ layout.tr.t("container-bare_tray") }}</option>
+      </select>
+    </label>
+  </fieldset>
+  <fieldset>
+    <legend>{{ layout.tr.t("ferment-dough") }}</legend>
+    {% call m::num("hydration", layout.tr.t("ferment-hydration"), self.v(form.dough.hydration_pct), "%", "0", "200", "") %}{% endcall %}
+    {% call m::num("salt", layout.tr.t("formula-salt"), self.v(form.dough.salt_pct), "%", "0", "5", "") %}{% endcall %}
+    {% call m::num("sugar", layout.tr.t("ferment-sugar"), self.v(form.dough.sugar_pct), "%", "0", "40", "") %}{% endcall %}
+    {% call m::num("fat", layout.tr.t("ferment-fat"), self.v(form.dough.fat_pct), "%", "0", "100", "") %}{% endcall %}
+    {% call m::num("whole_grain", layout.tr.t("ferment-whole-grain"), self.v(form.dough.whole_grain_pct), "%", "0", "100", "") %}{% endcall %}
+    {% call m::num("scalded", layout.tr.t("ferment-scalded"), self.v(form.dough.scalded_pct), "%", "0", "50", "") %}{% endcall %}
+    {% call m::num("spice", layout.tr.t("ferment-spice"), self.v(form.dough.spice_pct), "%", "0", "10", "") %}{% endcall %}
+    {% call m::num("cocoa", layout.tr.t("ferment-cocoa"), self.v(form.dough.cocoa_pct), "%", "0", "30", "") %}{% endcall %}
+    <label class="choice"><input type="checkbox" name="milk" value="1"{% if form.dough.milk %} checked{% endif %}> {{ layout.tr.t("ferment-milk") }}</label>
+    <label class="choice"><input type="checkbox" name="eggs" value="1"{% if form.dough.eggs %} checked{% endif %}> {{ layout.tr.t("ferment-eggs") }}</label>
+  </fieldset>
+  <button type="submit">{{ layout.tr.t("compute") }}</button>
+</form>
+<section class="results" aria-live="polite">
+  {% if let Some(e) = error %}<p class="error" role="alert">{{ e }}</p>{% endif %}
+  {% if let Some(r) = result %}
+  <p class="big"><strong>{{ r.headline }}</strong></p>
+  <p>{{ r.range }}</p>
+  {% if let Some(w) = r.where_ %}<p>{{ w }}</p>{% endif %}
+  {% for n in r.notes %}<p class="warning">{{ n }}</p>{% endfor %}
+  {% if !r.schedule.is_empty() %}
+  <h2>{{ layout.tr.t("ferment-schedule") }}</h2>
+  <table class="lines"><tbody>
+  {% for s in r.schedule %}<tr><th scope="row">{{ s.label }}</th><td class="g">{{ s.value }}</td><td>{{ s.detail }}</td></tr>
+  {% endfor %}</tbody></table>
+  {% endif %}
+  <h2>{{ layout.tr.t("ferment-factors") }}</h2>
+  <table class="lines"><tbody>
+  {% for s in r.modifiers %}<tr><th scope="row">{{ s.label }}</th><td class="g">{{ s.value }}</td><td>{{ s.detail }}</td></tr>
+  {% endfor %}</tbody></table>
+  {% endif %}
+  <h2>{{ layout.tr.t("ferment-how") }}</h2>
+  <p class="note">{{ layout.tr.t("ferment-how-model") }}</p>
+  <p class="note">{{ layout.tr.t("ferment-how-endpoint") }}</p>
+  <p class="note">{{ layout.tr.t("ferment-how-range") }}</p>
+  <ul class="note sources">
+    <li><a href="https://doi.org/10.1128/AEM.64.7.2616-2623.1998" rel="noopener noreferrer">Gänzle, Ehmann &amp; Hammes 1998, Appl. Environ. Microbiol. 64:2616</a></li>
+    <li><a href="https://www.the-sourdough-framework.com" rel="noopener noreferrer">Kleinwächter, The Sourdough Framework (CC BY-SA 4.0), Tables 7.1 and 7.3</a></li>
+    <li><a href="https://www.pizzamaking.com/forum/index.php?topic=26831.0" rel="noopener noreferrer">TXCraig1, yeast quantity chart, pizzamaking.com</a></li>
+    <li><a href="https://doi.org/10.3390/foods9070952" rel="noopener noreferrer">Carcea et al. 2020, Foods 9:952 (salt)</a></li>
+  </ul>
+</section>
+</div>
+{% endblock %}

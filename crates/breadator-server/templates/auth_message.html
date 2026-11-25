@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="narrow"{% if wipe %} data-island="account" data-wipe-local{% endif %}>
+<h1>{{ title }}</h1>
+<p class="lead">{{ text }}</p>
+<p><a class="button" href="{{ action_href }}">{{ action_label }}</a></p>
+</div>
+{% endblock %}

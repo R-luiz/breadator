@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="narrow">
+<h1>{{ layout.tr.t("auth-check-title") }}</h1>
+<p class="lead">{{ text }}</p>
+<p class="note">{{ layout.tr.t("auth-check-hint") }}</p>
+<p><a href="{{ layout.href("/account/sign-in") }}">{{ layout.tr.t("auth-check-retry") }}</a></p>
+</div>
+{% endblock %}

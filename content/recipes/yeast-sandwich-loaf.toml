@@ -1,0 +1,24 @@
+bread_type = "pan"
+sources = ["breadcode-1737", "breadcode-1738", "breadcode-1739", "breadcode-1740", "breadcode-1741", "breadcode-1743", "breadcode-1742", "breadcode-1744"]
+title = { fr = "Pain de mie à la levure sans pétrissage", en = "No-knead yeasted sandwich loaf" }
+description = { fr = "D'après le pain de mie à la levure de Hendrik Kleinwächter (The Bread Code) : une pâte directe de farine, eau, sel et levure sèche, mélangée une minute et cuite en moule avec de la vapeur.", en = "After Hendrik Kleinwächter's (The Bread Code) yeast sandwich bread: a straight dough of flour, water, salt and dry yeast, stirred for a minute and baked in a loaf pan with steam." }
+steps = [
+  { fr = "Mélangez la farine, l'eau, le sel et la levure environ 1 min, jusqu'à ce qu'il ne reste plus de farine sèche, puis laissez reposer 15 min : ce repos forme le gluten sans pétrissage. Placez un échantillon de pâte dans un bocal témoin et marquez son niveau.", en = "Stir the flour, water, salt and yeast for about 1 min, until no dry flour is left, then rest 15 min: the rest builds the gluten without kneading. Put a sample of dough in a jar and mark its level." },
+  { fr = "Pointage : jusqu'à ce que le témoin ait doublé, environ 2 h dans la cuisine de la source. Une pâte à la levure seule supporte de lever un peu trop. Le calculateur de fermentation donne la durée pour la température de votre pâte.", en = "Bulk fermentation: until the sample has doubled, about 2 h in the source's kitchen. A yeast-only dough tolerates rising a little too far. The fermentation calculator gives the time for your own dough temperature." },
+  { fr = "Préfaçonnez, laissez détendre, puis façonnez et déposez, soudure dessous, dans un moule graissé.", en = "Preshape, let the dough rest, then shape it and place it seam down in a greased loaf pan." },
+  { fr = "Apprêt : 30 min à 2 h selon la température, jusqu'à ce que l'empreinte d'un doigt fariné remonte lentement.", en = "Final proof: 30 min to 2 h depending on the temperature, until a floured finger leaves a dent that springs back slowly." },
+  { fr = "Pour une grigne nette, placez le moule environ 30 min au congélateur, puis incisez sur 1 à 1,5 cm de profondeur.", en = "For a clean cut, put the pan in the freezer for about 30 min, then score 1 to 1.5 cm deep." },
+  { fr = "Préchauffez le four environ 30 min. Cuisez à 230 °C avec de la vapeur, par exemple sous un second moule retourné. Retirez la source de vapeur après environ 30 min pour former la croûte ; le pain est cuit à 95 °C à cœur.", en = "Preheat the oven for about 30 min. Bake at 230 °C with steam, for example under a second loaf pan turned upside down. Remove the steam source after about 30 min to form the crust; the loaf is done at 95 °C at the core." },
+]
+notes = { fr = "Fournée de la source : 400 g de farine (environ 15 % de protéines), 280 g d'eau, 8 g de sel et 4 g de levure sèche, ou 12 g de levure fraîche à la place. Le type de levure sèche n'est pas précisé ; elle est saisie comme levure sèche active. Les 70 % d'eau conviennent à cette farine : mettez-en moins avec une farine plus pauvre en protéines. Les pourcentages sont arrondis à 0,01 point (0,001 en dessous de 1 %) ; les poids donnés par le calculateur restent à moins de 0,1 % de ceux de la source.", en = "Source batch: 400 g flour (about 15 % protein), 280 g water, 8 g salt and 4 g dry yeast, or 12 g fresh yeast instead. The kind of dry yeast is not stated; it is entered as active dry yeast. The 70 % of water suits that flour: use less with a flour lower in protein. Percentages are rounded to 0.01 point (0.001 below 1 %); the weights the calculator gives stay within 0.1 % of the source's." }
+
+[formula]
+target = { by = "pieces", count = 1, grams = 692 }
+flours = [
+  { id = "bread_flour", pct = 100 },
+]
+ingredients = [
+  { id = "water", kind = "water", pct = 70 },
+  { id = "salt", kind = "salt", pct = 2 },
+  { id = "active_dry_yeast", kind = "active_dry_yeast", pct = 1 },
+]

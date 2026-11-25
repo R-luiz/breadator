@@ -1,0 +1,283 @@
+{
+ "model": "deepseek/deepseek-v4.1-flash-1017",
+ "provider": {
+  "zdr": true,
+  "sort": "price",
+  "max_price": {
+   "prompt": 0.08,
+   "completion": 0.6
+  }
+ },
+ "started": "2026-11-24T13:54:33.439Z",
+ "answers": [
+  {
+   "id": "Q07",
+   "lang": "fr",
+   "kind": "numeric",
+   "question": "Avec 10 % de levain, combien de temps de pointage à 21 °C ? Et si je monte ma pâte à 26 °C ?",
+   "final": "Avec 10 % de levain (farine blanche, pousse visée +50 %) :\n\n| Température pâte | Pointage estimé | Fourchette |\n|---|---|---|\n| 21 °C | **8,9 h** (≈ 8 h 55) | 7,5 – 10,2 h |\n| 26 °C | **5,7 h** (≈ 5 h 40) | 4,9 – 6,6 h |\n\nPasser de 21 à 26 °C raccourcit donc le pointage d'environ 3 h 10 : la fermentation s'accélère fortement avec la température, l'activité des levures et des bactéries lactiques du levain suivant une courbe exponentielle (chaque tranche de quelques degrés modifie nettement la vitesse) [not sourced]. La fourchette est large parce que le modèle ne connaît ni ta farine exacte, ni l'activité réelle de ton levain.\n\nPratique : à 26 °C, un levain à 10 % devient exigeant — surveille la pousse plutôt que l'horloge, et garde les rabats (3–4) dans la première moitié du pointage. À 21 °C, tu as plus de marge pour étaler les rabats sur toute la durée.",
+   "error": null,
+   "tool_calls": [
+    {
+     "name": "predict_bulk_time",
+     "args": {
+      "dough_temp_c": 21,
+      "levain_pct": 10
+     }
+    },
+    {
+     "name": "predict_bulk_time",
+     "args": {
+      "dough_temp_c": 26,
+      "levain_pct": 10
+     }
+    }
+   ],
+   "totals": {
+    "calls": 2,
+    "cost": 0.000282168,
+    "prompt_tokens": 4130,
+    "completion_tokens": 460,
+    "reasoning_tokens": 46,
+    "cached_tokens": 3712,
+    "ms": 4983,
+    "providers": [
+     "Wafer"
+    ]
+   },
+   "calls": [
+    {
+     "q": "Q07",
+     "i": 0,
+     "model": "deepseek/deepseek-v4.1-flash-1017",
+     "provider": "Wafer",
+     "prompt_tokens": 1909,
+     "completion_tokens": 159,
+     "reasoning_tokens": 45,
+     "cached_tokens": 1792,
+     "cache_write_tokens": 0,
+     "cost": 0.000101632,
+     "ms": 1442,
+     "finish": "tool_calls"
+    },
+    {
+     "q": "Q07",
+     "i": 1,
+     "model": "deepseek/deepseek-v4.1-flash-1017",
+     "provider": "Wafer",
+     "prompt_tokens": 2221,
+     "completion_tokens": 301,
+     "reasoning_tokens": 1,
+     "cached_tokens": 1920,
+     "cache_write_tokens": 0,
+     "cost": 0.000180536,
+     "ms": 3541,
+     "finish": "stop"
+    }
+   ],
+   "auto": {
+    "searched": false,
+    "n_search": 0,
+    "engine_calls": [
+     {
+      "name": "predict_bulk_time",
+      "args": {
+       "dough_temp_c": 21,
+       "levain_pct": 10
+      }
+     },
+     {
+      "name": "predict_bulk_time",
+      "args": {
+       "dough_temp_c": 26,
+       "levain_pct": 10
+      }
+     }
+    ],
+    "cited": [],
+    "invented_keys": [],
+    "irrelevant_cited": [],
+    "unsourced_labels": 1,
+    "words": 166,
+    "lang_guess": "fr",
+    "args_ok": true
+   }
+  },
+  {
+   "id": "Q09",
+   "lang": "fr",
+   "kind": "grounding",
+   "question": "Ma mie de pain 100 % seigle est collante alors que j'ai bien cuit. Pourquoi ? Et à quelle température à cœur un pain de seigle est-il cuit ?",
+   "final": "Deux causes possibles, souvent combinées, et aucune n'est un problème de cuisson.\n\n**1. Attaque de l'amidon (starch attack).** La farine de seigle est beaucoup plus riche en alpha-amylase que la farine de blé, et son amidon gélatinise plus tôt, vers 52–62 °C. Pendant la cuisson, l'amidon devient donc accessible alors que l'enzyme est encore active : l'amylase le dégrade en dextrines, ce qui donne une mie collante et gommeuse [rye-amylase]. Le remède est l'acidification : viser pH 4,0–4,3, traditionnellement via un levain de seigle, ce qui inhibe fortement l'alpha-amylase et protège l'amidon [rye-amylase]. C'est pour cela qu'un pain à plus de 20 % de seigle est presque toujours acidifié [rye-amylase]. Vérifiez donc l'acidité de votre levain (pH, ou goût franchement acidulé) et sa proportion.\n\n**2. Coupe trop précoce.** Un pain très riche en seigle finit de « prendre » après le four : le gel amidon-pentosanes se raffermit au refroidissement et l'humidité se redistribue [rye-cooling]. Un pain à 80–100 % de seigle doit reposer 12 à 24 h, enveloppé dans un linge, avant d'être tranché ; coupé trop tôt, la mie paraît humide et collante même si la cuisson est complète [rye-cooling].\n\n**Température à cœur :** la base de connaissances ne donne pas de valeur pour le seigle. En pratique, on vise environ 96–98 °C à cœur pour un 100 % seigle (le seigle supporte mal d'être sous-cuit) [non sourcé] ; mesurez en plein centre, la sonde doit rester quelques secondes stable. Et laissez impérativement le repos de 12–24 h avant de juger la mie.",
+   "error": null,
+   "tool_calls": [
+    {
+     "name": "search_knowledge",
+     "args": {
+      "query": "seigle mie collante amylase pentosanes"
+     }
+    },
+    {
+     "name": "search_knowledge",
+     "args": {
+      "query": "rye bread baking temperature internal temperature crumb"
+     }
+    },
+    {
+     "name": "search_knowledge",
+     "args": {
+      "query": "température à cœur cuisson pain sonde"
+     }
+    }
+   ],
+   "totals": {
+    "calls": 3,
+    "cost": 0.000466948,
+    "prompt_tokens": 7843,
+    "completion_tokens": 702,
+    "reasoning_tokens": 86,
+    "cached_tokens": 6400,
+    "ms": 7063,
+    "providers": [
+     "Wafer"
+    ]
+   },
+   "calls": [
+    {
+     "q": "Q09",
+     "i": 0,
+     "model": "deepseek/deepseek-v4.1-flash-1017",
+     "provider": "Wafer",
+     "prompt_tokens": 1914,
+     "completion_tokens": 111,
+     "reasoning_tokens": 23,
+     "cached_tokens": 1792,
+     "cache_write_tokens": 0,
+     "cost": 0.000077812,
+     "ms": 1315,
+     "finish": "tool_calls"
+    },
+    {
+     "q": "Q09",
+     "i": 1,
+     "model": "deepseek/deepseek-v4.1-flash-1017",
+     "provider": "Wafer",
+     "prompt_tokens": 2732,
+     "completion_tokens": 110,
+     "reasoning_tokens": 62,
+     "cached_tokens": 1920,
+     "cache_write_tokens": 0,
+     "cost": 0.000103432,
+     "ms": 1230,
+     "finish": "tool_calls"
+    },
+    {
+     "q": "Q09",
+     "i": 2,
+     "model": "deepseek/deepseek-v4.1-flash-1017",
+     "provider": "Wafer",
+     "prompt_tokens": 3197,
+     "completion_tokens": 481,
+     "reasoning_tokens": 1,
+     "cached_tokens": 2688,
+     "cache_write_tokens": 0,
+     "cost": 0.000285704,
+     "ms": 4518,
+     "finish": "stop"
+    }
+   ],
+   "auto": {
+    "searched": true,
+    "n_search": 3,
+    "engine_calls": [],
+    "cited": [
+     "rye-amylase",
+     "rye-cooling"
+    ],
+    "invented_keys": [],
+    "irrelevant_cited": [],
+    "unsourced_labels": 1,
+    "words": 255,
+    "lang_guess": "fr"
+   }
+  },
+  {
+   "id": "Q12",
+   "lang": "en",
+   "kind": "grounding",
+   "question": "My friend has celiac disease. If I ferment an einkorn sourdough for 48 hours, will it be safe for her?",
+   "final": "No. Einkorn is a wheat species that contains gluten proteins, including gliadins, and is not gluten-free [einkorn-gluten]. A 48-hour sourdough fermentation will not make it safe for someone with coeliac disease.\n\nLong fermentation does partially hydrolyse gluten through flour and bacterial proteases, but ordinary sourdough bread still contains far more than the 20 mg/kg threshold used for \"gluten-free\" labelling in the EU [sourdough-gluten]. Residual gluten below 10 ppm has only been achieved in experimental processes using selected lactobacilli plus fungal proteases over long fermentations, in clinical studies — not something reproducible with a home levain and a 48-hour timeline [sourdough-gluten].\n\nSo the answer is no, regardless of fermentation length, flour age or hydration. For a coeliac guest, bake with certified gluten-free flour in a strictly separated environment, or buy a certified gluten-free loaf [not sourced]. Fermentation time is not a reliable safety lever here [not sourced].\n\nAlso consider cross-contamination: your usual flour dust, linen, banneton, bench and oven surfaces carry wheat flour, so a \"gluten-free\" bake in the same kitchen needs real separation [not sourced]. For anything concerning her diet and health, she should confirm with her doctor or dietitian rather than rely on fermentation-based claims [not sourced].",
+   "error": null,
+   "tool_calls": [
+    {
+     "name": "search_knowledge",
+     "args": {
+      "query": "celiac disease sourdough gluten fermentation einkorn"
+     }
+    },
+    {
+     "name": "search_knowledge",
+     "args": {
+      "query": "gluten degradation sourdough fermentation celiac safety"
+     }
+    }
+   ],
+   "totals": {
+    "calls": 2,
+    "cost": 0.000275824,
+    "prompt_tokens": 4426,
+    "completion_tokens": 426,
+    "reasoning_tokens": 51,
+    "cached_tokens": 3712,
+    "ms": 4419,
+    "providers": [
+     "Wafer"
+    ]
+   },
+   "calls": [
+    {
+     "q": "Q12",
+     "i": 0,
+     "model": "deepseek/deepseek-v4.1-flash-1017",
+     "provider": "Wafer",
+     "prompt_tokens": 1902,
+     "completion_tokens": 115,
+     "reasoning_tokens": 26,
+     "cached_tokens": 1792,
+     "cache_write_tokens": 0,
+     "cost": 0.00007938,
+     "ms": 1137,
+     "finish": "tool_calls"
+    },
+    {
+     "q": "Q12",
+     "i": 1,
+     "model": "deepseek/deepseek-v4.1-flash-1017",
+     "provider": "Wafer",
+     "prompt_tokens": 2524,
+     "completion_tokens": 311,
+     "reasoning_tokens": 25,
+     "cached_tokens": 1920,
+     "cache_write_tokens": 0,
+     "cost": 0.000196444,
+     "ms": 3282,
+     "finish": "stop"
+    }
+   ],
+   "auto": {
+    "searched": true,
+    "n_search": 2,
+    "engine_calls": [],
+    "cited": [
+     "einkorn-gluten",
+     "sourdough-gluten"
+    ],
+    "invented_keys": [],
+    "irrelevant_cited": [],
+    "unsourced_labels": 4,
+    "words": 198,
+    "lang_guess": "en"
+   }
+  }
+ ]
+}

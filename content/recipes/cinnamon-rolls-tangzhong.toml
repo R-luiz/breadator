@@ -1,0 +1,32 @@
+bread_type = "enriched"
+sources = ["novita-0492", "novita-0495", "novita-0497", "novita-0493", "novita-0494", "novita-0499"]
+title = { fr = "Roulés à la cannelle sur tangzhong et poolish", en = "Cinnamon rolls with tangzhong and poolish" }
+description = { fr = "D'après les roulés à la cannelle de Novita Listyani : six roulés d'une pâte au lait avec 30 % de la farine en empois, sa limite haute, et toute la levure dans une poolish d'une nuit.", en = "After Novita Listyani's cinnamon rolls: six rolls from a milk dough with 30 % of the flour scalded, her upper limit, and all the yeast in an overnight poolish." }
+steps = [
+  { fr = "Empois (la veille) : versez l'eau bouillante dans un bol préchauffé, ajoutez d'un coup la farine de l'empois et remuez 1 à 2 min jusqu'à obtenir une pâte épaisse et lisse. Couvrez, laissez refroidir, puis gardez une nuit au réfrigérateur.", en = "Scald (the day before): pour the boiling water into a pre-warmed bowl, add the scald flour at once and stir for 1–2 min into a thick, smooth paste. Cover, let it cool, then refrigerate overnight." },
+  { fr = "Poolish (la veille) : mélangez sa farine, son eau et sa levure, laissez fermenter jusqu'à son sommet, puis gardez une nuit au réfrigérateur.", en = "Poolish (the day before): mix its flour, water and yeast, let it ferment until it reaches its peak, then refrigerate overnight." },
+  { fr = "Mélangez l'empois et la poolish, utilisés froids exprès pour garder la pâte fraîche dans une pièce chaude, avec le lait, le sucre, le sel et la farine. Pétrissez, en ajoutant le beurre ramolli une fois le gluten amorcé. Comptez 12 à 13 min de pétrissage en tout pour atteindre le test du voile ; la pâte reste collante.", en = "Mix the scald and the poolish, both used cold on purpose to keep the dough cool in a warm room, with the milk, sugar, salt and flour. Knead, adding the softened butter once the gluten has started to form. Count 12 to 13 min of kneading in all to reach the windowpane test; the dough stays tacky." },
+  { fr = "Pointage : 45 à 60 min dans une pièce chaude (25 à 29 °C), jusqu'au doublement. Le calculateur de fermentation donne la durée pour la température de votre pâte.", en = "Bulk fermentation: 45 to 60 min in a warm room (25 to 29 °C), until doubled. The fermentation calculator gives the time for your own dough temperature." },
+  { fr = "Abaissez la pâte à environ 20 × 55 cm. Étalez la garniture, qui ne figure pas dans la formule : pour cette fournée, 50 g de beurre mou, 50 g de sucre brun foncé et 3,5 g de cannelle (1 cuillère à café), soit un sixième du poids de farine pour le beurre comme pour le sucre. Roulez et coupez en 6 tronçons ; posez-les dans un moule graissé.", en = "Roll the dough out to about 20 × 55 cm. Spread the filling, which is not in the formula: for this batch, 50 g soft butter, 50 g dark brown sugar and 3.5 g cinnamon (1 teaspoon), that is one sixth of the flour weight for the butter and for the sugar. Roll up and cut into 6 pieces; place them in a greased pan." },
+  { fr = "Apprêt : 45 à 60 min à la même température ; la source ne donne pas d'autre repère : arrêtez quand les roulés sont nettement gonflés.", en = "Final proof: 45 to 60 min at the same temperature; the source gives no other endpoint, so stop when the rolls are clearly puffy." },
+  { fr = "Cuisez à 180 °C : 25 min en chaleur statique (voûte et sole), puis 10 min en sole seule.", en = "Bake at 180 °C: 25 min with top and bottom heat, then 10 min with bottom heat only." },
+]
+notes = { fr = "Fournée de la source pour 6 roulés : empois de 90 g de farine et 110 g d'eau bouillante ; poolish de 60 g de farine, 60 g d'eau et 0,6 g de levure instantanée ; pétrin de 150 g de farine, 55 g de lait, 18 g de sucre, 20 g de beurre et 5,5 g de sel (569 g de pâte). Aucune levure n'est ajoutée au pétrin. La garniture et le glaçage, que la source ne quantifie pas, sont hors formule. L'autrice compte 73,8 % d'hydratation, eau du beurre comprise. Elle limite l'empois à 30 % de la farine : le mémoire sur lequel elle s'appuie a observé un volume plus faible et un rassissement plus rapide au-delà. La source ne dit pas combien d'eau l'empois perd en refroidissant : pesez-le froid et rajoutez ce qui manque. Les pourcentages sont arrondis à 0,01 point (0,001 en dessous de 1 %) ; les poids donnés par le calculateur restent à moins de 0,2 % de ceux de la source.", en = "Source batch for 6 rolls: scald of 90 g flour and 110 g boiling water; poolish of 60 g flour, 60 g water and 0.6 g instant yeast; final mix of 150 g flour, 55 g milk, 18 g sugar, 20 g butter and 5.5 g salt (569 g of dough). No yeast is added to the final mix. The filling and the icing, which the source does not quantify, are outside the formula. The author counts 73.8 % hydration, including the water of the butter. She keeps the scald at 30 % of the flour at most: the thesis she relies on found lower volume and faster staling above that. The source does not say how much water the scald loses on cooling: weigh it cold and add back what is missing. Percentages are rounded to 0.01 point (0.001 below 1 %); the weights the calculator gives stay within 0.2 % of the source's." }
+
+[formula]
+target = { by = "pieces", count = 6, grams = 94.9 }
+flours = [
+  { id = "bread_flour", pct = 100 },
+]
+ingredients = [
+  { id = "water", kind = "water", pct = 56.666 },
+  { id = "milk", kind = "milk", pct = 18.33 },
+  { id = "sugar", kind = "sugar", pct = 6 },
+  { id = "butter", kind = "butter", pct = 6.67 },
+  { id = "salt", kind = "salt", pct = 1.83 },
+  { id = "instant_yeast", kind = "instant_yeast", pct = 0.2 },
+]
+stages = [
+  { id = "scald", kind = "scald", flour_pct = 30, liquid_pct = 122.22 },
+  { id = "poolish", kind = "poolish", flour_pct = 20, liquid_pct = 100, extras = [{ ingredient = "instant_yeast", pct = 0.2, basis = "total_flour" }] },
+]

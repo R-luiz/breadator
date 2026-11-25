@@ -1,0 +1,14 @@
+target
+# Only the published research files are part of the build (compiled into the binary).
+research/*
+!research/data
+research/data/*
+!research/data/bibliography.json
+!research/data/claims.jsonl
+!research/data/videos.json
+docs
+.git
+.github
+web/node_modules
+web/pkg
+crates/breadator-server/static/dist

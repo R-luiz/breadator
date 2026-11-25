@@ -1,0 +1,135 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+# The jobs only read the repository.
+permissions:
+  contents: read
+
+jobs:
+  rust:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Toolchain
+        run: |
+          rustup toolchain install stable --profile minimal --component clippy,rustfmt --target wasm32-unknown-unknown
+          rustup default stable
+          cargo --version
+      - uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cargo/registry/index
+            ~/.cargo/registry/cache
+            ~/.cargo/git/db
+            target
+          key: rust-${{ runner.os }}-${{ hashFiles('Cargo.lock') }}
+          restore-keys: rust-${{ runner.os }}-
+      - name: Research files are merged and keys pinned
+        run: python3 research/tools/merge_corpus.py --check
+      - name: Flour table matches the sourced model
+        run: python3 research/tools/export_flour_table.py --check
+      - name: Format check
+        run: cargo fmt --all --check
+      - name: Clippy
+        run: cargo clippy --all-targets --locked -- -D warnings
+      - name: Tests
+        run: cargo test --locked
+      - name: Engine builds for the browser
+        run: cargo build --locked --release --target wasm32-unknown-unknown -p breadator-wasm
+
+  image:
+    # The production image builds (its web stage typechecks and bundles the islands against the
+    # real wasm-bindgen output), serves the pages and hashed assets, runs as a non-root user,
+    # reports healthy and stops cleanly on SIGTERM.
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build
+        run: docker build -t breadator:ci .
+      - name: Smoke test
+        run: |
+          set -euo pipefail
+          docker run -d --name smoke -p 8080:8080 -e PUBLIC_URL=http://localhost:8080 breadator:ci
+          for _ in $(seq 1 30); do
+            curl -fsS http://localhost:8080/healthz > /dev/null && break
+            sleep 1
+          done
+          # The server is PID 1 once the entrypoint has dropped root: it must run as uid 10001.
+          [ "$(docker exec smoke awk '/^Uid:/ {print $2}' /proc/1/status)" = 10001 ]
+          docker exec smoke breadator healthcheck
+          check() { # path expected_status
+            got="$(curl -s -o /dev/null -w '%{http_code}' "http://localhost:8080$1")"
+            echo "$1 -> $got"
+            [ "$got" = "$2" ]
+          }
+          check /fr 200
+          check /en/calculators/formula 200
+          check "/fr/calculators/formula?by=baked&grams=800&loss=14&levain=20&scald_method=yudane&scald=10" 200
+          check /en/calculators/temperature 200
+          check /fr/calculators/yeast 200
+          check /sitemap.xml 200
+          check /sw.js 200
+          check /nope 404
+          # Fermentation calculator and the compiled-in knowledge base.
+          check "/fr/calculators/fermentation?leavening=sourdough&dose=15&warm_h=3&fridge_h=14" 200
+          check /en/learn 200
+          check /fr/learn/sourdough-starter 200
+          check /en/learn/no-such-article 404
+          check /fr/sources 200
+          check "/en/search?q=yudane" 200
+          check /fr/recipes 200
+          # The starter and flour calculators, the calculators index, the chat page (without a
+          # key it says the assistant is unavailable).
+          check /en/calculators 200
+          check "/fr/calculators/starter?flour=5&water=5&temp_c=24" 200
+          check "/en/calculators/flour?f1=fr_t65&p1=80&f2=fr_rye_t130&p2=20&seeds=10" 200
+          check /en/learn/flour-types 200
+          check /fr/chat 200
+          curl -fsS -X POST -H 'content-type: application/json' \
+            -d '{"flour_parts":5,"water_parts":5,"temp_c":24}' \
+            http://localhost:8080/api/v1/starter | grep -q '"mid_h"'
+          curl -fsS -X POST -H 'content-type: application/json' \
+            -d '{"flours":[{"id":"fr_t65","pct":70},{"id":"fr_t150","pct":30}]}' \
+            http://localhost:8080/api/v1/flour | grep -q '"hydration"'
+          # A body far larger than any form or formula is refused, not parsed.
+          [ "$(head -c 300000 /dev/zero | tr '\0' ' ' | curl -s -o /dev/null -w '%{http_code}' -X POST -H 'content-type: application/json' --data-binary @- http://localhost:8080/api/v1/formula)" = 413 ]
+          curl -fsS -X POST -H 'content-type: application/json' \
+            -d '{"leavening":"instant_yeast","dose_pct":0.5,"endpoint":"doubled"}' \
+            http://localhost:8080/api/v1/fermentation | grep -q '"mid_h"'
+          page="$(curl -fsS http://localhost:8080/en/calculators/formula)"
+          for asset in app.js breadator_wasm_bg.wasm; do
+            url="$(grep -o "/static/dist/${asset%.*}\.[0-9a-f]*\.${asset##*.}" <<< "$page" | head -n1)"
+            [ -n "$url" ] || { echo "::error::$asset not referenced"; exit 1; }
+            check "$url" 200
+          done
+          # The islands' messages: an asset named on <html>.
+          messages="$(grep -o '/static/i18n/en\.[0-9a-f]*\.json' <<< "$page" | head -n1)"
+          [ -n "$messages" ] || { echo "::error::message catalog not referenced"; exit 1; }
+          check "$messages" 200
+          curl -fsS -X POST -H 'content-type: application/json' \
+            -d '{"grams":10,"from":"fresh_yeast","to":"instant_yeast"}' http://localhost:8080/api/v1/yeast
+          # Accounts: the data directory is writable by the server, a magic link signs in, the
+          # session reads and writes synced records.
+          check /en/account/sign-in 200
+          check /en/my/formulas 200
+          check /en/account 303
+          [ "$(curl -s -o /dev/null -w '%{http_code}' -X POST -d 'email=ci@example.com' http://localhost:8080/en/account/sign-in)" = 403 ]
+          curl -fsS -X POST -H 'Origin: http://localhost:8080' -d 'email=ci@example.com' http://localhost:8080/en/account/sign-in > /dev/null
+          link="$(docker logs smoke 2>&1 | grep -o 'http://localhost:8080/en/account/sign-in/verify?token=[A-Za-z0-9_-]*' | head -n1)"
+          [ -n "$link" ] || { echo "::error::no sign-in link in the logs"; exit 1; }
+          jar="$(mktemp)"
+          code="$(curl -s -o /dev/null -w '%{http_code}' -c "$jar" -X POST -H 'Origin: http://localhost:8080' --data-urlencode "token=${link##*token=}" http://localhost:8080/en/account/sign-in/verify)"
+          [ "$code" = 303 ]
+          curl -fsS -b "$jar" http://localhost:8080/api/v1/me | grep -q '"email":"ci@example.com"'
+          curl -fsS -b "$jar" -X POST -H 'Origin: http://localhost:8080' -H 'content-type: application/json' \
+            -d "{\"since\":0,\"formulas\":[{\"id\":\"$(cat /proc/sys/kernel/random/uuid)\",\"name\":\"CI loaf\",\"formula\":{},\"updated_at\":$(( $(date +%s) * 1000 ))}]}" \
+            http://localhost:8080/api/v1/sync | grep -q '"accepted":1'
+          docker exec smoke test -s /data/breadator.sqlite3
+          docker stop smoke
+          [ "$(docker inspect smoke --format '{{.State.ExitCode}}')" = 0 ]

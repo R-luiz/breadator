@@ -1,0 +1,940 @@
+{
+ "model": "z-ai/glm-5.3-flash",
+ "provider": {
+  "zdr": true,
+  "sort": "price"
+ },
+ "started": "2026-11-24T13:49:38.100Z",
+ "answers": [
+  {
+   "id": "Q01",
+   "lang": "fr",
+   "kind": "mechanism",
+   "question": "Pourquoi faut-il acidifier une pâte de seigle ? Qu'est-ce qui se passe avec les enzymes si on ne le fait pas ?",
+   "final": "Il faut acidifier le seigle principalement pour **neutraliser son alpha-amylase très active**.\n\nLe mécanisme : la farine de seigle contient beaucoup plus d'alpha-amylase que le blé, et son amidon gélatinise à basse température (environ 52–62 °C). À la cuisson, l'amidon devient donc accessible alors que l'enzyme est encore active : elle le dégrade en dextrines, la mie devient collante et gommeuse — c'est le défaut appelé « attaque d'amidon » [rye-amylase]. En acidifiant la pâte à environ pH 4,0–4,3 (traditionnellement avec un levain de seigle), l'activité alpha-amylase est fortement réduite et l'amidon est protégé [rye-amylase].\n\nL'acidification a aussi un second rôle : le seigle ne forme pas de gluten, sa structure repose sur les pentosanes. Un pH abaissé améliore leur gonflement et limite leur dégradation par les pentosanases endogènes, donc meilleure liaison d'eau et meilleure tenue de mie [rye-pentosans].\n\nEn pratique : au-delà d'environ 20 % de seigle, acidifiez presque toujours via un levain de seigle [rye-amylase].",
+   "error": null,
+   "tool_calls": [
+    {
+     "name": "search_knowledge",
+     "args": {
+      "query": "seigle acidification enzymes amylase"
+     }
+    }
+   ],
+   "totals": {
+    "calls": 2,
+    "cost": 0.0001543532,
+    "prompt_tokens": 3875,
+    "completion_tokens": 320,
+    "reasoning_tokens": 0,
+    "cached_tokens": 1728,
+    "ms": 7657,
+    "providers": [
+     "Relace"
+    ]
+   },
+   "calls": [
+    {
+     "q": "Q01",
+     "i": 0,
+     "model": "z-ai/glm-5.3-flash",
+     "provider": "Relace",
+     "prompt_tokens": 1737,
+     "completion_tokens": 21,
+     "reasoning_tokens": 0,
+     "cached_tokens": 0,
+     "cache_write_tokens": 0,
+     "cost": 0.0000635487,
+     "ms": 1634,
+     "finish": "tool_calls"
+    },
+    {
+     "q": "Q01",
+     "i": 1,
+     "model": "z-ai/glm-5.3-flash",
+     "provider": "Relace",
+     "prompt_tokens": 2138,
+     "completion_tokens": 299,
+     "reasoning_tokens": 0,
+     "cached_tokens": 1728,
+     "cache_write_tokens": 0,
+     "cost": 0.0000908045,
+     "ms": 6023,
+     "finish": "stop"
+    }
+   ],
+   "auto": {
+    "searched": true,
+    "n_search": 1,
+    "engine_calls": [],
+    "cited": [
+     "rye-amylase",
+     "rye-pentosans"
+    ],
+    "invented_keys": [],
+    "irrelevant_cited": [],
+    "unsourced_labels": 0,
+    "words": 157,
+    "lang_guess": "fr"
+   }
+  },
+  {
+   "id": "Q02",
+   "lang": "en",
+   "kind": "mechanism",
+   "question": "What's the actual difference between tangzhong and yudane in terms of starch gelatinization? Which one should I use for a soft sandwich loaf?",
+   "final": "**The difference is how the starch is gelatinized:**\n\n- **Tangzhong** cooks 5–10 % of the flour with ~5× its weight of water/milk to ~65 °C until it forms a paste. The starch granules swell and bind much more water than raw flour would, and that extra bound water lets you push total hydration higher while the dough stays workable [tangzhong].\n- **Yudane** is a scald: 10–20 % of the flour mixed with an equal weight of boiling water (≈1:1), cooled slowly, often rested overnight in the fridge. The boiling water gelatinizes part of the starch without stove cooking, and during the slow cool/rest amylases convert some of that gelatinized starch into sugars [yudane].\n\n**Which to use:** both give softer, moister crumb and slower staling; yudane adds slight sweetness and a chewy-soft texture, while tangzhong supports higher hydration [tangzhong] [yudane]. For a soft sandwich loaf, either works well — tangzhong is easier to make fresh and keeps the loaf especially moist; yudane needs advance planning (overnight rest) but gives that slightly sweeter, chewy Japanese-milk-bread character [non sourcé].",
+   "error": null,
+   "tool_calls": [
+    {
+     "name": "search_knowledge",
+     "args": {
+      "query": "tangzhong yudane gelatinization starch"
+     }
+    }
+   ],
+   "totals": {
+    "calls": 2,
+    "cost": 0.0001547904,
+    "prompt_tokens": 3923,
+    "completion_tokens": 300,
+    "reasoning_tokens": 0,
+    "cached_tokens": 1664,
+    "ms": 7135,
+    "providers": [
+     "Relace"
+    ]
+   },
+   "calls": [
+    {
+     "q": "Q02",
+     "i": 0,
+     "model": "z-ai/glm-5.3-flash",
+     "provider": "Relace",
+     "prompt_tokens": 1739,
+     "completion_tokens": 23,
+     "reasoning_tokens": 0,
+     "cached_tokens": 0,
+     "cache_write_tokens": 0,
+     "cost": 0.0000637829,
+     "ms": 1500,
+     "finish": "tool_calls"
+    },
+    {
+     "q": "Q02",
+     "i": 1,
+     "model": "z-ai/glm-5.3-flash",
+     "provider": "Relace",
+     "prompt_tokens": 2184,
+     "completion_tokens": 277,
+     "reasoning_tokens": 0,
+     "cached_tokens": 1664,
+     "cache_write_tokens": 0,
+     "cost": 0.0000910075,
+     "ms": 5635,
+     "finish": "stop"
+    }
+   ],
+   "auto": {
+    "searched": true,
+    "n_search": 1,
+    "engine_calls": [],
+    "cited": [
+     "tangzhong",
+     "yudane"
+    ],
+    "invented_keys": [],
+    "irrelevant_cited": [],
+    "unsourced_labels": 1,
+    "words": 176,
+    "lang_guess": "en"
+   }
+  },
+  {
+   "id": "Q03",
+   "lang": "fr",
+   "kind": "mechanism",
+   "question": "Pourquoi le sel ralentit-il la fermentation ? Si je mets 2 % de sel, est-ce que ça change beaucoup ?",
+   "final": "Le sel ralentit la fermentation par effet **osmotique** : dissous dans l'eau de la pâte, il augmente la pression osmotique autour des cellules de levure et abaisse l'activité de l'eau. La levure perd de l'eau et doit dépenser de l'énergie à produire du glycérol pour rééquilibrer sa pression interne, ce qui ralentit la production de gaz [salt-osmotic].\n\n**À 2 %, ça change peu.** Dans la plage habituelle de 1,8–2,2 % du poids de farine, l'effet est modéré : environ 10–20 % de réduction de la vitesse de production de gaz [salt-osmotic]. En pratique, on compense simplement en laissant le pointage un peu plus long. Au-delà d'environ 2,5 %, l'inhibition devient nettement perceptible [salt-osmotic].\n\nBonus : le sel renforce le réseau de gluten, la pâte retient mieux le gaz, et freine l'oxydation pendant le pétrissage, ce qui préserve la couleur crème de la mie et l'arôme [salt-gluten].",
+   "error": null,
+   "tool_calls": [
+    {
+     "name": "search_knowledge",
+     "args": {
+      "query": "salt fermentation yeast osmotic effect"
+     }
+    }
+   ],
+   "totals": {
+    "calls": 2,
+    "cost": 0.00013969970000000001,
+    "prompt_tokens": 3819,
+    "completion_tokens": 279,
+    "reasoning_tokens": 0,
+    "cached_tokens": 3392,
+    "ms": 5628,
+    "providers": [
+     "Relace"
+    ]
+   },
+   "calls": [
+    {
+     "q": "Q03",
+     "i": 0,
+     "model": "z-ai/glm-5.3-flash",
+     "provider": "Relace",
+     "prompt_tokens": 1735,
+     "completion_tokens": 19,
+     "reasoning_tokens": 0,
+     "cached_tokens": 1664,
+     "cache_write_tokens": 0,
+     "cost": 0.0000539961,
+     "ms": 1340,
+     "finish": "tool_calls"
+    },
+    {
+     "q": "Q03",
+     "i": 1,
+     "model": "z-ai/glm-5.3-flash",
+     "provider": "Relace",
+     "prompt_tokens": 2084,
+     "completion_tokens": 260,
+     "reasoning_tokens": 0,
+     "cached_tokens": 1728,
+     "cache_write_tokens": 0,
+     "cost": 0.0000857036,
+     "ms": 4288,
+     "finish": "stop"
+    }
+   ],
+   "auto": {
+    "searched": true,
+    "n_search": 1,
+    "engine_calls": [],
+    "cited": [
+     "salt-osmotic",
+     "salt-gluten"
+    ],
+    "invented_keys": [],
+    "irrelevant_cited": [],
+    "unsourced_labels": 0,
+    "words": 146,
+    "lang_guess": "fr"
+   }
+  },
+  {
+   "id": "Q04",
+   "lang": "en",
+   "kind": "mechanism",
+   "question": "Does a stiff starter make a more sour bread than a liquid one? Why?",
+   "final": "Yes — in general, a stiff starter tends to give a sharper, more vinegary sourness, while a liquid one is milder and more yogurt-like. The key isn't so much \"stiffness\" itself as the acid balance it promotes [starter-hydration]:\n\n- **Stiff starter (≈50–65 % hydration), kept cool**: favours a higher proportion of **acetic acid** relative to lactic acid. Heterofermentative lactobacilli need an electron acceptor (fructose, oxygen) to form acetate, and slow fermentation in a firm dough gives them time to do so — hence a sharper, vinegary note [starter-hydration].\n- **Liquid starter (≥100 % hydration), warm (28–30 °C)**: favours **lactic acid**, producing a milder, creamier, yogurt-like acidity [starter-hydration].\n\nTemperature compounds the effect: lactic acid bacteria grow fastest around 30–35 °C, so a warm liquid levain acidifies more overall but in the lactic direction, while a cool stiff one builds acetate [starter-hydration] [lab-temperature].\n\nPractical tip: if you want a more sour loaf, try a stiffer levain refreshed less often and kept slightly cooler; for a gentler flavour, keep it liquid and warm.",
+   "error": null,
+   "tool_calls": [
+    {
+     "name": "search_knowledge",
+     "args": {
+      "query": "stiff vs liquid levain sourness acidity"
+     }
+    }
+   ],
+   "totals": {
+    "calls": 2,
+    "cost": 0.00014126649999999998,
+    "prompt_tokens": 3798,
+    "completion_tokens": 303,
+    "reasoning_tokens": 2,
+    "cached_tokens": 3328,
+    "ms": 5499,
+    "providers": [
+     "Relace"
+    ]
+   },
+   "calls": [
+    {
+     "q": "Q04",
+     "i": 0,
+     "model": "z-ai/glm-5.3-flash",
+     "provider": "Relace",
+     "prompt_tokens": 1723,
+     "completion_tokens": 21,
+     "reasoning_tokens": 0,
+     "cached_tokens": 1664,
+     "cache_write_tokens": 0,
+     "cost": 0.0000537319,
+     "ms": 1104,
+     "finish": "tool_calls"
+    },
+    {
+     "q": "Q04",
+     "i": 1,
+     "model": "z-ai/glm-5.3-flash",
+     "provider": "Relace",
+     "prompt_tokens": 2075,
+     "completion_tokens": 282,
+     "reasoning_tokens": 2,
+     "cached_tokens": 1664,
+     "cache_write_tokens": 0,
+     "cost": 0.0000875346,
+     "ms": 4395,
+     "finish": "stop"
+    }
+   ],
+   "auto": {
+    "searched": true,
+    "n_search": 1,
+    "engine_calls": [],
+    "cited": [
+     "starter-hydration",
+     "lab-temperature"
+    ],
+    "invented_keys": [],
+    "irrelevant_cited": [],
+    "unsourced_labels": 0,
+    "words": 170,
+    "lang_guess": "en"
+   }
+  },
+  {
+   "id": "Q05",
+   "lang": "fr",
+   "kind": "numeric",
+   "question": "Je veux faire 2 pains de 900 g chacun, hydratation 75 %, sel 2 %, levain liquide (100 %) à 20 %. Donne-moi les pesées.",
+   "final": "Pesées pour 2 pains de 900 g (1 800 g de pâte, hydratation totale 75 %) :\n\n| Ingrédient | Poids |\n|---|---|\n| Farine (à peser directement) | 915 g |\n| Eau (à ajouter) | 661 g |\n| Levain liquide (100 %) | 203 g |\n| Sel | 20 g |\n\nDétail : le levain de 203 g contient lui-même 102 g de farine et 102 g d'eau, d'où le total réel de 1 017 g de farine et 763 g d'eau dans la pâte.",
+   "error": null,
+   "tool_calls": [
+    {
+     "name": "compute_formula",
+     "args": {
+      "hydration_pct": 75,
+      "levain_hydration_pct": 100,
+      "levain_pct": 20,
+      "pieces": 2,
+      "piece_weight_g": 900,
+      "salt_pct": 2
+     }
+    }
+   ],
+   "totals": {
+    "calls": 2,
+    "cost": 0.0001274893,
+    "prompt_tokens": 3650,
+    "completion_tokens": 203,
+    "reasoning_tokens": 0,
+    "cached_tokens": 3392,
+    "ms": 6793,
+    "providers": [
+     "Relace"
+    ]
+   },
+   "calls": [
+    {
+     "q": "Q05",
+     "i": 0,
+     "model": "z-ai/glm-5.3-flash",
+     "provider": "Relace",
+     "prompt_tokens": 1750,
+     "completion_tokens": 53,
+     "reasoning_tokens": 0,
+     "cached_tokens": 1664,
+     "cache_write_tokens": 0,
+     "cost": 0.0000573011,
+     "ms": 1956,
+     "finish": "tool_calls"
+    },
+    {
+     "q": "Q05",
+     "i": 1,
+     "model": "z-ai/glm-5.3-flash",
+     "provider": "Relace",
+     "prompt_tokens": 1900,
+     "completion_tokens": 150,
+     "reasoning_tokens": 0,
+     "cached_tokens": 1728,
+     "cache_write_tokens": 0,
+     "cost": 0.0000701882,
+     "ms": 4837,
+     "finish": "stop"
+    }
+   ],
+   "auto": {
+    "searched": false,
+    "n_search": 0,
+    "engine_calls": [
+     {
+      "name": "compute_formula",
+      "args": {
+       "hydration_pct": 75,
+       "levain_hydration_pct": 100,
+       "levain_pct": 20,
+       "pieces": 2,
+       "piece_weight_g": 900,
+       "salt_pct": 2
+      }
+     }
+    ],
+    "cited": [],
+    "invented_keys": [],
+    "irrelevant_cited": [],
+    "unsourced_labels": 0,
+    "words": 89,
+    "lang_guess": "fr",
+    "args_ok": true
+   }
+  },
+  {
+   "id": "Q06",
+   "lang": "en",
+   "kind": "numeric",
+   "question": "My dough is sitting at 75°F and I used 15% levain. How long should bulk fermentation take?",
+   "final": "At 75°F (23.9°C) with 15% levain, expect about **5.7 hours** of bulk fermentation (range ~4.9–6.6 hours) for a ~50% rise, assuming a white-flour dough.\n\nDon't follow the clock blindly — watch the dough and end bulk at the target rise, not the timer.",
+   "error": null,
+   "tool_calls": [
+    {
+     "name": "predict_bulk_time",
+     "args": {
+      "dough_temp_c": 23.9,
+      "levain_pct": 15
+     }
+    }
+   ],
+   "totals": {
+    "calls": 2,
+    "cost": 0.00011611,
+    "prompt_tokens": 3557,
+    "completion_tokens": 104,
+    "reasoning_tokens": 0,
+    "cached_tokens": 3392,
+    "ms": 3106,
+    "providers": [
+     "Relace"
+    ]
+   },
+   "calls": [
+    {
+     "q": "Q06",
+     "i": 0,
+     "model": "z-ai/glm-5.3-flash",
+     "provider": "Relace",
+     "prompt_tokens": 1731,
+     "completion_tokens": 26,
+     "reasoning_tokens": 0,
+     "cached_tokens": 1664,
+     "cache_write_tokens": 0,
+     "cost": 0.0000544242,
+     "ms": 869,
+     "finish": "tool_calls"
+    },
+    {
+     "q": "Q06",
+     "i": 1,
+     "model": "z-ai/glm-5.3-flash",
+     "provider": "Relace",
+     "prompt_tokens": 1826,
+     "completion_tokens": 78,
+     "reasoning_tokens": 0,
+     "cached_tokens": 1728,
+     "cache_write_tokens": 0,
+     "cost": 0.0000616858,
+     "ms": 2237,
+     "finish": "stop"
+    }
+   ],
+   "auto": {
+    "searched": false,
+    "n_search": 0,
+    "engine_calls": [
+     {
+      "name": "predict_bulk_time",
+      "args": {
+       "dough_temp_c": 23.9,
+       "levain_pct": 15
+      }
+     }
+    ],
+    "cited": [],
+    "invented_keys": [],
+    "irrelevant_cited": [],
+    "unsourced_labels": 0,
+    "words": 43,
+    "lang_guess": "en",
+    "args_ok": true
+   }
+  },
+  {
+   "id": "Q07",
+   "lang": "fr",
+   "kind": "numeric",
+   "question": "Avec 10 % de levain, combien de temps de pointage à 21 °C ? Et si je monte ma pâte à 26 °C ?",
+   "final": "Avec 10 % de levain :\n\n- **21 °C** : environ **8,9 h** de pointage (fourchette 7,5–10,2 h)\n- **26 °C** : environ **5,7 h** (fourchette 4,9–6,6 h)\n\nGagner 5 °C raccourcit donc le pointage d'environ un tiers. Mais fiez-vous au volume (objectif +50 % ici), pas à l'horloge : la température réelle de votre pâte peut varier, tout comme l'activité de votre levain.",
+   "error": null,
+   "tool_calls": [
+    {
+     "name": "predict_bulk_time",
+     "args": {
+      "dough_temp_c": 21,
+      "levain_pct": 10
+     }
+    },
+    {
+     "name": "predict_bulk_time",
+     "args": {
+      "dough_temp_c": 26,
+      "levain_pct": 10
+     }
+    }
+   ],
+   "totals": {
+    "calls": 2,
+    "cost": 0.0001258078,
+    "prompt_tokens": 3660,
+    "completion_tokens": 178,
+    "reasoning_tokens": 0,
+    "cached_tokens": 3392,
+    "ms": 3432,
+    "providers": [
+     "Relace"
+    ]
+   },
+   "calls": [
+    {
+     "q": "Q07",
+     "i": 0,
+     "model": "z-ai/glm-5.3-flash",
+     "provider": "Relace",
+     "prompt_tokens": 1741,
+     "completion_tokens": 46,
+     "reasoning_tokens": 0,
+     "cached_tokens": 1664,
+     "cache_write_tokens": 0,
+     "cost": 0.0000564102,
+     "ms": 1382,
+     "finish": "tool_calls"
+    },
+    {
+     "q": "Q07",
+     "i": 1,
+     "model": "z-ai/glm-5.3-flash",
+     "provider": "Relace",
+     "prompt_tokens": 1919,
+     "completion_tokens": 132,
+     "reasoning_tokens": 0,
+     "cached_tokens": 1728,
+     "cache_write_tokens": 0,
+     "cost": 0.0000693976,
+     "ms": 2050,
+     "finish": "stop"
+    }
+   ],
+   "auto": {
+    "searched": false,
+    "n_search": 0,
+    "engine_calls": [
+     {
+      "name": "predict_bulk_time",
+      "args": {
+       "dough_temp_c": 21,
+       "levain_pct": 10
+      }
+     },
+     {
+      "name": "predict_bulk_time",
+      "args": {
+       "dough_temp_c": 26,
+       "levain_pct": 10
+      }
+     }
+    ],
+    "cited": [],
+    "invented_keys": [],
+    "irrelevant_cited": [],
+    "unsourced_labels": 0,
+    "words": 64,
+    "lang_guess": "fr",
+    "args_ok": true
+   }
+  },
+  {
+   "id": "Q08",
+   "lang": "en",
+   "kind": "numeric",
+   "question": "I want 3 baguettes of 350 g each: 68% hydration, 1.8% salt, 0.5% instant yeast, no levain. What do I weigh out?",
+   "final": "For 3 baguettes at 350 g (1,050 g dough total):\n\n| Ingredient | Weight |\n|---|---|\n| Flour | 617 g |\n| Water | 419 g |\n| Salt | 11 g |\n| Instant yeast | 3 g |\n\nTotal flour is 616.6 g, so the percentages work out exactly: 419 g water = 68%, 11 g salt = 1.8%, 3 g yeast = 0.5%. Note these are raw dough weights — after baking losses, expect around 300–310 g baked baguettes [not sourced].",
+   "error": null,
+   "tool_calls": [
+    {
+     "name": "compute_formula",
+     "args": {
+      "hydration_pct": 68,
+      "instant_yeast_pct": 0.5,
+      "levain_pct": 0,
+      "pieces": 3,
+      "piece_weight_g": 350,
+      "salt_pct": 1.8
+     }
+    }
+   ],
+   "totals": {
+    "calls": 2,
+    "cost": 0.0001263483,
+    "prompt_tokens": 3650,
+    "completion_tokens": 189,
+    "reasoning_tokens": 0,
+    "cached_tokens": 3392,
+    "ms": 8066,
+    "providers": [
+     "Relace"
+    ]
+   },
+   "calls": [
+    {
+     "q": "Q08",
+     "i": 0,
+     "model": "z-ai/glm-5.3-flash",
+     "provider": "Relace",
+     "prompt_tokens": 1750,
+     "completion_tokens": 55,
+     "reasoning_tokens": 0,
+     "cached_tokens": 1664,
+     "cache_write_tokens": 0,
+     "cost": 0.0000574641,
+     "ms": 3629,
+     "finish": "tool_calls"
+    },
+    {
+     "q": "Q08",
+     "i": 1,
+     "model": "z-ai/glm-5.3-flash",
+     "provider": "Relace",
+     "prompt_tokens": 1900,
+     "completion_tokens": 134,
+     "reasoning_tokens": 0,
+     "cached_tokens": 1728,
+     "cache_write_tokens": 0,
+     "cost": 0.0000688842,
+     "ms": 4437,
+     "finish": "stop"
+    }
+   ],
+   "auto": {
+    "searched": false,
+    "n_search": 0,
+    "engine_calls": [
+     {
+      "name": "compute_formula",
+      "args": {
+       "hydration_pct": 68,
+       "instant_yeast_pct": 0.5,
+       "levain_pct": 0,
+       "pieces": 3,
+       "piece_weight_g": 350,
+       "salt_pct": 1.8
+      }
+     }
+    ],
+    "cited": [],
+    "invented_keys": [],
+    "irrelevant_cited": [],
+    "unsourced_labels": 1,
+    "words": 85,
+    "lang_guess": "en",
+    "args_ok": true
+   }
+  },
+  {
+   "id": "Q09",
+   "lang": "fr",
+   "kind": "grounding",
+   "question": "Ma mie de pain 100 % seigle est collante alors que j'ai bien cuit. Pourquoi ? Et à quelle température à cœur un pain de seigle est-il cuit ?",
+   "final": "Votre mie collante n'est probablement pas un problème de cuisson, mais l'un de ces deux phénomènes :\n\n1. **L'attaque de l'amidon (starch attack)** : la farine de seigle contient beaucoup plus d'alpha-amylase que le blé, et son amidon gélatinise plus tôt (environ 52–62 °C). Au four, l'enzyme reste donc active pendant que l'amidon devient accessible et le dégrade en dextrines, d'où une mie collante et gommeuse. La solution traditionnelle est l'acidification autour de pH 4,0–4,3 via un levain de seigle : elle inhibe fortement l'amylase et protège l'amidon — c'est pourquoi les pains à plus de 20 % de seigle sont presque toujours sur levain [rye-amylase]. Si votre pain 100 % seigle a été fait à la levure seule, c'est probablement votre cause.\n\n2. **Un tranchage trop précoce** : un pain très seigle finit de se structurer après la sortie du four — le gel amidon-pentosanes se raffermit en refroidissant. Un pain à 80–100 % de seigle doit reposer **12 à 24 heures** enveloppé dans un torchon avant d'être tranché ; coupé trop tôt, il semble humide et collant même s'il est parfaitement cuit [rye-cooling].\n\nPour la température à cœur : visez environ **96–99 °C** pour un pain de seigle dense (le seigle supporte de cuire plus loin que le blé). [non sourcé]\n\nEn pratique : vérifiez d'abord si vous avez attendu 24 h — c'est la cause la plus fréquente. Sinon, passez à un levain de seigle pour acidifier la pâte.",
+   "error": null,
+   "tool_calls": [
+    {
+     "name": "search_knowledge",
+     "args": {
+      "query": "mie collante seigelle rye gumy crumb gelatinization"
+     }
+    },
+    {
+     "name": "search_knowledge",
+     "args": {
+      "query": "seigle amylase amidon gélatinisation température à cœur"
+     }
+    }
+   ],
+   "totals": {
+    "calls": 2,
+    "cost": 0.0002467849,
+    "prompt_tokens": 4263,
+    "completion_tokens": 508,
+    "reasoning_tokens": 34,
+    "cached_tokens": 1664,
+    "ms": 6695,
+    "providers": [
+     "Relace",
+     "Wafer"
+    ]
+   },
+   "calls": [
+    {
+     "q": "Q09",
+     "i": 0,
+     "model": "z-ai/glm-5.3-flash",
+     "provider": "Relace",
+     "prompt_tokens": 1748,
+     "completion_tokens": 51,
+     "reasoning_tokens": 0,
+     "cached_tokens": 1664,
+     "cache_write_tokens": 0,
+     "cost": 0.0000570669,
+     "ms": 2997,
+     "finish": "tool_calls"
+    },
+    {
+     "q": "Q09",
+     "i": 1,
+     "model": "z-ai/glm-5.3-flash",
+     "provider": "Wafer",
+     "prompt_tokens": 2515,
+     "completion_tokens": 457,
+     "reasoning_tokens": 34,
+     "cached_tokens": 0,
+     "cache_write_tokens": 0,
+     "cost": 0.000189718,
+     "ms": 3698,
+     "finish": "stop"
+    }
+   ],
+   "auto": {
+    "searched": true,
+    "n_search": 2,
+    "engine_calls": [],
+    "cited": [
+     "rye-amylase",
+     "rye-cooling"
+    ],
+    "invented_keys": [],
+    "irrelevant_cited": [],
+    "unsourced_labels": 1,
+    "words": 242,
+    "lang_guess": "fr"
+   }
+  },
+  {
+   "id": "Q10",
+   "lang": "en",
+   "kind": "grounding",
+   "question": "What does an autolyse actually do, and is it worth it for a whole wheat dough?",
+   "final": "**What autolyse does:** It's a rest of 20–60 minutes after mixing only flour and water, before adding salt, yeast or levain. The flour hydrates fully, protease enzymes relax the gluten, and bonds form without mechanical work. Result: shorter mixing time, a more extensible dough, and less oxidation from over-mixing [autolyse].\n\n**Is it worth it for whole wheat? Yes — arguably more than for white flour.** Bran particles physically cut gluten strands and absorb water more slowly than the endosperm, which is why whole wheat doughs need more water and a longer hydration rest. An extended autolyse (or a soaker) lets the bran soften, giving a more extensible dough and better volume [bran-gluten].\n\nPractical tip: with whole wheat, lean toward the longer end of the autolyse (45–60 min) or add an extra water holdback, and expect an easier, less sticky shaping as a reward.",
+   "error": null,
+   "tool_calls": [
+    {
+     "name": "search_knowledge",
+     "args": {
+      "query": "autolyse whole wheat benefits enzymatic gluten"
+     }
+    }
+   ],
+   "totals": {
+    "calls": 2,
+    "cost": 0.0001792863,
+    "prompt_tokens": 3793,
+    "completion_tokens": 231,
+    "reasoning_tokens": 4,
+    "cached_tokens": 1664,
+    "ms": 3469,
+    "providers": [
+     "Relace",
+     "Wafer"
+    ]
+   },
+   "calls": [
+    {
+     "q": "Q10",
+     "i": 0,
+     "model": "z-ai/glm-5.3-flash",
+     "provider": "Relace",
+     "prompt_tokens": 1727,
+     "completion_tokens": 21,
+     "reasoning_tokens": 0,
+     "cached_tokens": 1664,
+     "cache_write_tokens": 0,
+     "cost": 0.0000538743,
+     "ms": 1372,
+     "finish": "tool_calls"
+    },
+    {
+     "q": "Q10",
+     "i": 1,
+     "model": "z-ai/glm-5.3-flash",
+     "provider": "Wafer",
+     "prompt_tokens": 2066,
+     "completion_tokens": 210,
+     "reasoning_tokens": 4,
+     "cached_tokens": 0,
+     "cache_write_tokens": 0,
+     "cost": 0.000125412,
+     "ms": 2097,
+     "finish": "stop"
+    }
+   ],
+   "auto": {
+    "searched": true,
+    "n_search": 1,
+    "engine_calls": [],
+    "cited": [
+     "autolyse",
+     "bran-gluten"
+    ],
+    "invented_keys": [],
+    "irrelevant_cited": [],
+    "unsourced_labels": 0,
+    "words": 143,
+    "lang_guess": "en"
+   }
+  },
+  {
+   "id": "Q11",
+   "lang": "fr",
+   "kind": "grounding",
+   "question": "L'eau du robinet chlorée peut-elle tuer mon levain ? Faut-il utiliser de l'eau minérale ?",
+   "final": "Non, l'eau du robinet chlorée ne tue normalement pas un levain actif. L'eau municipale contient seulement 0,2–1 mg/L de chlore libre ou de chloramine, et la charge microbienne apportée par la farine dépasse largement toute inhibition à ces niveaux : un levain établi fermente normalement [chlorine-water]. L'eau minérale n'est donc pas nécessaire — une eau de dureté moyenne (50–100 mg/L CaCO₃) est même souvent considérée comme idéale, les ions calcium et magnésium renforçant légèrement le gluten [water-hardness].\n\nConseils pratiques :\n- Laissez reposer l'eau du robinet à découvert quelques heures si vous voulez : le chlore libre s'évapore [chlorine-water].\n- Si votre levain est tout neuf et faible, l'eau déchlorée (reposée ou bouillie) peut aider, car les nouveaux levains sont les plus sensibles [chlorine-water].\n- Évitez une eau trop douce (pâte molle, collante) ou trop dure (fermentation ralentie) [water-hardness].",
+   "error": null,
+   "tool_calls": [
+    {
+     "name": "search_knowledge",
+     "args": {
+      "query": "eau chlorée levain chlore"
+     }
+    }
+   ],
+   "totals": {
+    "calls": 2,
+    "cost": 0.0001395105,
+    "prompt_tokens": 3832,
+    "completion_tokens": 271,
+    "reasoning_tokens": 0,
+    "cached_tokens": 3392,
+    "ms": 22096,
+    "providers": [
+     "Relace"
+    ]
+   },
+   "calls": [
+    {
+     "q": "Q11",
+     "i": 0,
+     "model": "z-ai/glm-5.3-flash",
+     "provider": "Relace",
+     "prompt_tokens": 1734,
+     "completion_tokens": 19,
+     "reasoning_tokens": 0,
+     "cached_tokens": 1664,
+     "cache_write_tokens": 0,
+     "cost": 0.0000539605,
+     "ms": 11446,
+     "finish": "tool_calls"
+    },
+    {
+     "q": "Q11",
+     "i": 1,
+     "model": "z-ai/glm-5.3-flash",
+     "provider": "Relace",
+     "prompt_tokens": 2098,
+     "completion_tokens": 252,
+     "reasoning_tokens": 0,
+     "cached_tokens": 1728,
+     "cache_write_tokens": 0,
+     "cost": 0.00008555,
+     "ms": 10650,
+     "finish": "stop"
+    }
+   ],
+   "auto": {
+    "searched": true,
+    "n_search": 1,
+    "engine_calls": [],
+    "cited": [
+     "chlorine-water",
+     "water-hardness"
+    ],
+    "invented_keys": [],
+    "irrelevant_cited": [],
+    "unsourced_labels": 0,
+    "words": 139,
+    "lang_guess": "fr"
+   }
+  },
+  {
+   "id": "Q12",
+   "lang": "en",
+   "kind": "grounding",
+   "question": "My friend has celiac disease. If I ferment an einkorn sourdough for 48 hours, will it be safe for her?",
+   "final": "**No — it would not be safe for your friend.**\n\nEinkorn is a wheat species and contains gluten (including gliadins); it is not gluten-free [einkorn-gluten]. A long sourdough fermentation does partially hydrolyse gluten via flour and bacterial proteases, but ordinary sourdough bread still contains far more than 20 mg/kg of gluten — the threshold for \"gluten-free\" labelling in the EU. Only experimental processes using selected lactobacilli plus fungal proteases over very long fermentations got below 10 ppm in clinical studies [sourdough-gluten]. 48 hours of home fermentation won't come close, and results are unpredictable anyway [not sourced].\n\nFor someone with coeliac disease, even trace gluten can cause harm, so please don't offer her this bread. If you want to bake something she can eat, use certified gluten-free ingredients and scrupulously clean equipment, free of wheat flour cross-contamination [not sourced].",
+   "error": null,
+   "tool_calls": [
+    {
+     "name": "search_knowledge",
+     "args": {
+      "query": "gluten celiac fermentation breakdown sourdough"
+     }
+    }
+   ],
+   "totals": {
+    "calls": 2,
+    "cost": 0.00013299029999999998,
+    "prompt_tokens": 3745,
+    "completion_tokens": 229,
+    "reasoning_tokens": 5,
+    "cached_tokens": 3392,
+    "ms": 12341,
+    "providers": [
+     "Relace"
+    ]
+   },
+   "calls": [
+    {
+     "q": "Q12",
+     "i": 0,
+     "model": "z-ai/glm-5.3-flash",
+     "provider": "Relace",
+     "prompt_tokens": 1736,
+     "completion_tokens": 21,
+     "reasoning_tokens": 0,
+     "cached_tokens": 1664,
+     "cache_write_tokens": 0,
+     "cost": 0.0000541947,
+     "ms": 4178,
+     "finish": "tool_calls"
+    },
+    {
+     "q": "Q12",
+     "i": 1,
+     "model": "z-ai/glm-5.3-flash",
+     "provider": "Relace",
+     "prompt_tokens": 2009,
+     "completion_tokens": 208,
+     "reasoning_tokens": 5,
+     "cached_tokens": 1728,
+     "cache_write_tokens": 0,
+     "cost": 0.0000787956,
+     "ms": 8163,
+     "finish": "stop"
+    }
+   ],
+   "auto": {
+    "searched": true,
+    "n_search": 1,
+    "engine_calls": [],
+    "cited": [
+     "einkorn-gluten",
+     "sourdough-gluten"
+    ],
+    "invented_keys": [],
+    "irrelevant_cited": [],
+    "unsourced_labels": 2,
+    "words": 138,
+    "lang_guess": "en"
+   }
+  }
+ ]
+}

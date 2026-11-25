@@ -1,0 +1,2021 @@
+[
+ {
+  "key": "doi:10.1021/bm061206g",
+  "authors": [
+   "Almutawah",
+   "Barker",
+   "Belton"
+  ],
+  "year": 2007,
+  "title": "Hydration of Gluten:  A Dielectric, Calorimetric, and Fourier Transform Infrared Study",
+  "venue": "Biomacromolecules",
+  "doi": "10.1021/bm061206g",
+  "url": "https://doi.org/10.1021/bm061206g",
+  "oa_url": null,
+  "match": "search sim=0.04 author=True year=True",
+  "cited_by": [
+   "novita-0262"
+  ]
+ },
+ {
+  "key": "doi:10.1016/j.jfoodeng.2011.07.015",
+  "authors": [
+   "Altamirano-Fortoul",
+   "Le-Bail",
+   "Chevallier",
+   "Rosell"
+  ],
+  "year": 2012,
+  "title": "Effect of the amount of steam during baking on bread crust features and water diffusion",
+  "venue": "Journal of Food Engineering",
+  "doi": "10.1016/j.jfoodeng.2011.07.015",
+  "url": "https://doi.org/10.1016/j.jfoodeng.2011.07.015",
+  "oa_url": null,
+  "match": "title-search 1.00",
+  "cited_by": [
+   "novita-0089",
+   "novita-0090",
+   "novita-0441"
+  ]
+ },
+ {
+  "key": "doi:10.1016/j.jff.2014.11.023",
+  "authors": [
+   "Arcila",
+   "Rose"
+  ],
+  "year": 2015,
+  "title": "Repeated cooking and freezing of whole wheat flour increases resistant starch with beneficial impacts on in vitro fecal fermentation properties",
+  "venue": "Journal of Functional Foods",
+  "doi": "10.1016/j.jff.2014.11.023",
+  "url": "https://doi.org/10.1016/j.jff.2014.11.023",
+  "oa_url": null,
+  "match": "title-search 1.00",
+  "cited_by": [
+   "novita-0029",
+   "novita-0030"
+  ]
+ },
+ {
+  "key": "doi:10.1073/pnas.1801071115",
+  "authors": [
+   "Arranz-Otaegui",
+   "Gonzalez Carretero",
+   "Ramsey",
+   "Fuller",
+   "Richter"
+  ],
+  "year": 2018,
+  "title": "Archaeobotanical evidence reveals the origins of bread 14,400 years ago in northeastern Jordan",
+  "venue": "Proceedings of the National Academy of Sciences",
+  "doi": "10.1073/pnas.1801071115",
+  "url": "https://doi.org/10.1073/pnas.1801071115",
+  "oa_url": null,
+  "match": "search sim=0.19 author=True year=True",
+  "cited_by": [
+   "novita-0243"
+  ]
+ },
+ {
+  "key": "doi:10.1016/s0733-5210(09)80024-6",
+  "authors": [
+   "Ask",
+   "Nair",
+   "Asp"
+  ],
+  "year": 1991,
+  "title": "Effect of scalding procedures on the degradation of starch in rye products",
+  "venue": "Journal of Cereal Science",
+  "doi": "10.1016/s0733-5210(09)80024-6",
+  "url": "https://doi.org/10.1016/s0733-5210(09)80024-6",
+  "oa_url": null,
+  "match": "search sim=0.04 author=True year=True",
+  "cited_by": [
+   "novita-0244"
+  ]
+ },
+ {
+  "key": "doi:10.1006/jcrs.2000.0320",
+  "authors": [
+   "Baardseth",
+   "Kvaal",
+   "Lea",
+   "Ellekjær",
+   "Færgestad"
+  ],
+  "year": 2000,
+  "title": "The Effects of Bread Making Process and Wheat Quality on French Baguettes",
+  "venue": "Journal of Cereal Science",
+  "doi": "10.1006/jcrs.2000.0320",
+  "url": "https://doi.org/10.1006/jcrs.2000.0320",
+  "oa_url": null,
+  "match": "manual targeted search",
+  "cited_by": [
+   "novita-0652",
+   "novita-0716"
+  ]
+ },
+ {
+  "key": "doi:10.1007/s00217-003-0717-0",
+  "authors": [
+   "Basaran",
+   "G��men"
+  ],
+  "year": 2003,
+  "title": "The effects of low mixing temperature on dough rheology and bread properties",
+  "venue": "European Food Research and Technology",
+  "doi": "10.1007/s00217-003-0717-0",
+  "url": "https://doi.org/10.1007/s00217-003-0717-0",
+  "oa_url": null,
+  "match": "doi-given",
+  "cited_by": [
+   "novita-0062",
+   "novita-0063",
+   "novita-0065",
+   "novita-0066",
+   "novita-0067",
+   "novita-0083"
+  ]
+ },
+ {
+  "key": "doi:10.1016/j.jfoodeng.2020.110035",
+  "authors": [
+   "Baudouin",
+   "Nogueira",
+   "van der Mijnsbrugge",
+   "Frederix",
+   "Redl",
+   "Morel"
+  ],
+  "year": 2020,
+  "title": "Mechanochemical activation of gluten network development during dough mixing",
+  "venue": "Journal of Food Engineering",
+  "doi": "10.1016/j.jfoodeng.2020.110035",
+  "url": "https://doi.org/10.1016/j.jfoodeng.2020.110035",
+  "oa_url": null,
+  "match": "search sim=1.00 author=True year=True",
+  "cited_by": [
+   "novita-0064"
+  ]
+ },
+ {
+  "key": "doi:10.1007/s00253-012-4052-x",
+  "authors": [
+   "Belz",
+   "Mairinger",
+   "Zannini",
+   "Ryan",
+   "Cashman",
+   "Arendt"
+  ],
+  "year": 2012,
+  "title": "The effect of sourdough and calcium propionate on the microbial shelf-life of salt reduced bread",
+  "venue": "Applied Microbiology and Biotechnology",
+  "doi": "10.1007/s00253-012-4052-x",
+  "url": "https://doi.org/10.1007/s00253-012-4052-x",
+  "oa_url": null,
+  "match": "doi-given",
+  "cited_by": [
+   "novita-0738",
+   "novita-0739"
+  ]
+ },
+ {
+  "key": "ref:bertrand-1771",
+  "authors": [
+   "Bertrand J.E."
+  ],
+  "year": 1771,
+  "title": "Descriptions des arts et métiers",
+  "venue": "Académie Royale des Sciences",
+  "url": "https://archive.org/details/bub_gb_v9263puX2-IC",
+  "doi": null,
+  "oa_url": null,
+  "match": "no DOI (book/thesis/patent/decree)",
+  "cited_by": [
+   "novita-0050"
+  ]
+ },
+ {
+  "key": "doi:10.1016/j.jfoodeng.2012.10.005",
+  "authors": [
+   "Besbes",
+   "Jury",
+   "Monteau",
+   "Le Bail"
+  ],
+  "year": 2013,
+  "title": "Characterizing the cellular structure of bread crumb and crust as affected by heating rate using X-ray microtomography",
+  "venue": "Journal of Food Engineering",
+  "doi": "10.1016/j.jfoodeng.2012.10.005",
+  "url": "https://doi.org/10.1016/j.jfoodeng.2012.10.005",
+  "oa_url": null,
+  "match": "title-search 1.00",
+  "cited_by": [
+   "novita-0092",
+   "novita-0093",
+   "novita-0444"
+  ]
+ },
+ {
+  "key": "doi:10.1016/j.foodres.2012.09.041",
+  "authors": [
+   "Besbes",
+   "Jury",
+   "Monteau",
+   "Le Bail"
+  ],
+  "year": 2013,
+  "title": "Water vapor transport properties during staling of bread crumb and crust as affected by heating rate",
+  "venue": "Food Research International",
+  "doi": "10.1016/j.foodres.2012.09.041",
+  "url": "https://doi.org/10.1016/j.foodres.2012.09.041",
+  "oa_url": null,
+  "match": "search sim=1.00 author=True year=True",
+  "cited_by": [
+   "novita-0092",
+   "novita-0444"
+  ]
+ },
+ {
+  "key": "doi:10.1094/cchem-06-13-0121-rw",
+  "authors": [
+   "Birch",
+   "Petersen",
+   "Hansen"
+  ],
+  "year": 2014,
+  "title": "REVIEW: Aroma of Wheat Bread Crumb",
+  "venue": "Cereal Chemistry",
+  "doi": "10.1094/cchem-06-13-0121-rw",
+  "url": "https://doi.org/10.1094/cchem-06-13-0121-rw",
+  "oa_url": null,
+  "match": "doi-given",
+  "cited_by": [
+   "novita-0073",
+   "novita-0074"
+  ]
+ },
+ {
+  "key": "doi:10.1016/j.lwt.2012.08.019",
+  "authors": [
+   "Birch",
+   "Petersen",
+   "Hansen"
+  ],
+  "year": 2013,
+  "title": "The aroma profile of wheat bread crumb influenced by yeast concentration and fermentation temperature",
+  "venue": "LWT - Food Science and Technology",
+  "doi": "10.1016/j.lwt.2012.08.019",
+  "url": "https://doi.org/10.1016/j.lwt.2012.08.019",
+  "oa_url": null,
+  "match": "doi-given",
+  "cited_by": [
+   "novita-0075",
+   "novita-0076",
+   "novita-0078",
+   "novita-0079",
+   "novita-0080"
+  ]
+ },
+ {
+  "key": "doi:10.1016/j.foodres.2013.03.011",
+  "authors": [
+   "Birch",
+   "Petersen",
+   "Arneborg",
+   "Hansen"
+  ],
+  "year": 2013,
+  "title": "Influence of commercial baker's yeasts on bread aroma profiles",
+  "venue": "Food Research International",
+  "doi": "10.1016/j.foodres.2013.03.011",
+  "url": "https://doi.org/10.1016/j.foodres.2013.03.011",
+  "oa_url": null,
+  "match": "search sim=0.25 author=True year=True",
+  "cited_by": [
+   "novita-0301"
+  ]
+ },
+ {
+  "key": "doi:10.1016/j.jff.2022.105094",
+  "authors": [
+   "Bojarczuk",
+   "Skąpska",
+   "Mousavi Khaneghah",
+   "Marszałek"
+  ],
+  "year": 2022,
+  "title": "Health benefits of resistant starch: A review of the literature",
+  "venue": "Journal of Functional Foods",
+  "doi": "10.1016/j.jff.2022.105094",
+  "url": "https://doi.org/10.1016/j.jff.2022.105094",
+  "oa_url": null,
+  "match": "title-search 1.00",
+  "cited_by": [
+   "novita-0028"
+  ]
+ },
+ {
+  "key": "doi:10.3945/jn.111.141366",
+  "authors": [
+   "Bolhuis",
+   "Temme",
+   "Koeman",
+   "Noort",
+   "Kremer",
+   "Janssen"
+  ],
+  "year": 2011,
+  "title": "A Salt Reduction of 50% in Bread Does Not Decrease Bread Consumption or Increase Sodium Intake by the Choice of Sandwich Fillings",
+  "venue": "The Journal of Nutrition",
+  "doi": "10.3945/jn.111.141366",
+  "url": "https://doi.org/10.3945/jn.111.141366",
+  "oa_url": null,
+  "match": "doi-given",
+  "cited_by": [
+   "novita-0743"
+  ]
+ },
+ {
+  "key": "doi:10.1016/j.lwt.2019.05.094",
+  "authors": [
+   "Bredariol",
+   "Spatti",
+   "Vanin"
+  ],
+  "year": 2019,
+  "title": "Different baking conditions may produce breads with similar physical qualities but unique starch gelatinization behaviour",
+  "venue": "LWT",
+  "doi": "10.1016/j.lwt.2019.05.094",
+  "url": "https://doi.org/10.1016/j.lwt.2019.05.094",
+  "oa_url": null,
+  "match": "title-search 1.00",
+  "cited_by": [
+   "novita-0091"
+  ]
+ },
+ {
+  "key": "doi:10.1006/jcrs.1996.0052",
+  "authors": [
+   "Brooker"
+  ],
+  "year": 1996,
+  "title": "The Role of Fat in the Stabilisation of Gas Cells in Bread Dough",
+  "venue": "Journal of Cereal Science",
+  "doi": "10.1006/jcrs.1996.0052",
+  "url": "https://doi.org/10.1006/jcrs.1996.0052",
+  "oa_url": null,
+  "match": "search sim=1.00 author=True year=False",
+  "cited_by": [
+   "novita-0831"
+  ]
+ },
+ {
+  "key": "doi:10.1007/978-1-4757-6809-1",
+  "authors": [
+   "Calvel"
+  ],
+  "year": 2001,
+  "title": "The Taste of Bread",
+  "venue": "",
+  "doi": "10.1007/978-1-4757-6809-1",
+  "url": "https://doi.org/10.1007/978-1-4757-6809-1",
+  "oa_url": null,
+  "match": "title-search 1.00",
+  "cited_by": [
+   "novita-0053",
+   "novita-0103",
+   "novita-0104",
+   "novita-0105",
+   "novita-0712",
+   "novita-0713",
+   "novita-0717",
+   "novita-0718"
+  ]
+ },
+ {
+  "key": "doi:10.1111/jfbc.13204",
+  "authors": [
+   "Campos‐Vega",
+   "Arreguín‐Campos",
+   "Cruz‐Medrano",
+   "Castillo Bilbao"
+  ],
+  "year": 2020,
+  "title": "Spent coffee (<i>Coffea arabica</i>L.) grounds promote satiety and attenuate energy intake: A pilot study",
+  "venue": "Journal of Food Biochemistry",
+  "doi": "10.1111/jfbc.13204",
+  "url": "https://doi.org/10.1111/jfbc.13204",
+  "oa_url": null,
+  "match": "manual targeted search",
+  "cited_by": [
+   "novita-0693"
+  ]
+ },
+ {
+  "key": "doi:10.1016/j.ijrefrig.2020.04.006",
+  "authors": [
+   "Cappelli",
+   "Canessa",
+   "Cini"
+  ],
+  "year": 2020,
+  "title": "Effects of CO2 snow addition during kneading on thermoregulation, dough rheological properties, and bread characteristics: A focus on ancient and modern wheat cultivars",
+  "venue": "International Journal of Refrigeration",
+  "doi": "10.1016/j.ijrefrig.2020.04.006",
+  "url": "https://doi.org/10.1016/j.ijrefrig.2020.04.006",
+  "oa_url": null,
+  "match": "doi-given",
+  "cited_by": [
+   "novita-0062",
+   "novita-0063"
+  ]
+ },
+ {
+  "key": "doi:10.1016/j.tifs.2020.08.008",
+  "authors": [
+   "Cappelli",
+   "Bettaccini",
+   "Cini"
+  ],
+  "year": 2020,
+  "title": "The kneading process: A systematic review of the effects on dough rheology and resulting bread characteristics, including improvement strategies",
+  "venue": "Trends in Food Science &amp; Technology",
+  "doi": "10.1016/j.tifs.2020.08.008",
+  "url": "https://doi.org/10.1016/j.tifs.2020.08.008",
+  "oa_url": null,
+  "match": "search sim=0.29 author=True year=True",
+  "cited_by": [
+   "novita-0067"
+  ]
+ },
+ {
+  "key": "doi:10.1007/s13197-016-2399-1",
+  "authors": [
+   "Carrillo-Navas",
+   "Guadarrama-Lezama",
+   "Vernon-Carter",
+   "García-Díaz",
+   "Reyes",
+   "Alvarez-Ramírez"
+  ],
+  "year": 2016,
+  "title": "Effect of gelatinized flour fraction on thermal and rheological properties of wheat-based dough and bread",
+  "venue": "Journal of Food Science and Technology",
+  "doi": "10.1007/s13197-016-2399-1",
+  "url": "https://doi.org/10.1007/s13197-016-2399-1",
+  "oa_url": null,
+  "match": "title-search 1.00",
+  "cited_by": [
+   "novita-0001",
+   "novita-0002"
+  ]
+ },
+ {
+  "key": "ref:chen-65c-bread-doctor",
+  "authors": [
+   "Chen Yvonne (陳郁芬)"
+  ],
+  "year": 2005,
+  "title": "65°C 湯種麵包 (65 °C tangzhong bread)",
+  "venue": "book",
+  "url": null,
+  "doi": null,
+  "oa_url": null,
+  "match": "no DOI (book/thesis/patent/decree)",
+  "cited_by": [
+   "novita-0786"
+  ]
+ },
+ {
+  "key": "doi:10.1007/s10068-010-0081-3",
+  "authors": [
+   "Cho",
+   "Peterson"
+  ],
+  "year": 2010,
+  "title": "Chemistry of bread aroma: A review",
+  "venue": "Food Science and Biotechnology",
+  "doi": "10.1007/s10068-010-0081-3",
+  "url": "https://doi.org/10.1007/s10068-010-0081-3",
+  "oa_url": null,
+  "match": "doi-given",
+  "cited_by": [
+   "novita-0074",
+   "novita-0714"
+  ]
+ },
+ {
+  "key": "doi:10.1046/j.1365-2621.2003.00748.x",
+  "authors": [
+   "Cuq",
+   "Abecassis",
+   "Guilbert"
+  ],
+  "year": 2003,
+  "title": "State diagrams to help describe wheat bread processing",
+  "venue": "International Journal of Food Science and Technology",
+  "doi": "10.1046/j.1365-2621.2003.00748.x",
+  "url": "https://doi.org/10.1046/j.1365-2621.2003.00748.x",
+  "oa_url": null,
+  "match": "title-search 1.00",
+  "cited_by": [
+   "novita-0102"
+  ]
+ },
+ {
+  "key": "doi:10.1007/s00397-024-01430-6",
+  "authors": [
+   "Dufour",
+   "Chaunier",
+   "Hugon",
+   "Dugué",
+   "Kansou",
+   "Saulnier",
+   "Della Valle"
+  ],
+  "year": 2024,
+  "title": "From Alveograph test to extensional behavior of wheat flour dough",
+  "venue": "Rheologica Acta",
+  "doi": "10.1007/s00397-024-01430-6",
+  "url": "https://doi.org/10.1007/s00397-024-01430-6",
+  "oa_url": null,
+  "match": "search sim=1.00 author=True year=True",
+  "cited_by": [
+   "novita-0043"
+  ]
+ },
+ {
+  "key": "doi:10.3389/fnut.2023.1230043",
+  "authors": [
+   "D’Amico",
+   "Gänzle",
+   "Call",
+   "Zwirzitz",
+   "Grausgruber",
+   "D’Amico",
+   "Brouns"
+  ],
+  "year": 2023,
+  "title": "Does sourdough bread provide clinically relevant health benefits?",
+  "venue": "Frontiers in Nutrition",
+  "doi": "10.3389/fnut.2023.1230043",
+  "url": "https://doi.org/10.3389/fnut.2023.1230043",
+  "oa_url": null,
+  "match": "title-search 1.00",
+  "cited_by": [
+   "novita-0145",
+   "novita-0720"
+  ]
+ },
+ {
+  "key": "doi:10.3746/pnf.2014.19.2.115",
+  "authors": [
+   "Eleazu",
+   "Eleazu",
+   "Aniedu",
+   "Amajor",
+   "Ikpeama",
+   "Ebenzer"
+  ],
+  "year": 2014,
+  "title": "Effect of Partial Replacement of Wheat Flour with High Quality Cassava Flour on the Chemical Composition, Antioxidant Activity, Sensory Quality, and Microbial Quality of Bread",
+  "venue": "Preventive Nutrition and Food Science",
+  "doi": "10.3746/pnf.2014.19.2.115",
+  "url": "https://doi.org/10.3746/pnf.2014.19.2.115",
+  "oa_url": null,
+  "match": "doi-given",
+  "cited_by": [
+   "novita-0750"
+  ]
+ },
+ {
+  "key": "doi:10.1002/star.19800320806",
+  "authors": [
+   "Eliasson"
+  ],
+  "year": 1980,
+  "title": "Effect of Water Content on the Gelatinization of Wheat Starch",
+  "venue": "Starch - Stärke",
+  "doi": "10.1002/star.19800320806",
+  "url": "https://doi.org/10.1002/star.19800320806",
+  "oa_url": null,
+  "match": "title-search 1.00",
+  "cited_by": [
+   "novita-0125"
+  ]
+ },
+ {
+  "key": "doi:10.1128/aem.02955-13",
+  "authors": [
+   "Ercolini",
+   "Pontonio",
+   "De Filippis",
+   "Minervini",
+   "La Storia",
+   "Gobbetti",
+   "Di Cagno"
+  ],
+  "year": 2013,
+  "title": "Microbial Ecology Dynamics during Rye and Wheat Sourdough Preparation",
+  "venue": "Applied and Environmental Microbiology",
+  "doi": "10.1128/aem.02955-13",
+  "url": "https://doi.org/10.1128/aem.02955-13",
+  "oa_url": null,
+  "match": "search sim=0.10 author=True year=True",
+  "cited_by": [
+   "novita-0233"
+  ]
+ },
+ {
+  "key": "doi:10.1016/j.lwt.2020.110024",
+  "authors": [
+   "Estévez-López",
+   "García-Gómez",
+   "Vázquez-Odériz",
+   "Ferreiro",
+   "Romero-Rodríguez"
+  ],
+  "year": 2021,
+  "title": "Influence of bread shape on the sensory characteristics of Galician breads: Development of lexicon, efficacy control of the trained panel and establishment of a sensory profile",
+  "venue": "LWT",
+  "doi": "10.1016/j.lwt.2020.110024",
+  "url": "https://doi.org/10.1016/j.lwt.2020.110024",
+  "oa_url": null,
+  "match": "search sim=0.43 author=True year=True",
+  "cited_by": [
+   "novita-0190",
+   "novita-0656"
+  ]
+ },
+ {
+  "key": "ref:fanari-2021",
+  "authors": [
+   "Fanari F. et al."
+  ],
+  "year": 2021,
+  "title": "Impact of water and flour components in dough investigated through low-field nuclear magnetic resonance",
+  "venue": "Chemical Engineering Transactions 87:289-294",
+  "url": null,
+  "doi": null,
+  "oa_url": null,
+  "match": "no DOI (book/thesis/patent/decree)",
+  "cited_by": [
+   "novita-0096"
+  ]
+ },
+ {
+  "key": "doi:10.3390/molecules26030541",
+  "authors": [
+   "Feng",
+   "Zhang",
+   "Wang",
+   "Chen"
+  ],
+  "year": 2021,
+  "title": "Dynamic Changes in Glutenin Macropolymer during Different Dough Mixing and Resting Processes",
+  "venue": "Molecules",
+  "doi": "10.3390/molecules26030541",
+  "url": "https://doi.org/10.3390/molecules26030541",
+  "oa_url": null,
+  "match": "title-search 1.00",
+  "cited_by": [
+   "novita-0106",
+   "novita-0107"
+  ]
+ },
+ {
+  "key": "ref:galal-johnson-1977",
+  "authors": [
+   "Galal A.M.",
+   "Johnson J.A."
+  ],
+  "year": 1977,
+  "title": "Rheological dough properties as affected by organic acids and salts",
+  "venue": "Cereal Foods World 22(9)",
+  "url": null,
+  "doi": null,
+  "oa_url": null,
+  "match": "no DOI (book/thesis/patent/decree)",
+  "cited_by": [
+   "novita-0054"
+  ]
+ },
+ {
+  "key": "doi:10.1007/978-1-4614-5425-0_8",
+  "authors": [
+   "Galle"
+  ],
+  "year": 2012,
+  "title": "Sourdough: A Tool to Improve Bread Structure",
+  "venue": "Handbook on Sourdough Biotechnology",
+  "doi": "10.1007/978-1-4614-5425-0_8",
+  "url": "https://doi.org/10.1007/978-1-4614-5425-0_8",
+  "oa_url": null,
+  "match": "title-search 1.00",
+  "cited_by": [
+   "novita-0646"
+  ]
+ },
+ {
+  "key": "doi:10.1038/sj.ejcn.1601583",
+  "authors": [
+   "Girgis",
+   "Neal",
+   "Prescott",
+   "Prendergast",
+   "Dumbrell",
+   "Turner",
+   "Woodward"
+  ],
+  "year": 2003,
+  "title": "A one-quarter reduction in the salt content of bread can be made without detection",
+  "venue": "European Journal of Clinical Nutrition",
+  "doi": "10.1038/sj.ejcn.1601583",
+  "url": "https://doi.org/10.1038/sj.ejcn.1601583",
+  "oa_url": null,
+  "match": "doi-given",
+  "cited_by": [
+   "novita-0742"
+  ]
+ },
+ {
+  "key": "doi:10.1002/cche.10100",
+  "authors": [
+   "Gélinas",
+   "McKinnon"
+  ],
+  "year": 2018,
+  "title": "Baking tests: Effect of sucrose and water on yeast gassing power",
+  "venue": "Cereal Chemistry",
+  "doi": "10.1002/cche.10100",
+  "url": "https://doi.org/10.1002/cche.10100",
+  "oa_url": null,
+  "match": "manual: author/topic match (Gélinas & McKinnon, Cereal Chem 2018)",
+  "cited_by": [
+   "novita-0357"
+  ]
+ },
+ {
+  "key": "doi:10.1007/s00217-007-0668-y",
+  "authors": [
+   "Gómez",
+   "Oliete",
+   "Pando",
+   "Ronda",
+   "Caballero"
+  ],
+  "year": 2007,
+  "title": "Effect of fermentation conditions on bread staling kinetics",
+  "venue": "European Food Research and Technology",
+  "doi": "10.1007/s00217-007-0668-y",
+  "url": "https://doi.org/10.1007/s00217-007-0668-y",
+  "oa_url": null,
+  "match": "doi-given",
+  "cited_by": [
+   "novita-0083"
+  ]
+ },
+ {
+  "key": "doi:10.1007/978-3-031-23084-4",
+  "authors": [],
+  "year": 2023,
+  "title": "Handbook on Sourdough Biotechnology",
+  "venue": "",
+  "doi": "10.1007/978-3-031-23084-4",
+  "url": "https://doi.org/10.1007/978-3-031-23084-4",
+  "oa_url": null,
+  "match": "title-search 1.00",
+  "cited_by": [
+   "novita-0081"
+  ]
+ },
+ {
+  "key": "doi:10.1016/j.jcs.2012.11.006",
+  "authors": [
+   "Hirte",
+   "Hamer",
+   "Hoffmann",
+   "Primo-Martín"
+  ],
+  "year": 2013,
+  "title": "Cracks in bread crust cause longer crispness retention",
+  "venue": "Journal of Cereal Science",
+  "doi": "10.1016/j.jcs.2012.11.006",
+  "url": "https://doi.org/10.1016/j.jcs.2012.11.006",
+  "oa_url": null,
+  "match": "title-search 1.00",
+  "cited_by": [
+   "novita-0090",
+   "novita-0438",
+   "novita-0439",
+   "novita-0570"
+  ]
+ },
+ {
+  "key": "doi:10.1016/j.foodres.2011.11.019",
+  "authors": [
+   "Hirte",
+   "Hamer",
+   "Meinders",
+   "van de Hoek",
+   "Primo-Martín"
+  ],
+  "year": 2012,
+  "title": "Control of crust permeability and crispness retention in crispy breads",
+  "venue": "Food Research International",
+  "doi": "10.1016/j.foodres.2011.11.019",
+  "url": "https://doi.org/10.1016/j.foodres.2011.11.019",
+  "oa_url": null,
+  "match": "title-search 1.00",
+  "cited_by": [
+   "novita-0566",
+   "novita-0569"
+  ]
+ },
+ {
+  "key": "doi:10.1002/star.19960480204",
+  "authors": [
+   "Jang",
+   "Pyun"
+  ],
+  "year": 1996,
+  "title": "Effect of Moisture Content on the Melting of Wheat Starch",
+  "venue": "Starch - Stärke",
+  "doi": "10.1002/star.19960480204",
+  "url": "https://doi.org/10.1002/star.19960480204",
+  "oa_url": null,
+  "match": "title-search 1.00",
+  "cited_by": [
+   "novita-0125"
+  ]
+ },
+ {
+  "key": "doi:10.1016/j.fochx.2022.100448",
+  "authors": [
+   "Jia",
+   "Zhang",
+   "Yang",
+   "Ma",
+   "Sun",
+   "Li"
+  ],
+  "year": 2022,
+  "title": "Evolution of the morphological, structural, and molecular properties of gluten protein in dough with different hydration levels during mixing",
+  "venue": "Food Chemistry: X",
+  "doi": "10.1016/j.fochx.2022.100448",
+  "url": "https://doi.org/10.1016/j.fochx.2022.100448",
+  "oa_url": null,
+  "match": "manual targeted search",
+  "cited_by": [
+   "novita-0186"
+  ]
+ },
+ {
+  "key": "doi:10.1038/s41598-021-84959-3",
+  "authors": [
+   "Jødal",
+   "Larsen"
+  ],
+  "year": 2021,
+  "title": "Investigation of the relationships between the alveograph parameters",
+  "venue": "Scientific Reports",
+  "doi": "10.1038/s41598-021-84959-3",
+  "url": "https://doi.org/10.1038/s41598-021-84959-3",
+  "oa_url": null,
+  "match": "title-search 1.00",
+  "cited_by": [
+   "novita-0043",
+   "novita-0262"
+  ]
+ },
+ {
+  "key": "doi:10.3390/foods10030635",
+  "authors": [
+   "Katsi",
+   "Kosma",
+   "Michailidou",
+   "Argiriou",
+   "Badeka",
+   "Kontominas"
+  ],
+  "year": 2021,
+  "title": "Characterization of Artisanal Spontaneous Sourdough Wheat Bread from Central Greece: Evaluation of Physico-Chemical, Microbiological, and Sensory Properties in Relation to Conventional Yeast Leavened Wheat Bread",
+  "venue": "Foods",
+  "doi": "10.3390/foods10030635",
+  "url": "https://doi.org/10.3390/foods10030635",
+  "oa_url": null,
+  "match": "search sim=0.01 author=True year=True",
+  "cited_by": [
+   "novita-0235"
+  ]
+ },
+ {
+  "key": "ref:ke-yuwen-2004-thesis",
+  "authors": [
+   "Ke Yuwen (柯玉文)"
+  ],
+  "year": 2004,
+  "title": "湯種添加量與熟成條件對麵包品質之影響 (Effects of addition proportion and ripening condition of yudane/tangzhong on bread quality), master's thesis",
+  "venue": "Taiwan (institution not given by the source)",
+  "url": null,
+  "doi": null,
+  "oa_url": null,
+  "match": "no DOI (book/thesis/patent/decree)",
+  "cited_by": [
+   "novita-0004",
+   "novita-0005",
+   "novita-0006",
+   "novita-0007",
+   "novita-0014",
+   "novita-0019",
+   "novita-0109",
+   "novita-0117",
+   "novita-0122",
+   "novita-0123",
+   "novita-0349",
+   "novita-0372",
+   "novita-0481",
+   "novita-0495",
+   "novita-0825"
+  ]
+ },
+ {
+  "key": "doi:10.1038/s41586-024-07453-6",
+  "authors": [
+   "Kim",
+   "Svetlizky",
+   "Weitz",
+   "Spaepen"
+  ],
+  "year": 2024,
+  "title": "Work hardening in colloidal crystals",
+  "venue": "Nature",
+  "doi": "10.1038/s41586-024-07453-6",
+  "url": "https://doi.org/10.1038/s41586-024-07453-6",
+  "oa_url": null,
+  "match": "search sim=0.08 author=True year=True",
+  "cited_by": [
+   "novita-0260"
+  ]
+ },
+ {
+  "key": "doi:10.1016/j.foodqual.2012.12.001",
+  "authors": [
+   "Kremer",
+   "Shimojo",
+   "Holthuysen",
+   "Köster",
+   "Mojet"
+  ],
+  "year": 2013,
+  "title": "Consumer acceptance of salt-reduced “soy sauce” bread over repeated in home consumption",
+  "venue": "Food Quality and Preference",
+  "doi": "10.1016/j.foodqual.2012.12.001",
+  "url": "https://doi.org/10.1016/j.foodqual.2012.12.001",
+  "oa_url": null,
+  "match": "doi-given",
+  "cited_by": [
+   "novita-0741"
+  ]
+ },
+ {
+  "key": "doi:10.7554/elife.61644",
+  "authors": [
+   "Landis",
+   "Oliverio",
+   "McKenney",
+   "Nichols",
+   "Kfoury",
+   "Biango-Daniels",
+   "Shell",
+   "Madden"
+  ],
+  "year": 2021,
+  "title": "The diversity and function of sourdough starter microbiomes",
+  "venue": "eLife",
+  "doi": "10.7554/elife.61644",
+  "url": "https://doi.org/10.7554/elife.61644",
+  "oa_url": null,
+  "match": "title-search 1.00",
+  "cited_by": [
+   "novita-0060"
+  ]
+ },
+ {
+  "key": "doi:10.3390/microorganisms9071355",
+  "authors": [
+   "Lau",
+   "Chong",
+   "Chin",
+   "Talib",
+   "Basha"
+  ],
+  "year": 2021,
+  "title": "Sourdough Microbiome Comparison and Benefits",
+  "venue": "Microorganisms",
+  "doi": "10.3390/microorganisms9071355",
+  "url": "https://doi.org/10.3390/microorganisms9071355",
+  "oa_url": null,
+  "match": "search sim=0.14 author=True year=True",
+  "cited_by": [
+   "novita-0233",
+   "novita-0457"
+  ]
+ },
+ {
+  "key": "doi:10.1016/j.jfoodeng.2011.03.001",
+  "authors": [
+   "Le-bail",
+   "dessev",
+   "Leray",
+   "Lucas",
+   "Mariani",
+   "Mottollese",
+   "Jury"
+  ],
+  "year": 2011,
+  "title": "Influence of the amount of steaming during baking on the kinetic of heating and on selected quality attributes of bread",
+  "venue": "Journal of Food Engineering",
+  "doi": "10.1016/j.jfoodeng.2011.03.001",
+  "url": "https://doi.org/10.1016/j.jfoodeng.2011.03.001",
+  "oa_url": null,
+  "match": "manual title search",
+  "cited_by": [
+   "novita-0086",
+   "novita-0087",
+   "novita-0441"
+  ]
+ },
+ {
+  "key": "ref:lebail-2011-crispy-roll",
+  "authors": [
+   "Le-Bail A. et al."
+  ],
+  "year": 2011,
+  "title": "Impact of steaming conditions on the structure and on the properties of bread crust; in the case of a crispy roll",
+  "venue": "(as cited)",
+  "url": null,
+  "doi": null,
+  "oa_url": null,
+  "match": "no DOI (book/thesis/patent/decree)",
+  "cited_by": [
+   "novita-0089"
+  ]
+ },
+ {
+  "key": "doi:10.1016/j.foodres.2025.116209",
+  "authors": [
+   "Li",
+   "Qi",
+   "Hamadou",
+   "Xu"
+  ],
+  "year": 2025,
+  "title": "Variation in quality of noodles by regulating the dynamic transition behavior of gluten proteins though dough crumbles temperature control method at different stages of mixing",
+  "venue": "Food Research International",
+  "doi": "10.1016/j.foodres.2025.116209",
+  "url": "https://doi.org/10.1016/j.foodres.2025.116209",
+  "oa_url": null,
+  "match": "doi-given",
+  "cited_by": [
+   "novita-0069"
+  ]
+ },
+ {
+  "key": "doi:10.3390/molecules26041035",
+  "authors": [
+   "Liszkowska",
+   "Berlowska"
+  ],
+  "year": 2021,
+  "title": "Yeast Fermentation at Low Temperatures: Adaptation to Changing Environmental Conditions and Formation of Volatile Compounds",
+  "venue": "Molecules",
+  "doi": "10.3390/molecules26041035",
+  "url": "https://doi.org/10.3390/molecules26041035",
+  "oa_url": null,
+  "match": "doi-given",
+  "cited_by": [
+   "novita-0080"
+  ]
+ },
+ {
+  "key": "doi:10.1016/j.lwt.2021.110920",
+  "authors": [
+   "Liu",
+   "Liu",
+   "Li",
+   "Obadi",
+   "Jiang",
+   "Li",
+   "Xu"
+  ],
+  "year": 2021,
+  "title": "Effects of dough resting time on the development of gluten network in different sheeting directions and the textural properties of noodle dough",
+  "venue": "LWT",
+  "doi": "10.1016/j.lwt.2021.110920",
+  "url": "https://doi.org/10.1016/j.lwt.2021.110920",
+  "oa_url": null,
+  "match": "search sim=0.47 author=True year=True",
+  "cited_by": [
+   "novita-0107"
+  ]
+ },
+ {
+  "key": "doi:10.5458/jag.jag.jag-2021_0014",
+  "authors": [
+   "Matsumoto",
+   "Nakai",
+   "Kawai"
+  ],
+  "year": 2022,
+  "title": "Effects of Water and Gelatinized Starch on the Viscoelasticity of Pizza Dough and the Texture of Pizza Crust",
+  "venue": "Journal of Applied Glycoscience",
+  "doi": "10.5458/jag.jag.jag-2021_0014",
+  "url": "https://doi.org/10.5458/jag.jag.jag-2021_0014",
+  "oa_url": null,
+  "match": "doi-given",
+  "cited_by": [
+   "novita-0137"
+  ]
+ },
+ {
+  "key": "doi:10.3390/foods11101484",
+  "authors": [
+   "Maurice",
+   "Saint-Eve",
+   "Pernin",
+   "Leroy",
+   "Souchon"
+  ],
+  "year": 2022,
+  "title": "How Different Are Industrial, Artisanal and Homemade Soft Breads?",
+  "venue": "Foods",
+  "doi": "10.3390/foods11101484",
+  "url": "https://doi.org/10.3390/foods11101484",
+  "oa_url": null,
+  "match": "search sim=1.00 author=True year=True",
+  "cited_by": [
+   "novita-0715"
+  ]
+ },
+ {
+  "key": "doi:10.1016/bs.aambs.2017.02.003",
+  "authors": [],
+  "year": 2017,
+  "title": "Microbial Ecology and Process Technology of Sourdough Fermentation",
+  "venue": "Advances in Applied Microbiology",
+  "doi": "10.1016/bs.aambs.2017.02.003",
+  "url": "https://doi.org/10.1016/bs.aambs.2017.02.003",
+  "oa_url": null,
+  "match": "doi-given",
+  "cited_by": [
+   "novita-0051",
+   "novita-0055",
+   "novita-0060"
+  ]
+ },
+ {
+  "key": "doi:10.1128/aem.00572-12",
+  "authors": [
+   "Minervini",
+   "Lattanzi",
+   "De Angelis",
+   "Di Cagno",
+   "Gobbetti"
+  ],
+  "year": 2012,
+  "title": "Influence of Artisan Bakery- or Laboratory-Propagated Sourdoughs on the Diversity of Lactic Acid Bacterium and Yeast Microbiotas",
+  "venue": "Applied and Environmental Microbiology",
+  "doi": "10.1128/aem.00572-12",
+  "url": "https://doi.org/10.1128/aem.00572-12",
+  "oa_url": null,
+  "match": "search sim=0.07 author=True year=True",
+  "cited_by": [
+   "novita-0234"
+  ]
+ },
+ {
+  "key": "doi:10.3390/foods12244475",
+  "authors": [
+   "Murniece",
+   "Reidzane",
+   "Galoburda",
+   "Radenkovs",
+   "Klava"
+  ],
+  "year": 2023,
+  "title": "The Impact of Fermented Scald on Rye and Hull-Less Barley Dough and Bread Structure Formation",
+  "venue": "Foods",
+  "doi": "10.3390/foods12244475",
+  "url": "https://doi.org/10.3390/foods12244475",
+  "oa_url": null,
+  "match": "search sim=0.03 author=True year=True",
+  "cited_by": [
+   "novita-0245",
+   "novita-0318"
+  ]
+ },
+ {
+  "key": "doi:10.1016/j.jcs.2010.06.018",
+  "authors": [
+   "Noort",
+   "Bult",
+   "Stieger",
+   "Hamer"
+  ],
+  "year": 2010,
+  "title": "Saltiness enhancement in bread by inhomogeneous spatial distribution of sodium chloride",
+  "venue": "Journal of Cereal Science",
+  "doi": "10.1016/j.jcs.2010.06.018",
+  "url": "https://doi.org/10.1016/j.jcs.2010.06.018",
+  "oa_url": null,
+  "match": "doi-given",
+  "cited_by": [
+   "novita-0746"
+  ]
+ },
+ {
+  "key": "doi:10.3390/fermentation11040206",
+  "authors": [
+   "Ohisa",
+   "Endo",
+   "Komoda"
+  ],
+  "year": 2025,
+  "title": "Preparing Sponge Dough for Making Bread Using Wheat Flour Cultured in 5% Saline",
+  "venue": "Fermentation",
+  "doi": "10.3390/fermentation11040206",
+  "url": "https://doi.org/10.3390/fermentation11040206",
+  "oa_url": null,
+  "match": "doi-given",
+  "cited_by": [
+   "novita-0061"
+  ]
+ },
+ {
+  "key": "doi:10.4315/0362-028x.jfp-10-319",
+  "authors": [
+   "Pao",
+   "Kim",
+   "Jordan",
+   "Long",
+   "Inserra",
+   "Sayre"
+  ],
+  "year": 2011,
+  "title": "Growth of Salmonella enterica and Staphylococcus aureus in No-Knead Bread Dough during Prolonged Yeast Fermentation",
+  "venue": "Journal of Food Protection",
+  "doi": "10.4315/0362-028x.jfp-10-319",
+  "url": "https://doi.org/10.4315/0362-028x.jfp-10-319",
+  "oa_url": null,
+  "match": "search sim=0.22 author=True year=True",
+  "cited_by": [
+   "novita-0298"
+  ]
+ },
+ {
+  "key": "doi:10.1016/j.lwt.2019.02.066",
+  "authors": [
+   "Parenti",
+   "Guerrini",
+   "Canuti",
+   "Angeloni",
+   "Masella",
+   "Zanoni"
+  ],
+  "year": 2019,
+  "title": "The effect of the addition of gelatinized flour on dough rheology and quality of bread made from brown wheat flour",
+  "venue": "LWT",
+  "doi": "10.1016/j.lwt.2019.02.066",
+  "url": "https://doi.org/10.1016/j.lwt.2019.02.066",
+  "oa_url": null,
+  "match": "title-search 1.00",
+  "cited_by": [
+   "novita-0031"
+  ]
+ },
+ {
+  "key": "doi:10.1016/j.lwt.2021.111017",
+  "authors": [
+   "Parenti",
+   "Carini",
+   "Marchini",
+   "Tuccio",
+   "Guerrini",
+   "Zanoni"
+  ],
+  "year": 2021,
+  "title": "Wholewheat bread: Effect of gradual water addition during kneading on dough and bread properties",
+  "venue": "LWT",
+  "doi": "10.1016/j.lwt.2021.111017",
+  "url": "https://doi.org/10.1016/j.lwt.2021.111017",
+  "oa_url": null,
+  "match": "title-search 1.00",
+  "cited_by": [
+   "novita-0095",
+   "novita-0097"
+  ]
+ },
+ {
+  "key": "doi:10.1016/j.jcs.2011.08.011",
+  "authors": [
+   "Pareyt",
+   "Finnie",
+   "Putseys",
+   "Delcour"
+  ],
+  "year": 2011,
+  "title": "Lipids in bread making: Sources, interactions, and impact on bread quality",
+  "venue": "Journal of Cereal Science",
+  "doi": "10.1016/j.jcs.2011.08.011",
+  "url": "https://doi.org/10.1016/j.jcs.2011.08.011",
+  "oa_url": null,
+  "match": "manual title search",
+  "cited_by": [
+   "novita-0832"
+  ]
+ },
+ {
+  "key": "ref:parmentier-1778",
+  "authors": [
+   "Parmentier A.A."
+  ],
+  "year": 1778,
+  "title": "Le parfait boulanger, ou traité complet sur la fabrication et le commerce du pain",
+  "venue": "book",
+  "url": null,
+  "doi": null,
+  "oa_url": null,
+  "match": "no DOI (book/thesis/patent/decree)",
+  "cited_by": [
+   "novita-0062"
+  ]
+ },
+ {
+  "key": "doi:10.1021/jf403304y",
+  "authors": [
+   "Pflaum",
+   "Konitzer",
+   "Hofmann",
+   "Koehler"
+  ],
+  "year": 2013,
+  "title": "Influence of Texture on the Perception of Saltiness in Wheat Bread",
+  "venue": "Journal of Agricultural and Food Chemistry",
+  "doi": "10.1021/jf403304y",
+  "url": "https://doi.org/10.1021/jf403304y",
+  "oa_url": null,
+  "match": "doi-given",
+  "cited_by": [
+   "novita-0744"
+  ]
+ },
+ {
+  "key": "doi:10.1016/j.jcs.2005.12.007",
+  "authors": [
+   "Primo-Martín",
+   "Pijpekamp",
+   "Vliet",
+   "Jongh",
+   "Plijter",
+   "Hamer"
+  ],
+  "year": 2006,
+  "title": "The role of the gluten network in the crispness of bread crust",
+  "venue": "Journal of Cereal Science",
+  "doi": "10.1016/j.jcs.2005.12.007",
+  "url": "https://doi.org/10.1016/j.jcs.2005.12.007",
+  "oa_url": null,
+  "match": "search sim=1.00 author=False year=True",
+  "cited_by": [
+   "novita-0654"
+  ]
+ },
+ {
+  "key": "doi:10.1094/cchem-06-15-0123-r",
+  "authors": [
+   "Quayson",
+   "Marti",
+   "Bonomi",
+   "Atwell",
+   "Seetharaman"
+  ],
+  "year": 2016,
+  "title": "Structural Modification of Gluten Proteins in Strong and Weak Wheat Dough as Affected by Mixing Temperature",
+  "venue": "Cereal Chemistry",
+  "doi": "10.1094/cchem-06-15-0123-r",
+  "url": "https://doi.org/10.1094/cchem-06-15-0123-r",
+  "oa_url": null,
+  "match": "title-search 1.00",
+  "cited_by": [
+   "novita-0064",
+   "novita-0068"
+  ]
+ },
+ {
+  "key": "doi:10.1016/j.foodres.2015.07.004",
+  "authors": [
+   "Quilaqueo",
+   "Duizer",
+   "Aguilera"
+  ],
+  "year": 2015,
+  "title": "The morphology of salt crystals affects the perception of saltiness",
+  "venue": "Food Research International",
+  "doi": "10.1016/j.foodres.2015.07.004",
+  "url": "https://doi.org/10.1016/j.foodres.2015.07.004",
+  "oa_url": null,
+  "match": "title-search 1.00",
+  "cited_by": [
+   "novita-0572"
+  ]
+ },
+ {
+  "key": "doi:10.1016/j.advnut.2022.10.003",
+  "authors": [
+   "Ribet",
+   "Dessalles",
+   "Lesens",
+   "Brusselaers",
+   "Durand-Dubief"
+  ],
+  "year": 2023,
+  "title": "Nutritional benefits of sourdoughs: A systematic review",
+  "venue": "Advances in Nutrition",
+  "doi": "10.1016/j.advnut.2022.10.003",
+  "url": "https://doi.org/10.1016/j.advnut.2022.10.003",
+  "oa_url": null,
+  "match": "title-search 1.00",
+  "cited_by": [
+   "novita-0145",
+   "novita-0146",
+   "novita-0151"
+  ]
+ },
+ {
+  "key": "doi:10.1111/j.1365-2621.2008.01758.x",
+  "authors": [
+   "Rosell",
+   "Collar"
+  ],
+  "year": 2009,
+  "title": "Effect of temperature and consistency on wheat dough performance",
+  "venue": "International Journal of Food Science &amp; Technology",
+  "doi": "10.1111/j.1365-2621.2008.01758.x",
+  "url": "https://doi.org/10.1111/j.1365-2621.2008.01758.x",
+  "oa_url": null,
+  "match": "doi-given",
+  "cited_by": [
+   "novita-0065",
+   "novita-0066"
+  ]
+ },
+ {
+  "key": "ref:french-decret-pain-1993",
+  "authors": [
+   "République française"
+  ],
+  "year": 1993,
+  "title": "Décret n° 93-1074 du 13 septembre 1993 (pain de tradition française)",
+  "venue": "Journal officiel",
+  "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000727617",
+  "doi": null,
+  "oa_url": null,
+  "match": "no DOI (book/thesis/patent/decree)",
+  "cited_by": [
+   "novita-0391",
+   "novita-0719"
+  ]
+ },
+ {
+  "key": "doi:10.1007/bf01202626",
+  "authors": [
+   "Schieberle",
+   "Grosch"
+  ],
+  "year": 1991,
+  "title": "Potent odorants of the wheat bread crumb Differences to the crust and effect of a longer dough fermentation",
+  "venue": "Zeitschrift f�r Lebensmittel-Untersuchung und -Forschung",
+  "doi": "10.1007/bf01202626",
+  "url": "https://doi.org/10.1007/bf01202626",
+  "oa_url": null,
+  "match": "doi-given",
+  "cited_by": [
+   "novita-0074"
+  ]
+ },
+ {
+  "key": "ref:patent-jp3167692",
+  "authors": [
+   "Shibata",
+   "Kato"
+  ],
+  "year": 2001,
+  "title": "パン類の製造法 (bread production method; yudane), JP patent 3167692",
+  "venue": "patent",
+  "url": null,
+  "doi": null,
+  "oa_url": null,
+  "match": "no DOI (book/thesis/patent/decree)",
+  "cited_by": [
+   "novita-0122"
+  ]
+ },
+ {
+  "key": "ref:chojuku-yudane-patent",
+  "authors": [
+   "Shikishima Baking (Pasco)"
+  ],
+  "year": null,
+  "title": "Chojuku yudane process patents (cold-aged yudane 15–72 h; renewed 24–72 h), as described by the creator",
+  "venue": "patent",
+  "url": null,
+  "doi": null,
+  "oa_url": null,
+  "match": "no DOI (book/thesis/patent/decree)",
+  "cited_by": [
+   "novita-0003"
+  ]
+ },
+ {
+  "key": "doi:10.1016/s0740-0020(02)00117-x",
+  "authors": [
+   "Simonson",
+   "Salovaara",
+   "Korhola"
+  ],
+  "year": 2003,
+  "title": "Response of wheat sourdough parameters to temperature, NaCl and sucrose variations",
+  "venue": "Food Microbiology",
+  "doi": "10.1016/s0740-0020(02)00117-x",
+  "url": "https://doi.org/10.1016/s0740-0020(02)00117-x",
+  "oa_url": null,
+  "match": "title-search 1.00",
+  "cited_by": [
+   "novita-0055",
+   "novita-0057",
+   "novita-0058",
+   "novita-0059",
+   "novita-0736"
+  ]
+ },
+ {
+  "key": "doi:10.1007/s00397-003-0344-5",
+  "authors": [
+   "Sliwinski",
+   "Kolster",
+   "van Vliet"
+  ],
+  "year": 2004,
+  "title": "Large-deformation properties of wheat dough in uni- and biaxial extension. Part I. Flour dough",
+  "venue": "Rheologica Acta",
+  "doi": "10.1007/s00397-003-0344-5",
+  "url": "https://doi.org/10.1007/s00397-003-0344-5",
+  "oa_url": null,
+  "match": "search sim=0.80 author=True year=True",
+  "cited_by": [
+   "novita-0182"
+  ]
+ },
+ {
+  "key": "doi:10.1111/j.1745-4549.2004.23079.x",
+  "authors": [
+   "SMITH",
+   "JOHANSSON"
+  ],
+  "year": 2005,
+  "title": "INFLUENCES OF THE PROPORTION OF SOLID FAT IN A SHORTENING ON LOAF VOLUME AND STALING OF BREAD",
+  "venue": "Journal of Food Processing and Preservation",
+  "doi": "10.1111/j.1745-4549.2004.23079.x",
+  "url": "https://doi.org/10.1111/j.1745-4549.2004.23079.x",
+  "oa_url": null,
+  "match": "search sim=0.51 author=True year=True",
+  "cited_by": [
+   "novita-0831"
+  ]
+ },
+ {
+  "key": "doi:10.1002/cche.10699",
+  "authors": [
+   "Sun",
+   "Scanlon",
+   "Nickerson",
+   "Koksel"
+  ],
+  "year": 2023,
+  "title": "The entrainment and evolution of gas bubbles in bread dough—A review",
+  "venue": "Cereal Chemistry",
+  "doi": "10.1002/cche.10699",
+  "url": "https://doi.org/10.1002/cche.10699",
+  "oa_url": null,
+  "match": "search sim=0.88 author=True year=True",
+  "cited_by": [
+   "novita-0183",
+   "novita-0184",
+   "novita-0559",
+   "novita-0560",
+   "novita-0563"
+  ]
+ },
+ {
+  "key": "doi:10.1080/10942910500473947",
+  "authors": [
+   "Tan",
+   "Mittal"
+  ],
+  "year": 2006,
+  "title": "Physicochemical Properties Changes of Donuts During Vacuum Frying",
+  "venue": "International Journal of Food Properties",
+  "doi": "10.1080/10942910500473947",
+  "url": "https://doi.org/10.1080/10942910500473947",
+  "oa_url": null,
+  "match": "search sim=1.00 author=True year=True",
+  "cited_by": [
+   "novita-0835"
+  ]
+ },
+ {
+  "key": "doi:10.1088/1755-1315/947/1/012044",
+  "authors": [
+   "Trà",
+   "Phúc",
+   "Yến",
+   "Sang",
+   "Thu",
+   "Nguyệt",
+   "Mẫn"
+  ],
+  "year": 2021,
+  "title": "Use of wheat flour and spent coffee grounds in the production of cookies with high fiber and antioxidant content: Effects of spent coffee grounds ratio on the product quality",
+  "venue": "IOP Conference Series: Earth and Environmental Science",
+  "doi": "10.1088/1755-1315/947/1/012044",
+  "url": "https://doi.org/10.1088/1755-1315/947/1/012044",
+  "oa_url": null,
+  "match": "manual targeted search",
+  "cited_by": [
+   "novita-0692"
+  ]
+ },
+ {
+  "key": "ref:patent-us3734743a",
+  "authors": [],
+  "year": 1973,
+  "title": "US patent US3734743A (sourdough French bread with salted liquid starter)",
+  "venue": "patent",
+  "url": "https://patents.google.com/patent/US3734743A/en",
+  "doi": null,
+  "oa_url": null,
+  "match": "no DOI (book/thesis/patent/decree)",
+  "cited_by": [
+   "novita-0051"
+  ]
+ },
+ {
+  "key": "doi:10.1016/j.jcs.2007.08.010",
+  "authors": [
+   "van Vliet"
+  ],
+  "year": 2008,
+  "title": "Strain hardening as an indicator of bread-making performance: A review with discussion",
+  "venue": "Journal of Cereal Science",
+  "doi": "10.1016/j.jcs.2007.08.010",
+  "url": "https://doi.org/10.1016/j.jcs.2007.08.010",
+  "oa_url": null,
+  "match": "title-search 1.00",
+  "cited_by": [
+   "novita-0044",
+   "novita-0045"
+  ]
+ },
+ {
+  "key": "doi:10.1111/j.1745-4603.1992.tb00033.x",
+  "authors": [
+   "VAN VLIET",
+   "JANSSEN",
+   "BLOKSMA",
+   "WALSTRA"
+  ],
+  "year": 1992,
+  "title": "STRAIN HARDENING OF DOUGH AS A REQUIREMENT FOR GAS RETENTION",
+  "venue": "Journal of Texture Studies",
+  "doi": "10.1111/j.1745-4603.1992.tb00033.x",
+  "url": "https://doi.org/10.1111/j.1745-4603.1992.tb00033.x",
+  "oa_url": null,
+  "match": "search sim=1.00 author=True year=True",
+  "cited_by": [
+   "novita-0182",
+   "novita-0184",
+   "novita-0259"
+  ]
+ },
+ {
+  "key": "doi:10.1016/j.tifs.2009.04.001",
+  "authors": [
+   "Vanin",
+   "Lucas",
+   "Trystram"
+  ],
+  "year": 2009,
+  "title": "Crust formation and its role during bread baking",
+  "venue": "Trends in Food Science &amp; Technology",
+  "doi": "10.1016/j.tifs.2009.04.001",
+  "url": "https://doi.org/10.1016/j.tifs.2009.04.001",
+  "oa_url": null,
+  "match": "search sim=1.00 author=True year=True",
+  "cited_by": [
+   "novita-0085"
+  ]
+ },
+ {
+  "key": "doi:10.1002/cche.10572",
+  "authors": [
+   "Wieser",
+   "Koehler",
+   "Scherf"
+  ],
+  "year": 2022,
+  "title": "Chemistry of wheat gluten proteins: Qualitative composition",
+  "venue": "Cereal Chemistry",
+  "doi": "10.1002/cche.10572",
+  "url": "https://doi.org/10.1002/cche.10572",
+  "oa_url": null,
+  "match": "manual targeted search",
+  "cited_by": [
+   "novita-0553"
+  ]
+ },
+ {
+  "key": "doi:10.1016/j.fbio.2021.101323",
+  "authors": [
+   "Xi",
+   "Zhao",
+   "Xu",
+   "Jin",
+   "Wu",
+   "Xu"
+  ],
+  "year": 2021,
+  "title": "Effect of dough kneading time on Chinese steamed bread quality and volatile compounds",
+  "venue": "Food Bioscience",
+  "doi": "10.1016/j.fbio.2021.101323",
+  "url": "https://doi.org/10.1016/j.fbio.2021.101323",
+  "oa_url": null,
+  "match": "doi-given",
+  "cited_by": [
+   "novita-0079"
+  ]
+ },
+ {
+  "key": "doi:10.1016/j.fbio.2020.100704",
+  "authors": [
+   "Xu",
+   "Zhang",
+   "Xi",
+   "Jin",
+   "Chen",
+   "Guo",
+   "Jin",
+   "Xu"
+  ],
+  "year": 2020,
+  "title": "Improving bread aroma using low-temperature sourdough fermentation",
+  "venue": "Food Bioscience",
+  "doi": "10.1016/j.fbio.2020.100704",
+  "url": "https://doi.org/10.1016/j.fbio.2020.100704",
+  "oa_url": null,
+  "match": "search sim=1.00 author=False year=True",
+  "cited_by": [
+   "novita-0081"
+  ]
+ },
+ {
+  "key": "doi:10.3136/nskkk.62.547",
+  "authors": [
+   "Yamada",
+   "Iseki",
+   "Inoue",
+   "Yoshino",
+   "Tsuboi",
+   "Murayama",
+   "Santiago",
+   "Koaze"
+  ],
+  "year": 2015,
+  "title": "Effect of Gelatinized Wheat Starch on Bread-making Qualities of Yudane Dough",
+  "venue": "NIPPON SHOKUHIN KAGAKU KOGAKU KAISHI",
+  "doi": "10.3136/nskkk.62.547",
+  "url": "https://doi.org/10.3136/nskkk.62.547",
+  "oa_url": null,
+  "match": "search sim=1.00 author=False year=False",
+  "cited_by": [
+   "novita-0009",
+   "novita-0018",
+   "novita-0020",
+   "novita-0114",
+   "novita-0117",
+   "novita-0120",
+   "novita-0122",
+   "novita-0123",
+   "novita-0126",
+   "novita-0129",
+   "novita-0130"
+  ]
+ },
+ {
+  "key": "doi:10.3136/nskkk.64.90",
+  "authors": [
+   "Yamada",
+   "Inoue",
+   "Yoshino",
+   "Tsuboi",
+   "Koaze",
+   "Yamauchi"
+  ],
+  "year": 2017,
+  "title": "Effect of Heated Gluten on Bread-making Qualities of Yudane Dough",
+  "venue": "NIPPON SHOKUHIN KAGAKU KOGAKU KAISHI",
+  "doi": "10.3136/nskkk.64.90",
+  "url": "https://doi.org/10.3136/nskkk.64.90",
+  "oa_url": null,
+  "match": "search sim=1.00 author=False year=False",
+  "cited_by": [
+   "novita-0010",
+   "novita-0013"
+  ]
+ },
+ {
+  "key": "doi:10.3136/fstr.20.1071",
+  "authors": [
+   "Yamauchi",
+   "Yamada",
+   "Murayama",
+   "Santiago",
+   "Orikasa",
+   "Koaze",
+   "Nakaura",
+   "Inouchi"
+  ],
+  "year": 2014,
+  "title": "The Staling and Texture of Bread Made Using the Yudane Dough Method",
+  "venue": "Food Science and Technology Research",
+  "doi": "10.3136/fstr.20.1071",
+  "url": "https://doi.org/10.3136/fstr.20.1071",
+  "oa_url": null,
+  "match": "title-search 1.00",
+  "cited_by": [
+   "novita-0009",
+   "novita-0131",
+   "novita-0133",
+   "novita-0158",
+   "novita-0354",
+   "novita-0475",
+   "novita-0476",
+   "novita-0496",
+   "novita-0511",
+   "novita-0514",
+   "novita-0642",
+   "novita-0828"
+  ]
+ },
+ {
+  "key": "doi:10.1016/j.jcs.2019.102791",
+  "authors": [
+   "Yang",
+   "Guan",
+   "Zhang",
+   "Li",
+   "Bian"
+  ],
+  "year": 2019,
+  "title": "Influence of water addition methods on water mobility characterization and rheological properties of wheat flour dough",
+  "venue": "Journal of Cereal Science",
+  "doi": "10.1016/j.jcs.2019.102791",
+  "url": "https://doi.org/10.1016/j.jcs.2019.102791",
+  "oa_url": null,
+  "match": "title-search 1.00",
+  "cited_by": [
+   "novita-0095",
+   "novita-0098",
+   "novita-0099"
+  ]
+ },
+ {
+  "key": "doi:10.3390/foods13070996",
+  "authors": [
+   "Ye",
+   "Zhang",
+   "Wang",
+   "Ban",
+   "Wei",
+   "Fan",
+   "Guo"
+  ],
+  "year": 2024,
+  "title": "Dynamic Study on Water State and Water Migration during Gluten–Starch Model Dough Development under Different Gluten Protein Contents",
+  "venue": "Foods",
+  "doi": "10.3390/foods13070996",
+  "url": "https://doi.org/10.3390/foods13070996",
+  "oa_url": null,
+  "match": "search sim=0.70 author=False year=True",
+  "cited_by": [
+   "novita-0096"
+  ]
+ },
+ {
+  "key": "doi:10.1111/j.1750-3841.2009.01337.x",
+  "authors": [
+   "Yeh",
+   "Charles",
+   "Ho",
+   "Huang"
+  ],
+  "year": 2009,
+  "title": "A Novel Bread Making Process Using Salt‐Stressed Baker's Yeast",
+  "venue": "Journal of Food Science",
+  "doi": "10.1111/j.1750-3841.2009.01337.x",
+  "url": "https://doi.org/10.1111/j.1750-3841.2009.01337.x",
+  "oa_url": null,
+  "match": "doi-given",
+  "cited_by": [
+   "novita-0052",
+   "novita-0056"
+  ]
+ },
+ {
+  "key": "doi:10.1016/j.lwt.2017.10.034",
+  "authors": [
+   "Zadeike",
+   "Jukonyte",
+   "Juodeikiene",
+   "Bartkiene",
+   "Valatkeviciene"
+  ],
+  "year": 2018,
+  "title": "Comparative study of ciabatta crust crispness through acoustic and mechanical methods: Effects of wheat malt and protease on dough rheology and crust crispness retention during storage",
+  "venue": "LWT",
+  "doi": "10.1016/j.lwt.2017.10.034",
+  "url": "https://doi.org/10.1016/j.lwt.2017.10.034",
+  "oa_url": null,
+  "match": "search sim=0.02 author=True year=True",
+  "cited_by": [
+   "novita-0442"
+  ]
+ },
+ {
+  "key": "doi:10.1006/jcrs.1998.0183",
+  "authors": [
+   "Zehentbauer",
+   "Grosch"
+  ],
+  "year": 1998,
+  "title": "Crust Aroma of Baguettes II. Dependence of the Concentrations of Key Odorants on Yeast Level and Dough Processing",
+  "venue": "Journal of Cereal Science",
+  "doi": "10.1006/jcrs.1998.0183",
+  "url": "https://doi.org/10.1006/jcrs.1998.0183",
+  "oa_url": null,
+  "match": "manual title search",
+  "cited_by": [
+   "novita-0082"
+  ]
+ },
+ {
+  "key": "doi:10.1002/jsfa.12565",
+  "authors": [
+   "Zeng",
+   "Yang",
+   "Liu",
+   "Yang",
+   "Jin",
+   "Jiao"
+  ],
+  "year": 2023,
+  "title": "Effect of fermentation methods on properties of dough and whole wheat bread",
+  "venue": "Journal of the Science of Food and Agriculture",
+  "doi": "10.1002/jsfa.12565",
+  "url": "https://doi.org/10.1002/jsfa.12565",
+  "oa_url": null,
+  "match": "search sim=1.00 author=False year=False",
+  "cited_by": [
+   "novita-0024",
+   "novita-0025",
+   "novita-0026",
+   "novita-0027"
+  ]
+ },
+ {
+  "key": "ref:chojuku-book",
+  "authors": [],
+  "year": null,
+  "title": "超熟ヒットの理由: 「食パン」から学ぶブランドNo.1物語",
+  "venue": "book",
+  "url": null,
+  "doi": null,
+  "oa_url": null,
+  "match": "no DOI (book/thesis/patent/decree)",
+  "cited_by": [
+   "novita-0003"
+  ]
+ }
+]

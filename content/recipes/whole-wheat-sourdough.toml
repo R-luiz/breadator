@@ -1,0 +1,26 @@
+bread_type = "whole-grain"
+sources = ["breadcode-1246", "breadcode-1247", "breadcode-1259", "breadcode-1260", "breadcode-1261", "breadcode-1250", "breadcode-1251", "breadcode-1252", "breadcode-1253"]
+title = { fr = "Pain complet au levain", en = "100 % whole-wheat sourdough" }
+description = { fr = "D'après le pain complet au levain de Hendrik Kleinwächter (The Bread Code) : un pain de farine complète seule, à 85 % d'eau sur la farine ajoutée, avec un apprêt d'une nuit au réfrigérateur.", en = "After Hendrik Kleinwächter's (The Bread Code) whole-wheat sourdough: one loaf of whole-wheat flour only, at 85 % water on the flour added, proofed overnight in the refrigerator." }
+steps = [
+  { fr = "Levain : rafraîchissez-le en 1:5:5 une fois par jour à température ambiante pendant 2 à 3 jours, la dernière fois la veille au soir, pour qu'il soit très actif et peu acide.", en = "Starter: feed it 1:5:5 once a day at room temperature for 2 to 3 days, the last time the evening before mixing, so that it is very active and not too acidic." },
+  { fr = "Mélangez la farine avec de l'eau à peu près à température ambiante, puis ajoutez le levain et le sel (l'autolyse est facultative). Travaillez à la main environ 10 min, laissez reposer 5 min, pétrissez brièvement sur le plan de travail et étirez une fois la pâte en voile fin. Placez un échantillon dans un bocal témoin couvert, gardé à côté de la pâte.", en = "Mix the flour with water at about room temperature, then add the levain and the salt (an autolyse is optional). Mix by hand for about 10 min, rest 5 min, knead briefly on the bench and stretch the dough out thin once. Put a sample in a covered jar kept next to the dough." },
+  { fr = "Pointage : jusqu'à ce que le témoin ait gagné environ 50 %, repère choisi pour cette farine (il dépend de sa teneur en protéines). Il a duré environ 12 h dans la cuisine fraîche de la source. Donnez 1 à 3 rabats par enroulement, seulement quand la pâte s'étale visiblement. Le calculateur de fermentation donne la durée pour la température de votre pâte.", en = "Bulk fermentation: until the sample has grown by about 50 %, the target chosen for this flour (it depends on the flour's protein). It took about 12 h in the source's cool kitchen. Give 1 to 3 coil folds, only when the dough visibly flattens. The fermentation calculator gives the time for your own dough temperature." },
+  { fr = "Façonnez le pain unique sans préfaçonnage et déposez-le dans un banneton garni d'un linge.", en = "Shape the single loaf without preshaping and place it in a lined basket." },
+  { fr = "Apprêt : 30 à 60 min à température ambiante, jusqu'à ce que l'empreinte d'un doigt fariné remonte lentement, puis au moins 12 h au réfrigérateur.", en = "Final proof: 30 to 60 min at room temperature, until a floured finger leaves a dent that springs back slowly, then at least 12 h in the refrigerator." },
+  { fr = "Préchauffez le four et une cocotte à 250 °C. Cuisez 25 min à couvert à 250 °C (chaleur statique), puis retirez le couvercle, baissez à 230 °C et cuisez jusqu'à ce que la croûte soit bien colorée ; la source ne donne pas la durée totale.", en = "Preheat the oven and a Dutch oven to 250 °C. Bake 25 min with the lid on at 250 °C (top and bottom heat), then remove the lid, lower to 230 °C and bake until the crust is well coloured; the source does not give the total time." },
+]
+notes = { fr = "Fournée de la source : 400 g de farine complète, 340 g d'eau, 80 g de levain et 8 g de sel. Les 85 % d'eau ont été choisis après un essai de 75 à 90 % avec cette farine : faites le même essai avec la vôtre. L'hydratation du levain n'est pas précisée ; rafraîchi en 1:5:5 à poids égaux de farine et d'eau, il est compté à 100 %, soit 440 g de farine et 86,4 % d'hydratation. Les pourcentages sont arrondis à 0,01 point (0,001 en dessous de 1 %) ; les poids donnés par le calculateur restent à moins de 0,2 % de ceux de la source.", en = "Source batch: 400 g whole-wheat flour, 340 g water, 80 g starter and 8 g salt. The 85 % of water was chosen after testing 75 to 90 % with that flour: run the same test with yours. The starter's hydration is not stated; fed 1:5:5 with equal weights of flour and water, it is counted at 100 %, which makes 440 g of flour and 86.4 % hydration. Percentages are rounded to 0.01 point (0.001 below 1 %); the weights the calculator gives stay within 0.2 % of the source's." }
+
+[formula]
+target = { by = "pieces", count = 1, grams = 828 }
+flours = [
+  { id = "whole_wheat_flour", pct = 100 },
+]
+ingredients = [
+  { id = "water", kind = "water", pct = 86.36 },
+  { id = "salt", kind = "salt", pct = 1.82 },
+]
+stages = [
+  { id = "levain", kind = "levain", flour_pct = 9.09, flour = "whole_wheat_flour", liquid_pct = 100, seed = { pct = 20, hydration_pct = 100 } },
+]

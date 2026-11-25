@@ -1,0 +1,7 @@
+id,feed_ratio,seed_flour_fraction,temp_c,hours_low,hours_high,temperature_note,evidence,conditions,source
+sj-fed-control,1:1:1 or similar (ratio not stated),,,3.5,3.5,room temperature (not stated),measured,starter described as fed 3.5 h prior and just peaking in volume,"The Sourdough Journey, ""Can you use an unfed starter directly from the refrigerator?"", https://thesourdoughjourney.com/can-you-use-an-unfed-starter-directly-from-the-refrigerator/"
+sj-1-2-2,1:2:2,0.2,,4,6,room temperature (not stated; tests run at 19-23 C dough),creator-rule,starter fed 1:2:2 about 4-6 h before mixing and used at or near peak,"Sourdough Journey Bulk Fermentation Timetables V1.0, Recipe note"
+sj-1-1-1-4h,1:1:1,0.3333,,4,4,not stated,creator-rule,illustration: a 1:1:1 feed peaking in 4 h needs about 1:20:20 to peak in 8 h,"The Sourdough Journey FAQ ""Starter maintenance"", https://thesourdoughjourney.com/faq-starter-maintenance/"
+sj-1-20-20-8h,1:20:20,0.0244,,8,8,not stated,creator-rule,same illustration,same
+breadcode-1-5-5,1:5:5,0.0909,,6,12,not stated,creator-rule,check for the peak 6-12 h after a 1:5:5 feed,"The Bread Code, ""Sourdough starter feeding ratio"", https://www.the-bread-code.io/tutorial/2023/05/06/sourdough-starter-feeding-ratio.html"
+sj-flour-test-20C,1:1:1,0.3333,20,12,14,20 C,measured,"peak of CO2 generation (pressure vessel), not volume peak: bread flour 12 h, whole wheat 14 h, rye 12 h","The Sourdough Journey, ""White, wheat, or rye?"", https://thesourdoughjourney.com/white-wheat-or-rye-what-is-the-best-flour-to-feed-your-starter/"

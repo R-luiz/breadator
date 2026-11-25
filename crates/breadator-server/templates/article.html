@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+<article class="article">
+  <p class="note"><a href="{{ layout.href("/learn") }}">{{ layout.tr.t("learn-title") }}</a> · {{ topic }}</p>
+  <h1>{{ layout.title }}</h1>
+  <p class="lead">{{ layout.description }}</p>
+  {% if headings.len() > 1 %}<nav class="toc" aria-labelledby="toc-heading">
+    <h2 id="toc-heading">{{ layout.tr.t("article-contents") }}</h2>
+    <ul>
+    {% for h in headings %}<li><a href="#{{ h.id }}">{{ h.text }}</a></li>
+    {% endfor %}</ul>
+  </nav>
+  {% endif %}
+  <div class="prose">{{ html|safe }}</div>
+  {% if !sources.is_empty() %}
+  <section class="sources" aria-labelledby="sources-heading">
+    <h2 id="sources-heading">{{ layout.tr.t("article-sources") }}</h2>
+    <ol>
+    {% for s in sources %}<li id="cite-{{ s.n }}">{% if let Some(h) = s.href %}<a href="{{ h }}" rel="noopener noreferrer">{{ s.text }}</a>{% else %}{{ s.text }}{% endif %}</li>
+    {% endfor %}</ol>
+  </section>
+  {% endif %}
+  <p class="note">{{ layout.tr.t("article-updated") }} {{ updated }} · {{ layout.tr.t("article-licence") }}</p>
+</article>
+{% endblock %}

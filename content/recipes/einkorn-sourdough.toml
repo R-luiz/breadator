@@ -1,0 +1,26 @@
+bread_type = "lean-hearth"
+sources = ["breadcode-2700", "breadcode-2701", "breadcode-2703", "breadcode-2702", "breadcode-2704", "breadcode-2708", "breadcode-2707", "breadcode-2706", "breadcode-2705"]
+title = { fr = "Pain de petit épeautre (engrain) au levain", en = "Einkorn sourdough" }
+description = { fr = "D'après le pain de petit épeautre au levain de Hendrik Kleinwächter (The Bread Code) : farine, eau, sel et levain mélangés quelques minutes, 24 h d'apprêt au réfrigérateur et une cuisson en cocotte.", en = "After Hendrik Kleinwächter's (The Bread Code) einkorn sourdough: flour, water, salt and a starter, stirred for a few minutes, proofed 24 h in the refrigerator and baked in a covered pot." }
+steps = [
+  { fr = "Mélangez à la main la farine, l'eau, le levain (idéalement nourri au petit épeautre) et le sel pendant environ 3 min, jusqu'à homogénéité. Le petit épeautre ne forme pas de réseau de gluten solide : pétrir n'apporte rien.", en = "Stir the flour, water, starter (ideally fed with einkorn) and salt by hand for about 3 min, until homogeneous. Einkorn forms no strong gluten network, so kneading brings nothing." },
+  { fr = "Pointage : environ 6 h, le minimum donné par la source, qui ne précise pas la température de la pièce ; plus long, le pain devient plus acide. Le calculateur de fermentation donne la durée pour la température de votre pâte.", en = "Bulk fermentation: about 6 h, the minimum given by the source, which does not state the room temperature; longer makes the bread more sour. The fermentation calculator gives the time for your own dough temperature." },
+  { fr = "Façonnez en rassemblant la pâte sur elle-même : on cherche un pâton compact qui ne colle pas, pas de la force. Déposez-le dans un banneton fariné à la farine de riz.", en = "Shape by tucking the dough together: the aim is a compact piece that does not stick, not strength. Place it in a banneton dusted with rice flour." },
+  { fr = "Apprêt : 24 h au réfrigérateur, pour le goût et une forme plus régulière.", en = "Final proof: 24 h in the refrigerator, for flavour and a more regular shape." },
+  { fr = "Préchauffez une cocotte à 230 °C. Démoulez le pâton, brossez l'excès de farine de riz, grignez à environ 45° et vaporisez-le d'eau.", en = "Preheat a Dutch oven at 230 °C. Turn the loaf out, brush off the excess rice flour, score at about 45° and spray it with water." },
+  { fr = "Cuisez à 230 °C environ 25 min à couvert, puis sans couvercle jusqu'à cuisson complète ; la source ne donne pas la durée totale.", en = "Bake at 230 °C for about 25 min with the lid on, then without the lid until done; the source does not give the total time." },
+]
+notes = { fr = "Fournée de la source : 500 g de farine de petit épeautre, 325 g d'eau, 100 g de levain et 10 g de sel (65 % d'eau, 20 % de levain et 2 % de sel sur la farine ajoutée). L'hydratation du levain n'est pas précisée : il est compté à 100 % et sa farine comme du petit épeautre, soit 550 g de farine, 68,2 % d'hydratation et 1,82 % de sel. Les pourcentages sont arrondis à 0,01 point (0,001 en dessous de 1 %) ; les poids donnés par le calculateur restent à moins de 0,1 % de ceux de la source.", en = "Source batch: 500 g einkorn flour, 325 g water, 100 g starter and 10 g salt (65 % water, 20 % starter and 2 % salt on the flour added). The starter's hydration is not stated: it is counted at 100 % and its flour as einkorn, which makes 550 g of flour, 68.2 % hydration and 1.82 % salt. Percentages are rounded to 0.01 point (0.001 below 1 %); the weights the calculator gives stay within 0.1 % of the source's." }
+
+[formula]
+target = { by = "pieces", count = 1, grams = 935 }
+flours = [
+  { id = "einkorn_flour", pct = 100 },
+]
+ingredients = [
+  { id = "water", kind = "water", pct = 68.18 },
+  { id = "salt", kind = "salt", pct = 1.82 },
+]
+stages = [
+  { id = "levain", kind = "levain", flour_pct = 9.09, flour = "einkorn_flour", liquid_pct = 100 },
+]

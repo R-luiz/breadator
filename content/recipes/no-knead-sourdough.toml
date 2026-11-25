@@ -1,0 +1,28 @@
+bread_type = "lean-hearth"
+sources = ["breadcode-1772", "breadcode-1773", "breadcode-1776", "breadcode-1775", "breadcode-1774", "breadcode-1712", "breadcode-1713", "breadcode-1778", "breadcode-1715", "breadcode-1714", "breadcode-1716", "breadcode-1780", "breadcode-1717", "breadcode-1781"]
+title = { fr = "Pain au levain sans pétrissage", en = "No-knead sourdough loaf" }
+description = { fr = "D'après le pain au levain sans pétrissage de Hendrik Kleinwächter (The Bread Code) : une autolyse d'une nuit remplace le pétrissage, un bocal témoin fixe la fin du pointage et l'apprêt se fait au réfrigérateur.", en = "After Hendrik Kleinwächter's (The Bread Code) no-knead sourdough: an overnight autolyse replaces kneading, a sample jar ends the bulk fermentation and the loaf proofs in the refrigerator." }
+steps = [
+  { fr = "Levain : pendant les deux jours qui précèdent, rafraîchissez-le en 1:5:5 (par exemple 10 g de chef, 50 g de farine, 50 g d'eau) matin et soir, avec un dernier rafraîchi la veille au soir. La source fait cinq rafraîchis pour un chef gardé au réfrigérateur.", en = "Starter: for two days before mixing, feed it 1:5:5 (for example 10 g starter, 50 g flour, 50 g water) morning and evening, with a last feed the night before. The source does five feeds for a starter kept in the refrigerator." },
+  { fr = "Autolyse : la veille au soir, mélangez seulement la farine et l'eau du pétrin, couvrez et laissez la nuit à température ambiante.", en = "Autolyse: the evening before, mix the final-mix flour and water only, cover and leave overnight at room temperature." },
+  { fr = "Le matin, ajoutez le levain et le sel et mélangez environ 2 min jusqu'à homogénéité. Placez un petit morceau de pâte dans un bocal témoin à bords droits et marquez son niveau.", en = "In the morning add the levain and the salt and mix for about 2 min until even. Put a small piece of dough in a straight-sided jar and mark its level." },
+  { fr = "Pointage : jusqu'à ce que le témoin ait doublé, repère valable pour une farine à environ 15 % de protéines. Il a duré environ 8 h dans la source, qui ne précise pas la température de la pièce. Le calculateur de fermentation donne la durée pour la température de votre pâte.", en = "Bulk fermentation: until the sample has doubled, a target for a flour of about 15 % protein. It took about 8 h in the source, where the room temperature is not stated. The fermentation calculator gives the time for your own dough temperature." },
+  { fr = "Façonnez directement, sans préfaçonnage, et déposez en banneton fariné.", en = "Shape directly, without preshaping, and place in a floured banneton." },
+  { fr = "Apprêt : 30 min à température ambiante, puis au réfrigérateur pour la nuit (environ 18 h dans la source ; environ 24 h vers 4 °C est courant). Cuire 1 à 3 h plus tard que prévu ne pose pas de problème.", en = "Final proof: 30 min at room temperature, then in the refrigerator overnight (about 18 h in the source; about 24 h at about 4 °C is typical). Baking 1 to 3 h later than planned does no harm." },
+  { fr = "Préchauffez le four avec une cocotte environ 30 min à environ 270 °C, ou au maximum de votre four. Grignez la pâte froide à environ 45°, sur environ 1 cm de profondeur.", en = "Preheat the oven with a Dutch oven for about 30 min at about 270 °C, or your oven's maximum. Score the cold dough at about 45°, about 1 cm deep." },
+  { fr = "Cuisez à 230 °C : 25 min à couvert, puis 15 à 20 min sans couvercle, jusqu'à la couleur souhaitée.", en = "Bake at 230 °C: 25 min with the lid on, then 15 to 20 min without it, until the colour you like." },
+]
+notes = { fr = "Fournée de la source : 500 g de farine de force, 350 g d'eau, 100 g de levain et 10 g de sel, soit 70 % d'eau, 20 % de levain et 2 % de sel sur la farine ajoutée. Le levain est rafraîchi à poids égaux de farine et d'eau : il est donc compté à 100 % d'hydratation, soit 550 g de farine au total, 72,7 % d'hydratation et 1,82 % de sel. Les 70 % d'eau conviennent à une farine à environ 15 % de protéines ; mettez-en moins avec une farine plus faible. Les pourcentages sont arrondis à 0,01 point (0,001 en dessous de 1 %) ; les poids donnés par le calculateur restent à moins de 0,1 % de ceux de la source.", en = "Source batch: 500 g bread flour, 350 g water, 100 g starter and 10 g salt, that is 70 % water, 20 % starter and 2 % salt on the flour added. The starter is fed with equal weights of flour and water, so it is counted at 100 % hydration: 550 g of flour in total, 72.7 % hydration and 1.82 % salt. The 70 % of water suits a flour of about 15 % protein; use less with a weaker flour. Percentages are rounded to 0.01 point (0.001 below 1 %); the weights the calculator gives stay within 0.1 % of the source's." }
+
+[formula]
+target = { by = "pieces", count = 1, grams = 960 }
+flours = [
+  { id = "bread_flour", pct = 100 },
+]
+ingredients = [
+  { id = "water", kind = "water", pct = 72.73 },
+  { id = "salt", kind = "salt", pct = 1.82 },
+]
+stages = [
+  { id = "levain", kind = "levain", flour_pct = 9.09, flour = "bread_flour", liquid_pct = 100, seed = { pct = 20, hydration_pct = 100 } },
+]

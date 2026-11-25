@@ -1,0 +1,29 @@
+bread_type = "focaccia"
+sources = ["novita-0367", "novita-0368", "novita-0362", "novita-0363", "novita-0365", "novita-0366"]
+title = { fr = "Focaccia sur poolish et tangzhong", en = "Focaccia with poolish and tangzhong" }
+description = { fr = "D'après la focaccia de Novita Listyani : 80 % d'hydratation, 40 % de la farine dans une poolish d'une nuit et 20 % en empois, pour une mie ouverte qui reste moelleuse.", en = "After Novita Listyani's focaccia: 80 % hydration, 40 % of the flour in an overnight poolish and 20 % scalded, for an open crumb that stays moist." }
+steps = [
+  { fr = "Poolish (la veille) : mélangez la farine, l'eau et la levure de la poolish. Laissez fermenter environ 2 h à environ 28 °C (plus longtemps dans une cuisine fraîche), puis gardez une nuit au réfrigérateur.", en = "Poolish (the day before): mix the poolish flour, water and yeast. Let it ferment about 2 h at about 28 °C (longer in a cooler kitchen), then refrigerate overnight." },
+  { fr = "Empois (la veille) : versez l'eau bouillante dans un bol préchauffé, ajoutez d'un coup la farine de l'empois et remuez 1 à 2 min jusqu'à obtenir une pâte épaisse et lisse. Couvrez, laissez refroidir, puis gardez une nuit au réfrigérateur.", en = "Scald (the day before): pour the boiling water into a pre-warmed bowl, add the scald flour at once and stir for 1–2 min into a thick, smooth paste. Cover, let it cool, then refrigerate overnight." },
+  { fr = "Délayez l'empois dans l'eau du pétrin, ajoutez la poolish, la farine, le sel et l'huile d'olive (gardez-en un peu pour le moule) et mélangez 3 à 4 min. Jugez le gluten au test du voile, pas à la fermeté de la pâte.", en = "Break the scald up in the final-mix water, add the poolish, flour, salt and olive oil (keep a little of the oil for the pan) and mix for 3 to 4 min. Judge the gluten by the windowpane test, not by how firm the dough feels." },
+  { fr = "Donnez des séries de 4 rabats toutes les 30 min environ, puis laissez lever environ 1 h à environ 28 °C, jusqu'à ce que la pâte ait à peu près doublé. Le calculateur de fermentation donne la durée pour la température de votre pâte.", en = "Give sets of 4 stretch-and-folds about every 30 min, then let the dough rise for about 1 h at about 28 °C, until roughly doubled. The fermentation calculator gives the time for your own dough temperature." },
+  { fr = "Graissez un moule en métal au beurre et à l'huile d'olive, versez-y la pâte et étalez-la délicatement. Apprêt : environ 90 min à la même température, jusqu'à ce que la pâte atteigne la mi-hauteur du moule. Marquez-la du bout des doigts et garnissez.", en = "Grease a metal pan with butter and olive oil, turn the dough into it and spread it gently. Final proof: about 90 min at the same temperature, until the dough reaches half the height of the pan. Dimple it and add your toppings." },
+  { fr = "Cuisez à 230 °C : environ 20 min en sole seule, puis 15 à 18 min en chaleur statique (voûte et sole).", en = "Bake at 230 °C: about 20 min with bottom heat only, then 15 to 18 min with top and bottom heat." },
+]
+notes = { fr = "Fournée de la source : poolish de 100 g de farine, 100 g d'eau et 0,5 g de levure instantanée ; empois de 50 g de farine et 75 g d'eau bouillante ; pétrin de 100 g de farine, 25 g d'eau, 4,5 g de sel et 15 g d'huile d'olive (470 g de pâte). Les 15 g d'huile couvrent la pâte et le moule. La source cuit dans un moule en métal dont la taille ne fait pas partie de la recette. La source ne dit pas combien d'eau l'empois perd en refroidissant : pesez-le froid et rajoutez ce qui manque. Les pourcentages sont arrondis à 0,01 point (0,001 en dessous de 1 %) ; les poids donnés par le calculateur restent à moins de 0,1 % de ceux de la source.", en = "Source batch: poolish of 100 g flour, 100 g water and 0.5 g instant yeast; scald of 50 g flour and 75 g boiling water; final mix of 100 g flour, 25 g water, 4.5 g salt and 15 g olive oil (470 g of dough). The 15 g of oil cover the dough and the pan. The source bakes in a metal pan whose size is not part of the recipe. The source does not say how much water the scald loses on cooling: weigh it cold and add back what is missing. Percentages are rounded to 0.01 point (0.001 below 1 %); the weights the calculator gives stay within 0.1 % of the source's." }
+
+[formula]
+target = { by = "pieces", count = 1, grams = 470 }
+flours = [
+  { id = "bread_flour", pct = 100 },
+]
+ingredients = [
+  { id = "water", kind = "water", pct = 80 },
+  { id = "salt", kind = "salt", pct = 1.8 },
+  { id = "olive_oil", kind = "oil", pct = 6 },
+  { id = "instant_yeast", kind = "instant_yeast", pct = 0.2 },
+]
+stages = [
+  { id = "poolish", kind = "poolish", flour_pct = 40, liquid_pct = 100, extras = [{ ingredient = "instant_yeast", pct = 0.2, basis = "total_flour" }] },
+  { id = "scald", kind = "scald", flour_pct = 20, liquid_pct = 150 },
+]

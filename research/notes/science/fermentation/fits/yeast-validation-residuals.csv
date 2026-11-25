@@ -1,0 +1,200 @@
+group,id,source,medium,endpoint,idy_pct,temp_c,hours_observed,hours_engine_doubled,ln_obs_over_engine,note
+own:technomitron-poolish,technomitron-poolish-2h,"Technomitron (AAINB), ""Les methodes de fermentation sur levu",poolish,ripe poolish,0.7454,23.0,2.0,1.45,0.3217,
+own:technomitron-poolish,technomitron-poolish-3h,"Technomitron (AAINB), ""Les methodes de fermentation sur levu",poolish,ripe poolish,0.5774,23.0,3.0,1.74,0.5433,
+own:technomitron-poolish,technomitron-poolish-4h,"Technomitron (AAINB), ""Les methodes de fermentation sur levu",poolish,ripe poolish,0.5,23.0,4.0,1.93,0.7273,
+own:technomitron-poolish,technomitron-poolish-5h,"Technomitron (AAINB), ""Les methodes de fermentation sur levu",poolish,ripe poolish,0.3333,23.0,5.0,2.59,0.6585,
+own:technomitron-poolish,technomitron-poolish-7h,"Technomitron (AAINB), ""Les methodes de fermentation sur levu",poolish,ripe poolish,0.2333,23.0,7.0,3.35,0.7381,
+own:technomitron-poolish,technomitron-poolish-12h,"Technomitron (AAINB), ""Les methodes de fermentation sur levu",poolish,ripe poolish,0.1333,23.0,12.0,5.01,0.8741,
+own:technomitron-poolish,technomitron-poolish-16h,"Technomitron (AAINB), ""Les methodes de fermentation sur levu",poolish,ripe poolish,0.0667,23.0,16.0,8.24,0.6633,
+own:technomitron-poolish,technomitron-poolish-18h,"Technomitron (AAINB), ""Les methodes de fermentation sur levu",poolish,ripe poolish,0.0333,23.0,18.0,13.59,0.2809,
+own:bakerpedia-poolish,bakerpedia-poolish-3,"BAKERpedia, ""Poolish"", table compressed yeast inoculation vs",poolish,"ripe poolish (peak, starts to recede)",1.0,27.5,1.4142135623730951,0.67,0.7396,
+own:bakerpedia-poolish,bakerpedia-poolish-1.5,"BAKERpedia, ""Poolish"", table compressed yeast inoculation vs",poolish,"ripe poolish (peak, starts to recede)",0.5,27.5,3.4641016151377544,1.11,1.1364,
+own:bakerpedia-poolish,bakerpedia-poolish-0.8,"BAKERpedia, ""Poolish"", table compressed yeast inoculation vs",poolish,"ripe poolish (peak, starts to recede)",0.2667,27.5,7.483314773547883,1.75,1.4542,
+own:bakerpedia-poolish,bakerpedia-poolish-0.25,"BAKERpedia, ""Poolish"", table compressed yeast inoculation vs",poolish,"ripe poolish (peak, starts to recede)",0.0833,27.5,13.416407864998739,4.04,1.2001,
+own:weekendbakery-poolish,weekendbakery-poolish-8h,"Weekend Bakery, ""Artisan bread baking tips: Poolish & biga"",",poolish,ripe poolish,0.2755,21.0,8.0,3.87,0.7262,temperature not stated: 21 C assumed
+own:weekendbakery-poolish,weekendbakery-poolish-12h,"Weekend Bakery, ""Artisan bread baking tips: Poolish & biga"",",poolish,ripe poolish,0.1414,21.0,12.0,6.26,0.6514,temperature not stated: 21 C assumed
+own:weekendbakery-poolish,weekendbakery-poolish-16h,"Weekend Bakery, ""Artisan bread baking tips: Poolish & biga"",",poolish,ripe poolish,0.049,21.0,16.0,13.42,0.1761,temperature not stated: 21 C assumed
+own:breadcode-pizza,breadcode-pizza-0.05,"The Bread Code, Neapolitan pizza dough recipe, https://pizza",direct dough,+50 % (balls),0.05,21.0,12.96148139681572,13.22,-0.02,temperature not stated: 21 C assumed
+own:breadcode-basic-bread,breadcode-basic-bread-0.2,hendricius/the-bread-code recipes/savory/basic-bread.md L16-,direct dough,doubled,0.2,21.0,8.0,4.87,0.4956,temperature not stated: 21 C assumed
+ext:direct dough:unspecified,D001,dough.school yeast calculator,direct dough,unspecified ('watch your dough'),1.5,20.0,4.0,1.31,1.1171,
+ext:direct dough:unspecified,D002,dough.school yeast calculator,direct dough,unspecified ('watch your dough'),1.0,25.0,4.0,0.91,1.4806,
+ext:direct dough:unspecified,D003,dough.school yeast calculator,direct dough,unspecified ('watch your dough'),0.7,30.0,4.0,0.67,1.7941,
+ext:direct dough:unspecified,D004,dough.school yeast calculator,direct dough,unspecified ('watch your dough'),0.8,20.0,6.0,2.06,1.07,
+ext:direct dough:unspecified,D005,dough.school yeast calculator,direct dough,unspecified ('watch your dough'),0.5,25.0,6.0,1.5,1.387,
+ext:direct dough:unspecified,D006,dough.school yeast calculator,direct dough,unspecified ('watch your dough'),0.35,30.0,6.0,1.1,1.7005,
+ext:direct dough:unspecified,D007,dough.school yeast calculator,direct dough,unspecified ('watch your dough'),0.5,20.0,8.0,2.89,1.0192,
+ext:direct dough:unspecified,D008,dough.school yeast calculator,direct dough,unspecified ('watch your dough'),0.3,25.0,8.0,2.17,1.3069,
+ext:direct dough:unspecified,D009,dough.school yeast calculator,direct dough,unspecified ('watch your dough'),0.2,30.0,8.0,1.64,1.5852,
+ext:direct dough:unspecified,D010,dough.school yeast calculator,direct dough,unspecified ('watch your dough'),0.25,20.0,12.0,4.76,0.9256,
+ext:direct dough:unspecified,D011,dough.school yeast calculator,direct dough,unspecified ('watch your dough'),0.15,25.0,12.0,3.57,1.2133,
+ext:direct dough:unspecified,D012,dough.school yeast calculator,direct dough,unspecified ('watch your dough'),0.1,30.0,12.0,2.7,1.4916,
+ext:direct dough:unspecified,D013,dough.school yeast calculator,direct dough,unspecified ('watch your dough'),0.1,20.0,24.0,9.2,0.9591,
+ext:direct dough:unspecified,D014,dough.school yeast calculator,direct dough,unspecified ('watch your dough'),0.05,25.0,24.0,7.87,1.1154,
+ext:direct dough:unspecified,D015,dough.school yeast calculator,direct dough,unspecified ('watch your dough'),0.03,30.0,24.0,6.42,1.3179,
+ext:direct dough:unspecified,D016,dough.school yeast calculator,direct dough,unspecified ('watch your dough'),0.04,20.0,48.0,17.79,0.9925,
+ext:direct dough:unspecified,D017,dough.school yeast calculator,direct dough,unspecified ('watch your dough'),0.02,25.0,48.0,15.22,1.1489,
+ext:direct dough:unspecified,D018,dough.school yeast calculator,direct dough,unspecified ('watch your dough'),0.02,20.0,72.0,29.31,0.8989,
+ext:direct dough:schedule/other,D023,"Crust Kingdom, How much yeast",direct dough,'optimum' with usable window,0.5,21.0,2.0,2.52,-0.2309,
+ext:direct dough:schedule/other,D024,"Crust Kingdom, How much yeast",direct dough,'optimum' with usable window,0.2,21.0,5.0,4.87,0.0256,
+ext:direct dough:schedule/other,D025,"Crust Kingdom, How much yeast",direct dough,'optimum' with usable window,0.1,21.0,8.0,8.03,-0.0034,
+ext:direct dough:schedule/other,D026,"Crust Kingdom, How much yeast",direct dough,'optimum' with usable window,0.03,21.0,18.0,19.1,-0.0594,
+ext:direct dough:unspecified,D030,My Pizza Night yeast guide,direct dough,unspecified ('reliable starting points'),0.65,22.0,5.0,1.82,1.0081,
+ext:direct dough:unspecified,D031,My Pizza Night yeast guide,direct dough,unspecified ('reliable starting points'),0.4,20.0,8.0,3.39,0.8586,
+ext:direct dough:unspecified,D032,My Pizza Night yeast guide,direct dough,unspecified ('reliable starting points'),0.25,18.0,12.0,6.28,0.6472,
+ext:direct dough:unspecified,D036,"Jordo's pizza calculator, fermentation timing",direct dough,unspecified,0.6,21.0,5.0,2.21,0.8166,
+ext:direct dough:unspecified,D037,"Jordo's pizza calculator, fermentation timing",direct dough,unspecified,0.3,21.0,9.0,3.64,0.9053,
+ext:direct dough:unspecified,D038,"Jordo's pizza calculator, fermentation timing",direct dough,unspecified,0.1,21.0,13.0,8.03,0.4821,
+ext:direct dough:schedule/other,D042,fond.kitchen pizza dough fermentation,direct dough,expanded toward double (cold often short of it); poke test,0.4,23.0,7.0,2.27,1.1263,
+ext:direct dough:schedule/other,D043,fond.kitchen pizza dough fermentation,direct dough,expanded toward double (cold often short of it); poke test,0.225,23.0,15.0,3.43,1.4742,
+ext:direct dough:doubled,D047,"Biorito, quanto lievito per 1 kg di farina",direct dough,doubled ('fino al raddoppio'),0.3333,22.0,2.5,2.95,-0.166,
+ext:direct dough:doubled,D048,"Biorito, quanto lievito per 1 kg di farina",direct dough,doubled ('fino al raddoppio'),0.1,22.0,7.0,7.02,-0.0032,
+ext:direct dough:doubled,D049,"Biorito, quanto lievito per 1 kg di farina",direct dough,doubled ('fino al raddoppio'),0.05,22.0,12.0,11.57,0.0368,
+ext:direct dough:unspecified,D051,Pizza Napoletana DOC (Davide Esposito),direct dough,unspecified,0.8333,20.5,3.0,1.87,0.4745,
+ext:direct dough:unspecified,D053,Pizza Napoletana DOC (Davide Esposito),direct dough,unspecified,0.6667,20.5,5.0,2.19,0.8247,
+ext:direct dough:unspecified,D055,Pizza Napoletana DOC (Davide Esposito),direct dough,unspecified,0.5333,20.5,8.0,2.57,1.134,
+ext:direct dough:unspecified,D057,Pizza Napoletana DOC (Davide Esposito),direct dough,unspecified,0.4,20.5,10.0,3.17,1.15,
+ext:direct dough:unspecified,D059,Pizza Napoletana DOC (Davide Esposito),direct dough,unspecified,0.2667,20.5,12.0,4.24,1.0405,
+ext:direct dough:unspecified,D061,Pizza Napoletana DOC (Davide Esposito),direct dough,unspecified,0.1333,20.5,16.0,6.98,0.8289,
+ext:direct dough:unspecified,D072,khymos.org (PizzApp+ data),direct dough,unspecified (calculator),0.048,20.0,20.0,15.6,0.2483,
+ext:direct dough:schedule/other,D073,GitHub dough-designer-pro PR #2 (secondary description of TX,direct dough,"'ready' (Craig chart, endpoint not stated in PR)",0.048,21.1,12.0,13.43,-0.1129,
+ext:direct dough:schedule/other,D076,EU Reg. 97/2010 Pizza Napoletana TSG,direct dough,"ready to use, usable 6 h more",0.0556,25.0,7.0,7.29,-0.0403,
+ext:direct dough:schedule/other,D080,"Forkish, Saturday White Bread (FWSY) via Penguin AU",direct dough,tripled (bulk),0.4,24.0,5.0,2.0,0.9184,
+ext:direct dough:schedule/other,D081,"Forkish, Overnight Straight Pizza Dough via WPR",direct dough,2-3x volume (bulk),0.08,22.0,12.0,8.25,0.3752,
+ext:direct dough:doubled,D082,Forkish 'I slept in' dough via Ooni,direct dough,doubled (balls),0.1,24.0,6.5,5.41,0.1827,
+ext:direct dough:doubled,D083,Baking Steel 24-hour pizza dough,direct dough,doubled,0.2,21.0,24.0,4.87,1.5942,
+ext:direct dough:schedule/other,D091,Modernist Pizza Vol. 4 Kitchen Manual (owner's PDF): Direct ,direct dough,recipe schedule (Modernist fingertip test),0.81,21.0,1.83,1.78,0.0276,
+ext:direct dough:schedule/other,D092,Modernist Pizza Vol. 4 Kitchen Manual (owner's PDF): Brazili,direct dough,recipe schedule (Modernist fingertip test),0.49,21.0,2.0,2.56,-0.2455,
+ext:direct dough:schedule/other,D093,Modernist Pizza Vol. 4 Kitchen Manual (owner's PDF): Deep-Di,direct dough,recipe schedule (Modernist fingertip test),0.82,21.0,1.83,1.76,0.0364,
+ext:direct dough:schedule/other,D094,Modernist Pizza Vol. 4 Kitchen Manual (owner's PDF): Neapoli,direct dough,recipe schedule (Modernist fingertip test),0.04,21.0,25.0,15.53,0.4763,
+ext:direct dough:schedule/other,D095,Modernist Pizza Vol. 4 Kitchen Manual (owner's PDF): Moderni,direct dough,recipe schedule (Modernist fingertip test),0.04,21.0,25.0,15.53,0.4763,
+ext:direct dough:schedule/other,D096,Modernist Pizza Vol. 4 Kitchen Manual (owner's PDF): Emergen,direct dough,recipe schedule (Modernist fingertip test),1.0,21.0,2.33,1.53,0.4208,
+ext:direct dough:schedule/other,D097,Modernist Pizza Vol. 4 Kitchen Manual (owner's PDF): Direct ,direct dough,recipe schedule (Modernist fingertip test),0.47,21.0,5.2,2.63,0.68,
+ext:direct dough:schedule/other,D098,Modernist Pizza Vol. 4 Kitchen Manual (owner's PDF): Emergen,direct dough,recipe schedule (Modernist fingertip test),1.0,21.0,2.33,1.53,0.4208,
+ext:direct dough:schedule/other,D099,Modernist Pizza Vol. 4 Kitchen Manual (owner's PDF): Direct ,direct dough,recipe schedule (Modernist fingertip test),0.42,21.0,5.2,2.86,0.599,
+ext:direct dough:schedule/other,D100,Modernist Pizza Vol. 4 Kitchen Manual (owner's PDF): Emergen,direct dough,recipe schedule (Modernist fingertip test),0.8,21.0,2.33,1.8,0.2602,
+ext:direct dough:schedule/other,D101,Modernist Pizza Vol. 4 Kitchen Manual (owner's PDF): Detroit,direct dough,recipe schedule (Modernist fingertip test),0.9,21.0,3.5,1.65,0.7519,
+ext:direct dough:schedule/other,D102,Modernist Pizza Vol. 4 Kitchen Manual (owner's PDF): Argenti,direct dough,recipe schedule (Modernist fingertip test),0.93,21.0,2.58,1.61,0.4705,
+ext:direct dough:schedule/other,D103,Modernist Pizza Vol. 4 Kitchen Manual (owner's PDF): Old For,direct dough,recipe schedule (Modernist fingertip test),0.67,21.0,6.0,2.04,1.0784,
+ext:direct dough:schedule/other,D104,Modernist Pizza Vol. 4 Kitchen Manual (owner's PDF): Roman P,direct dough,recipe schedule (Modernist fingertip test),0.5,21.0,5.5,2.52,0.7807,
+ext:direct dough:schedule/other,D105,Modernist Pizza Vol. 4 Kitchen Manual (owner's PDF): AVPN Ne,direct dough,recipe schedule,0.0367,20.25,22.0,18.29,0.1846,
+ext:direct dough:schedule/other,D106,Modernist Pizza Vol. 4 Kitchen Manual (owner's PDF): Pizza G,direct dough,recipe schedule,1.08,21.0,4.25,1.45,1.0773,
+ext:dough with ~10-17% poolish:schedule/other,D108,Modernist Pizza Vol. 4 Kitchen Manual (owner's PDF): Thin-Cr,dough with ~10-17% poolish (total yeast),recipe schedule,0.82,21.0,2.83,1.76,0.4724,
+ext:dough with ~10-17% poolish:schedule/other,D110,Modernist Pizza Vol. 4 Kitchen Manual (owner's PDF): 100% Ry,dough with ~10-17% poolish (total yeast),recipe schedule,0.37,21.0,2.08,3.13,-0.4085,
+ext:dough with ~10-17% poolish:schedule/other,D112,Modernist Pizza Vol. 4 Kitchen Manual (owner's PDF): Apizza ,dough with ~10-17% poolish (total yeast),recipe schedule,0.33,21.0,3.58,3.4,0.0521,
+ext:dough with ~10-17% poolish:schedule/other,D115,Modernist Pizza Vol. 4 Kitchen Manual (owner's PDF): New Yor,dough with ~10-17% poolish (total yeast),recipe schedule,0.49,21.0,6.0,2.56,0.8531,
+ext:poolish:ripe,D116,Modernist Pizza Vol. 4 Kitchen Manual (owner's PDF): Strateg,poolish,ripe (yeast has done as much fermenting as possible with the,0.45,22.5,3.0,2.23,0.2985,
+ext:poolish:ripe,D117,Modernist Pizza Vol. 4 Kitchen Manual (owner's PDF): Strateg,poolish,ripe (yeast has done as much fermenting as possible with the,0.28,22.5,8.0,3.13,0.9377,
+ext:poolish:ripe,D118,Modernist Pizza Vol. 4 Kitchen Manual (owner's PDF): Strateg,poolish,ripe (yeast has done as much fermenting as possible with the,0.15,22.5,14.0,4.91,1.0479,
+ext:poolish:ripe,D119,Modernist Pizza Vol. 4 Kitchen Manual (owner's PDF): Strateg,poolish,ripe (yeast has done as much fermenting as possible with the,0.05,22.5,17.5,10.83,0.4801,
+ext:poolish:ripe,D120,Modernist Bread Vol. 6 Kitchen Manual (owner's PDF): Poolish,poolish,ripe,0.45,20.5,3.0,2.91,0.0309,
+ext:poolish:ripe,D121,Modernist Bread Vol. 6 Kitchen Manual (owner's PDF): Poolish,poolish,ripe,0.28,20.5,8.0,4.09,0.6701,
+ext:poolish:ripe,D122,Modernist Bread Vol. 6 Kitchen Manual (owner's PDF): Poolish,poolish,ripe,0.15,20.5,12.0,6.42,0.6262,
+ext:poolish:ripe,D123,Modernist Bread Vol. 6 Kitchen Manual (owner's PDF): Poolish,poolish,ripe,0.03,20.5,15.0,20.44,-0.3095,
+ext:biga:ripe,D124,Modernist Bread Vol. 6 Kitchen Manual (owner's PDF): Biga,biga,ripe,0.31,21.0,12.0,3.55,1.2166,
+ext:biga:ripe,D125,Modernist Bread Vol. 6 Kitchen Manual (owner's PDF): Preferm,biga,ripe,0.285,21.0,12.0,3.78,1.1561,
+ext:sponge:ripe,D126,Modernist Bread Vol. 6 Kitchen Manual (owner's PDF): Preferm,sponge (enriched),ripe,0.15,21.0,12.0,6.0,0.694,
+ext:pâte fermentée:ripe,D127,Modernist Bread Vol. 6 Kitchen Manual (owner's PDF): Pâte fe,pâte fermentée (salted lean dough),ripe,0.07,21.0,12.0,10.38,0.1452,
+ext:dough with poolish:schedule/other,D128,Modernist Bread Vol. 6 Kitchen Manual (owner's PDF): French ,dough with poolish (total yeast),recipe schedule,0.49,24.0,5.5,1.72,1.1598,
+ext:poolish:ripe,D129,Modernist Bread Vol. 2 p. 44 errata (prior pass),poolish,ripe,0.03,20.5,18.0,20.44,-0.1272,
+ext:poolish:ripe,D130,"Suas, Advanced Bread and Pastry, via BAKERpedia (prior pass)",poolish,"ripe (domed, just beginning to recede)",1.0,27.5,1.5,0.67,0.7985,
+ext:poolish:ripe,D131,"Suas, Advanced Bread and Pastry, via BAKERpedia (prior pass)",poolish,"ripe (domed, just beginning to recede)",0.5,27.5,3.5,1.11,1.1467,
+ext:poolish:ripe,D132,"Suas, Advanced Bread and Pastry, via BAKERpedia (prior pass)",poolish,"ripe (domed, just beginning to recede)",0.2667,27.5,7.5,1.75,1.4564,
+ext:poolish:ripe,D133,"Suas, Advanced Bread and Pastry, via BAKERpedia (prior pass)",poolish,"ripe (domed, just beginning to recede)",0.0833,27.5,13.5,4.04,1.2063,
+ext:poolish:ripe,D137,Weekend Bakery poolish (prior pass),poolish,ripe,0.28,22.0,8.0,3.35,0.8717,
+ext:poolish:ripe,D138,Weekend Bakery poolish (prior pass),poolish,ripe,0.15,22.0,12.0,5.24,0.8278,
+ext:poolish:ripe,D139,Weekend Bakery poolish (prior pass),poolish,ripe,0.055,22.0,16.0,10.8,0.3931,
+ext:poolish:ripe,D140,fond.kitchen poolish glossary (prior pass),poolish,ripe/peak,0.2,21.0,8.0,4.87,0.4956,
+ext:poolish:ripe,D141,fond.kitchen poolish glossary (prior pass),poolish,ripe/peak,0.1,21.0,12.0,8.03,0.402,
+ext:poolish:ripe,D142,fond.kitchen poolish glossary (prior pass),poolish,ripe/peak,0.07,21.0,16.0,10.38,0.4329,
+ext:poolish:ripe,D143,Dissapore biga e poolish (prior pass),poolish,ripe,0.8333,21.0,1.5,1.74,-0.1509,
+ext:poolish:ripe,D144,Dissapore biga e poolish (prior pass),poolish,ripe,0.5,21.0,4.5,2.52,0.58,
+ext:poolish:ripe,D145,Dissapore biga e poolish (prior pass),poolish,ripe,0.3333,21.0,6.5,3.37,0.6557,
+ext:poolish:ripe,D146,Dissapore biga e poolish (prior pass),poolish,ripe,0.1667,21.0,8.5,5.56,0.4251,
+ext:poolish:ripe,D147,Dissapore biga e poolish (prior pass),poolish,ripe,0.1,21.0,11.0,8.03,0.315,
+ext:poolish:ripe,D148,Dissapore biga e poolish (prior pass),poolish,ripe,0.0667,21.0,13.5,10.75,0.2282,
+ext:poolish:ripe,D149,Dissapore biga e poolish (prior pass),poolish,ripe,0.0333,21.0,15.5,17.72,-0.1338,
+ext:poolish:ripe,D150,"Luca Pezzetta, Scatti di Gusto (prior pass)",poolish,ripe,0.0333,20.0,19.0,20.3,-0.0663,
+ext:poolish:ripe,D151,"The Dough Formula, Preferments 101 (prior pass)",poolish,peak,0.175,27.0,5.5,2.51,0.785,
+ext:biga:ripe,D154,Giorilli biga via Dissapore (prior pass),biga,ripe,0.3333,19.0,16.0,4.44,1.2821,
+ext:direct dough:schedule/other,D157,"Finney, Magoffin, Hoseney & Finney 1976, Cereal Chem 53:126",direct dough,"optimised loaf (balanced system), proof ≈30% of fermentation",0.6667,30.0,3.92,0.69,1.7388,
+ext:direct dough:schedule/other,D158,Finney et al. 1976,direct dough,optimised loaf,2.4,30.0,1.5250000000000001,0.27,1.7169,
+ext:dough:schedule/other,D159,Modernist Pizza Vol. 4 Kitchen Manual (owner's PDF): Apizza ,dough (proof stage),fully proofed (Modernist fingertip test),0.33,21.0,3.25,3.4,-0.0446,
+ext:dough:schedule/other,D160,Modernist Pizza Vol. 4 Kitchen Manual (owner's PDF): Apizza ,dough (proof stage),fully proofed (Modernist fingertip test),0.33,27.0,2.25,1.59,0.3479,
+ext:dough:schedule/other,D163,Modernist Pizza Vol. 4 Kitchen Manual (owner's PDF): Focacci,dough (proof stage),fully proofed (Modernist fingertip test),0.25,21.0,3.0,4.15,-0.3245,
+ext:dough:schedule/other,D164,Modernist Pizza Vol. 4 Kitchen Manual (owner's PDF): Focacci,dough (proof stage),fully proofed (Modernist fingertip test),0.25,27.0,2.0,1.94,0.0303,
+ext:dough:schedule/other,D165,Modernist Pizza Vol. 4 Kitchen Manual (owner's PDF): New Yor,dough (proof stage),fully proofed (Modernist fingertip test),0.49,21.0,3.0,2.56,0.16,
+ext:dough:schedule/other,D166,Modernist Pizza Vol. 4 Kitchen Manual (owner's PDF): New Yor,dough (proof stage),fully proofed (Modernist fingertip test),0.49,27.0,2.0,1.2,0.5148,
+ext:dough:schedule/other,D167,Modernist Pizza Vol. 4 Kitchen Manual (owner's PDF): High-Hy,dough (proof stage),fully proofed (Modernist fingertip test),0.5,21.0,3.0,2.52,0.1745,
+ext:dough:schedule/other,D168,Modernist Pizza Vol. 4 Kitchen Manual (owner's PDF): High-Hy,dough (proof stage),fully proofed (Modernist fingertip test),0.5,27.0,2.0,1.18,0.5293,
+ext:dough:schedule/other,D169,Modernist Pizza Vol. 4 Kitchen Manual (owner's PDF): Roman a,dough (proof stage),fully proofed (Modernist fingertip test),0.5,21.0,3.0,2.52,0.1745,
+ext:dough:schedule/other,D170,Modernist Pizza Vol. 4 Kitchen Manual (owner's PDF): Roman a,dough (proof stage),fully proofed (Modernist fingertip test),0.5,27.0,2.0,1.18,0.5293,
+ext:dough:schedule/other,D171,Modernist Pizza Vol. 4 Kitchen Manual (owner's PDF): Pizza G,dough (proof stage),fully proofed (Modernist fingertip test),1.08,21.0,3.5,1.45,0.8832,
+ext:dough:schedule/other,D172,Modernist Pizza Vol. 4 Kitchen Manual (owner's PDF): Pizza G,dough (proof stage),fully proofed (Modernist fingertip test),1.08,27.0,2.5,0.68,1.3069,
+ext:dough:schedule/other,D173,Modernist Pizza Vol. 4 Kitchen Manual (owner's PDF): Detroit,dough (proof stage),fully proofed (Modernist fingertip test),0.9,21.0,3.0,1.65,0.5977,
+ext:dough:schedule/other,D174,Modernist Pizza Vol. 4 Kitchen Manual (owner's PDF): Detroit,dough (proof stage),fully proofed (Modernist fingertip test),0.9,27.0,2.5,0.77,1.1757,
+ext:dough:schedule/other,D175,Modernist Pizza Vol. 4 Kitchen Manual (owner's PDF): Old For,dough (proof stage),fully proofed (Modernist fingertip test),0.67,21.0,3.0,2.04,0.3852,
+ext:dough:schedule/other,D176,Modernist Pizza Vol. 4 Kitchen Manual (owner's PDF): Old For,dough (proof stage),fully proofed (Modernist fingertip test),0.67,27.0,2.0,0.95,0.74,
+ext:biga:ripe,N001,biancolievito.it,biga,ripe,0.33333,18.5,18.0,4.76,1.3301,
+ext:biga:ripe,N004,Ooni,biga,ripe,0.13,21.0,16.0,6.65,0.8786,
+ext:biga:ripe,N006,fond.kitchen,biga,ripe,0.1,19.0,14.0,10.56,0.2818,
+ext:biga:ripe,N007,fond.kitchen,biga,ripe,0.1,15.5,21.0,17.38,0.189,
+ext:biga:ripe,N008,fond.kitchen,biga,ripe,0.1,23.0,10.0,6.16,0.4848,
+ext:biga:ripe,N010,Jordo's,biga,ripe,0.1,17.0,21.0,14.0,0.4051,
+ext:biga:ripe,N011,Jordo's,biga,ripe,0.1,20.0,14.0,9.2,0.4201,
+ext:biga:ripe,N012,Jordo's,biga,ripe,0.05,24.0,10.0,8.92,0.1144,
+ext:biga:ripe,N013,behindthecrust,biga,ripe,0.15152,21.0,16.0,5.95,0.9889,
+ext:biga:ripe,N014,Zaghini (Scatti di Gusto),biga,ripe,0.33333,18.5,16.0,4.76,1.2124,
+ext:poolish:ripe,N016,biancolievito.it,poolish,ripe,1.0,23.0,2.0,1.17,0.5333,
+ext:poolish:ripe,N017,biancolievito.it,poolish,ripe,0.5,23.0,4.0,1.93,0.7273,
+ext:poolish:ripe,N018,biancolievito.it,poolish,ripe,0.25,23.0,8.0,3.18,0.9214,
+ext:poolish:ripe,N019,biancolievito.it,poolish,ripe,0.06667,23.0,12.0,8.25,0.3753,
+ext:poolish:ripe,N020,biancolievito.it,poolish,ripe,0.03333,23.0,18.0,13.58,0.2816,
+ext:dough:schedule/other,N021,pizzamateur.fr,dough,ready,0.41667,22.0,2.0,2.51,-0.2284,
+ext:dough:schedule/other,N022,pizzamateur.fr,dough,ready,0.2,22.0,4.0,4.26,-0.0637,
+ext:dough:schedule/other,N023,pizzamateur.fr,dough,ready,0.1,20.0,8.0,9.2,-0.1396,
+ext:dough:schedule/other,N024,pizzamateur.fr,dough,ready,0.05,18.0,24.0,20.01,0.1816,
+ext:dough:schedule/other,N027,teigformel.de,dough,ready,0.26667,21.0,4.0,3.96,0.0096,
+ext:dough:schedule/other,N028,teigformel.de,dough,ready,0.15,21.0,6.0,6.0,0.0008,
+ext:dough:schedule/other,N029,teigformel.de,dough,ready,0.09333,21.0,8.0,8.44,-0.0531,
+ext:dough:schedule/other,N030,teigformel.de,dough,ready,0.05,21.0,12.0,13.22,-0.097,
+ext:cold-profile,D019,dough.school yeast calculator (cold table),direct dough,unspecified,0.15,4.0,22.0,,-0.2911,"profile: 2.0 h at 21.0 C then fridge; P_warm=0.33 P_fridge_with_cooling=0.41 P_fridge_isothermal=0.29; ln_obs_over_engine column = ln(total progress P), 0 means 'doubled' exactly at the end"
+ext:cold-profile,D020,dough.school yeast calculator (cold table),direct dough,unspecified,0.08,4.0,46.0,,-0.3863,"profile: 2.0 h at 21.0 C then fridge; P_warm=0.21 P_fridge_with_cooling=0.47 P_fridge_isothermal=0.39; ln_obs_over_engine column = ln(total progress P), 0 means 'doubled' exactly at the end"
+ext:cold-profile,D021,dough.school yeast calculator (cold table),direct dough,unspecified,0.05,4.0,70.0,,-0.4619,"profile: 2.0 h at 21.0 C then fridge; P_warm=0.15 P_fridge_with_cooling=0.48 P_fridge_isothermal=0.42; ln_obs_over_engine column = ln(total progress P), 0 means 'doubled' exactly at the end"
+ext:cold-profile,D022,dough.school cold-fermentation guide,direct dough,"doubled, jiggly, slow spring-back",0.125,3.0,46.0,,0.4614,"profile: 7.0 h at 21.0 C then fridge; P_warm=1.02 P_fridge_with_cooling=0.56 P_fridge_isothermal=0.46; ln_obs_over_engine column = ln(total progress P), 0 means 'doubled' exactly at the end"
+ext:cold-profile,D027,"Crust Kingdom, How much yeast",direct dough,'optimum' with usable window,0.3,4.0,24.0,,-0.289,"profile: nan h at nan C then fridge; P_warm=0.00 P_fridge_with_cooling=0.75 P_fridge_isothermal=0.53; ln_obs_over_engine column = ln(total progress P), 0 means 'doubled' exactly at the end"
+ext:cold-profile,D028,"Crust Kingdom, How much yeast",direct dough,'optimum' with usable window,0.1,4.0,48.0,,-0.5457,"profile: nan h at nan C then fridge; P_warm=0.00 P_fridge_with_cooling=0.58 P_fridge_isothermal=0.48; ln_obs_over_engine column = ln(total progress P), 0 means 'doubled' exactly at the end"
+ext:cold-profile,D029,"Crust Kingdom, How much yeast",direct dough,'optimum' with usable window,0.05,4.0,72.0,,-0.6984,"profile: nan h at nan C then fridge; P_warm=0.00 P_fridge_with_cooling=0.50 P_fridge_isothermal=0.44; ln_obs_over_engine column = ln(total progress P), 0 means 'doubled' exactly at the end"
+ext:cold-profile,D033,My Pizza Night yeast guide,direct dough,unspecified ('reliable starting points'),0.225,4.0,24.0,,-0.4961,"profile: nan h at nan C then fridge; P_warm=0.00 P_fridge_with_cooling=0.61 P_fridge_isothermal=0.43; ln_obs_over_engine column = ln(total progress P), 0 means 'doubled' exactly at the end"
+ext:cold-profile,D034,My Pizza Night yeast guide,direct dough,unspecified ('reliable starting points'),0.125,4.0,48.0,,-0.3851,"profile: nan h at nan C then fridge; P_warm=0.00 P_fridge_with_cooling=0.68 P_fridge_isothermal=0.56; ln_obs_over_engine column = ln(total progress P), 0 means 'doubled' exactly at the end"
+ext:cold-profile,D035,My Pizza Night yeast guide,direct dough,unspecified ('reliable starting points'),0.065,4.0,72.0,,-0.5095,"profile: nan h at nan C then fridge; P_warm=0.00 P_fridge_with_cooling=0.60 P_fridge_isothermal=0.53; ln_obs_over_engine column = ln(total progress P), 0 means 'doubled' exactly at the end"
+ext:cold-profile,D039,"Jordo's pizza calculator, fermentation timing",direct dough,unspecified,0.2,3.5,24.0,,-0.6409,"profile: nan h at nan C then fridge; P_warm=0.00 P_fridge_with_cooling=0.53 P_fridge_isothermal=0.36; ln_obs_over_engine column = ln(total progress P), 0 means 'doubled' exactly at the end"
+ext:cold-profile,D040,"Jordo's pizza calculator, fermentation timing",direct dough,unspecified,0.1,3.5,48.0,,-0.6136,"profile: nan h at nan C then fridge; P_warm=0.00 P_fridge_with_cooling=0.54 P_fridge_isothermal=0.44; ln_obs_over_engine column = ln(total progress P), 0 means 'doubled' exactly at the end"
+ext:cold-profile,D041,"Jordo's pizza calculator, fermentation timing",direct dough,unspecified,0.06,3.5,72.0,,-0.6382,"profile: nan h at nan C then fridge; P_warm=0.00 P_fridge_with_cooling=0.53 P_fridge_isothermal=0.46; ln_obs_over_engine column = ln(total progress P), 0 means 'doubled' exactly at the end"
+ext:cold-profile,D044,fond.kitchen pizza dough fermentation,direct dough,expanded toward double (cold often short of it); poke test,0.125,4.5,60.0,,-0.127,"profile: nan h at nan C then fridge; P_warm=0.00 P_fridge_with_cooling=0.88 P_fridge_isothermal=0.76; ln_obs_over_engine column = ln(total progress P), 0 means 'doubled' exactly at the end"
+ext:cold-profile,D045,fond.kitchen pizza dough fermentation,direct dough,expanded toward double (cold often short of it); poke test,0.045,4.5,108.0,,-0.3367,"profile: nan h at nan C then fridge; P_warm=0.00 P_fridge_with_cooling=0.71 P_fridge_isothermal=0.66; ln_obs_over_engine column = ln(total progress P), 0 means 'doubled' exactly at the end"
+ext:cold-profile,D046,fond.kitchen cold fermentation reference formula,direct dough,cues; can be ready without doubling,0.1,4.0,48.0,,-0.0592,"profile: 3.0 h at 21.0 C then fridge; P_warm=0.37 P_fridge_with_cooling=0.57 P_fridge_isothermal=0.48; ln_obs_over_engine column = ln(total progress P), 0 means 'doubled' exactly at the end"
+ext:cold-profile,D050,"Biorito, quanto lievito per 1 kg di farina",direct dough,doubled ('fino al raddoppio'),0.0167,5.0,24.0,,-2.247,"profile: nan h at nan C then fridge; P_warm=0.00 P_fridge_with_cooling=0.11 P_fridge_isothermal=0.08; ln_obs_over_engine column = ln(total progress P), 0 means 'doubled' exactly at the end"
+ext:cold-profile,D052,Pizza Napoletana DOC (Davide Esposito),direct dough,unspecified,0.8333,5.5,6.0,,-0.1922,"profile: nan h at nan C then fridge; P_warm=0.00 P_fridge_with_cooling=0.83 P_fridge_isothermal=0.35; ln_obs_over_engine column = ln(total progress P), 0 means 'doubled' exactly at the end"
+ext:cold-profile,D054,Pizza Napoletana DOC (Davide Esposito),direct dough,unspecified,0.6667,5.5,8.0,,-0.2175,"profile: nan h at nan C then fridge; P_warm=0.00 P_fridge_with_cooling=0.80 P_fridge_isothermal=0.40; ln_obs_over_engine column = ln(total progress P), 0 means 'doubled' exactly at the end"
+ext:cold-profile,D056,Pizza Napoletana DOC (Davide Esposito),direct dough,unspecified,0.5333,5.5,13.0,,-0.1088,"profile: nan h at nan C then fridge; P_warm=0.00 P_fridge_with_cooling=0.90 P_fridge_isothermal=0.55; ln_obs_over_engine column = ln(total progress P), 0 means 'doubled' exactly at the end"
+ext:cold-profile,D058,Pizza Napoletana DOC (Davide Esposito),direct dough,unspecified,0.4,5.5,16.0,,-0.1838,"profile: nan h at nan C then fridge; P_warm=0.00 P_fridge_with_cooling=0.83 P_fridge_isothermal=0.55; ln_obs_over_engine column = ln(total progress P), 0 means 'doubled' exactly at the end"
+ext:cold-profile,D060,Pizza Napoletana DOC (Davide Esposito),direct dough,unspecified,0.2667,5.5,20.0,,-0.3229,"profile: nan h at nan C then fridge; P_warm=0.00 P_fridge_with_cooling=0.72 P_fridge_isothermal=0.51; ln_obs_over_engine column = ln(total progress P), 0 means 'doubled' exactly at the end"
+ext:cold-profile,D062,Pizza Napoletana DOC (Davide Esposito),direct dough,unspecified,0.1333,5.5,24.0,,-0.6898,"profile: nan h at nan C then fridge; P_warm=0.00 P_fridge_with_cooling=0.50 P_fridge_isothermal=0.37; ln_obs_over_engine column = ln(total progress P), 0 means 'doubled' exactly at the end"
+ext:cold-profile,D077,"Michelin Guide SG, L'Antica Pizzeria da Michele recipe",direct dough,ready to stretch,0.0583,6.5,10.0,,0.1763,"profile: 8.0 h at 24.0 C then fridge; P_warm=1.00 P_fridge_with_cooling=0.19 P_fridge_isothermal=0.10; ln_obs_over_engine column = ln(total progress P), 0 means 'doubled' exactly at the end"
+ext:cold-profile,D079,Ooni cold-proof pizza dough,direct dough,roughly doubled in fridge; doubled after 5 h RT,0.2306,4.0,48.0,,0.777,"profile: 5.0 h at 21.0 C then fridge; P_warm=1.14 P_fridge_with_cooling=1.04 P_fridge_isothermal=0.88; ln_obs_over_engine column = ln(total progress P), 0 means 'doubled' exactly at the end"
+ext:cold-profile,D084,"Lehmann (Dough Doctor), Pizza Today",direct dough,usable window day 1-3,0.375,3.0,48.0,,0.5702,"profile: 1.5 h at 21.0 C then fridge; P_warm=0.48 P_fridge_with_cooling=1.28 P_fridge_isothermal=1.06; ln_obs_over_engine column = ln(total progress P), 0 means 'doubled' exactly at the end"
+ext:cold-profile,D085,Gozney NY style (poolish),dough with 15% poolish,ready to bake,0.2,4.0,36.0,,0.6784,"profile: 6.0 h at 21.0 C then fridge; P_warm=1.23 P_fridge_with_cooling=0.74 P_fridge_isothermal=0.59; ln_obs_over_engine column = ln(total progress P), 0 means 'doubled' exactly at the end"
+ext:cold-profile,D109,Modernist Pizza Vol. 4 Kitchen Manual (owner's PDF): Neapoli,dough with ~10-17% poolish (total yeast),recipe schedule,0.4,4.0,36.0,,0.2849,"profile: 0.33 h at 21.0 C then fridge; P_warm=0.11 P_fridge_with_cooling=1.22 P_fridge_isothermal=0.98; ln_obs_over_engine column = ln(total progress P), 0 means 'doubled' exactly at the end"
+ext:cold-profile,D111,Modernist Pizza Vol. 4 Kitchen Manual (owner's PDF): New Yor,dough with ~10-17% poolish (total yeast),recipe schedule,0.48,4.0,36.0,,0.4162,"profile: 0.33 h at 21.0 C then fridge; P_warm=0.13 P_fridge_with_cooling=1.39 P_fridge_isothermal=1.11; ln_obs_over_engine column = ln(total progress P), 0 means 'doubled' exactly at the end"
+ext:cold-profile,D113,Modernist Pizza Vol. 4 Kitchen Manual (owner's PDF): Quad Ci,dough with ~10-17% poolish (total yeast),recipe schedule,0.48,4.0,36.0,,0.4162,"profile: 0.33 h at 21.0 C then fridge; P_warm=0.13 P_fridge_with_cooling=1.39 P_fridge_isothermal=1.11; ln_obs_over_engine column = ln(total progress P), 0 means 'doubled' exactly at the end"
+ext:cold-profile,D114,Modernist Pizza Vol. 4 Kitchen Manual (owner's PDF): Artisan,dough with ~10-17% poolish (total yeast),recipe schedule,0.43,4.0,36.0,,0.337,"profile: 0.33 h at 21.0 C then fridge; P_warm=0.12 P_fridge_with_cooling=1.28 P_fridge_isothermal=1.03; ln_obs_over_engine column = ln(total progress P), 0 means 'doubled' exactly at the end"
+ext:cold-profile,D156,"TFL, CalBeachBaker",dough with 20% poolish,ready,0.51,3.3,24.0,,0.0092,"profile: nan h at nan C then fridge; P_warm=0.00 P_fridge_with_cooling=1.01 P_fridge_isothermal=0.69; ln_obs_over_engine column = ln(total progress P), 0 means 'doubled' exactly at the end"
+ext:cold-profile,N002,biancolievito.it,biga,ripe,0.33333,4.0,18.0,,1.6633,"profile: 24.0 h at 18.0 C then fridge; P_warm=4.70 P_fridge_with_cooling=0.58 P_fridge_isothermal=0.43; ln_obs_over_engine column = ln(total progress P), 0 means 'doubled' exactly at the end"
+ext:cold-profile,N005,Burnhard,biga,ripe,0.33333,5.0,48.0,,0.4577,"profile: nan h at nan C then fridge; P_warm=0.00 P_fridge_with_cooling=1.58 P_fridge_isothermal=1.34; ln_obs_over_engine column = ln(total progress P), 0 means 'doubled' exactly at the end"
+ext:cold-profile,N009,fond.kitchen,biga,ripe,0.1,5.0,46.0,,-0.445,"profile: nan h at nan C then fridge; P_warm=0.00 P_fridge_with_cooling=0.64 P_fridge_isothermal=0.54; ln_obs_over_engine column = ln(total progress P), 0 means 'doubled' exactly at the end"
+ext:cold-profile,N015,Zaghini (Scatti di Gusto),biga,ripe,0.33333,4.0,24.0,,1.7529,"profile: 24.0 h at 18.5 C then fridge; P_warm=5.04 P_fridge_with_cooling=0.73 P_fridge_isothermal=0.57; ln_obs_over_engine column = ln(total progress P), 0 means 'doubled' exactly at the end"
+ext:cold-profile,N025,pizzamateur.fr,dough,ready,0.025,4.0,48.0,,-1.5439,"profile: nan h at nan C then fridge; P_warm=0.00 P_fridge_with_cooling=0.21 P_fridge_isothermal=0.18; ln_obs_over_engine column = ln(total progress P), 0 means 'doubled' exactly at the end"
+ext:cold-profile,N026,pizzamateur.fr,dough,ready,0.01333,4.0,72.0,,-1.6503,"profile: nan h at nan C then fridge; P_warm=0.00 P_fridge_with_cooling=0.19 P_fridge_isothermal=0.17; ln_obs_over_engine column = ln(total progress P), 0 means 'doubled' exactly at the end"
+ext:cold-profile,N031,teigformel.de,dough,ready,0.06667,4.0,24.0,,-1.3719,"profile: nan h at nan C then fridge; P_warm=0.00 P_fridge_with_cooling=0.25 P_fridge_isothermal=0.18; ln_obs_over_engine column = ln(total progress P), 0 means 'doubled' exactly at the end"
+ext:cold-profile,N032,teigformel.de,dough,ready,0.03333,4.0,48.0,,-1.3368,"profile: nan h at nan C then fridge; P_warm=0.00 P_fridge_with_cooling=0.26 P_fridge_isothermal=0.22; ln_obs_over_engine column = ln(total progress P), 0 means 'doubled' exactly at the end"
+ext:cold-profile,N033,teigformel.de,dough,ready,0.01667,4.0,72.0,,-1.4893,"profile: nan h at nan C then fridge; P_warm=0.00 P_fridge_with_cooling=0.23 P_fridge_isothermal=0.20; ln_obs_over_engine column = ln(total progress P), 0 means 'doubled' exactly at the end"

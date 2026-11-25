@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% import "macros.html" as m %}
+{% block content %}
+<h1>{{ layout.tr.t("temperature-title") }}</h1>
+<p class="lead">{{ layout.tr.t("temperature-lead") }}</p>
+<div class="calc" data-island="temperature">
+<form class="inputs" method="get" action="{{ layout.href("/calculators/temperature") }}">
+  <fieldset>
+    <legend>{{ layout.tr.t("temperature-method") }}</legend>
+    <label class="choice"><input type="radio" name="method" value="balance"{% if !self.classic() %} checked{% endif %}> {{ layout.tr.t("temperature-balance") }}</label>
+    <label class="choice"><input type="radio" name="method" value="classic"{% if self.classic() %} checked{% endif %}> {{ layout.tr.t("temperature-classic") }}</label>
+  </fieldset>
+  <fieldset>
+    <legend>{{ layout.tr.t("temperature-temperatures") }}</legend>
+    {% call m::num("desired", layout.tr.t("temperature-desired"), self.v(form.desired), "°C", "-5", "45", "") %}{% endcall %}
+    {% call m::num("flour_c", layout.tr.t("temperature-flour"), self.v(form.flour_c), "°C", "-20", "50", "") %}{% endcall %}
+    {% call m::num("room_c", layout.tr.t("temperature-room"), self.v(form.room_c), "°C", "-5", "50", layout.tr.t("temperature-room-hint")) %}{% endcall %}
+    {% call m::num("pref_c", layout.tr.t("temperature-preferment"), self.v(form.pref_c), "°C", "-5", "50", "") %}{% endcall %}
+  </fieldset>
+  <fieldset>
+    <legend>{{ layout.tr.t("temperature-masses") }}</legend>
+    {% call m::num("flour_g", layout.tr.t("temperature-flour-g"), self.v(form.flour_g), "g", "0", "1000000", "") %}{% endcall %}
+    {% call m::num("water_g", layout.tr.t("temperature-water-g"), self.v(form.water_g), "g", "1", "1000000", "") %}{% endcall %}
+    {% call m::num("pref_g", layout.tr.t("temperature-pref-g"), self.v(form.pref_g), "g", "0", "1000000", layout.tr.t("temperature-pref-g-hint")) %}{% endcall %}
+    {% call m::num("pref_hyd", layout.tr.t("temperature-pref-hyd"), self.v(form.pref_hyd), "%", "0", "300", "") %}{% endcall %}
+  </fieldset>
+  <fieldset>
+    <legend>{{ layout.tr.t("temperature-mixing") }}</legend>
+    {% call m::num("rise", layout.tr.t("temperature-rise"), self.v(form.rise), "°C", "-5", "30", layout.tr.t("temperature-rise-hint")) %}{% endcall %}
+    {% call m::num("friction", layout.tr.t("temperature-friction"), self.v(form.friction), "°C", "-20", "100", layout.tr.t("temperature-friction-hint")) %}{% endcall %}
+    {% call m::num("tap_c", layout.tr.t("temperature-tap"), self.tap(), "°C", "0", "40", layout.tr.t("temperature-tap-hint")) %}{% endcall %}
+  </fieldset>
+  <button type="submit">{{ layout.tr.t("compute") }}</button>
+</form>
+<section class="results" aria-live="polite">
+  {% if let Some(e) = error %}<p class="error" role="alert">{{ e }}</p>{% endif %}
+  {% if let Some(r) = result %}
+  <p class="big">{{ layout.tr.t("temperature-water-result") }} <strong>{{ r.water }} °C</strong></p>
+  {% if let Some(ice) = r.ice %}<p class="big">{{ ice }}</p>{% endif %}
+  <p>{{ layout.tr.t("temperature-expected") }} {{ r.expected }} °C</p>
+  {% for w in r.warnings %}<p class="warning">{{ w }}</p>{% endfor %}
+  {% endif %}
+  <p class="note">{{ layout.tr.t("temperature-explain") }}</p>
+</section>
+</div>
+{% endblock %}

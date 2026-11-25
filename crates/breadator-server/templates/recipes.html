@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>{{ layout.tr.t("recipes-title") }}</h1>
+<p class="lead">{{ layout.tr.t("recipes-lead") }}</p>
+<section class="cards">
+{% for r in recipes %}<a class="card" href="{{ r.href }}">
+  <span class="note">{{ r.kind }}</span>
+  <h2>{{ r.title }}</h2>
+  <p>{{ r.description }}</p>
+</a>
+{% endfor %}</section>
+{% endblock %}

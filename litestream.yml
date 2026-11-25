@@ -1,0 +1,14 @@
+# Litestream: replicates the SQLite database to a Cloudflare R2 bucket (S3 API).
+# Read by docker-entrypoint.sh only when LITESTREAM_BUCKET, LITESTREAM_ENDPOINT,
+# LITESTREAM_ACCESS_KEY_ID and LITESTREAM_SECRET_ACCESS_KEY are all set; the two keys are read by
+# Litestream itself, the rest is expanded below. Setup: docs/OPERATIONS.md.
+dbs:
+  - path: ${DATABASE_PATH}
+    replica:
+      type: s3
+      bucket: ${LITESTREAM_BUCKET}
+      # Folder inside the bucket (the entrypoint defaults it to "breadator").
+      path: ${LITESTREAM_PATH}
+      # https://<account id>.r2.cloudflarestorage.com (https://<account id>.eu.r2.cloudflarestorage.com for the EU jurisdiction)
+      endpoint: ${LITESTREAM_ENDPOINT}
+      region: auto

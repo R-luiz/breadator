@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="{{ layout.tr.lang() }}" data-i18n="{{ layout.i18n }}"{% if layout.units_us %} data-units="us"{% endif %}>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{{ layout.title }} · Breadator</title>
+<meta name="description" content="{{ layout.description }}">
+<link rel="canonical" href="{{ layout.canonical() }}">
+{% if layout.noindex %}<meta name="robots" content="noindex">
+{% endif %}
+{% for a in layout.alternates() %}<link rel="alternate" hreflang="{{ a.lang }}" href="{{ a.href }}">
+{% endfor %}<link rel="alternate" hreflang="x-default" href="{{ layout.public_url }}/en{{ layout.path }}">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Breadator">
+<meta property="og:title" content="{{ layout.title }}">
+<meta property="og:description" content="{{ layout.description }}">
+<meta property="og:url" content="{{ layout.canonical() }}">
+<meta name="theme-color" content="#8a5a2b">
+<link rel="stylesheet" href="{{ layout.css }}">
+<link rel="icon" href="{{ layout.icon }}" type="image/svg+xml">
+<link rel="manifest" href="/manifest.webmanifest">
+{% if let Some(js) = layout.script %}<script type="module" src="{{ js }}"></script>
+{% endif %}</head>
+<body{% if let Some(w) = layout.wasm %} data-wasm="{{ w }}"{% endif %}{% if layout.user.is_some() %} data-signed-in{% endif %}>
+<a class="skip" href="#main">{{ layout.tr.t("skip-to-content") }}</a>
+<header class="site">
+  <a class="brand" href="{{ layout.href("") }}"><span aria-hidden="true">🍞</span> Breadator</a>
+  <nav class="main" aria-label="{{ layout.tr.t("nav-label") }}">
+    <a href="{{ layout.href("/calculators") }}"{% if layout.in_calculators() %} aria-current="{% if layout.is("calculators") %}page{% else %}true{% endif %}"{% endif %}>{{ layout.tr.t("nav-calculators") }}</a>
+    <a href="{{ layout.href("/learn") }}"{% if layout.is("learn") %} aria-current="page"{% endif %}>{{ layout.tr.t("nav-learn") }}</a>
+    <a href="{{ layout.href("/recipes") }}"{% if layout.is("recipes") %} aria-current="page"{% endif %}>{{ layout.tr.t("nav-recipes") }}</a>
+    <a href="{{ layout.href("/chat") }}"{% if layout.is("chat") %} aria-current="page"{% endif %}>{{ layout.tr.t("nav-chat") }}</a>
+  </nav>
+  <nav class="lang" aria-label="{{ layout.tr.t("lang-switch") }}">
+    {% for a in layout.alternates() %}{% if a.lang != layout.tr.lang() %}<a href="/{{ a.lang }}{{ layout.path }}" hreflang="{{ a.lang }}" lang="{{ a.lang }}">{{ a.label }}</a>{% endif %}{% endfor %}
+  </nav>
+  <nav class="user" aria-label="{{ layout.tr.t("nav-account-label") }}">
+    {% if let Some(u) = layout.user %}<a href="{{ layout.href("/account") }}"{% if layout.is("account") %} aria-current="page"{% endif %}>{% if u.name.is_empty() %}{{ layout.tr.t("nav-account") }}{% else %}{{ u.name }}{% endif %}</a>{% else %}<a href="{{ layout.href("/account/sign-in") }}"{% if layout.is("account") %} aria-current="page"{% endif %}>{{ layout.tr.t("nav-sign-in") }}</a>{% endif %}
+  </nav>
+</header>
+{% if layout.in_calculators() %}<nav class="sub" aria-label="{{ layout.tr.t("nav-calculators") }}">
+  <a href="{{ layout.href("/calculators/formula") }}"{% if layout.is("formula") %} aria-current="page"{% endif %}>{{ layout.tr.t("nav-formula") }}</a>
+  <a href="{{ layout.href("/calculators/fermentation") }}"{% if layout.is("fermentation") %} aria-current="page"{% endif %}>{{ layout.tr.t("nav-fermentation") }}</a>
+  <a href="{{ layout.href("/calculators/starter") }}"{% if layout.is("starter") %} aria-current="page"{% endif %}>{{ layout.tr.t("nav-starter") }}</a>
+  <a href="{{ layout.href("/calculators/flour") }}"{% if layout.is("flour") %} aria-current="page"{% endif %}>{{ layout.tr.t("nav-flour") }}</a>
+  <a href="{{ layout.href("/calculators/temperature") }}"{% if layout.is("temperature") %} aria-current="page"{% endif %}>{{ layout.tr.t("nav-temperature") }}</a>
+  <a href="{{ layout.href("/calculators/yeast") }}"{% if layout.is("yeast") %} aria-current="page"{% endif %}>{{ layout.tr.t("nav-yeast") }}</a>
+  <a class="saved" href="{{ layout.href("/my/formulas") }}"{% if layout.is("my") %} aria-current="page"{% endif %}>{{ layout.tr.t("nav-saved") }}</a>
+</nav>
+{% endif %}
+<main id="main">
+{% block content %}{% endblock %}
+</main>
+<footer class="site">
+  <p>{{ layout.tr.t("units-label") }} {% if layout.units_us %}<a href="{{ layout.href("/units/metric") }}" rel="nofollow">{{ layout.tr.t("units-metric") }}</a> · <strong>{{ layout.tr.t("units-us") }}</strong>{% else %}<strong>{{ layout.tr.t("units-metric") }}</strong> · <a href="{{ layout.href("/units/us") }}" rel="nofollow">{{ layout.tr.t("units-us") }}</a>{% endif %}</p>
+  <p>{{ layout.tr.t("footer-licence") }}</p>
+  <p>{{ layout.tr.t("footer-made-by") }} <a href="https://robinluiz.fr">Robin Luiz</a> · <a href="https://github.com/R-luiz/breadator">GitHub</a></p>
+</footer>
+</body>
+</html>

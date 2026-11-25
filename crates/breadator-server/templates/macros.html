@@ -1,0 +1,15 @@
+{% macro num(name, label, value, unit, min, max, hint) %}
+<label class="field">
+  <span class="label">{{ label }}</span>
+  <span class="input-unit"><input type="number" name="{{ name }}" value="{{ value }}" min="{{ min }}" max="{{ max }}" step="any" inputmode="decimal"><span class="unit">{{ unit }}</span></span>
+  {% if !hint.is_empty() %}<small class="hint">{{ hint }}</small>{% endif %}
+</label>
+{% endmacro %}
+
+{% macro rows(rows) %}
+<table class="lines">
+  <tbody>
+  {% for r in rows.iter() %}<tr><th scope="row">{{ r.name }}</th><td class="g">{{ r.grams }} g</td><td class="pct">{{ r.pct }} %</td></tr>
+  {% endfor %}</tbody>
+</table>
+{% endmacro %}

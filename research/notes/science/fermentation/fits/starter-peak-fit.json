@@ -1,0 +1,115 @@
+{
+  "model": "tau_peak = ln(K_peak / iota) / (mu_ref * v * 1.18 * M_hydration * gamma_s(T)), K_peak = 1",
+  "assumed_temperature_where_unstated_c": 23.0,
+  "n_statements_used": 4,
+  "median_ln_obs_over_engine": 0.084,
+  "sd_ln": 0.241,
+  "implied_K_peak_median": 1.13,
+  "implied_K_peak_range": [
+    0.35,
+    1.51
+  ],
+  "prediction_table_hours": {
+    "liquid_100pct": {
+      "1:1": {
+        "iota": 0.3333,
+        "18C_h": 6.4,
+        "21C_h": 4.2,
+        "24C_h": 3.0,
+        "27C_h": 2.4,
+        "30C_h": 2.4
+      },
+      "1:2": {
+        "iota": 0.2,
+        "18C_h": 9.3,
+        "21C_h": 6.1,
+        "24C_h": 4.4,
+        "27C_h": 3.6,
+        "30C_h": 3.5
+      },
+      "1:3": {
+        "iota": 0.1429,
+        "18C_h": 11.3,
+        "21C_h": 7.4,
+        "24C_h": 5.3,
+        "27C_h": 4.3,
+        "30C_h": 4.2
+      },
+      "1:5": {
+        "iota": 0.0909,
+        "18C_h": 13.9,
+        "21C_h": 9.1,
+        "24C_h": 6.6,
+        "27C_h": 5.3,
+        "30C_h": 5.2
+      },
+      "1:10": {
+        "iota": 0.0476,
+        "18C_h": 17.6,
+        "21C_h": 11.6,
+        "24C_h": 8.3,
+        "27C_h": 6.8,
+        "30C_h": 6.6
+      },
+      "1:20": {
+        "iota": 0.0244,
+        "18C_h": 21.5,
+        "21C_h": 14.1,
+        "24C_h": 10.2,
+        "27C_h": 8.3,
+        "30C_h": 8.1
+      }
+    },
+    "stiff_55pct": {
+      "1:1": {
+        "iota": 0.3922,
+        "18C_h": 6.8,
+        "21C_h": 4.5,
+        "24C_h": 3.2,
+        "27C_h": 2.6,
+        "30C_h": 2.6
+      },
+      "1:2": {
+        "iota": 0.2439,
+        "18C_h": 10.2,
+        "21C_h": 6.7,
+        "24C_h": 4.8,
+        "27C_h": 3.9,
+        "30C_h": 3.8
+      },
+      "1:3": {
+        "iota": 0.177,
+        "18C_h": 12.5,
+        "21C_h": 8.2,
+        "24C_h": 5.9,
+        "27C_h": 4.8,
+        "30C_h": 4.7
+      },
+      "1:5": {
+        "iota": 0.1143,
+        "18C_h": 15.7,
+        "21C_h": 10.3,
+        "24C_h": 7.4,
+        "27C_h": 6.0,
+        "30C_h": 5.9
+      },
+      "1:10": {
+        "iota": 0.0606,
+        "18C_h": 20.3,
+        "21C_h": 13.3,
+        "24C_h": 9.6,
+        "27C_h": 7.8,
+        "30C_h": 7.6
+      },
+      "1:20": {
+        "iota": 0.0312,
+        "18C_h": 25.0,
+        "21C_h": 16.5,
+        "24C_h": 11.8,
+        "27C_h": 9.6,
+        "30C_h": 9.4
+      }
+    }
+  },
+  "note": "four statements, three of them without a temperature: this is a consistency check, not a fit. The pressure-vessel test (peak of CO2 generation at 20 C after 12-14 h) is a different event from the volume peak and is listed but not used."
+}

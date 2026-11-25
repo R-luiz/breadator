@@ -1,0 +1,6 @@
+id,feed_ratio,iota,temp_c_used,temp_assumed,hours_low,hours_high,hours_engine_K1,ln_obs_over_engine,implied_K_peak,used_for_K,evidence
+sj-1-2-2,1:2:2,0.2,23.0,1,4.0,6.0,4.86,0.009,1.01,1,creator-rule
+sj-1-1-1-4h,1:1:1,0.3333,23.0,1,4.0,4.0,3.31,0.188,1.26,1,creator-rule
+sj-1-20-20-8h,1:20:20,0.0244,23.0,1,8.0,8.0,11.2,-0.337,0.35,1,creator-rule
+breadcode-1-5-5,1:5:5,0.0909,23.0,1,6.0,12.0,7.23,0.159,1.51,1,creator-rule
+sj-flour-test-20C,1:1:1,0.3333,20.0,0,12.0,14.0,4.77,1.001,6.62,0,measured

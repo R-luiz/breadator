@@ -1,0 +1,968 @@
+[
+ {
+  "key": "rebholz2021",
+  "authors": [
+   "Rebholz, Gerold Felix",
+   "Sebald, Karin",
+   "Dirndorfer, Sebastian",
+   "Dawid, Corinna",
+   "Hofmann, Thomas",
+   "Scherf, Katharina Anne"
+  ],
+  "year": 2020,
+  "title": "Impact of exogenous α-amylases on sugar formation in straight dough wheat bread",
+  "venue": "European Food Research and Technology 247:695-706",
+  "doi": "10.1007/s00217-020-03657-y",
+  "url": "https://doi.org/10.1007/s00217-020-03657-y",
+  "oa_url": "https://link.springer.com/content/pdf/10.1007/s00217-020-03657-y.pdf",
+  "cited_by": [
+   "science-bread-0007",
+   "science-bread-0008",
+   "science-bread-0009",
+   "science-bread-0011"
+  ]
+ },
+ {
+  "key": "reichenberger2019",
+  "authors": [
+   "Reichenberger, Katrin",
+   "Luz, Anja",
+   "Seitl, Ines",
+   "Fischer, Lutz"
+  ],
+  "year": 2019,
+  "title": "Determination of the Direct Activity of the Maltogenic Amylase from Geobacillus stearothermophilus in White Bread",
+  "venue": "Food Analytical Methods 13:496-502",
+  "doi": "10.1007/s12161-019-01673-7",
+  "url": "https://doi.org/10.1007/s12161-019-01673-7",
+  "oa_url": "https://link.springer.com/content/pdf/10.1007/s12161-019-01673-7.pdf",
+  "cited_by": [
+   "science-bread-0010",
+   "science-bread-0075",
+   "science-bread-0081"
+  ]
+ },
+ {
+  "key": "murniece2024",
+  "authors": [
+   "Murniece, Ruta",
+   "Reidzane, Sanita",
+   "Radenkovs, Vitalijs",
+   "Matisons, Roberts",
+   "Dabina-Bicka, Ilona",
+   "Klava, Dace",
+   "Galoburda, Ruta"
+  ],
+  "year": 2024,
+  "title": "Impact of Rye Malt with Various Diastatic Activity on Wholegrain Rye Flour Rheology and Sugar Formation in Scalding and Fermentation Processes",
+  "venue": "Foods 13:2077",
+  "doi": "10.3390/foods13132077",
+  "url": "https://doi.org/10.3390/foods13132077",
+  "oa_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11241332/",
+  "cited_by": [
+   "science-bread-0005",
+   "science-bread-0019",
+   "science-bread-0027"
+  ]
+ },
+ {
+  "key": "newberry2018",
+  "authors": [
+   "Newberry, Marcus",
+   "Zwart, Alexander B",
+   "Whan, Alex",
+   "Mieog, Jos C",
+   "Sun, May",
+   "Leyne, Emmett",
+   "Pritchard, Jenifer",
+   "Daneri-Castro, Sergio Nicolas",
+   "Ibrahim, Kutty",
+   "Diepeveen, Dean",
+   "Howitt, Crispin A",
+   "Ral, Jean-Philippe F"
+  ],
+  "year": 2018,
+  "title": "Does Late Maturity Alpha-Amylase Impact Wheat Baking Quality?",
+  "venue": "Frontiers in Plant Science 9:1356",
+  "doi": "10.3389/fpls.2018.01356",
+  "url": "https://doi.org/10.3389/fpls.2018.01356",
+  "oa_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6137811/",
+  "cited_by": [
+   "science-bread-0016",
+   "science-bread-0017"
+  ]
+ },
+ {
+  "key": "leenhardt2005",
+  "authors": [
+   "Leenhardt, Fanny",
+   "Levrat-Verny, Marie-Anne",
+   "Chanliaud, Elisabeth",
+   "Rémésy, Christian"
+  ],
+  "year": 2004,
+  "title": "Moderate Decrease of pH by Sourdough Fermentation Is Sufficient To Reduce Phytate Content of Whole Wheat Flour through Endogenous Phytase Activity",
+  "venue": "Journal of Agricultural and Food Chemistry 53:98-102",
+  "doi": "10.1021/jf049193q",
+  "url": "https://doi.org/10.1021/jf049193q",
+  "oa_url": "https://pubmed.ncbi.nlm.nih.gov/15631515/",
+  "cited_by": [
+   "science-bread-0040"
+  ]
+ },
+ {
+  "key": "lopez2001",
+  "authors": [
+   "Lopez, H. W.",
+   "Krespine, V.",
+   "Guy, C.",
+   "Messager, A.",
+   "Demigne, C.",
+   "Remesy, C."
+  ],
+  "year": 2001,
+  "title": "Prolonged Fermentation of Whole Wheat Sourdough Reduces Phytate Level and Increases Soluble Magnesium",
+  "venue": "Journal of Agricultural and Food Chemistry 49:2657-2662",
+  "doi": "10.1021/jf001255z",
+  "url": "https://doi.org/10.1021/jf001255z",
+  "oa_url": "https://pubmed.ncbi.nlm.nih.gov/11368651/",
+  "cited_by": [
+   "science-bread-0041"
+  ]
+ },
+ {
+  "key": "brouns2021",
+  "authors": [
+   "Brouns, Fred"
+  ],
+  "year": 2021,
+  "title": "Phytic Acid and Whole Grains for Health Controversy",
+  "venue": "Nutrients 14:25",
+  "doi": "10.3390/nu14010025",
+  "url": "https://doi.org/10.3390/nu14010025",
+  "oa_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8746346/",
+  "cited_by": [
+   "science-bread-0043",
+   "science-bread-0139"
+  ]
+ },
+ {
+  "key": "nkhata2018",
+  "authors": [
+   "Nkhata, Smith G.",
+   "Ayua, Emmanuel",
+   "Kamau, Elijah H.",
+   "Shingiro, Jean‐Bosco"
+  ],
+  "year": 2018,
+  "title": "Fermentation and germination improve nutritional value of cereals and legumes through activation of endogenous enzymes",
+  "venue": "Food Science & Nutrition 6:2446-2458",
+  "doi": "10.1002/fsn3.846",
+  "url": "https://doi.org/10.1002/fsn3.846",
+  "oa_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6261201/",
+  "cited_by": [
+   "science-bread-0044",
+   "science-bread-0045"
+  ]
+ },
+ {
+  "key": "ribet2026",
+  "authors": [
+   "Ribet, Léa",
+   "Dessalles, Robin",
+   "Clement, Héliciane",
+   "Nyhan, Laura",
+   "Baptista, Nathália Trunckle",
+   "Wang, Yaqin",
+   "Arendt, Elke K.",
+   "Durand-Dubief, Mickaël"
+  ],
+  "year": 2026,
+  "title": "Fermentation in breadmaking: enhancing digestibility and nutritional value for gastrointestinal health",
+  "venue": "Frontiers in Nutrition 13",
+  "doi": "10.3389/fnut.2026.1777596",
+  "url": "https://doi.org/10.3389/fnut.2026.1777596",
+  "oa_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13233721/",
+  "cited_by": [
+   "science-bread-0042"
+  ]
+ },
+ {
+  "key": "nikolaou2026",
+  "authors": [
+   "Nikolaou, Anastasios",
+   "Assunção, Ricardo",
+   "Cvetković, Biljana",
+   "Fardet, Anthony",
+   "Gamero, Amparo",
+   "Gandía, Mónica",
+   "Mojsova, Sandra",
+   "Yilmaz, Birsen",
+   "Kütt, Mary-Liis",
+   "Santa, Dushica",
+   "Chassard, Christophe",
+   "Praćer, Smilja",
+   "Vergères, Guy",
+   "Karakaya, Sibel",
+   "Syrpas, Michail"
+  ],
+  "year": 2026,
+  "title": "Effects of sourdough- or regular-bread fermentation, and phytate reduction on iron bioavailability, absorption, and iron status in humans: a systematic review of intervention studies",
+  "venue": "Frontiers in Nutrition 13:1778997",
+  "doi": "10.3389/fnut.2026.1778997",
+  "url": "https://doi.org/10.3389/fnut.2026.1778997",
+  "oa_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13183556/",
+  "cited_by": [
+   "science-bread-0138"
+  ]
+ },
+ {
+  "key": "efsa2025",
+  "authors": [
+   "Turck, Dominique",
+   "Bohn, Torsten",
+   "Cámara, Montaña",
+   "Castenmiller, Jacqueline",
+   "de Henauw, Stefaan",
+   "Hirsch‐Ernst, Karen‐Ildico",
+   "Jos, Angeles",
+   "Maciuk, Alexandre",
+   "Mangelsdorf, Inge",
+   "McNulty, Breige",
+   "Naska, Androniki",
+   "Pentieva, Kristina",
+   "Thies, Frank",
+   "Drenjančević, Ines",
+   "Craciun, Ionut",
+   "Fiolet, Thibault",
+   "Siani, Alfonso"
+  ],
+  "year": 2025,
+  "title": "Beta‐glucans from oats or barley and reduction of postprandial glycaemic responses: Modification of an authorised health claim pursuant to Article 13(1) of Regulation (EC) No 1924/2006 following a request in accordance with Article 19 of Regulation (EC) No 1924/2006",
+  "venue": "EFSA Journal 23",
+  "doi": "10.2903/j.efsa.2025.9630",
+  "url": "https://doi.org/10.2903/j.efsa.2025.9630",
+  "oa_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12447000/",
+  "cited_by": [
+   "science-bread-0046",
+   "science-bread-0047",
+   "science-bread-0112",
+   "science-bread-0121",
+   "science-bread-0122"
+  ]
+ },
+ {
+  "key": "islam2024",
+  "authors": [
+   "Islam, Md Ahmadul",
+   "Islam, Shahidul"
+  ],
+  "year": 2024,
+  "title": "Sourdough Bread Quality: Facts and Factors",
+  "venue": "Foods 13:2132",
+  "doi": "10.3390/foods13132132",
+  "url": "https://doi.org/10.3390/foods13132132",
+  "oa_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11241011/",
+  "cited_by": [
+   "science-bread-0067",
+   "science-bread-0072"
+  ]
+ },
+ {
+  "key": "carcea2020",
+  "authors": [
+   "Carcea, Marina",
+   "Narducci, Valentina",
+   "Turfani, Valeria",
+   "Mellara, Francesco"
+  ],
+  "year": 2020,
+  "title": "A Comprehensive Study on the Influence of Sodium Chloride on the Technological Quality Parameters of Soft Wheat Dough",
+  "venue": "Foods 9:952",
+  "doi": "10.3390/foods9070952",
+  "url": "https://doi.org/10.3390/foods9070952",
+  "oa_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7404662/",
+  "cited_by": [
+   "science-bread-0049",
+   "science-bread-0050",
+   "science-bread-0051"
+  ]
+ },
+ {
+  "key": "allan2020",
+  "authors": [
+   "Allan, Matthew C.",
+   "Chamberlain, MaryClaire",
+   "Mauer, Lisa J."
+  ],
+  "year": 2020,
+  "title": "Effects of Sugars and Sugar Alcohols on the Gelatinization Temperatures of Wheat, Potato, and Corn Starches",
+  "venue": "Foods 9:757",
+  "doi": "10.3390/foods9060757",
+  "url": "https://doi.org/10.3390/foods9060757",
+  "oa_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7353504/",
+  "cited_by": [
+   "science-bread-0053"
+  ]
+ },
+ {
+  "key": "kinner2021",
+  "authors": [
+   "Kinner, Mathias",
+   "Rüegg, Ramona",
+   "Weber, Claudia A.",
+   "Buchli, Jürg",
+   "Durrer, Ludwig",
+   "Müller, Nadina"
+  ],
+  "year": 2021,
+  "title": "Impact of selected baking and vacuum cooling parameters on the quality of toast bread",
+  "venue": "Journal of Food Science and Technology 58:4578-4586",
+  "doi": "10.1007/s13197-020-04945-x",
+  "url": "https://doi.org/10.1007/s13197-020-04945-x",
+  "oa_url": "https://link.springer.com/content/pdf/10.1007/s13197-020-04945-x.pdf",
+  "cited_by": [
+   "science-bread-0076",
+   "science-bread-0077",
+   "science-bread-0081"
+  ]
+ },
+ {
+  "key": "temkov2024",
+  "authors": [
+   "Temkov, Mishela",
+   "Rocha, João Miguel",
+   "Rannou, Cécile",
+   "Ducasse, Maren",
+   "Prost, Carole"
+  ],
+  "year": 2024,
+  "title": "Influence of baking time and formulation of part-baked wheat sourdough bread on the physical characteristics, sensory quality, glycaemic index and appetite sensations",
+  "venue": "Frontiers in Nutrition 11",
+  "doi": "10.3389/fnut.2024.1370086",
+  "url": "https://doi.org/10.3389/fnut.2024.1370086",
+  "oa_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11180745/",
+  "cited_by": [
+   "science-bread-0078"
+  ]
+ },
+ {
+  "key": "alpers2021",
+  "authors": [
+   "Alpers, Thekla",
+   "Kerpes, Roland",
+   "Frioli, Mariana",
+   "Nobis, Arndt",
+   "Hoi, Ka Ian",
+   "Bach, Axel",
+   "Jekle, Mario",
+   "Becker, Thomas"
+  ],
+  "year": 2021,
+  "title": "Impact of Storing Condition on Staling and Microbial Spoilage Behavior of Bread and Their Contribution to Prevent Food Waste",
+  "venue": "Foods 10:76",
+  "doi": "10.3390/foods10010076",
+  "url": "https://doi.org/10.3390/foods10010076",
+  "oa_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7824337/",
+  "cited_by": [
+   "science-bread-0066",
+   "science-bread-0072",
+   "science-bread-0096",
+   "science-bread-0097",
+   "science-bread-0098",
+   "science-bread-0099",
+   "science-bread-0100",
+   "science-bread-0109",
+   "science-bread-0110"
+  ]
+ },
+ {
+  "key": "li2024",
+  "authors": [
+   "Li, Cheng",
+   "Shao, Shuaibo",
+   "Yi, Xueer",
+   "Cao, Senbin",
+   "Yu, Wenwen",
+   "Zhang, Bin",
+   "Liu, Hongsheng",
+   "Gilbert, Robert G."
+  ],
+  "year": 2024,
+  "title": "Influence of Storage Temperature on Starch Retrogradation and Digestion of Chinese Steamed Bread",
+  "venue": "Foods 13:517",
+  "doi": "10.3390/foods13040517",
+  "url": "https://doi.org/10.3390/foods13040517",
+  "oa_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10888248/",
+  "cited_by": [
+   "science-bread-0107",
+   "science-bread-0118"
+  ]
+ },
+ {
+  "key": "murillo2022",
+  "authors": [
+   "Murillo, Serafin",
+   "Mallol, Ariadna",
+   "Adot, Alba",
+   "Juárez, Fabiola",
+   "Coll, Alba",
+   "Gastaldo, Isabella",
+   "Roura, Elena"
+  ],
+  "year": 2022,
+  "title": "Culinary strategies to manage glycemic response in people with type 2 diabetes: A narrative review",
+  "venue": "Frontiers in Nutrition 9:1025993",
+  "doi": "10.3389/fnut.2022.1025993",
+  "url": "https://doi.org/10.3389/fnut.2022.1025993",
+  "oa_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9684673/",
+  "cited_by": [
+   "science-bread-0117",
+   "science-bread-0118"
+  ]
+ },
+ {
+  "key": "rolim2022",
+  "authors": [
+   "Rolim, Maria Esther",
+   "Fortes, Maria Izabel",
+   "Von Frankenberg, Anize",
+   "Duarte, Camila Kümmel"
+  ],
+  "year": 2022,
+  "title": "Consumption of sourdough bread and changes in the glycemic control and satiety: A systematic review",
+  "venue": "Critical Reviews in Food Science and Nutrition 64:801-816",
+  "doi": "10.1080/10408398.2022.2108756",
+  "url": "https://doi.org/10.1080/10408398.2022.2108756",
+  "oa_url": "https://pubmed.ncbi.nlm.nih.gov/35943419/",
+  "cited_by": [
+   "science-bread-0111"
+  ]
+ },
+ {
+  "key": "starowicz2026",
+  "authors": [
+   "Starowicz, Malgorzata",
+   "Domínguez-Soberanes, Julieta",
+   "Garcia-Gutierrez, Enriqueta",
+   "Arslan-Tontul, Sultan",
+   "Burton-Pimentel, Kathryn J.",
+   "Vidović, Bojana",
+   "Moreno-Indias, Isabel",
+   "Karagöz, Mustafa Fevzi",
+   "Prvulović, Milica",
+   "Simeunovic, Valentina",
+   "Ruiz-Limón, Patricia",
+   "Gutiérrez-Repiso, Carolina",
+   "Pajalic, Zada",
+   "Yerlikaya, Oktay",
+   "Esatbeyoglu, Tuba",
+   "Yilmaz, Birsen",
+   "Mantzouridou, Fani",
+   "Chassard, Christophe",
+   "Pracer, Smilja",
+   "Vergères, Guy",
+   "Louis, Sandrine"
+  ],
+  "year": 2026,
+  "title": "Effects of sourdough and yeast fermented breads consumption on glycaemia in healthy populations: a systematic review",
+  "venue": "Frontiers in Nutrition 13",
+  "doi": "10.3389/fnut.2026.1910648",
+  "url": "https://doi.org/10.3389/fnut.2026.1910648",
+  "oa_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13481810/",
+  "cited_by": [
+   "science-bread-0113"
+  ]
+ },
+ {
+  "key": "ribet2023",
+  "authors": [
+   "Ribet, Léa",
+   "Dessalles, Robin",
+   "Lesens, Corinne",
+   "Brusselaers, Nele",
+   "Durand-Dubief, Mickaël"
+  ],
+  "year": 2023,
+  "title": "Nutritional benefits of sourdoughs: A systematic review",
+  "venue": "Advances in Nutrition 14:22-29",
+  "doi": "10.1016/j.advnut.2022.10.003",
+  "url": "https://doi.org/10.1016/j.advnut.2022.10.003",
+  "oa_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10103004/",
+  "cited_by": [
+   "science-bread-0114"
+  ]
+ },
+ {
+  "key": "stamataki2017",
+  "authors": [
+   "Stamataki, Nikoleta S.",
+   "Yanni, Amalia E.",
+   "Karathanos, Vaios T."
+  ],
+  "year": 2017,
+  "title": "Bread making technology influences postprandial glucose response: a review of the clinical evidence",
+  "venue": "British Journal of Nutrition 117:1001-1012",
+  "doi": "10.1017/s0007114517000770",
+  "url": "https://doi.org/10.1017/s0007114517000770",
+  "oa_url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/88CFB9752F11AA18E4CC8224FCDD60D3/S0007114517000770a.pdf",
+  "cited_by": [
+   "science-bread-0115"
+  ]
+ },
+ {
+  "key": "burton2008",
+  "authors": [
+   "Burton, P",
+   "Lightowler, H J"
+  ],
+  "year": 2007,
+  "title": "The impact of freezing and toasting on the glycaemic response of white bread",
+  "venue": "European Journal of Clinical Nutrition 62:594-599",
+  "doi": "10.1038/sj.ejcn.1602746",
+  "url": "https://doi.org/10.1038/sj.ejcn.1602746",
+  "oa_url": "https://pubmed.ncbi.nlm.nih.gov/17426743/",
+  "cited_by": [
+   "science-bread-0116",
+   "science-bread-0118"
+  ]
+ },
+ {
+  "key": "schmidt2021",
+  "authors": [
+   "Schmidt, Marcus",
+   "Sciurba, Elisabeth"
+  ],
+  "year": 2020,
+  "title": "Determination of FODMAP contents of common wheat and rye breads and the effects of processing on the final contents",
+  "venue": "European Food Research and Technology 247:395-410",
+  "doi": "10.1007/s00217-020-03633-6",
+  "url": "https://doi.org/10.1007/s00217-020-03633-6",
+  "oa_url": "https://link.springer.com/content/pdf/10.1007/s00217-020-03633-6.pdf",
+  "cited_by": [
+   "science-bread-0125",
+   "science-bread-0126",
+   "science-bread-0127",
+   "science-bread-0132"
+  ]
+ },
+ {
+  "key": "pejcz2020",
+  "authors": [
+   "Pejcz, Ewa",
+   "Spychaj, Radosław",
+   "Gil, Zygmunt"
+  ],
+  "year": 2020,
+  "title": "Technological methods for reducing the content of fructan in rye bread",
+  "venue": "European Food Research and Technology 246:1839-1846",
+  "doi": "10.1007/s00217-020-03537-5",
+  "url": "https://doi.org/10.1007/s00217-020-03537-5",
+  "oa_url": "https://link.springer.com/content/pdf/10.1007/s00217-020-03537-5.pdf",
+  "cited_by": [
+   "science-bread-0128",
+   "science-bread-0132"
+  ]
+ },
+ {
+  "key": "torbica2025",
+  "authors": [
+   "Torbica, Aleksandra M.",
+   "Vujasinović, Vesna",
+   "Miljić, Uroš",
+   "Radivojević, Goran",
+   "Filipčev, Bojana",
+   "Miljić, Milorad",
+   "Radosavljević, Miloš"
+  ],
+  "year": 2025,
+  "title": "Successful Strategy in Creating Low-FODMAP Wholegrain Bread—Simple and Global",
+  "venue": "Foods 14:304",
+  "doi": "10.3390/foods14020304",
+  "url": "https://doi.org/10.3390/foods14020304",
+  "oa_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11764468/",
+  "cited_by": [
+   "science-bread-0131",
+   "science-bread-0132"
+  ]
+ },
+ {
+  "key": "loponen2018",
+  "authors": [
+   "Loponen, Jussi",
+   "Gänzle, Michael G."
+  ],
+  "year": 2018,
+  "title": "Use of Sourdough in Low FODMAP Baking",
+  "venue": "Foods 7:96",
+  "doi": "10.3390/foods7070096",
+  "url": "https://doi.org/10.3390/foods7070096",
+  "oa_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6068548/",
+  "cited_by": [
+   "science-bread-0129",
+   "science-bread-0130",
+   "science-bread-0132"
+  ]
+ },
+ {
+  "key": "efsa2014",
+  "authors": [
+   "EFSA Panel on Dietetic Products, Nutrition and Allergies (NDA)"
+  ],
+  "year": 2014,
+  "title": "Scientific Opinion on the substantiation of a health claim related to high fibre sourdough rye bread and reduction of post-prandial glycaemic responses pursuant to Article 13(5) of Regulation (EC) No 1924/2006",
+  "venue": "EFSA Journal 12(10):3837",
+  "doi": "10.2903/j.efsa.2014.3837",
+  "url": "https://doi.org/10.2903/j.efsa.2014.3837",
+  "oa_url": "https://europepmc.org/articles/PMC13136983",
+  "cited_by": [
+   "science-bread-0112"
+  ]
+ },
+ {
+  "key": "dicagno2004",
+  "authors": [
+   "Di Cagno, Raffaella",
+   "De Angelis, Maria",
+   "Auricchio, Salvatore",
+   "Greco, Luigi",
+   "Clarke, Charmaine",
+   "De Vincenzi, Massimo",
+   "Giovannini, Claudio",
+   "D'Archivio, Massimo",
+   "Landolfo, Federica",
+   "Parrilli, Gianpaolo",
+   "Minervini, Fabio",
+   "Arendt, Elke",
+   "Gobbetti, Marco"
+  ],
+  "year": 2004,
+  "title": "Sourdough bread made from wheat and nontoxic flours and started with selected lactobacilli is tolerated in celiac sprue patients",
+  "venue": "Applied and Environmental Microbiology 70(2):1088-1096",
+  "doi": "10.1128/AEM.70.2.1088-1096.2004",
+  "url": "https://doi.org/10.1128/AEM.70.2.1088-1096.2004",
+  "oa_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC348803/",
+  "cited_by": [
+   "science-bread-0136",
+   "science-bread-0137"
+  ]
+ },
+ {
+  "key": "greco2011",
+  "authors": [
+   "Greco, Luigi",
+   "Gobbetti, Marco",
+   "Auricchio, Renata",
+   "Di Mase, Raffaella",
+   "Landolfo, Federica",
+   "Paparo, Francesco",
+   "Di Cagno, Raffaella",
+   "De Angelis, Maria",
+   "Rizzello, Carlo G.",
+   "Cassone, Alessia",
+   "Terrone, Gaetano",
+   "Timpone, Laura",
+   "D'Aniello, Martina",
+   "Maglio, Mariantonia",
+   "Troncone, Riccardo",
+   "Auricchio, Salvatore"
+  ],
+  "year": 2011,
+  "title": "Safety for patients with celiac disease of baked goods made of wheat flour hydrolyzed during food processing",
+  "venue": "Clinical Gastroenterology and Hepatology 9(1):24-29",
+  "doi": "10.1016/j.cgh.2010.09.025",
+  "url": "https://doi.org/10.1016/j.cgh.2010.09.025",
+  "oa_url": "https://pubmed.ncbi.nlm.nih.gov/20951830/",
+  "cited_by": [
+   "science-bread-0135",
+   "science-bread-0137"
+  ]
+ },
+ {
+  "key": "eu432",
+  "authors": [
+   "European Commission"
+  ],
+  "year": 2012,
+  "title": "Commission Regulation (EU) No 432/2012 of 16 May 2012 establishing a list of permitted health claims made on foods, other than those referring to the reduction of disease risk and to children's development and health",
+  "venue": "Official Journal of the European Union L 136, 25.5.2012, p. 1-40",
+  "doi": null,
+  "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32012R0432",
+  "oa_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32012R0432",
+  "cited_by": [
+   "science-bread-0047",
+   "science-bread-0119",
+   "science-bread-0120",
+   "science-bread-0122",
+   "science-bread-0123",
+   "science-bread-0124"
+  ]
+ },
+ {
+  "key": "eu828",
+  "authors": [
+   "European Commission"
+  ],
+  "year": 2014,
+  "title": "Commission Implementing Regulation (EU) No 828/2014 of 30 July 2014 on the requirements for the provision of information to consumers on the absence or reduced presence of gluten in food",
+  "venue": "Official Journal of the European Union L 228, 31.7.2014, p. 5-8",
+  "doi": null,
+  "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32014R0828",
+  "oa_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32014R0828",
+  "cited_by": [
+   "science-bread-0134",
+   "science-bread-0137"
+  ]
+ },
+ {
+  "key": "fsis_molds",
+  "authors": [
+   "U.S. Department of Agriculture, Food Safety and Inspection Service"
+  ],
+  "year": 2013,
+  "title": "Molds on Food: Are They Dangerous?",
+  "venue": "USDA FSIS, Food Safety Basics (last updated 22 August 2013)",
+  "doi": null,
+  "url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/molds-food-are-they-dangerous",
+  "oa_url": "https://web.archive.org/web/20260103144248/https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/molds-food-are-they-dangerous",
+  "cited_by": [
+   "science-bread-0101",
+   "science-bread-0103"
+  ]
+ },
+ {
+  "key": "bfr_schimmel2026",
+  "authors": [
+   "Bundesinstitut für Risikobewertung (BfR)"
+  ],
+  "year": 2026,
+  "title": "Schimmelpilze in Lebensmitteln – Gesundheitliche Risiken und wie sie sich vermeiden lassen (FAQ vom 11. März 2026)",
+  "venue": "BfR, Fragen und Antworten",
+  "doi": null,
+  "url": "https://www.bfr.bund.de/fragen-und-antworten/thema/schimmelpilze-in-lebensmitteln-gesundheitliche-risiken-und-wie-sie-sich-vermeiden-lassen",
+  "oa_url": "https://www.bfr.bund.de/assets/01_Ver%C3%B6ffentlichungen/FAQ_deutsch/schimmelpilze-in-lebensmitteln-gesundheitliche-risiken-und-wie-sie-sich-vermeiden-lassen.pdf",
+  "cited_by": [
+   "science-bread-0102",
+   "science-bread-0103"
+  ]
+ },
+ {
+  "key": "beyondceliac_sourdough",
+  "authors": [
+   "Beyond Celiac"
+  ],
+  "year": null,
+  "title": "Is Sourdough Bread Gluten-Free?",
+  "venue": "BeyondCeliac.org, The Gluten-Free Diet",
+  "doi": null,
+  "url": "https://www.beyondceliac.org/gluten-free-diet/is-it-gluten-free/sourdough-bread/",
+  "oa_url": "https://web.archive.org/web/20260108072025/https://www.beyondceliac.org/gluten-free-diet/is-it-gluten-free/sourdough-bread/",
+  "cited_by": [
+   "science-bread-0133",
+   "science-bread-0137"
+  ]
+ },
+ {
+  "key": "ciqual2020",
+  "authors": [
+   "Anses"
+  ],
+  "year": 2020,
+  "title": "Table de composition nutritionnelle des aliments Ciqual 2020",
+  "venue": "Anses, Ciqual",
+  "doi": null,
+  "url": "https://ciqual.anses.fr/",
+  "oa_url": null,
+  "cited_by": [
+   "science-bread-0060",
+   "science-bread-0061",
+   "science-bread-0122"
+  ]
+ },
+ {
+  "key": "ireks",
+  "authors": [
+   "IREKS GmbH"
+  ],
+  "year": null,
+  "title": "The IREKS Compendium of Baking Technology",
+  "venue": "IREKS GmbH, Kulmbach (online edition)",
+  "doi": null,
+  "url": "https://www.ireks-kompendium.com/en/",
+  "oa_url": "https://www.ireks-kompendium.com/en/",
+  "cited_by": [
+   "science-bread-0004",
+   "science-bread-0012",
+   "science-bread-0013",
+   "science-bread-0018",
+   "science-bread-0020",
+   "science-bread-0021",
+   "science-bread-0022",
+   "science-bread-0023",
+   "science-bread-0025",
+   "science-bread-0030",
+   "science-bread-0032",
+   "science-bread-0036",
+   "science-bread-0062",
+   "science-bread-0063",
+   "science-bread-0064",
+   "science-bread-0065",
+   "science-bread-0069",
+   "science-bread-0070",
+   "science-bread-0071",
+   "science-bread-0072",
+   "science-bread-0073",
+   "science-bread-0074",
+   "science-bread-0081",
+   "science-bread-0082",
+   "science-bread-0083",
+   "science-bread-0084",
+   "science-bread-0085",
+   "science-bread-0086",
+   "science-bread-0087",
+   "science-bread-0088",
+   "science-bread-0089",
+   "science-bread-0093",
+   "science-bread-0094",
+   "science-bread-0095",
+   "science-bread-0104",
+   "science-bread-0106",
+   "science-bread-0109",
+   "science-bread-0110"
+  ]
+ },
+ {
+  "key": "bakerpedia",
+  "authors": [
+   "BAKERpedia"
+  ],
+  "year": null,
+  "title": "BAKERpedia: ingredients and processes encyclopedia",
+  "venue": "BAKERpedia (online)",
+  "doi": null,
+  "url": "https://bakerpedia.com/",
+  "oa_url": "https://bakerpedia.com/",
+  "cited_by": [
+   "science-bread-0001",
+   "science-bread-0002",
+   "science-bread-0003",
+   "science-bread-0014",
+   "science-bread-0026",
+   "science-bread-0028",
+   "science-bread-0029",
+   "science-bread-0031",
+   "science-bread-0033",
+   "science-bread-0034",
+   "science-bread-0035",
+   "science-bread-0037",
+   "science-bread-0038",
+   "science-bread-0039",
+   "science-bread-0048",
+   "science-bread-0052",
+   "science-bread-0055",
+   "science-bread-0056",
+   "science-bread-0057",
+   "science-bread-0058",
+   "science-bread-0059",
+   "science-bread-0061",
+   "science-bread-0105"
+  ]
+ },
+ {
+  "key": "kingarthur_thermometer",
+  "authors": [
+   "Hamel, PJ"
+  ],
+  "year": 2017,
+  "title": "Using a thermometer with yeast bread",
+  "venue": "King Arthur Baking Company blog, 7 April 2017",
+  "doi": null,
+  "url": "https://www.kingarthurbaking.com/blog/2017/04/07/using-a-thermometer-with-yeast-bread",
+  "oa_url": null,
+  "cited_by": [
+   "science-bread-0079",
+   "science-bread-0080",
+   "science-bread-0081",
+   "science-bread-0108"
+  ]
+ },
+ {
+  "key": "busby_bakeloss",
+  "authors": [
+   "Busby, Gareth"
+  ],
+  "year": 2023,
+  "title": "How Much Weight Does Bread Lose When Baked?",
+  "venue": "Busby's Bakery (updated 18 January 2023)",
+  "doi": null,
+  "url": "https://www.busbysbakery.com/bread-weight-lost-when-baked/",
+  "oa_url": null,
+  "cited_by": [
+   "science-bread-0090",
+   "science-bread-0091",
+   "science-bread-0093"
+  ]
+ },
+ {
+  "key": "hamelman2004",
+  "authors": [
+   "Hamelman, Jeffrey"
+  ],
+  "year": 2004,
+  "title": "Bread: A Baker's Book of Techniques and Recipes",
+  "venue": "John Wiley & Sons",
+  "doi": null,
+  "url": "https://app.ckbk.com/section/brea32715c01s012ss001/moisture-loss-in-baked-bread",
+  "oa_url": null,
+  "cited_by": [
+   "science-bread-0092",
+   "science-bread-0093"
+  ]
+ },
+ {
+  "key": "wiki_de_fallzahl",
+  "authors": [
+   "Wikipedia contributors"
+  ],
+  "year": null,
+  "title": "Fallzahl",
+  "venue": "Wikipedia (de)",
+  "doi": null,
+  "url": "https://de.wikipedia.org/wiki/Fallzahl",
+  "oa_url": null,
+  "cited_by": [
+   "science-bread-0015"
+  ]
+ },
+ {
+  "key": "wiki_de_sauerteig",
+  "authors": [
+   "Wikipedia contributors"
+  ],
+  "year": null,
+  "title": "Sauerteig",
+  "venue": "Wikipedia (de)",
+  "doi": null,
+  "url": "https://de.wikipedia.org/wiki/Sauerteig",
+  "oa_url": null,
+  "cited_by": [
+   "science-bread-0024",
+   "science-bread-0068"
+  ]
+ },
+ {
+  "key": "wiki_en_mashing",
+  "authors": [
+   "Wikipedia contributors"
+  ],
+  "year": null,
+  "title": "Mashing",
+  "venue": "Wikipedia (en)",
+  "doi": null,
+  "url": "https://en.wikipedia.org/wiki/Mashing",
+  "oa_url": null,
+  "cited_by": [
+   "science-bread-0006"
+  ]
+ }
+]

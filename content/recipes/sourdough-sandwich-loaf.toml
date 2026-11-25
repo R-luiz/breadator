@@ -1,0 +1,27 @@
+bread_type = "pan"
+sources = ["breadcode-1361", "breadcode-1368", "breadcode-1369", "breadcode-1364", "breadcode-1365", "breadcode-1371", "breadcode-1372", "breadcode-1374", "breadcode-1375", "breadcode-1428", "breadcode-1377", "breadcode-1378", "breadcode-1376", "breadcode-0308"]
+title = { fr = "Pain de mie au levain sans pétrissage", en = "No-knead sourdough sandwich loaf" }
+description = { fr = "D'après le pain de mie au levain de Hendrik Kleinwächter (The Bread Code) : un pain en moule sans matière grasse, avec autolyse d'une nuit, apprêt au réfrigérateur et un second moule en guise de couvercle pour la vapeur.", en = "After Hendrik Kleinwächter's (The Bread Code) sourdough sandwich bread: a lean pan loaf with an overnight autolyse, a refrigerated proof and a second pan used as a lid for steam." }
+steps = [
+  { fr = "La veille au soir : rafraîchissez le levain en 1:5:5 pour qu'il soit prêt le matin, et mélangez la farine et l'eau du pétrin. Laissez cette autolyse couverte à température ambiante pour la nuit, jamais plus de 24 h.", en = "The evening before: feed the starter 1:5:5 so that it is ready in the morning, and mix the final-mix flour and water. Leave this autolyse covered at room temperature overnight, never more than 24 h." },
+  { fr = "Le matin, ajoutez le levain et le sel et mélangez jusqu'à homogénéité, sans pétrir. Placez un échantillon de pâte dans un bocal témoin et marquez son niveau.", en = "In the morning add the levain and the salt and mix until even, without kneading. Put a sample of dough in a jar and mark its level." },
+  { fr = "Pointage : jusqu'à ce que le témoin ait doublé. La source prévoyait 8 à 10 h vers 21 °C et a observé 12 h en hiver et 6 h en été. Le calculateur de fermentation donne la durée pour la température de votre pâte.", en = "Bulk fermentation: until the sample has doubled. The source expected 8 to 10 h at about 21 °C and observed 12 h in winter and 6 h in summer. The fermentation calculator gives the time for your own dough temperature." },
+  { fr = "Préfaçonnez, laissez environ 15 min de détente pour que le gluten se relâche, puis façonnez et déposez, soudure dessous, dans un moule graissé.", en = "Preshape, rest about 15 min so the gluten relaxes, then shape and place seam down in a greased loaf pan." },
+  { fr = "Apprêt : environ 60 min à température ambiante, puis 10 à 12 h au réfrigérateur pour une cuisson le lendemain matin.", en = "Final proof: about 60 min at room temperature, then 10 to 12 h in the refrigerator for a bake the next morning." },
+  { fr = "Préchauffez le four 30 min avec un second moule de même taille, ou une plaque pour l'eau. Enfournez le pain, couvrez-le avec le moule chaud retourné pour retenir sa vapeur et coupez la chaleur tournante. La source ne donne pas la température de son four ; The Sourdough Framework cuit les pains en moule vers 200 °C.", en = "Preheat the oven for 30 min with a second loaf pan of the same size, or a tray for water. Put the loaf in, cover it with the hot upturned pan to trap its steam and switch the fan off. The source does not give its oven temperature; The Sourdough Framework bakes pan loaves at about 200 °C." },
+  { fr = "Retirez le couvercle vers la mi-cuisson pour une croûte croustillante, ou gardez la vapeur jusqu'au bout pour une croûte souple. Le pain est cuit à 92–95 °C à cœur.", en = "Remove the cover about halfway through for a crisp crust, or keep the steam to the end for a soft one. The loaf is done at 92 to 95 °C at the core." },
+]
+notes = { fr = "Fournée de la source : 400 g de farine (environ 15 % de protéines), 280 g d'eau, 80 g de levain et 8 g de sel. L'hydratation du levain n'est pas précisée ; rafraîchi en 1:5:5 à poids égaux de farine et d'eau, il est compté à 100 %, soit 440 g de farine, 72,7 % d'hydratation et 1,82 % de sel. La source met un peu moins d'eau dans une pâte sans pétrissage que dans une pâte pétrie, et encore moins avec une farine plus pauvre en protéines. Les pourcentages sont arrondis à 0,01 point (0,001 en dessous de 1 %) ; les poids donnés par le calculateur restent à moins de 0,1 % de ceux de la source.", en = "Source batch: 400 g flour (about 15 % protein), 280 g water, 80 g starter and 8 g salt. The starter's hydration is not stated; fed 1:5:5 with equal weights of flour and water, it is counted at 100 %, which makes 440 g of flour, 72.7 % hydration and 1.82 % salt. The source uses a little less water in a no-knead dough than in a kneaded one, and less again with a flour lower in protein. Percentages are rounded to 0.01 point (0.001 below 1 %); the weights the calculator gives stay within 0.1 % of the source's." }
+
+[formula]
+target = { by = "pieces", count = 1, grams = 768 }
+flours = [
+  { id = "bread_flour", pct = 100 },
+]
+ingredients = [
+  { id = "water", kind = "water", pct = 72.73 },
+  { id = "salt", kind = "salt", pct = 1.82 },
+]
+stages = [
+  { id = "levain", kind = "levain", flour_pct = 9.09, flour = "bread_flour", liquid_pct = 100, seed = { pct = 20, hydration_pct = 100 } },
+]

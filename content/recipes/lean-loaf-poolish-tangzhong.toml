@@ -1,0 +1,29 @@
+bread_type = "lean-hearth"
+sources = ["novita-0312", "novita-0313", "novita-0314", "novita-0310", "novita-0315"]
+title = { fr = "Pain blanc fermenté au froid, sur poolish et tangzhong", en = "Cold-fermented lean loaf with poolish and tangzhong" }
+description = { fr = "D'après l'« artisan bread » de Novita Listyani : un pain blanc à la levure avec une poolish du jour et 15 % de farine en empois, mélangé à l'eau glacée et fermenté 3 h au réfrigérateur.", en = "After Novita Listyani's artisan bread: a lean yeasted loaf with a same-day poolish and a 15 % scald, mixed with ice water and fermented for 3 h in the refrigerator." }
+steps = [
+  { fr = "Empois (la veille, ou quelques heures avant) : versez l'eau bouillante dans un bol préchauffé, ajoutez d'un coup la farine de l'empois et remuez 1 à 2 min jusqu'à obtenir une pâte épaisse. Couvrez, laissez refroidir et réfrigérez ; gardé au froid, il aide aussi à abaisser la température de la pâte.", en = "Scald (the day before, or a few hours ahead): pour the boiling water into a pre-warmed bowl, add the scald flour at once and stir for 1 to 2 min into a thick paste. Cover, let it cool and refrigerate; kept cold, it also helps lower the dough temperature." },
+  { fr = "Poolish (le jour même) : mélangez sa farine, son eau et sa levure et laissez fermenter environ 3 h à 27 °C, jusqu'à ce qu'elle ait atteint son sommet et commence tout juste à retomber.", en = "Poolish (the same day): mix its flour, water and yeast and let it ferment for about 3 h at 27 °C, until it has peaked and just starts to sink." },
+  { fr = "Dissolvez le sel dans l'eau du pétrin, utilisée glacée, et délayez-y l'empois. Ajoutez la poolish, puis le reste de levure et la farine. Mélangez à la main jusqu'à homogénéité.", en = "Dissolve the salt in the final-mix water, used ice-cold, and break the scald up in it. Add the poolish, then the remaining yeast and the flour. Mix by hand until uniform." },
+  { fr = "Pointage au froid, 2 h dans un réfrigérateur à environ 5 °C : 30 min, puis 8 rabats ; 30 min, puis 4 rabats et une mise en boule ; puis 1 h. Le reste de levure règle l'allure : ces durées valent pour la dose indiquée ici.", en = "Cold bulk fermentation, 2 h in a refrigerator at about 5 °C: 30 min, then 8 stretch-and-folds; 30 min, then 4 stretch-and-folds and round the dough; then 1 h. The remaining yeast sets the pace: these times hold for the amount given here." },
+  { fr = "Façonnez en bâtard (accordez d'abord 5 à 10 min de détente si la pâte est ferme), cousez la soudure et déposez dans un banneton fariné à la farine de riz.", en = "Shape into a bâtard (give a 5 to 10 min rest first if the dough is stiff), stitch the seam and place in a banneton dusted with rice flour." },
+  { fr = "Apprêt : 1 h au réfrigérateur. Pour une autre température ou une autre dose de levure, utilisez le calculateur de fermentation.", en = "Final proof: 1 h in the refrigerator. For another temperature or yeast amount, use the fermentation calculator." },
+  { fr = "Préchauffez une cocotte à 240 °C. Grignez le pain, ajoutez un petit glaçon à côté et cuisez 20 min à couvert à 230 °C (chaleur statique), puis 10 à 15 min sans couvercle à 200 °C en chaleur tournante, jusqu'à une couleur dorée foncée et régulière.", en = "Preheat a Dutch oven at 240 °C. Score the loaf, add a small ice cube beside it and bake 20 min with the lid on at 230 °C (top and bottom heat), then 10 to 15 min without the lid at 200 °C with the fan, until evenly deep golden." },
+]
+notes = { fr = "Fournée de la source : empois de 60 g de farine et 120 g d'eau bouillante ; poolish de 80 g de farine, 80 g d'eau et 0,8 g de levure instantanée ; pétrin de 260 g de farine, 86 g d'eau glacée, 3,2 g de levure instantanée et 7 g de sel. La dose de levure est élevée (1 % au total) parce que la pâte fermente au réfrigérateur ; dans la vidéo elle parle d'environ 2 %, alors que la recette écrite donne 1 %, suivi ici. La source ne dit pas combien d'eau l'empois perd en refroidissant : pesez-le froid et rajoutez ce qui manque. Les pourcentages sont arrondis à 0,01 point (0,001 en dessous de 1 %) ; les poids donnés par le calculateur restent à moins de 0,1 % de ceux de la source.", en = "Source batch: scald of 60 g flour and 120 g boiling water; poolish of 80 g flour, 80 g water and 0.8 g instant yeast; final mix of 260 g flour, 86 g ice water, 3.2 g instant yeast and 7 g salt. The yeast is high (1 % in total) because the dough ferments in the refrigerator; in the video she speaks of about 2 %, while the written recipe gives 1 %, followed here. The source does not say how much water the scald loses on cooling: weigh it cold and add back what is missing. Percentages are rounded to 0.01 point (0.001 below 1 %); the weights the calculator gives stay within 0.1 % of the source's." }
+
+[formula]
+target = { by = "pieces", count = 1, grams = 697 }
+flours = [
+  { id = "bread_flour", pct = 100 },
+]
+ingredients = [
+  { id = "water", kind = "water", pct = 71.5 },
+  { id = "salt", kind = "salt", pct = 1.75 },
+  { id = "instant_yeast", kind = "instant_yeast", pct = 1 },
+]
+stages = [
+  { id = "scald", kind = "scald", flour_pct = 15, liquid_pct = 200 },
+  { id = "poolish", kind = "poolish", flour_pct = 20, liquid_pct = 100, extras = [{ ingredient = "instant_yeast", pct = 1 }] },
+]

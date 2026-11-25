@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="hero">
+  <h1>{{ layout.tr.t("home-heading") }}</h1>
+  <p class="lead">{{ layout.tr.t("home-lead") }}</p>
+</section>
+{% include "calculator_cards.html" %}
+<section class="cards" aria-label="{{ layout.tr.t("home-knowledge") }}">
+  <a class="card" href="{{ layout.href("/learn") }}">
+    <h2>{{ layout.tr.t("learn-title") }}</h2>
+    <p>{{ layout.tr.t("learn-description") }}</p>
+  </a>
+  <a class="card" href="{{ layout.href("/recipes") }}">
+    <h2>{{ layout.tr.t("recipes-title") }}</h2>
+    <p>{{ layout.tr.t("recipes-description") }}</p>
+  </a>
+</section>
+<section class="principles">
+  <h2>{{ layout.tr.t("home-principles") }}</h2>
+  <ul>
+    <li>{{ layout.tr.t("home-principle-sources") }}</li>
+    <li>{{ layout.tr.t("home-principle-temperature") }}</li>
+    <li>{{ layout.tr.t("home-principle-private") }}</li>
+  </ul>
+</section>
+{% endblock %}

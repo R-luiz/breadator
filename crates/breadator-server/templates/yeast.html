@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>{{ layout.tr.t("yeast-title") }}</h1>
+<p class="lead">{{ layout.tr.t("yeast-lead") }}</p>
+<div class="calc" data-island="yeast">
+<form class="inputs" method="get" action="{{ layout.href("/calculators/yeast") }}">
+  <fieldset>
+    <legend>{{ layout.tr.t("yeast-have") }}</legend>
+    <label class="field"><span class="label">{{ layout.tr.t("yeast-amount") }}</span>
+      <span class="input-unit"><input type="number" name="grams" value="{{ grams }}" min="0" step="any" inputmode="decimal"><span class="unit">g</span></span></label>
+    <label class="field"><span class="label">{{ layout.tr.t("yeast-form") }}</span>
+      <select name="from">
+        {% for (code, name) in kinds %}<option value="{{ code }}"{% if self.is_from(code) %} selected{% endif %}>{{ name }}</option>
+        {% endfor %}</select>
+    </label>
+  </fieldset>
+  <button type="submit">{{ layout.tr.t("compute") }}</button>
+</form>
+<section class="results" aria-live="polite">
+  {% if let Some(e) = error %}<p class="error" role="alert">{{ e }}</p>{% endif %}
+  <table class="lines">
+    <thead><tr><th scope="col">{{ layout.tr.t("yeast-form") }}</th><th scope="col">{{ layout.tr.t("yeast-equivalent") }}</th><th scope="col">{{ layout.tr.t("yeast-range") }}</th></tr></thead>
+    <tbody>
+    {% for r in rows %}<tr><th scope="row">{{ r.name }}</th><td class="g">{{ r.grams }} g</td><td>{{ r.range }} g</td></tr>
+    {% endfor %}</tbody>
+  </table>
+  <p class="note">{{ layout.tr.t("yeast-explain") }}</p>
+</section>
+</div>
+{% endblock %}

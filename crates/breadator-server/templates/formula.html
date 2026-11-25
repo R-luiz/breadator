@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% import "macros.html" as m %}
+{% block content %}
+<h1>{{ layout.tr.t("formula-title") }}</h1>
+<p class="lead">{{ layout.tr.t("formula-lead") }}</p>
+<div class="calc" data-island="formula">
+<form class="inputs" method="get" action="{{ layout.href("/calculators/formula") }}">
+  {% if advanced %}<p class="note">{{ layout.tr.t("formula-advanced") }}</p>{% endif %}
+  <fieldset>
+    <legend>{{ layout.tr.t("formula-target") }}</legend>
+    <label class="field"><span class="label">{{ layout.tr.t("formula-target-by") }}</span>
+      <select name="by">
+        <option value="dough" {{ self.sel("by", "dough") }}>{{ layout.tr.t("target-dough") }}</option>
+        <option value="pieces" {{ self.sel("by", "pieces") }}>{{ layout.tr.t("target-pieces") }}</option>
+        <option value="baked" {{ self.sel("by", "baked") }}>{{ layout.tr.t("target-baked") }}</option>
+        <option value="flour" {{ self.sel("by", "flour") }}>{{ layout.tr.t("target-flour") }}</option>
+      </select>
+    </label>
+    {% call m::num("grams", layout.tr.t("formula-grams"), self.v(form.grams), "g", "1", "1000000", layout.tr.t("formula-grams-hint")) %}{% endcall %}
+    {% call m::num("count", layout.tr.t("formula-count"), self.v(form.count), "×", "1", "10000", "") %}{% endcall %}
+    {% call m::num("loss", layout.tr.t("formula-loss"), self.v(form.loss), "%", "0", "60", layout.tr.t("formula-loss-hint")) %}{% endcall %}
+  </fieldset>
+  <fieldset>
+    <legend>{{ layout.tr.t("formula-flours") }}</legend>
+    <label class="field"><span class="label">{{ layout.tr.t("formula-flour1") }}</span><input type="text" name="flour1" value="{{ form.flour1 }}" maxlength="60"></label>
+    <label class="field"><span class="label">{{ layout.tr.t("formula-flour2") }}</span><input type="text" name="flour2" value="{{ form.flour2 }}" maxlength="60" placeholder="{{ layout.tr.t("formula-flour2-placeholder") }}"></label>
+    {% call m::num("flour2_pct", layout.tr.t("formula-flour2-pct"), self.v(form.flour2_pct), "%", "0", "100", "") %}{% endcall %}
+  </fieldset>
+  <fieldset>
+    <legend>{{ layout.tr.t("formula-dough") }}</legend>
+    {% call m::num("water", layout.tr.t("formula-water"), self.v(form.water), "%", "0", "400", layout.tr.t("formula-water-hint")) %}{% endcall %}
+    {% call m::num("salt", layout.tr.t("formula-salt"), self.v(form.salt), "%", "0", "10", "") %}{% endcall %}
+  </fieldset>
+  <fieldset>
+    <legend>{{ layout.tr.t("formula-leavening") }}</legend>
+    {% call m::num("levain", layout.tr.t("formula-levain"), self.v(form.levain), "%", "0", "200", layout.tr.t("formula-levain-hint")) %}{% endcall %}
+    {% call m::num("levain_hyd", layout.tr.t("formula-levain-hyd"), self.v(form.levain_hyd), "%", "30", "200", "") %}{% endcall %}
+    <label class="field"><span class="label">{{ layout.tr.t("formula-yeast-kind") }}</span>
+      <select name="yeast_kind">
+        <option value="none" {{ self.sel("yeast_kind", "none") }}>{{ layout.tr.t("yeast-none") }}</option>
+        <option value="fresh_yeast" {{ self.sel("yeast_kind", "fresh_yeast") }}>{{ layout.tr.t("entry-fresh_yeast") }}</option>
+        <option value="active_dry_yeast" {{ self.sel("yeast_kind", "active_dry_yeast") }}>{{ layout.tr.t("entry-active_dry_yeast") }}</option>
+        <option value="instant_yeast" {{ self.sel("yeast_kind", "instant_yeast") }}>{{ layout.tr.t("entry-instant_yeast") }}</option>
+      </select>
+    </label>
+    {% call m::num("yeast", layout.tr.t("formula-yeast"), self.v(form.yeast), "%", "0", "10", "") %}{% endcall %}
+    {% call m::num("poolish", layout.tr.t("formula-poolish"), self.v(form.poolish), "%", "0", "100", layout.tr.t("formula-poolish-hint")) %}{% endcall %}
+    {% call m::num("poolish_yeast", layout.tr.t("formula-poolish-yeast"), self.v(form.poolish_yeast), "%", "0", "5", "") %}{% endcall %}
+  </fieldset>
+  <fieldset>
+    <legend>{{ layout.tr.t("formula-scald") }}</legend>
+    <label class="field"><span class="label">{{ layout.tr.t("formula-scald-method") }}</span>
+      <select name="scald_method">
+        <option value="none" {{ self.sel("scald_method", "none") }}>{{ layout.tr.t("scald-none") }}</option>
+        <option value="tangzhong" {{ self.sel("scald_method", "tangzhong") }}>{{ layout.tr.t("scald-tangzhong") }}</option>
+        <option value="yudane" {{ self.sel("scald_method", "yudane") }}>{{ layout.tr.t("scald-yudane") }}</option>
+        <option value="empois" {{ self.sel("scald_method", "empois") }}>{{ layout.tr.t("scald-empois") }}</option>
+        <option value="kochstueck" {{ self.sel("scald_method", "kochstueck") }}>{{ layout.tr.t("scald-kochstueck") }}</option>
+      </select>
+    </label>
+    {% call m::num("scald", layout.tr.t("formula-scald-pct"), self.v(form.scald), "%", "0", "50", "") %}{% endcall %}
+  </fieldset>
+  <button type="submit">{{ layout.tr.t("compute") }}</button>
+</form>
+<section class="results" aria-live="polite">
+  {% if let Some(e) = error %}<p class="error" role="alert">{{ e }}</p>{% endif %}
+  {% if let Some(r) = results %}
+  {% for w in r.warnings %}<p class="warning">{{ w }}</p>{% endfor %}
+  {% for st in r.stages %}
+  <h2>{{ st.title }} <small>{{ st.mass }} g · {{ layout.tr.t("hydration") }} {{ st.hydration }} %</small></h2>
+  {% call m::rows(st.rows) %}{% endcall %}
+  {% for n in st.notes %}<p class="note">{{ n }}</p>{% endfor %}
+  {% endfor %}
+  <h2>{{ layout.tr.t("formula-final-mix") }}</h2>
+  {% call m::rows(r.final_mix) %}{% endcall %}
+  <h2>{{ layout.tr.t("formula-totals") }}</h2>
+  {% call m::rows(r.totals) %}{% endcall %}
+  <dl class="metrics">
+    {% for x in r.metrics %}<div><dt>{{ x.label }}</dt><dd>{{ x.value }}</dd></div>
+    {% endfor %}</dl>
+  {% endif %}
+  {% if !share.is_empty() %}<p class="share"><a href="{{ share }}" rel="nofollow">{{ layout.tr.t("share-link") }}</a></p>{% endif %}
+</section>
+</div>
+<script type="application/json" id="formula-state">{{ state_json|safe }}</script>
+{% endblock %}

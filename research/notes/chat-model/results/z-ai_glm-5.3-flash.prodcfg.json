@@ -1,0 +1,257 @@
+{
+ "model": "z-ai/glm-5.3-flash",
+ "provider": {
+  "zdr": true,
+  "sort": "price",
+  "max_price": {
+   "prompt": 0.08,
+   "completion": 0.6
+  }
+ },
+ "started": "2026-11-24T13:54:33.425Z",
+ "answers": [
+  {
+   "id": "Q07",
+   "lang": "fr",
+   "kind": "numeric",
+   "question": "Avec 10 % de levain, combien de temps de pointage à 21 °C ? Et si je monte ma pâte à 26 °C ?",
+   "final": "À 21 °C : environ **8,9 h** de pointage (plage 7,5–10,2 h).\nÀ 26 °C : environ **5,7 h** (plage 4,9–6,6 h).\n\n+5 °C raccourcit donc le pointage d'environ 3 h (~35 %), car l'activité des levures et bactéries du levain augmente fortement avec la température. Surveillez le volume (objectif ~+50 %) plutôt que l'horloge : la durée exacte dépend aussi de la force de votre levain et de la farine.",
+   "error": null,
+   "tool_calls": [
+    {
+     "name": "predict_bulk_time",
+     "args": {
+      "dough_temp_c": 21,
+      "levain_pct": 10
+     }
+    },
+    {
+     "name": "predict_bulk_time",
+     "args": {
+      "dough_temp_c": 26,
+      "levain_pct": 10
+     }
+    }
+   ],
+   "totals": {
+    "calls": 2,
+    "cost": 0.0001253846,
+    "prompt_tokens": 3660,
+    "completion_tokens": 186,
+    "reasoning_tokens": 0,
+    "cached_tokens": 3584,
+    "ms": 3954,
+    "providers": [
+     "Relace"
+    ]
+   },
+   "calls": [
+    {
+     "q": "Q07",
+     "i": 0,
+     "model": "z-ai/glm-5.3-flash",
+     "provider": "Relace",
+     "prompt_tokens": 1741,
+     "completion_tokens": 46,
+     "reasoning_tokens": 0,
+     "cached_tokens": 1728,
+     "cache_write_tokens": 0,
+     "cost": 0.0000560518,
+     "ms": 1466,
+     "finish": "tool_calls"
+    },
+    {
+     "q": "Q07",
+     "i": 1,
+     "model": "z-ai/glm-5.3-flash",
+     "provider": "Relace",
+     "prompt_tokens": 1919,
+     "completion_tokens": 140,
+     "reasoning_tokens": 0,
+     "cached_tokens": 1856,
+     "cache_write_tokens": 0,
+     "cost": 0.0000693328,
+     "ms": 2488,
+     "finish": "stop"
+    }
+   ],
+   "auto": {
+    "searched": false,
+    "n_search": 0,
+    "engine_calls": [
+     {
+      "name": "predict_bulk_time",
+      "args": {
+       "dough_temp_c": 21,
+       "levain_pct": 10
+      }
+     },
+     {
+      "name": "predict_bulk_time",
+      "args": {
+       "dough_temp_c": 26,
+       "levain_pct": 10
+      }
+     }
+    ],
+    "cited": [],
+    "invented_keys": [],
+    "irrelevant_cited": [],
+    "unsourced_labels": 0,
+    "words": 71,
+    "lang_guess": "fr",
+    "args_ok": true
+   }
+  },
+  {
+   "id": "Q09",
+   "lang": "fr",
+   "kind": "grounding",
+   "question": "Ma mie de pain 100 % seigle est collante alors que j'ai bien cuit. Pourquoi ? Et à quelle température à cœur un pain de seigle est-il cuit ?",
+   "final": "Votre mie collante n'est probablement pas due à une cuisson insuffisante, mais à l'**attaque de l'amidon** : la farine de seigle contient beaucoup plus d'alpha-amylase que le blé, et son amidon gélatinise plus tôt (environ 52-62 °C). Pendant la cuisson, l'amidon devient accessible alors que l'enzyme est encore active : elle le dégrade en dextrines, d'où une mie collante et gommeuse [rye-amylase].\n\nLa parade : **acidifier la pâte à pH 4,0-4,3** (levain de seigle traditionnel), ce qui bloque l'alpha-amylase et protège l'amidon [rye-amylase]. Sans levain assez actif, un pain 100 % seigle sera presque toujours collant, même parfaitement cuit.\n\nDeuxième cause possible : avoir tranché trop tôt. Un pain 80-100 % seigle finit de se structurer **après** la sortie du four — le gel amidon-pentosanes se raffermit en refroidissant. Comptez **12 à 24 h de repos enveloppé dans un lin** avant de couper [rye-cooling].\n\nPour la température à cœur, la base ne le précise pas [non sourcé] ; en pratique on vise environ 90-98 °C à cœur pour un pain de seigle, la gélatinisation commençant dès 52-62 °C pour l'amidon de seigle [rye-amylase].",
+   "error": null,
+   "tool_calls": [
+    {
+     "name": "search_knowledge",
+     "args": {
+      "query": "pain de seigle mie collante pentosanes amylase"
+     }
+    },
+    {
+     "name": "search_knowledge",
+     "args": {
+      "query": "température à cœur pain seigle cuit"
+     }
+    }
+   ],
+   "totals": {
+    "calls": 2,
+    "cost": 0.000250574,
+    "prompt_tokens": 4259,
+    "completion_tokens": 398,
+    "reasoning_tokens": 0,
+    "cached_tokens": 1536,
+    "ms": 7041,
+    "providers": [
+     "Wafer"
+    ]
+   },
+   "calls": [
+    {
+     "q": "Q09",
+     "i": 0,
+     "model": "z-ai/glm-5.3-flash",
+     "provider": "Wafer",
+     "prompt_tokens": 1748,
+     "completion_tokens": 47,
+     "reasoning_tokens": 0,
+     "cached_tokens": 0,
+     "cache_write_tokens": 0,
+     "cost": 0.000082064,
+     "ms": 1455,
+     "finish": "tool_calls"
+    },
+    {
+     "q": "Q09",
+     "i": 1,
+     "model": "z-ai/glm-5.3-flash",
+     "provider": "Wafer",
+     "prompt_tokens": 2511,
+     "completion_tokens": 351,
+     "reasoning_tokens": 0,
+     "cached_tokens": 1536,
+     "cache_write_tokens": 0,
+     "cost": 0.00016851,
+     "ms": 5586,
+     "finish": "stop"
+    }
+   ],
+   "auto": {
+    "searched": true,
+    "n_search": 2,
+    "engine_calls": [],
+    "cited": [
+     "rye-amylase",
+     "rye-cooling"
+    ],
+    "invented_keys": [],
+    "irrelevant_cited": [],
+    "unsourced_labels": 1,
+    "words": 183,
+    "lang_guess": "fr"
+   }
+  },
+  {
+   "id": "Q12",
+   "lang": "en",
+   "kind": "grounding",
+   "question": "My friend has celiac disease. If I ferment an einkorn sourdough for 48 hours, will it be safe for her?",
+   "final": "No — a long-fermented einkorn sourdough is **not safe** for your friend.\n\n**Why:**\n- Einkorn is a wheat species (Triticum monococcum) that contains gluten proteins, including gliadins, so it is not gluten-free by nature [einkorn-gluten].\n- Long sourdough fermentation does partially hydrolyse gluten via flour and bacterial proteases, but ordinary sourdough bread still contains far more than the 20 mg/kg gluten threshold for \"gluten-free\" labelling in the EU. Only experimental protocols using selected lactobacilli plus added fungal proteases over very long fermentations got residual gluten below 10 ppm in clinical studies [sourdough-gluten]. Even 48 h of home fermentation won't get near that, and celiac disease requires a strict medical standard, not just \"reduced gluten.\"\n\n**Practical advice:** For your friend, bake with truly gluten-free flours (buckwheat, rice, millet...) using a dedicated gluten-free starter, and avoid cross-contamination [not sourced]. For any decision about what a coeliac person can eat, it's safest to check with her doctor or dietitian [not sourced].",
+   "error": null,
+   "tool_calls": [
+    {
+     "name": "search_knowledge",
+     "args": {
+      "query": "celiac gluten sourdough fermentation safety"
+     }
+    }
+   ],
+   "totals": {
+    "calls": 2,
+    "cost": 0.0001367322,
+    "prompt_tokens": 3748,
+    "completion_tokens": 278,
+    "reasoning_tokens": 6,
+    "cached_tokens": 3456,
+    "ms": 5575,
+    "providers": [
+     "Relace"
+    ]
+   },
+   "calls": [
+    {
+     "q": "Q12",
+     "i": 0,
+     "model": "z-ai/glm-5.3-flash",
+     "provider": "Relace",
+     "prompt_tokens": 1736,
+     "completion_tokens": 24,
+     "reasoning_tokens": 6,
+     "cached_tokens": 1728,
+     "cache_write_tokens": 0,
+     "cost": 0.0000540808,
+     "ms": 1293,
+     "finish": "tool_calls"
+    },
+    {
+     "q": "Q12",
+     "i": 1,
+     "model": "z-ai/glm-5.3-flash",
+     "provider": "Relace",
+     "prompt_tokens": 2012,
+     "completion_tokens": 254,
+     "reasoning_tokens": 0,
+     "cached_tokens": 1728,
+     "cache_write_tokens": 0,
+     "cost": 0.0000826514,
+     "ms": 4282,
+     "finish": "stop"
+    }
+   ],
+   "auto": {
+    "searched": true,
+    "n_search": 1,
+    "engine_calls": [],
+    "cited": [
+     "einkorn-gluten",
+     "sourdough-gluten"
+    ],
+    "invented_keys": [],
+    "irrelevant_cited": [],
+    "unsourced_labels": 2,
+    "words": 158,
+    "lang_guess": "en"
+   }
+  }
+ ]
+}

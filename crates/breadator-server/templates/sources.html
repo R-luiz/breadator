@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>{{ layout.tr.t("sources-title") }}</h1>
+<p class="lead">{{ layout.tr.t("sources-lead") }}</p>
+<ul class="bibliography">
+{% for r in references %}<li id="{{ r.key }}">{% if let Some(h) = r.href %}<a href="{{ h }}" rel="noopener noreferrer">{{ r.text }}</a>{% else %}{{ r.text }}{% endif %}</li>
+{% endfor %}</ul>
+{% endblock %}

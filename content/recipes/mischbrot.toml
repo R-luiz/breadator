@@ -1,0 +1,26 @@
+bread_type = "rye"
+sources = ["breadcode-1164", "breadcode-2592", "breadcode-2595", "breadcode-2594", "breadcode-1165", "breadcode-2596", "breadcode-1166", "breadcode-2597", "breadcode-1167", "breadcode-1168", "breadcode-1169"]
+title = { fr = "Mischbrot : pain au levain moitié seigle, moitié blé", en = "Mischbrot: half rye, half wheat sourdough" }
+description = { fr = "D'après le Mischbrot de Hendrik Kleinwächter (The Bread Code), le pain allemand de tous les jours : seigle et blé à parts égales, mélangés à la main sans pétrissage et cuits en cocotte.", en = "After Hendrik Kleinwächter's (The Bread Code) Mischbrot, the German everyday loaf: equal parts rye and wheat flour, mixed by hand without kneading and baked in a covered pot." }
+steps = [
+  { fr = "Mélangez les deux farines, le levain, le sel et de l'eau tiède (environ 30 °C, pas chaude) à la main jusqu'à homogénéité. Pas de pétrissage.", en = "Mix both flours, the starter, the salt and warm water (about 30 °C, not hot) by hand until even. No kneading." },
+  { fr = "Pointage : jusqu'à ce que la pâte ait doublé. Les deux versions de la recette divergent sur la durée vers 22 °C : environ 6 h dans la vidéo, environ 10 h dans la recette écrite. Fiez-vous au volume. Le calculateur de fermentation donne la durée pour la température de votre pâte.", en = "Bulk fermentation: until the dough has doubled. The two versions of the recipe disagree on the time at about 22 °C: about 6 h in the video, about 10 h in the written recipe. Go by the volume. The fermentation calculator gives the time for your own dough temperature." },
+  { fr = "Farinez le plan de travail et vos mains à la farine de riz, qui absorbe l'humidité de surface de cette pâte collante, façonnez le pain et déposez-le dans un banneton fariné à la farine de riz.", en = "Dust the bench and your hands with rice flour, which absorbs the surface moisture of this sticky dough, shape the loaf and place it in a banneton dusted with rice flour." },
+  { fr = "Apprêt, deux options données par la source : environ 1 h à température ambiante puis 2 à 3 h au réfrigérateur (vidéo), ou 24 h à environ 5 °C (recette écrite).", en = "Final proof, two options from the source: about 1 h at room temperature then 2 to 3 h in the refrigerator (video), or 24 h at about 5 °C (written recipe)." },
+  { fr = "Cuisez à 230 °C en cocotte préchauffée : 25 min à couvert, puis 20 min sans couvercle. Attendez 30 min avant de couper.", en = "Bake at 230 °C in a preheated covered pot: 25 min with the lid on, then 20 min without it. Wait 30 min before cutting." },
+]
+notes = { fr = "Fournée de la source : 250 g de farine de seigle, 250 g de farine de blé, 325 g d'eau, 100 g de levain et 10 g de sel (65 % d'eau, 20 % de levain et 2 % de sel sur la farine ajoutée). L'hydratation du levain n'est pas précisée : il est compté à 100 %, sa farine répartie à égalité entre seigle et blé, soit 550 g de farine, 68,2 % d'hydratation et 1,82 % de sel. La recette écrite admet jusqu'à 40 % de levain (dont la moitié de levain non rafraîchi) et indique que le pain se garde environ deux semaines. Les pourcentages sont arrondis à 0,01 point (0,001 en dessous de 1 %) ; les poids donnés par le calculateur restent à moins de 0,1 % de ceux de la source.", en = "Source batch: 250 g rye flour, 250 g wheat flour, 325 g water, 100 g starter and 10 g salt (65 % water, 20 % starter and 2 % salt on the flour added). The starter's hydration is not stated: it is counted at 100 %, its flour split evenly between rye and wheat, which makes 550 g of flour, 68.2 % hydration and 1.82 % salt. The written recipe allows up to 40 % starter (half of it discard) and says the loaf keeps about two weeks. Percentages are rounded to 0.01 point (0.001 below 1 %); the weights the calculator gives stay within 0.1 % of the source's." }
+
+[formula]
+target = { by = "pieces", count = 1, grams = 935 }
+flours = [
+  { id = "rye_flour", pct = 50 },
+  { id = "bread_flour", pct = 50 },
+]
+ingredients = [
+  { id = "water", kind = "water", pct = 68.18 },
+  { id = "salt", kind = "salt", pct = 1.82 },
+]
+stages = [
+  { id = "levain", kind = "levain", flour_pct = 9.09, liquid_pct = 100 },
+]
