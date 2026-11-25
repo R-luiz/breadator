@@ -122,6 +122,52 @@ fn catalog_to_json(lang: &str) -> String {
     serde_json::to_string(&map).unwrap_or_else(|_| "{}".into())
 }
 
+/// `v` with `decimals` places, rounded half away from zero on the number as it is written
+/// (`0.975` → `0.98`, `22.5` → `23`). That is how the browser's `Intl.NumberFormat` rounds,
+/// so a page and its island show the same figure; `{:.2}` rounds the binary value instead
+/// (`0.97`) and ties to even (`22`). A value that rounds to zero is `0`, never `-0`.
+fn round_half_up(v: f64, decimals: usize) -> String {
+    if !v.is_finite() {
+        return v.to_string();
+    }
+    // The shortest decimal that reads back as `v`; Rust writes it without an exponent.
+    let written = v.abs().to_string();
+    let (whole, fraction) = written.split_once('.').unwrap_or((&written, ""));
+    let mut digits: Vec<u8> = whole.bytes().chain(fraction.bytes()).map(|b| b - b'0').collect();
+    let mut whole_len = whole.len();
+    let keep = whole_len + decimals;
+    let up = digits.get(keep).is_some_and(|d| *d >= 5);
+    digits.resize(keep, 0);
+    if up {
+        let mut i = keep;
+        loop {
+            if i == 0 {
+                digits.insert(0, 1);
+                whole_len += 1;
+                break;
+            }
+            i -= 1;
+            if digits[i] == 9 {
+                digits[i] = 0;
+            } else {
+                digits[i] += 1;
+                break;
+            }
+        }
+    }
+    let mut out = String::with_capacity(digits.len() + 2);
+    if v < 0.0 && digits.iter().any(|d| *d != 0) {
+        out.push('-');
+    }
+    for (i, d) in digits.iter().enumerate() {
+        if i == whole_len {
+            out.push('.');
+        }
+        out.push(char::from(b'0' + d));
+    }
+    out
+}
+
 /// Translation and formatting helpers handed to templates.
 #[derive(Debug, Clone, Copy)]
 pub struct Tr(pub Lang);
@@ -148,11 +194,7 @@ impl Tr {
 
     /// Number with `decimals` places and the language's decimal separator.
     pub fn num(&self, v: f64, decimals: usize) -> String {
-        let mut s = format!("{v:.decimals$}");
-        // A value that rounds to zero is "0", not "-0".
-        if s.starts_with('-') && s[1..].bytes().all(|b| b == b'0' || b == b'.') {
-            s.remove(0);
-        }
+        let s = round_half_up(v, decimals);
         match self.0 {
             Lang::Fr => s.replace('.', ","),
             Lang::En => s,
@@ -255,9 +297,30 @@ mod tests {
     #[test]
     fn numbers_follow_the_language() {
         assert_eq!(Lang::Fr.tr().g(1234.4), "1234");
-        assert_eq!(Lang::Fr.tr().g(3.25), "3,2");
+        assert_eq!(Lang::Fr.tr().g(3.25), "3,3");
         assert_eq!(Lang::En.tr().g(0.456), "0.46");
         assert_eq!(Lang::En.tr().num(-0.001, 1), "0.0");
+    }
+
+    /// The island formats with `Intl.NumberFormat`, which rounds halves up on the number as
+    /// written: the page must show the same figure (the fermentation page's default hydration
+    /// factor, 0.975, read ×0,97 on the page and ×0,98 once the island had recomputed).
+    #[test]
+    fn numbers_round_like_the_browser() {
+        let en = Lang::En.tr();
+        assert_eq!(en.num(0.975, 2), "0.98");
+        assert_eq!(en.num(22.5, 0), "23");
+        assert_eq!(en.num(1.005, 2), "1.01");
+        assert_eq!(en.num(0.125, 2), "0.13");
+        assert_eq!(en.num(-2.5, 0), "-3");
+        assert_eq!(en.num(999.96, 1), "1000.0");
+        assert_eq!(en.num(9.5, 0), "10");
+        assert_eq!(en.num(0.4, 0), "0");
+        assert_eq!(en.num(-0.4, 0), "0");
+        assert_eq!(en.num(7.0, 2), "7.00");
+        assert_eq!(en.num(1234.0, 0), "1234");
+        assert_eq!(en.num(0.000_4, 3), "0.000");
+        assert_eq!(en.num(1.0e21, 0), "1000000000000000000000");
         assert!(!Lang::Fr.tr().t("site-name").is_empty());
     }
 

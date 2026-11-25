@@ -1,9 +1,16 @@
 # Breadator — operations
 
-State on 2026-11-24: code, CI and deploy workflows written; **nothing committed, no GitHub
-repository, no Fly app, no volume, no DNS record, no OAuth app, no R2 bucket yet** (first
-deployment pending the owner's go-ahead). Everything the owner has to create once is listed below,
-in the order to do it.
+State on 2026-11-25: **live at https://breadator.robinluiz.fr.** Public repository
+`R-luiz/breadator`, Fly app `breadator` (one machine in `fra`, volume `breadator_data`), DNS and
+certificate in place, every green push on `main` deploys.
+
+Not configured yet, so switched off on the site:
+
+| Missing | Effect on the site | Section |
+|---|---|---|
+| `OPENROUTER_API_KEY` | the chat page says the assistant is unavailable (left off on purpose) | "OpenRouter (chat)" |
+| `RESEND_API_KEY`, Google and GitHub OAuth apps | the sign-in page says accounts are not open yet; everything else works without an account | "Resend", "Google sign-in", "GitHub sign-in" |
+| R2 bucket and `LITESTREAM_*` | the database is not replicated. Acceptable while nobody can sign in (it holds no user data); **set it before opening accounts** | "Backups" |
 
 ## Configuration reference
 
@@ -23,9 +30,11 @@ in the order to do it.
 No `SESSION_SECRET` exists: sessions are random 256-bit tokens whose SHA-256 is stored, so there is
 nothing to sign.
 
-## First deployment (one-time)
+## First deployment (done on 2026-11-25)
 
-1. **Repository**: create the public `R-luiz/breadator`, push `main`.
+What exists, and how to recreate it:
+
+1. **Repository**: public `R-luiz/breadator`, branch `main`.
 2. **Fly app and volume** (account already used by LoL Rank Bot). The volume must exist before the
    first deploy; it is mounted at `/data` and holds the SQLite database:
    ```sh
@@ -34,8 +43,8 @@ nothing to sign.
    ```
    One machine only: a volume belongs to one machine and SQLite has one writer. `fly.toml` keeps
    it always on (`auto_stop_machines = "off"`, `min_machines_running = 1`); never scale to two.
-3. **Secrets**, once the services below exist (any can be added later; the app works without
-   them, with the matching sign-in method hidden or links logged):
+3. **Secrets**: none set yet. Each can be added on its own, once the service below exists
+   (`fly secrets set` restarts the machine):
    ```sh
    fly secrets set -a breadator RESEND_API_KEY=re_…
    fly secrets set -a breadator GOOGLE_CLIENT_ID=… GOOGLE_CLIENT_SECRET=…
@@ -44,24 +53,35 @@ nothing to sign.
    fly secrets set -a breadator LITESTREAM_BUCKET=… LITESTREAM_ENDPOINT=https://<account id>.r2.cloudflarestorage.com \
        LITESTREAM_ACCESS_KEY_ID=… LITESTREAM_SECRET_ACCESS_KEY=…
    ```
-4. **Deploy**:
+4. **Deploy and certificate**:
    ```sh
    fly deploy --remote-only            # first build on Fly's builder
    fly certs add breadator.robinluiz.fr
+   fly certs setup breadator.robinluiz.fr   # prints the DNS records below
    ```
-5. **DNS** (Cloudflare zone `robinluiz.fr`, see `robinluiz-infra`): `breadator` CNAME →
-   `breadator.fly.dev`, proxied; plus the `_acme-challenge.breadator` CNAME that
-   `fly certs add` prints, DNS only, so Fly can issue the certificate behind the proxy.
-   `python3 bin/cf.py POST /zones/9e4d6ede072fa204b3f638b54d6e8fbd/dns_records '{…}'`.
-   Record the change in `robinluiz-infra/README.md` ("Enregistrements DNS actuels").
+5. **DNS** (Cloudflare zone `robinluiz.fr`, listed in `robinluiz-infra/README.md`):
+
+   | Name | Type | Content | Proxy |
+   |---|---|---|---|
+   | `breadator` | CNAME | `0d6xmor.breadator.fly.dev` | proxied |
+   | `_acme-challenge.breadator` | CNAME | `breadator.robinluiz.fr.0d6xmor.flydns.net` | DNS only |
+   | `_fly-ownership.breadator` | TXT | `app-0d6xmor` | — |
+
+   The challenge record lets Fly issue and renew the certificate behind the proxy; the
+   ownership record is what Fly asks for when traffic comes through a CDN. Both must stay.
    Cloudflare must not cache HTML or the API (its default): pages carry the account link of the
    signed-in user (`/<lang>/account…` and `/auth/` answer `no-store`, other pages of a signed-in
    user `private`).
-6. **GitHub**: environment `production`, secret `FLY_API_TOKEN`
-   (`fly tokens create deploy -a breadator`). From then on every green push on `main` deploys.
-7. **Web Analytics**: add the Cloudflare Web Analytics site for the hostname; the CSP already
-   allows its script.
-8. **Portfolio**: add a card on robinluiz.fr.
+6. **GitHub**: environment `production`, secret `FLY_API_TOKEN`, a deploy token limited to this
+   app. **It expires on 2027-11-25**; renew it with
+   `fly tokens create deploy -a breadator -x 8760h | gh secret set FLY_API_TOKEN --env production -R R-luiz/breadator`.
+   The Deploy workflow runs after each green CI run on `main` and then checks the public site.
+
+Still to do:
+
+- **Web Analytics**: Cloudflare already adds its script on the proxied hostname (the CSP allows
+  it); check that the hostname shows up under Web Analytics in the dashboard.
+- **Portfolio**: add a card on robinluiz.fr.
 
 ### OpenRouter (chat)
 
