@@ -30,13 +30,13 @@ Bread-making calculators and science, for every baker: **https://breadator.robin
 - **Learn**: articles where every fact cites its source (papers, *The Sourdough Framework*,
   bakers' documented tests), a bibliography, full-text search, and recipes that open in the
   formula calculator.
-- **Chat**: questions answered from the knowledge base with numbered sources; weights, times and
-  temperatures come from the calculators, not from the model. Signed-in accounts only, under a
-  fixed monthly budget.
-- **For AI assistants**: an [MCP](https://modelcontextprotocol.io) endpoint,
-  `https://breadator.robinluiz.fr/mcp`, gives Claude and other assistants the calculators, the
-  knowledge base with its sources and the recipes. No account and no key; see
-  [Use it from an assistant](#use-it-from-an-assistant).
+- **Built-in chat** (not linked from the main menu): questions answered from the knowledge base
+  with numbered sources; weights, times and temperatures come from the calculators, not from
+  the model. Signed-in accounts only, under a fixed monthly budget.
+- **For AI assistants**: the **MCP** tab shows how to connect ChatGPT, Claude or another client
+  to the [MCP](https://modelcontextprotocol.io) endpoint at `https://breadator.robinluiz.fr/mcp`.
+  It gives assistants the calculators, the knowledge base with its sources and the recipes.
+  No Breadator account or API key; see [Use it from an assistant](#use-it-from-an-assistant).
 
 Coming: a persistent bake journal. See [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md).
 
@@ -50,10 +50,13 @@ putting them in the URL. The site installs as an app. French and English; result
 
 The endpoint speaks the Model Context Protocol over Streamable HTTP, without authentication and
 read-only: 14 tools (search, articles, recipes, bibliography and the eight calculators) and the
-articles and recipes as resources, in English and French. The step-by-step guide for bakers,
-with everything to paste, is on the site: https://breadator.robinluiz.fr/en/assistants
-(opening `/mcp` in a browser leads there too).
+articles and recipes as resources, in English and French. Open **MCP** in the site menu for the
+step-by-step guide and copyable commands: [English](https://breadator.robinluiz.fr/en/assistants),
+[French](https://breadator.robinluiz.fr/fr/assistants). Opening `/mcp` in a browser leads there too.
 
+- **ChatGPT** (web): add Breadator from [Plugins](https://chatgpt.com/plugins) as a custom MCP
+  server with no authentication. The [ChatGPT setup](https://breadator.robinluiz.fr/en/assistants#chatgpt)
+  covers account requirements, installation and use in a conversation.
 - **Claude** (claude.ai, desktop, mobile): open https://claude.ai/customize/connectors (the page
   is called Plugins in recent versions) → Add → Add custom connector, name Breadator, URL
   `https://breadator.robinluiz.fr/mcp`, Continue, authentication "No sign-in" (detected), Add.

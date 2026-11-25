@@ -229,10 +229,14 @@ Passkeys work on `localhost`.
 recipes to AI assistants (Model Context Protocol, Streamable HTTP). No secret, no setting: it
 is on wherever the server runs, at `PUBLIC_URL` + `/mcp`. Design: `docs/ARCHITECTURE.md` (MCP).
 
-Connect an assistant (the public guide, with everything to paste:
-`https://breadator.robinluiz.fr/{fr,en}/assistants`, `templates/assistants.html` and
-`locales/*/assistants.ftl`; a browser that opens `/mcp` is redirected there):
+The **MCP** navigation tab opens the public guide at `https://breadator.robinluiz.fr/{fr,en}/assistants`
+(`templates/assistants.html` and `locales/*/assistants.ftl`). A browser that opens `/mcp` is
+redirected there.
 
+- **ChatGPT** (web): the [guide](https://breadator.robinluiz.fr/en/assistants#chatgpt) follows
+  [OpenAI's documented setup](https://help.openai.com/en/articles/12584461-connecting-custom-mcp-servers-in-chatgpt).
+  A Pro account supports read-only tools; Business, Enterprise and Edu depend on workspace
+  permissions. The connection was not tested in ChatGPT.
 - **Claude** (web, desktop, mobile): https://claude.ai/customize/connectors (called Plugins in
   recent versions) → Add → Add custom connector → name Breadator, URL
   `https://breadator.robinluiz.fr/mcp` → Continue → Authentication "No sign-in" (Claude detects
@@ -242,9 +246,8 @@ Connect an assistant (the public guide, with everything to paste:
   servers, not from the device.
 - **Claude Code**: `claude mcp add --transport http breadator https://breadator.robinluiz.fr/mcp`
   (`--scope user` for every project), then `claude mcp list` shows `✓ Connected`.
-- Others: any client that speaks Streamable HTTP; the URL is all it needs. The guide's steps for
-  Cursor, VS Code and ChatGPT come from their publishers' documentation (November 2026) and
-  were not tried: update them when a user reports a changed menu.
+- Others: any client that speaks Streamable HTTP; the URL is all it needs. The guide's steps
+  for Cursor and VS Code come from their publishers' documentation and were not tried.
 
 Check it by hand:
 

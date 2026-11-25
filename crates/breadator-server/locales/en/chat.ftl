@@ -1,4 +1,3 @@
-nav-chat = Chat
 chat-title = Ask Breadator
 chat-description = Bread-making questions answered from Breadator's knowledge base, with numbered sources, and every number from its calculators.
 chat-lead = Ask a bread-making question. Answers rest on the knowledge base and number their sources; weights, temperatures and times come from Breadator's calculators.

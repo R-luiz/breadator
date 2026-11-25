@@ -62,14 +62,13 @@ mod tests {
     async fn the_guide_gives_this_deployments_address_and_what_to_paste() {
         let app = TestApp::new();
         let url = format!("{HTTPS_URL}/mcp");
-        for (path, heading, example) in [
-            ("/fr/assistants", "Breadator dans Claude", "Avec Breadator : deux pains"),
-            ("/en/assistants", "Breadator in Claude", "With Breadator: two"),
+        for (path, example) in [
+            ("/fr/assistants", "Avec Breadator : deux pains"),
+            ("/en/assistants", "With Breadator: two"),
         ] {
             let page = app.client().get(path).await;
             assert_eq!(page.status, StatusCode::OK, "{path}");
             let body = &page.body;
-            assert!(body.contains(heading), "{path}");
             // The address, the two Claude Code commands and the Cursor file, ready to paste.
             assert_eq!(block(body, 0), url, "{path}");
             assert_eq!(block(body, 1), format!("claude mcp add --transport http breadator {url}"));

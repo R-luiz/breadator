@@ -4,10 +4,28 @@
 <h1>{{ layout.tr.t("assistants-title") }}</h1>
 <p class="lead">{{ layout.tr.t("assistants-lead") }}</p>
 
+<nav class="cards" aria-label="{{ layout.tr.t("assistants-choose") }}">
+  <a class="card" href="#chatgpt"><strong>ChatGPT</strong></a>
+  <a class="card" href="#claude"><strong>Claude</strong></a>
+</nav>
+
 <section class="address" aria-labelledby="address">
   <h2 id="address">{{ layout.tr.t("assistants-address") }}</h2>
   <div class="copyable" data-label="{{ layout.tr.t("assistants-address") }}"><pre><code>{{ url }}</code></pre></div>
   <p class="note">{{ address_note }}</p>
+</section>
+
+<section aria-labelledby="chatgpt">
+  <h2 id="chatgpt">{{ layout.tr.t("assistants-chatgpt") }}</h2>
+  <p class="note">{{ layout.tr.t("assistants-chatgpt-account") }}</p>
+  <ol class="steps">
+    <li><a href="https://chatgpt.com/plugins" rel="noopener noreferrer">chatgpt.com/plugins</a> — {{ layout.tr.t("assistants-chatgpt-1") }}</li>
+    <li>{{ layout.tr.t("assistants-chatgpt-2") }} <a href="#address">{{ layout.tr.t("assistants-address-link") }}</a>.</li>
+    <li>{{ layout.tr.t("assistants-chatgpt-3") }}</li>
+    <li>{{ layout.tr.t("assistants-chatgpt-4") }}</li>
+    <li>{{ layout.tr.t("assistants-chatgpt-5") }}</li>
+  </ol>
+  <p class="note"><a href="https://help.openai.com/en/articles/12584461-connecting-custom-mcp-servers-in-chatgpt" rel="noopener noreferrer">{{ layout.tr.t("assistants-chatgpt-docs") }}</a>. {{ layout.tr.t("assistants-chatgpt-note") }}</p>
 </section>
 
 <section aria-labelledby="claude">
@@ -15,7 +33,7 @@
   <ol class="steps">
     <li>{{ layout.tr.t("assistants-claude-1") }} <a href="https://claude.ai/customize/connectors" rel="noopener noreferrer">claude.ai/customize/connectors</a>. <span class="note">{{ layout.tr.t("assistants-claude-1-note") }}</span></li>
     <li>{{ layout.tr.t("assistants-claude-2") }}</li>
-    <li>{{ layout.tr.t("assistants-claude-3") }}</li>
+    <li>{{ layout.tr.t("assistants-claude-3") }} <a href="#address">{{ layout.tr.t("assistants-address-link") }}</a>.</li>
     <li>{{ layout.tr.t("assistants-claude-4") }}</li>
     <li>{{ layout.tr.t("assistants-claude-5") }}</li>
   </ol>
@@ -47,8 +65,6 @@
 }</code></pre></div>
   <h3>VS Code</h3>
   <p>{{ layout.tr.t("assistants-vscode") }}</p>
-  <h3>ChatGPT</h3>
-  <p>{{ layout.tr.t("assistants-chatgpt") }}</p>
   <p class="note">{{ layout.tr.t("assistants-others-note") }}</p>
 </section>
 

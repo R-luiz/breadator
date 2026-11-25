@@ -29,7 +29,7 @@
     <a href="{{ layout.href("/calculators") }}"{% if layout.in_calculators() %} aria-current="{% if layout.is("calculators") %}page{% else %}true{% endif %}"{% endif %}>{{ layout.tr.t("nav-calculators") }}</a>
     <a href="{{ layout.href("/learn") }}"{% if layout.is("learn") %} aria-current="page"{% endif %}>{{ layout.tr.t("nav-learn") }}</a>
     <a href="{{ layout.href("/recipes") }}"{% if layout.is("recipes") %} aria-current="page"{% endif %}>{{ layout.tr.t("nav-recipes") }}</a>
-    <a href="{{ layout.href("/chat") }}"{% if layout.is("chat") %} aria-current="page"{% endif %}>{{ layout.tr.t("nav-chat") }}</a>
+    <a href="{{ layout.href("/assistants") }}"{% if layout.is("assistants") %} aria-current="page"{% endif %}>{{ layout.tr.t("nav-mcp") }}</a>
   </nav>
   <nav class="lang" aria-label="{{ layout.tr.t("lang-switch") }}">
     {% for a in layout.alternates() %}{% if a.lang != layout.tr.lang() %}<a href="/{{ a.lang }}{{ layout.path }}" hreflang="{{ a.lang }}" lang="{{ a.lang }}">{{ a.label }}</a>{% endif %}{% endfor %}

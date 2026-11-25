@@ -97,10 +97,11 @@ tests for mass conservation (sum of stage + final grams equals totals).
   `learn` (articles by topic in reading order, `learn/<slug>` with a table of contents: every
   heading has an id), `sources` (bibliography), `search` (FTS5 over articles, recipes and
   claims), `recipes` (`recipes/<slug>`, solved weights, opens in the formula calculator);
-  account pages, `my/formulas` and `chat`; `assistants`, the guide to the MCP endpoint below
-  (this deployment's address, the steps for Claude, Claude Code and other clients, requests to
-  paste, each block with a copy button: the `copy` island). A field that applies to one choice
-  only (time or dose, sourdough or yeast) is hidden by CSS `:has()` while another is chosen.
+  account pages, `my/formulas`, and `chat` (outside the main menu); `assistants` (the **MCP**
+  item in the main menu), the guide to the endpoint below, with setup for ChatGPT, Claude and
+  other clients and blocks to paste (copy buttons from the `copy` island). A field that applies
+  to one choice only (time or dose, sourdough or yeast) is hidden by CSS `:has()` while another
+  is chosen.
   Planned: persistent bake journal and calibration profiles.
 - **Knowledge** (`src/knowledge.rs`, `crates/breadator-content`): `content/` and the merged
   research files are compiled in and validated at start-up (unknown citation, missing

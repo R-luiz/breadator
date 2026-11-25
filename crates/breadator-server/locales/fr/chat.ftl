@@ -1,4 +1,3 @@
-nav-chat = Chat
 chat-title = Questions à Breadator
 chat-description = Des réponses à vos questions de panification tirées de la base de connaissances de Breadator, avec leurs sources numérotées, et chaque nombre calculé par ses calculateurs.
 chat-lead = Posez une question de panification. Les réponses s'appuient sur la base de connaissances et numérotent leurs sources ; poids, températures et durées viennent des calculateurs de Breadator.
