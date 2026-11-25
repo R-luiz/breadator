@@ -1,0 +1,142 @@
+{% extends "base.html" %}
+{% import "macros.html" as m %}
+{% block content %}
+<h1>{{ layout.tr.t("preferment-title") }}</h1>
+<p class="lead">{{ layout.tr.t("preferment-lead") }}</p>
+<div class="calc">
+<form class="inputs" method="post" action="{{ layout.href("/calculators/preferment") }}#preferment-result" novalidate>
+  <fieldset>
+    <legend>{{ layout.tr.t("preferment-have") }}</legend>
+    {% call m::num("seed_g", layout.tr.t("preferment-seed-g"), self.value("seed_g", defaults.seed_g), "g", "0.01", "20000", "") %}{% endcall %}
+    {% call m::num("seed_hydration_pct", layout.tr.t("starter-seed-hyd"), self.value("seed_hydration_pct", defaults.seed_hydration_pct), "%", "30", "300", "") %}{% endcall %}
+    <label class="field"><span class="label">{{ layout.tr.t("preferment-seed-state") }}</span>
+      <select name="seed_state">
+        <option value="ripe"{% if self.selected("seed_state", "ripe", "ripe") %} selected{% endif %}>{{ layout.tr.t("starter-ripe") }}</option>
+        <option value="from_fridge"{% if self.selected("seed_state", "from_fridge", "ripe") %} selected{% endif %}>{{ layout.tr.t("starter-from-fridge") }}</option>
+      </select>
+    </label>
+    {% call m::num("feed_flour_g", layout.tr.t("preferment-flour-g"), self.value("feed_flour_g", defaults.feed_flour_g), "g", "0.01", "100000", "") %}{% endcall %}
+    {% call m::num("feed_water_g", layout.tr.t("preferment-water-g"), self.value("feed_water_g", defaults.feed_water_g), "g", "0", "100000", "") %}{% endcall %}
+    {% call m::num("feed_c", layout.tr.t("preferment-feed-temp"), self.value("feed_c", defaults.feed_c), "°C", "2", "38", "") %}{% endcall %}
+    {% call m::num("age_h", layout.tr.t("preferment-age"), self.value("age_h", defaults.age_h), "h", "0", "168", "") %}{% endcall %}
+  </fieldset>
+  <fieldset>
+    <legend>{{ layout.tr.t("preferment-want") }}</legend>
+    {% call m::num("baked_g", layout.tr.t("preferment-baked-g"), self.value("baked_g", defaults.baked_g), "g", "50", "20000", "") %}{% endcall %}
+    {% call m::num("loss_pct", layout.tr.t("formula-loss"), self.value("loss_pct", defaults.loss_pct), "%", "0", "45", "") %}{% endcall %}
+    {% call m::num("hydration_pct", layout.tr.t("ferment-hydration"), self.value("hydration_pct", defaults.hydration_pct), "%", "1", "200", "") %}{% endcall %}
+    {% call m::num("salt_pct", layout.tr.t("formula-salt"), self.value("salt_pct", defaults.salt_pct), "%", "0", "5", "") %}{% endcall %}
+    {% call m::num("whole_grain_pct", layout.tr.t("ferment-whole-grain"), self.value("whole_grain_pct", defaults.whole_grain_pct), "%", "0", "100", layout.tr.t("preferment-whole-grain-hint")) %}{% endcall %}
+    {% call m::num("bulk_c", layout.tr.t("preferment-bulk-temp"), self.value("bulk_c", defaults.bulk_c), "°C", "10", "30", layout.tr.t("preferment-bulk-temp-hint")) %}{% endcall %}
+    {% call m::num("bulk_h", layout.tr.t("preferment-bulk-hours"), self.value("bulk_h", defaults.bulk_h), "h", "0.5", "96", "") %}{% endcall %}
+    <label class="field"><span class="label">{{ layout.tr.t("preferment-endpoint") }}</span>
+      <select name="endpoint">
+        {% for (_, code, label) in self.endpoints() %}<option value="{{ code }}"{% if self.selected("endpoint", code, "rise50") %} selected{% endif %}>{{ label }}</option>{% endfor %}
+      </select>
+    </label>
+    {% call m::num("extra_hydration_pct", layout.tr.t("preferment-extra-hyd"), self.value("extra_hydration_pct", defaults.extra_hydration_pct), "%", "30", "300", "") %}{% endcall %}
+  </fieldset>
+  <details class="preferment-calibration"{% if self.has_calibration_input() %} open{% endif %}>
+    <summary>{{ layout.tr.t("preferment-calibration") }}</summary>
+    <p class="note">{{ layout.tr.t("preferment-calibration-hint") }}</p>
+    {% call m::num("manual_vigour", layout.tr.t("preferment-vigour"), self.raw("manual_vigour"), "×", "0.1", "10", "") %}{% endcall %}
+    {% for i in self.slots() %}
+    {% let kind = self.obs_name(i, "kind") %}
+    <details class="preferment-observation"{% if !self.raw(kind.as_str()).is_empty() %} open{% endif %}>
+      <summary>{{ self.obs_label(i) }}</summary>
+      <label class="field"><span class="label">{{ layout.tr.t("preferment-observed-kind") }}</span>
+        <select name="{{ kind }}" data-obs-kind>
+          <option value=""{% if self.selected(kind.as_str(), "", "") %} selected{% endif %}>{{ layout.tr.t("preferment-no-observation") }}</option>
+          <option value="peak"{% if self.selected(kind.as_str(), "peak", "") %} selected{% endif %}>{{ layout.tr.t("preferment-observed-peak") }}</option>
+          <option value="bulk"{% if self.selected(kind.as_str(), "bulk", "") %} selected{% endif %}>{{ layout.tr.t("preferment-observed-bulk") }}</option>
+        </select>
+      </label>
+      <div data-obs-fields="both">
+        {% let h = self.obs_name(i, "hours") %}
+        {% let t = self.obs_name(i, "temp") %}
+        {% let hyd = self.obs_name(i, "starter_hyd") %}
+        {% call m::num(h, layout.tr.t("preferment-observed-hours"), self.raw(h.as_str()), "h", "0.25", "96", "") %}{% endcall %}
+        {% call m::num(t, layout.tr.t("preferment-observed-temperature"), self.raw(t.as_str()), "°C", "15", "30", "") %}{% endcall %}
+        {% call m::num(hyd, layout.tr.t("preferment-observed-starter-hydration"), self.raw(hyd.as_str()), "%", "30", "300", "") %}{% endcall %}
+      </div>
+      <div data-obs-fields="peak">
+        {% let f = self.obs_name(i, "flour") %}
+        {% let w = self.obs_name(i, "water") %}
+        {% call m::num(f, layout.tr.t("starter-flour-parts"), self.raw(f.as_str()), "×", "0.2", "20", "") %}{% endcall %}
+        {% call m::num(w, layout.tr.t("starter-water-parts"), self.raw(w.as_str()), "×", "0", "300", "") %}{% endcall %}
+      </div>
+      <div data-obs-fields="bulk">
+        {% let dose = self.obs_name(i, "dose") %}
+        {% let h = self.obs_name(i, "hydration") %}
+        {% let s = self.obs_name(i, "salt") %}
+        {% let g = self.obs_name(i, "whole_grain") %}
+        {% let e = self.obs_name(i, "endpoint") %}
+        {% call m::num(dose, layout.tr.t("preferment-observed-dose"), self.raw(dose.as_str()), "%", "0.1", "200", "") %}{% endcall %}
+        {% call m::num(h, layout.tr.t("ferment-hydration"), self.raw(h.as_str()), "%", "0", "200", "") %}{% endcall %}
+        {% call m::num(s, layout.tr.t("formula-salt"), self.raw(s.as_str()), "%", "0", "5", "") %}{% endcall %}
+        {% call m::num(g, layout.tr.t("ferment-whole-grain"), self.raw(g.as_str()), "%", "0", "100", "") %}{% endcall %}
+        <label class="field"><span class="label">{{ layout.tr.t("preferment-endpoint") }}</span>
+          <select name="{{ e }}">
+            {% for (_, code, label) in self.endpoints() %}<option value="{{ code }}"{% if self.selected(e.as_str(), code, "rise50") %} selected{% endif %}>{{ label }}</option>{% endfor %}
+          </select>
+        </label>
+      </div>
+    </details>
+    {% endfor %}
+  </details>
+  <button type="submit">{{ layout.tr.t("compute") }}</button>
+</form>
+<section class="results" id="preferment-result" aria-live="polite">
+  {% if let Some(error) = error %}<p class="error" role="alert">{{ error }}</p>{% endif %}
+  {% if let Some(plan) = result %}
+    <p class="big"><strong>{{ plan.available }}</strong></p>
+    <p id="preferment-peak">{{ plan.age }} {{ plan.peak }}. {{ plan.peak_band }}</p>
+    {% if plan.peak_extrapolated %}<p class="warning" id="preferment-peak-warning">{{ layout.tr.t("preferment-feed-warning") }}</p>{% endif %}
+    <p class="note">{{ layout.tr.t("preferment-peak-hint") }}</p>
+    <p id="preferment-calibration">{{ plan.calibration }}</p>
+    {% if let Some(primary) = plan.primary %}
+      <section id="preferment-target" aria-labelledby="preferment-target-title">
+        <h2 id="preferment-target-title">{{ layout.tr.t("preferment-keep-targets") }}</h2>
+        <p>{{ primary.mix.yield_text }} {{ primary.time }}. {{ primary.band }}</p>
+        {% if primary.extrapolated %}<p class="warning">{{ layout.tr.t("ferment-note-extrapolation") }}</p>{% endif %}
+        {% call m::rows(primary.mix.rows) %}{% endcall %}
+        {% if primary.no_extra %}<p><strong>{{ layout.tr.t("preferment-no-extra") }}</strong></p>{% endif %}
+        {% if let Some(left) = primary.leftover %}<p>{{ left }}</p>{% endif %}
+        {% if primary.water_limit %}<p class="note">{{ layout.tr.t("preferment-water-limit") }}</p>{% endif %}
+      </section>
+    {% endif %}
+    {% if let Some(issue) = plan.issue %}<p class="warning">{{ issue }}</p>{% endif %}
+    {% if let Some(alt) = plan.alternatives %}
+      <section id="preferment-all" aria-labelledby="preferment-all-title">
+        <h2 id="preferment-all-title">{{ layout.tr.t("preferment-keep-weight") }}</h2>
+        {% if let Some(mix) = alt.same_weight %}
+          <p>{{ mix.yield_text }} {{ alt.same_weight_pct }}</p>
+          {% if let Some((time, band)) = alt.same_weight_timing %}
+            <p>{{ time }}. {{ band }}</p>
+          {% else %}
+            <p class="warning">{{ layout.tr.t("preferment-no-time") }}</p>
+          {% endif %}
+          {% call m::rows(mix.rows) %}{% endcall %}
+        {% else %}
+          <p class="warning">{{ layout.tr.t("preferment-no-mass-balance") }}</p>
+        {% endif %}
+      </section>
+      {% if let Some(mix) = alt.same_time %}
+        <section id="preferment-scaled" aria-labelledby="preferment-scaled-title">
+          <h2 id="preferment-scaled-title">{{ layout.tr.t("preferment-keep-time") }}</h2>
+          <p>{{ mix.yield_text }} {{ layout.tr.t("preferment-scale-hint") }}</p>
+          {% call m::rows(mix.rows) %}{% endcall %}
+        </section>
+      {% endif %}
+    {% endif %}
+  {% else if !submitted %}
+    <p>{{ layout.tr.t("preferment-empty") }}</p>
+  {% endif %}
+  <h2>{{ layout.tr.t("ferment-how") }}</h2>
+  <p class="note">{{ layout.tr.t("preferment-how") }}
+    <a href="{{ layout.href("/calculators/starter") }}">{{ layout.tr.t("starter-title") }}</a> ·
+    <a href="{{ layout.href("/calculators/fermentation") }}">{{ layout.tr.t("ferment-title") }}</a>
+  </p>
+</section>
+</div>
+{% endblock %}

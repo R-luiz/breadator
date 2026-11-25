@@ -153,6 +153,19 @@ form:has(input[name="solve"][value="time"]:checked) [data-when="dose"],
 form:has(input[name="solve"][value="dose"]:checked) [data-when="time"],
 form:not(:has(select[name="leavening"] option[value="sourdough"]:checked)) [data-when="sourdough"] { display: none; }
 
+.preferment-calibration, .preferment-observation {
+  padding: .75rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+.preferment-calibration summary { cursor: pointer; font-weight: 600; }
+.preferment-observation { margin-top: .5rem; }
+.preferment-observation .field { margin-top: .75rem; }
+.preferment-observation:has([data-obs-kind] option[value=""]:checked) [data-obs-fields],
+.preferment-observation:has([data-obs-kind] option[value="peak"]:checked) [data-obs-fields="bulk"],
+.preferment-observation:has([data-obs-kind] option[value="bulk"]:checked) [data-obs-fields="peak"] { display: none; }
+
 input, select, button {
   font: inherit;
   color: inherit;

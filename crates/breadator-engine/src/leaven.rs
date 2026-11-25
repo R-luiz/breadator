@@ -839,6 +839,9 @@ pub struct StarterResult {
 /// Spread of K_peak (0.7–1.5) on the log time scale, at a typical growth of ln(1/ι) ≈ 2.5.
 const K_PEAK_SD: f64 = 0.30 / 2.5;
 
+/// The largest fresh-flour ratio in the starter peak observations (1:20:20).
+pub(crate) const CHECKED_STARTER_FEED_MAX: f64 = 20.0;
+
 impl QuickStarter {
     fn hours(&self, flour: f64, water: f64, v: f64) -> Option<(f64, f64, f64)> {
         let hs = self.seed_hydration_pct / 100.0;
@@ -912,8 +915,11 @@ impl QuickStarter {
         if self.seed_state == StarterState::FromFridge {
             sd2 += 0.2 * 0.2;
         }
-        if self.temp_c < 10.0 || self.temp_c > 30.0 {
+        let outside_temp = self.temp_c < 10.0 || self.temp_c > 30.0;
+        if outside_temp {
             sd2 += 0.3 * 0.3;
+        }
+        if outside_temp || flour > CHECKED_STARTER_FEED_MAX {
             notes.insert(0, FermentNote::Extrapolation);
         }
         let build = (self.need_g > 0.0).then(|| {

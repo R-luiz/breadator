@@ -10,10 +10,11 @@ Public repository: code MIT, content CC BY-SA 4.0.
 1. **One engine, everywhere.** All bread arithmetic and science models live in one pure Rust crate
    (`breadator-engine`). The server links it; the browser runs the same code as WebAssembly; the
    chatbot calls it through tools. No formula is ever reimplemented in JavaScript or in a prompt.
-2. **Works without JavaScript, better with it.** Every calculator is a GET form: its state lives in
-   the URL query, the server renders the result (shareable, indexable, no-JS). With JS, an island
-   loads the WASM engine and recomputes on every keystroke without a round trip.
-3. **Works without an account, better with one.** Anonymous data stays on the device
+2. **Works without JavaScript, better with it.** Shareable calculators render GET form results
+   on the server; their WASM islands can recompute without a round trip. The existing preferment
+   planner takes an online POST instead: observations stay out of the URL, aren't saved, and
+   its response is not cacheable.
+3. **Works without an account, better with one.** Saved anonymous data stays on the device
    (IndexedDB). Signing in syncs saved formulas, starters, bakes and calibration across devices.
    Chat requires an account (it spends the owner's OpenRouter credit).
 4. **Every claim has a source.** Knowledge articles, recipes and engine parameters cite entries of
@@ -63,6 +64,7 @@ Dockerfile, fly.toml, litestream.yml
 | `yeast` | fresh ↔ active dry ↔ instant ↔ osmotolerant conversions; sourdough equivalence is not a ratio (fermentation model instead) |
 | `ferment` | progress integration over temperature phases (constant, ramp, Newton cooling/warming); time-to-endpoint and dose-for-time solving; endpoint definitions (aliquot-jar rise); rate modifiers (salt, sugar, enrichment, whole grain, scald…); uncertainty bands |
 | `starter` | feed ratio × hydration × temperature → time to peak; levain build planning (seed:flour:water to reach a mass at a time) |
+| `preferment` | lean-dough mass balance for a weighed sourdough preferment, reusable peak and bulk prediction, per-plan vigour calibration, alternative mixes when all constraints cannot be met |
 | `flour` | flour types (ash class, protein, absorption, usual bread hydration, cold-proof class) and blends: protein, starting hydration with its range, water of additions and scalds, vital gluten for a protein target. The table in `flour/data.rs` is generated from `research/data/model-flour.json` by `research/tools/export_flour_table.py` (CI checks it is current) |
 | `calibration` | per-culture vigour factor (log-normal), Bayesian update from logged bakes |
 | `params` | model parameters with source keys, evidence labels and validity domains, compiled in from `params/*.toml` (generated from `research/data/model-*.json`) |
@@ -89,13 +91,13 @@ tests for mass conservation (sum of stage + final grams equals totals).
   hashed, immutable asset (`/static/i18n/<lang>.<hash>.json`, named on `<html data-i18n>`),
   fetched once and precached by the service worker: pages do not carry the messages.
 - **Pages** (built): home; `calculators` (index) and the calculators `formula`, `fermentation`,
-  `starter`, `flour`, `temperature`, `yeast`, shown as a row of tabs under the header on those pages;
+  `preferment`, `starter`, `flour`, `temperature`, `yeast`, shown as tabs under the header;
   `learn` (articles by topic in reading order, `learn/<slug>` with a table of contents: every
   heading has an id), `sources` (bibliography), `search` (FTS5 over articles, recipes and
   claims), `recipes` (`recipes/<slug>`, solved weights, opens in the formula calculator);
   account pages, `my/formulas` and `chat`. A field that applies to one choice only (time or
-  dose, sourdough or yeast) is hidden by CSS `:has()` while another is chosen. Planned: bake
-  journal and calibration pages.
+  dose, sourdough or yeast) is hidden by CSS `:has()` while another is chosen. Planned:
+  persistent bake journal and calibration profiles.
 - **Knowledge** (`src/knowledge.rs`, `crates/breadator-content`): `content/` and the merged
   research files are compiled in and validated at start-up (unknown citation, missing
   translation, broken internal link or unsolvable recipe formula = the server refuses to start).
@@ -202,7 +204,7 @@ tests for mass conservation (sum of stage + final grams equals totals).
 
 ## Front end (`web/`)
 
-TypeScript, no framework: one island per calculator (`data-island="formula"`), a shared WASM loader,
+TypeScript, no framework: one island per shareable calculator (`data-island="formula"`), a shared WASM loader,
 IndexedDB store for anonymous data and sync, chat client (SSE), service worker (precache shell,
 CSS, JS, WASM; network-first for HTML; offline fallback page; its copies of pages are deleted on
 sign-out, session revocation, account deletion and "remove my data from this device"). Mobile

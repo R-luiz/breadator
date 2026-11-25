@@ -41,6 +41,7 @@
 {% if layout.in_calculators() %}<nav class="sub" aria-label="{{ layout.tr.t("nav-calculators") }}">
   <a href="{{ layout.href("/calculators/formula") }}"{% if layout.is("formula") %} aria-current="page"{% endif %}>{{ layout.tr.t("nav-formula") }}</a>
   <a href="{{ layout.href("/calculators/fermentation") }}"{% if layout.is("fermentation") %} aria-current="page"{% endif %}>{{ layout.tr.t("nav-fermentation") }}</a>
+  <a href="{{ layout.href("/calculators/preferment") }}"{% if layout.is("preferment") %} aria-current="page"{% endif %}>{{ layout.tr.t("nav-preferment") }}</a>
   <a href="{{ layout.href("/calculators/starter") }}"{% if layout.is("starter") %} aria-current="page"{% endif %}>{{ layout.tr.t("nav-starter") }}</a>
   <a href="{{ layout.href("/calculators/flour") }}"{% if layout.is("flour") %} aria-current="page"{% endif %}>{{ layout.tr.t("nav-flour") }}</a>
   <a href="{{ layout.href("/calculators/temperature") }}"{% if layout.is("temperature") %} aria-current="page"{% endif %}>{{ layout.tr.t("nav-temperature") }}</a>

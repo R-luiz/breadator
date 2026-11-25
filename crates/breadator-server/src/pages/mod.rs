@@ -6,6 +6,7 @@ pub mod flour;
 pub mod formula;
 pub mod home;
 pub mod learn;
+pub mod preferment;
 pub mod recipes;
 pub mod starter;
 pub mod temperature;

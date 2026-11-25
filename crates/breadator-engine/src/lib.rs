@@ -12,6 +12,7 @@ pub mod flour;
 pub mod formula;
 pub mod ingredients;
 pub mod leaven;
+pub mod preferment;
 pub mod quick;
 pub mod scald;
 pub mod temperature;

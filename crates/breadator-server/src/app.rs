@@ -111,6 +111,10 @@ pub fn router(state: AppState) -> Router {
         .route("/{lang}/calculators/temperature", get(pages::temperature::page))
         .route("/{lang}/calculators/yeast", get(pages::yeast::page))
         .route("/{lang}/calculators/fermentation", get(pages::fermentation::page))
+        .route(
+            "/{lang}/calculators/preferment",
+            get(pages::preferment::page).post(pages::preferment::calculate),
+        )
         .route("/{lang}/calculators/starter", get(pages::starter::page))
         .route("/{lang}/calculators/flour", get(pages::flour::page))
         .route("/{lang}/learn", get(pages::learn::index))
@@ -253,6 +257,7 @@ impl Layout {
             "calculators"
                 | "formula"
                 | "fermentation"
+                | "preferment"
                 | "starter"
                 | "flour"
                 | "temperature"
@@ -325,6 +330,7 @@ pub const PUBLIC_PAGES: &[&str] = &[
     "/calculators",
     "/calculators/formula",
     "/calculators/fermentation",
+    "/calculators/preferment",
     "/calculators/starter",
     "/calculators/flour",
     "/calculators/temperature",

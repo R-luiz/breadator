@@ -15,6 +15,10 @@ Bread-making calculators and science, for every baker: **https://breadator.robin
 - **Starter feeding**: when a refreshed starter peaks for a feed ratio (starter : flour : water),
   its hydration and the temperature; or the ratio that peaks at the time you want, with the
   grams of seed, flour and water for the amount of levain needed.
+- **Existing preferment**: enter the grams already in a sourdough preferment, its age, desired
+  baked weight and bulk time. Compare a final mix for those targets with ways to use the entire
+  preferment. Optionally estimate culture vigour from up to four measured peaks or bulk rises,
+  or enter a known factor. Out-of-domain estimates are marked.
 - **Flour and hydration**: protein of a blend of flour types (French T45–T150, German, Italian,
   US, rye, spelt and other grains), a hydration to start from with its range, the water that
   bran, seeds, psyllium, vital gluten or a scald call for, and the vital gluten needed for a
@@ -30,13 +34,13 @@ Bread-making calculators and science, for every baker: **https://breadator.robin
   temperatures come from the calculators, not from the model. Signed-in accounts only, under a
   fixed monthly budget.
 
-Coming: the bake journal with personal calibration of fermentation times. See
-[`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md).
+Coming: a persistent bake journal. See [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md).
 
-Every calculator works without JavaScript (server-rendered forms whose state is in the URL) and,
-with JavaScript, recomputes as you type with the same Rust engine compiled to WebAssembly. The
-pages install as an app and work offline. French and English; results in grams and °C, with
-ounces, pounds and °F alongside for those who switch (footer, or the account's setting).
+Every calculator works without JavaScript. The shareable forms put their state in the URL and
+can also recompute offline using the same Rust engine compiled to WebAssembly. The existing
+preferment planner instead submits an online form without storing the calibration inputs or
+putting them in the URL. The site installs as an app. French and English; results in grams and
+°C, with ounces, pounds and °F alongside for those who switch.
 
 ## Layout
 
