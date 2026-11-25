@@ -56,7 +56,7 @@ with everything to paste, is on the site: https://breadator.robinluiz.fr/en/assi
 
 - **Claude** (claude.ai, desktop, mobile): open https://claude.ai/customize/connectors (the page
   is called Plugins in recent versions) → Add → Add custom connector, name Breadator, URL
-  `https://breadator.robinluiz.fr/mcp`, Continue, authentication "No sign in" (detected), Add.
+  `https://breadator.robinluiz.fr/mcp`, Continue, authentication "No sign-in" (detected), Add.
 - **Claude Code**: `claude mcp add --transport http breadator https://breadator.robinluiz.fr/mcp`.
 - **Any other client**: the same URL; a quick look with the MCP Inspector:
   `npx -y @modelcontextprotocol/inspector --cli https://breadator.robinluiz.fr/mcp --transport http --method tools/list`.

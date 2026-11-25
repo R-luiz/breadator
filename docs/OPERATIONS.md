@@ -235,7 +235,7 @@ Connect an assistant (the public guide, with everything to paste:
 
 - **Claude** (web, desktop, mobile): https://claude.ai/customize/connectors (called Plugins in
   recent versions) → Add → Add custom connector → name Breadator, URL
-  `https://breadator.robinluiz.fr/mcp` → Continue → Authentication "No sign in" (Claude detects
+  `https://breadator.robinluiz.fr/mcp` → Continue → Authentication "No sign-in" (Claude detects
   it) → Add. Path checked in the French interface on 2026-11-25 (Plug-ins → Ajouter → Ajouter un
   connecteur personnalisé → Aucune connexion); the English labels are those of Anthropic's help
   centre. The connector belongs to the Claude account and Claude calls it from Anthropic's
