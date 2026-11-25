@@ -1,6 +1,7 @@
 //! Pages and JSON API.
 
 pub mod api;
+pub mod assistants;
 pub mod fermentation;
 pub mod flour;
 pub mod formula;

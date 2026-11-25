@@ -50,13 +50,16 @@ putting them in the URL. The site installs as an app. French and English; result
 
 The endpoint speaks the Model Context Protocol over Streamable HTTP, without authentication and
 read-only: 14 tools (search, articles, recipes, bibliography and the eight calculators) and the
-articles and recipes as resources, in English and French.
+articles and recipes as resources, in English and French. The step-by-step guide for bakers,
+with everything to paste, is on the site: https://breadator.robinluiz.fr/en/assistants
+(opening `/mcp` in a browser leads there too).
 
-- **Claude** (claude.ai, desktop, mobile): Customize → Connectors → Add custom connector, URL
-  `https://breadator.robinluiz.fr/mcp`, authentication "No sign in".
+- **Claude** (claude.ai, desktop, mobile): open https://claude.ai/customize/connectors (the page
+  is called Plugins in recent versions) → Add → Add custom connector, name Breadator, URL
+  `https://breadator.robinluiz.fr/mcp`, Continue, authentication "No sign in" (detected), Add.
 - **Claude Code**: `claude mcp add --transport http breadator https://breadator.robinluiz.fr/mcp`.
 - **Any other client**: the same URL; a quick look with the MCP Inspector:
-  `npx @modelcontextprotocol/inspector --cli https://breadator.robinluiz.fr/mcp --transport http --method tools/list`.
+  `npx -y @modelcontextprotocol/inspector --cli https://breadator.robinluiz.fr/mcp --transport http --method tools/list`.
 
 An assistant then answers "two 800 g loaves at 75 % hydration with 20 % levain, and how long is
 the bulk at 24 °C?" with the engine's numbers, and "does salt slow fermentation?" from passages

@@ -2,6 +2,7 @@
 import { accountIsland } from "./account";
 import { myFormulasIsland } from "./account-formulas";
 import { chatIsland } from "./chat";
+import { copyIsland } from "./copy";
 import { fermentationIsland } from "./fermentation";
 import { flourIsland } from "./flour";
 import { formulaIsland } from "./formula";
@@ -14,6 +15,7 @@ import { yeastIsland } from "./yeast";
 const islands: Record<string, (root: HTMLElement) => Promise<void>> = {
   account: accountIsland,
   chat: chatIsland,
+  copy: copyIsland,
   fermentation: fermentationIsland,
   flour: flourIsland,
   formula: formulaIsland,

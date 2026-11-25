@@ -13,7 +13,8 @@
 //!   (JSON), for a person to attach to a conversation.
 //! - **Guards**: the `Host` must be the site's and an `Origin`, when a browser sends one, the
 //!   site's own (the transport's rules against DNS rebinding); bodies are capped; requests are
-//!   counted per client address ([`limit`]).
+//!   counted per client address ([`limit`]). A browser that opens the address (GET asking for
+//!   HTML) is sent to the page that explains how to connect an assistant.
 
 mod limit;
 #[cfg(test)]
@@ -23,8 +24,11 @@ use std::sync::{Arc, LazyLock};
 use std::time::Instant;
 
 use axum::Router;
-use axum::http::header;
+use axum::extract::Request;
 use axum::http::request::Parts;
+use axum::http::{Method, header};
+use axum::middleware::Next;
+use axum::response::{IntoResponse, Redirect, Response};
 use rmcp::model::{
     CacheScope, CallToolRequestParams, CallToolResponse, CallToolResult, ContentBlock,
     DiscoverResult, Icon, Implementation, ListResourceTemplatesResult, ListResourcesResult,
@@ -311,6 +315,24 @@ fn site_authority(public_url: &str) -> (String, String) {
     (host.to_owned(), format!("{scheme}://{host}:{port}"))
 }
 
+/// Someone who opens the address in a browser lands on the page that explains it. A browser asks
+/// for HTML; an MCP client never does (it asks for JSON or an event stream), so it keeps the
+/// transport's own answer to GET.
+async fn browser_to_guide(request: Request, next: Next) -> Response {
+    let wants_page = request.method() == Method::GET
+        && request
+            .headers()
+            .get(header::ACCEPT)
+            .and_then(|accept| accept.to_str().ok())
+            .is_some_and(|accept| accept.contains("text/html"));
+    if wants_page {
+        let lang = Lang::negotiate(request.headers());
+        return Redirect::to(&format!("/{}{}", lang.code(), crate::pages::assistants::PATH))
+            .into_response();
+    }
+    next.run(request).await
+}
+
 pub fn routes(state: AppState) -> Router {
     router(state, REQUESTS_PER_MINUTE)
 }
@@ -329,8 +351,11 @@ fn router(state: AppState, per_minute: u32) -> Router {
         Arc::new(NeverSessionManager::default()),
         config,
     );
-    Router::new().route_service(PATH, service).layer(axum::middleware::from_fn_with_state(
-        Arc::new(Limiter::new(per_minute)),
-        limit::layer,
-    ))
+    Router::new()
+        .route_service(PATH, service)
+        .layer(axum::middleware::from_fn(browser_to_guide))
+        .layer(axum::middleware::from_fn_with_state(
+            Arc::new(Limiter::new(per_minute)),
+            limit::layer,
+        ))
 }

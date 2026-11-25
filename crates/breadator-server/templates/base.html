@@ -55,7 +55,7 @@
 <footer class="site">
   <p>{{ layout.tr.t("units-label") }} {% if layout.units_us %}<a href="{{ layout.href("/units/metric") }}" rel="nofollow">{{ layout.tr.t("units-metric") }}</a> · <strong>{{ layout.tr.t("units-us") }}</strong>{% else %}<strong>{{ layout.tr.t("units-metric") }}</strong> · <a href="{{ layout.href("/units/us") }}" rel="nofollow">{{ layout.tr.t("units-us") }}</a>{% endif %}</p>
   <p>{{ layout.tr.t("footer-licence") }}</p>
-  <p>{{ layout.tr.t("footer-made-by") }} <a href="https://robinluiz.fr">Robin Luiz</a> · <a href="https://github.com/R-luiz/breadator">GitHub</a></p>
+  <p>{{ layout.tr.t("footer-made-by") }} <a href="https://robinluiz.fr">Robin Luiz</a> · <a href="https://github.com/R-luiz/breadator">GitHub</a> · <a href="{{ layout.href("/assistants") }}"{% if layout.is("assistants") %} aria-current="page"{% endif %}>{{ layout.tr.t("footer-assistants") }}</a></p>
 </footer>
 </body>
 </html>

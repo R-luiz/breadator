@@ -123,6 +123,7 @@ pub fn router(state: AppState) -> Router {
         .route("/{lang}/search", get(pages::learn::search))
         .route("/{lang}/recipes", get(pages::recipes::index))
         .route("/{lang}/recipes/{slug}", get(pages::recipes::recipe))
+        .route("/{lang}/assistants", get(pages::assistants::page))
         .merge(auth::routes())
         .merge(account::routes())
         .merge(sync::routes())
@@ -341,6 +342,7 @@ pub const PUBLIC_PAGES: &[&str] = &[
     "/learn",
     "/recipes",
     "/sources",
+    "/assistants",
 ];
 
 async fn sitemap(State(state): State<AppState>) -> impl IntoResponse {

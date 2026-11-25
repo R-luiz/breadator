@@ -229,14 +229,22 @@ Passkeys work on `localhost`.
 recipes to AI assistants (Model Context Protocol, Streamable HTTP). No secret, no setting: it
 is on wherever the server runs, at `PUBLIC_URL` + `/mcp`. Design: `docs/ARCHITECTURE.md` (MCP).
 
-Connect an assistant:
+Connect an assistant (the public guide, with everything to paste:
+`https://breadator.robinluiz.fr/{fr,en}/assistants`, `templates/assistants.html` and
+`locales/*/assistants.ftl`; a browser that opens `/mcp` is redirected there):
 
-- **Claude** (web, desktop, mobile): Customize → Connectors → Add custom connector → URL
-  `https://breadator.robinluiz.fr/mcp`, Authentication "No sign in". The connector belongs to
-  the Claude account and Claude calls it from Anthropic's servers, not from the device.
+- **Claude** (web, desktop, mobile): https://claude.ai/customize/connectors (called Plugins in
+  recent versions) → Add → Add custom connector → name Breadator, URL
+  `https://breadator.robinluiz.fr/mcp` → Continue → Authentication "No sign in" (Claude detects
+  it) → Add. Path checked in the French interface on 2026-11-25 (Plug-ins → Ajouter → Ajouter un
+  connecteur personnalisé → Aucune connexion); the English labels are those of Anthropic's help
+  centre. The connector belongs to the Claude account and Claude calls it from Anthropic's
+  servers, not from the device.
 - **Claude Code**: `claude mcp add --transport http breadator https://breadator.robinluiz.fr/mcp`
   (`--scope user` for every project), then `claude mcp list` shows `✓ Connected`.
-- Others: any client that speaks Streamable HTTP; the URL is all it needs.
+- Others: any client that speaks Streamable HTTP; the URL is all it needs. The guide's steps for
+  Cursor, VS Code and ChatGPT come from their publishers' documentation (November 2026) and
+  were not tried: update them when a user reports a changed menu.
 
 Check it by hand:
 

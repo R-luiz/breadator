@@ -126,6 +126,9 @@ jobs:
             -d '{"jsonrpc":"2.0","id":1,"method":"tools/call","params":{"name":"read_article","arguments":{"slug":"sourdough-starter","lang":"fr"}}}' \
             | grep -q '## Sources'
           check /mcp 405
+          # The guide for connecting an assistant, where a browser that opens /mcp is sent.
+          check /fr/assistants 200
+          [ "$(curl -s -o /dev/null -w '%{http_code} %{redirect_url}' -H 'accept: text/html' http://localhost:8080/mcp)" = "303 http://localhost:8080/en/assistants" ]
           # Accounts: the data directory is writable by the server, a magic link signs in, the
           # session reads and writes synced records.
           check /en/account/sign-in 200

@@ -428,3 +428,24 @@ form.chat-ask textarea {
 }
 form.chat-ask textarea:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
 form.chat-ask .actions { align-items: center; margin: 0; }
+
+/* Assistants guide: blocks of text to paste elsewhere, each with a copy button added by the
+   page's script (without it, the text is there to select). */
+.guide { max-width: 48rem; }
+.guide h3 { font-size: 1rem; margin: 1.25rem 0 .25rem; }
+.copyable { position: relative; }
+.copyable pre {
+  margin: .5rem 0;
+  padding: .7rem 1rem;
+  padding-right: 6.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: .9rem;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.copyable button.copy { position: absolute; top: .45rem; right: .45rem; }
+.guide .address pre { font-size: 1.05rem; font-weight: 600; }
+ul.examples { list-style: none; padding: 0; }
+ul.examples pre { font-family: inherit; font-size: .95rem; }

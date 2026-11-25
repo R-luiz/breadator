@@ -329,6 +329,17 @@ async fn the_endpoint_is_guarded() {
         assert_eq!(reply.status, StatusCode::METHOD_NOT_ALLOWED);
         assert_eq!(reply.headers[header::ALLOW], "POST");
     }
+    // A person who opens the address in a browser is sent to the page that explains it, in
+    // the browser's language.
+    let mut browser = app.client();
+    browser.extra = vec![
+        ("accept", "text/html,application/xhtml+xml,*/*;q=0.8".to_owned()),
+        ("accept-language", "fr-FR,fr;q=0.9,en;q=0.5".to_owned()),
+    ];
+    let reply = browser.get(PATH).await;
+    assert_eq!(reply.status, StatusCode::SEE_OTHER);
+    assert_eq!(reply.location(), "/fr/assistants");
+    assert_eq!(browser.get(&reply.location()).await.status, StatusCode::OK);
 
     // Another site's page, in a browser, is turned away; the site's own is not, and a
     // signed-in browser is served like anyone: the session is not even looked at.

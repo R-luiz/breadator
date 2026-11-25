@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+{% block content %}
+<article class="guide" data-island="copy">
+<h1>{{ layout.tr.t("assistants-title") }}</h1>
+<p class="lead">{{ layout.tr.t("assistants-lead") }}</p>
+
+<section class="address" aria-labelledby="address">
+  <h2 id="address">{{ layout.tr.t("assistants-address") }}</h2>
+  <div class="copyable" data-label="{{ layout.tr.t("assistants-address") }}"><pre><code>{{ url }}</code></pre></div>
+  <p class="note">{{ address_note }}</p>
+</section>
+
+<section aria-labelledby="claude">
+  <h2 id="claude">{{ layout.tr.t("assistants-claude") }}</h2>
+  <ol class="steps">
+    <li>{{ layout.tr.t("assistants-claude-1") }} <a href="https://claude.ai/customize/connectors" rel="noopener noreferrer">claude.ai/customize/connectors</a>. <span class="note">{{ layout.tr.t("assistants-claude-1-note") }}</span></li>
+    <li>{{ layout.tr.t("assistants-claude-2") }}</li>
+    <li>{{ layout.tr.t("assistants-claude-3") }}</li>
+    <li>{{ layout.tr.t("assistants-claude-4") }}</li>
+    <li>{{ layout.tr.t("assistants-claude-5") }}</li>
+  </ol>
+  <p>{{ layout.tr.t("assistants-claude-approve") }}</p>
+  <p class="note">{{ layout.tr.t("assistants-claude-account") }}</p>
+</section>
+
+<section aria-labelledby="claude-code">
+  <h2 id="claude-code">{{ layout.tr.t("assistants-code") }}</h2>
+  <p>{{ layout.tr.t("assistants-code-lead") }}</p>
+  <div class="copyable" data-label="{{ layout.tr.t("assistants-code") }}"><pre><code>claude mcp add --transport http breadator {{ url }}</code></pre></div>
+  <p>{{ layout.tr.t("assistants-code-user") }}</p>
+  <div class="copyable" data-label="{{ layout.tr.t("assistants-code") }}"><pre><code>claude mcp add --transport http --scope user breadator {{ url }}</code></pre></div>
+  <p>{{ layout.tr.t("assistants-code-check") }}</p>
+  <div class="copyable" data-label="{{ layout.tr.t("assistants-code") }}"><pre><code>claude mcp list</code></pre></div>
+</section>
+
+<section aria-labelledby="others">
+  <h2 id="others">{{ layout.tr.t("assistants-others") }}</h2>
+  <p>{{ layout.tr.t("assistants-others-lead") }}</p>
+  <h3>Cursor</h3>
+  <p>{{ layout.tr.t("assistants-cursor") }}</p>
+  <div class="copyable" data-label="Cursor"><pre><code>{
+  "mcpServers": {
+    "breadator": {
+      "url": "{{ url }}"
+    }
+  }
+}</code></pre></div>
+  <h3>VS Code</h3>
+  <p>{{ layout.tr.t("assistants-vscode") }}</p>
+  <h3>ChatGPT</h3>
+  <p>{{ layout.tr.t("assistants-chatgpt") }}</p>
+  <p class="note">{{ layout.tr.t("assistants-others-note") }}</p>
+</section>
+
+<section aria-labelledby="examples">
+  <h2 id="examples">{{ layout.tr.t("assistants-examples") }}</h2>
+  <p>{{ layout.tr.t("assistants-examples-lead") }}</p>
+  <ul class="examples">
+  {% for example in examples %}<li class="copyable example" data-label="{{ layout.tr.t("assistants-examples") }}"><pre>{{ example }}</pre></li>
+  {% endfor %}</ul>
+</section>
+
+<section aria-labelledby="can">
+  <h2 id="can">{{ layout.tr.t("assistants-can") }}</h2>
+  <p>{{ layout.tr.t("assistants-can-calc") }}</p>
+  <ul>
+    <li>{{ layout.tr.t("assistants-can-calc-1") }}</li>
+    <li>{{ layout.tr.t("assistants-can-calc-2") }}</li>
+    <li>{{ layout.tr.t("assistants-can-calc-3") }}</li>
+    <li>{{ layout.tr.t("assistants-can-calc-4") }}</li>
+    <li>{{ layout.tr.t("assistants-can-calc-5") }}</li>
+  </ul>
+  <p>{{ layout.tr.t("assistants-can-know") }}</p>
+  <ul>
+    <li>{{ layout.tr.t("assistants-can-know-1") }}</li>
+    <li>{{ layout.tr.t("assistants-can-know-2") }}</li>
+  </ul>
+</section>
+
+<section aria-labelledby="good">
+  <h2 id="good">{{ layout.tr.t("assistants-good") }}</h2>
+  <ul>
+    <li>{{ layout.tr.t("assistants-good-numbers") }}</li>
+    <li>{{ layout.tr.t("assistants-good-private") }}</li>
+    <li>{{ layout.tr.t("assistants-good-conversation") }}</li>
+  </ul>
+</section>
+
+<section aria-labelledby="developers">
+  <h2 id="developers">{{ layout.tr.t("assistants-dev") }}</h2>
+  <p>{{ layout.tr.t("assistants-dev-lead") }}</p>
+  <div class="copyable" data-label="{{ layout.tr.t("assistants-dev") }}"><pre><code>npx -y @modelcontextprotocol/inspector --cli {{ url }} --transport http --method tools/list</code></pre></div>
+  <p>{{ layout.tr.t("assistants-dev-code") }} <a href="https://github.com/R-luiz/breadator/blob/main/docs/OPERATIONS.md#mcp-endpoint" rel="noopener noreferrer">docs/OPERATIONS.md</a>.</p>
+</section>
+</article>
+{% endblock %}
