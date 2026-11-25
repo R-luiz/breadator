@@ -1233,25 +1233,39 @@ mod tests {
         let (mut me, user_id) = app.signed_in("me@example.com").await;
         let now = crate::db::now_ms();
         let plan = json!({ "a": vec![1; 32_000] });
-        let mut pushes = 0;
-        let limited = loop {
+        let oversized = |n: i64| {
             let bakes: Vec<Value> = (0..15)
-                .map(|i| json!({ "id": id(), "plan": plan, "updated_at": now + i }))
+                .map(|i| json!({ "id": id(), "plan": plan, "updated_at": now + n * 100 + i }))
                 .collect();
-            let reply = me.json(Method::POST, "/api/v1/sync", &json!({ "bakes": bakes })).await;
-            if reply.status != StatusCode::OK || pushes > 40 {
-                break reply;
-            }
-            let reply = reply.json();
+            json!({ "bakes": bakes })
+        };
+        for n in 0..3 {
+            let reply = push(&mut me, oversized(n)).await;
             assert_eq!(reply["accepted"], 0);
             assert!(
                 reply["rejected"].as_array().unwrap().iter().all(|r| r["reason"] == "too_large")
             );
-            pushes += 1;
-        };
+        }
+        // Use up the allowance of this window and of the next one: the windows are slices of
+        // the clock, and a test that pushed until refused counted 36 pushes instead of 30 the
+        // day it ran across the end of one.
+        let key = format!("sync:push:{user_id}");
+        app.state
+            .db
+            .write(move |c| {
+                let now = crate::db::now();
+                for at in [now, now + PUSH_WINDOW_SECS] {
+                    for _ in 0..PUSHES_PER_WINDOW {
+                        ratelimit::hit(c, &key, PUSH_WINDOW_SECS, PUSHES_PER_WINDOW, at)?;
+                    }
+                }
+                Ok(())
+            })
+            .await
+            .unwrap();
+        let limited = me.json(Method::POST, "/api/v1/sync", &oversized(3)).await;
         assert_eq!(limited.status, StatusCode::TOO_MANY_REQUESTS, "{}", limited.body);
         assert_eq!(limited.json()["error"]["code"], "rate_limited");
-        assert_eq!(pushes, PUSHES_PER_WINDOW);
         assert_eq!(footprint(&app, &user_id).await, (0, 0, 0, 0));
         // Pulling (a push without records) is not limited.
         assert_eq!(push(&mut me, json!({ "since": 0 })).await["cursor"], 0);
